@@ -8,5 +8,8 @@ namespace Planning_Tool.Masterdata
 {
     class WorkSchedule
     {
+        public static string TABLE = "WORKSCHEDULE";
+
+        private string workSchudle;
     }
 }
