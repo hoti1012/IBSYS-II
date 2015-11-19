@@ -6,10 +6,15 @@ namespace Planning_Tool.Masterdata
     {
         public static string TABLE = "BOM";
 
-        private string bom;
-        public BOM()
+
+        private string _bom;
+
+        public string bom
         {
+            get { return _bom; }
+            set { _bom = value; }
         }
+
     }
 
 }

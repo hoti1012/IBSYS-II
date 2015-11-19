@@ -16,9 +16,19 @@ namespace Planning_Tool
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            DatabaseManager manager = new DatabaseManager();
+            try
+            {
+                manager.initialize();
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Main());
+            } finally
+            {
+                if(manager != null)
+                 manager.release();
+            }
         }
     }
 }

@@ -10,6 +10,15 @@ namespace Planning_Tool.Masterdata
     {
         public static string TABLE = "WORKSCHEDULE";
 
-        private string workSchudle;
+        /// <summary>
+        /// Arbeitsgang Nummer
+        /// </summary>
+        private string _workSchudle;
+
+        public string WorkSchudle
+        {
+            get { return _workSchudle; }
+            set { _workSchudle = value; }
+        }
     }
 }

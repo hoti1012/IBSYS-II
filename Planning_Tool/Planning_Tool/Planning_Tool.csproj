@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DatabaseManager.cs" />
+    <Compile Include="Data\Properties.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,10 +62,10 @@
     <Compile Include="Masterdata\WorkSchedule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Purchase\Order.cs" />
-    <Compile Include="Purchase\OrderFactory.cs" />
-    <Compile Include="Purchase\OrderPos.cs" />
-    <Compile Include="Purchase\OrderPosFactory.cs" />
+    <Compile Include="Purchase\Ordering.cs" />
+    <Compile Include="Purchase\OrderingFactory.cs" />
+    <Compile Include="Purchase\OrderingPos.cs" />
+    <Compile Include="Purchase\OrderingPosFactory.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

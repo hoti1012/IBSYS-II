@@ -49,7 +49,7 @@ namespace Planning_Tool.Data
         /// <param name="type">Typ der Klasse</param>
         /// <param name="where">SQL where wenn beschtimmte bedingungen gelten sollen</param>
         /// <returns>List<Object> mit den Gefunden Objecten</returns>
-        public List<Object> load(Type type, string where)
+        public List<Object> get(Type type, string where)
         {
             List<Object> res = new List<object>();
             string sql = "SELECT * FROM " + type.Name;
@@ -85,6 +85,113 @@ namespace Planning_Tool.Data
             }
             return res;
         }//load
+
+        /// <summary>
+        /// Baut die Datenbank für sämtliche Klassen die Datenbanktabellen auf
+        /// </summary>
+        public void initialize()
+        {
+            string sql;
+            string fields;
+            Type[] classes;
+            PropertyInfo[] prop;
+
+            if (!open)
+            {
+                connection.Open();
+                open = true;
+            }
+
+            classes = Properties.classes;
+            command = new SQLiteCommand(connection);
+
+            foreach(Type t in classes)
+            {
+                sql = "CREATE TABLE IF NOT EXISTS " + t.Name + " (";
+
+                prop = t.GetProperties();
+                int anz = 1;
+                fields = null;
+                foreach(PropertyInfo p in prop) 
+                {
+                    fields += p.Name + " " + p.PropertyType.Name;
+                    if (p.Name.Equals(t.Name,StringComparison.CurrentCultureIgnoreCase)) 
+                    {
+                        fields += " NOT NULL UNIQUE";
+                    }
+                    if(anz < prop.Length)
+                    {
+                        fields += ", ";
+                    }
+                    anz++;
+                }
+                if(fields == null)
+                {
+                    break;
+                }
+
+                sql += fields;
+                sql += ")";
+
+                command.CommandText = sql;
+                command.ExecuteNonQuery();
+            }
+        }
+
+        /// <summary>
+        /// Führt ein Datenbank update durch
+        /// </summary>
+        /// <param name="obj">Object welches in der Datenbank aktuallisiert werden soll</param>
+        /// <param name="where">where bedingung</param>
+        public void update(Object obj)
+        {
+            string sql,where,value = null;
+            string fields;
+            string table = obj.GetType().Name;
+            PropertyInfo[] prop = obj.GetType().GetProperties();
+
+            if (!open)
+            {
+                connection.Open();
+                open = true;
+            }
+
+            command = new SQLiteCommand(connection);
+
+            sql = "UPDATE " + table + " SET ";
+
+            int anz = 1;
+            fields = null;
+            foreach (PropertyInfo p in prop)
+            {
+                if (p.GetValue(obj) != null )
+                {
+                    if(fields != null && anz <= prop.Length)
+                        fields += ", ";
+                    //Sich das Suchkriterium merken
+                    if (p.Name.Equals(table, StringComparison.CurrentCultureIgnoreCase)) 
+                    {
+                        value = p.GetValue(obj).ToString();
+                    }
+                    fields += p.Name + " = " + "\"" + p.GetValue(obj) + "\"";
+                }
+                anz++;
+            }
+
+            if (fields == null)
+            {
+                return;
+            }
+
+            where = "WHERE " + table + " = \"" + value + "\""; 
+
+            sql += fields;
+            sql += " " + where;
+
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+        }
 
 
 

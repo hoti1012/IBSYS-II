@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Planning_Tool.Purchase
 {
-    class OrderFactory
+    class OrderingFactory
     {
     }
 }

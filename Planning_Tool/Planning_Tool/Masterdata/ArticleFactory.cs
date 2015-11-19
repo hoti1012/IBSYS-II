@@ -23,17 +23,17 @@ namespace Planning_Tool.Masterdata
         /// </summary>
         /// <param name="articleNumber">Artikelnummer des Gesuchten Artikels</param>
         /// <returns>Den gesuchten Artikel</returns>
-        public static Article search(string articleNumber)
+        public static Article search(string article)
         {
             DatabaseManager manager = null;
-            string where = "WHERE articleNumber = " + articleNumber;
+            string where = "WHERE " + typeof(Article).Name + " = " + article;
             List<Object> objects;
-            Article article = null;
+            Article articleObj = null;
 
             try
             {
                 manager = new DatabaseManager();
-                objects = manager.load(typeof(Article),where);
+                objects = manager.get(typeof(Article),where);
 
                 if (objects == null)
                 {
@@ -45,7 +45,7 @@ namespace Planning_Tool.Masterdata
                     //TODO: Exception werfen
                 }
 
-                article = objects[0] as Article;
+                articleObj = objects[0] as Article;
 
             }
             finally
@@ -56,7 +56,7 @@ namespace Planning_Tool.Masterdata
                 }
             }
 
-            return article;
+            return articleObj;
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Planning_Tool.Masterdata
             try
             {
                 manager = new DatabaseManager();
-                objects = manager.load(typeof(Article), where);
+                objects = manager.get(typeof(Article), where);
                 articles = new List<Article>();
 
                 if (objects == null)
@@ -111,7 +111,7 @@ namespace Planning_Tool.Masterdata
             try
             {
                 manager = new DatabaseManager();
-                objects = manager.load(typeof(Article), where);
+                objects = manager.get(typeof(Article), where);
                 articles = new List<Article>();
 
                 if (objects == null)
@@ -133,6 +133,23 @@ namespace Planning_Tool.Masterdata
             }
 
             return articles;
+        }
+
+        /// <summary>
+        /// Speichert sämtliche änderungen in die Datenbank
+        /// </summary>
+        /// <param name="article">ArtikelObject</param>
+        public static void update(Article article)
+        {
+            DatabaseManager manager = new DatabaseManager();
+            try
+            {
+                manager.update(article);
+            }
+            finally
+            {
+                manager.release();
+            }
         }
     }
 }
