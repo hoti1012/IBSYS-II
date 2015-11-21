@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Data\DatabaseManager.cs" />
     <Compile Include="Data\Properties.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +59,9 @@
     <Compile Include="Masterdata\Article.cs" />
     <Compile Include="Masterdata\ArticleFactory.cs" />
     <Compile Include="Masterdata\BOM.cs" />
+    <Compile Include="Masterdata\BOMFactory.cs" />
+    <Compile Include="Masterdata\BOMpos.cs" />
+    <Compile Include="Masterdata\BOMposFactory.cs" />
     <Compile Include="Masterdata\WorkSchedule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,9 +94,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exception\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

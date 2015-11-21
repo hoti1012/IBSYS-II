@@ -9,13 +9,35 @@ namespace Planning_Tool.Masterdata
 {
     class ArticleFactory
     {
+
         /// <summary>
         /// Erstellt einen neuen Artikel
         /// </summary>
         /// <returns>Gibt den neu erzeugten Artikel zurück</returns>
-        public static Article create()
+        public static Article create(string article)
         {
-            return new Article();
+            Article articleObj;
+            DatabaseManager manager;
+
+            if (article == null || article == "")
+            {
+                //TODO: Fehler werfen
+                return null;
+            }
+            
+            articleObj = new Article();
+            articleObj.article = article;
+
+            manager = new DatabaseManager();
+            try
+            {
+                manager.insert(articleObj);
+            }
+            finally
+            {
+                manager.release();
+            }
+            return articleObj;
         }
 
         /// <summary>
@@ -33,7 +55,7 @@ namespace Planning_Tool.Masterdata
             try
             {
                 manager = new DatabaseManager();
-                objects = manager.get(typeof(Article),where);
+                objects = manager.select(typeof(Article),where);
 
                 if (objects == null)
                 {
@@ -73,7 +95,7 @@ namespace Planning_Tool.Masterdata
             try
             {
                 manager = new DatabaseManager();
-                objects = manager.get(typeof(Article), where);
+                objects = manager.select(typeof(Article), where);
                 articles = new List<Article>();
 
                 if (objects == null)
@@ -111,7 +133,7 @@ namespace Planning_Tool.Masterdata
             try
             {
                 manager = new DatabaseManager();
-                objects = manager.get(typeof(Article), where);
+                objects = manager.select(typeof(Article), where);
                 articles = new List<Article>();
 
                 if (objects == null)

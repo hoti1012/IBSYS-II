@@ -6,7 +6,9 @@ namespace Planning_Tool.Masterdata
     {
         public static string TABLE = "BOM";
 
-
+        /// <summary>
+        /// Stücklisten nummer (ist die Artikelnummer der E-Artikels)
+        /// </summary>
         private string _bom;
 
         public string bom
@@ -14,7 +16,6 @@ namespace Planning_Tool.Masterdata
             get { return _bom; }
             set { _bom = value; }
         }
-
     }
 
 }

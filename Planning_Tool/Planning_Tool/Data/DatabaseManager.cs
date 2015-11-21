@@ -49,7 +49,7 @@ namespace Planning_Tool.Data
         /// <param name="type">Typ der Klasse</param>
         /// <param name="where">SQL where wenn beschtimmte bedingungen gelten sollen</param>
         /// <returns>List<Object> mit den Gefunden Objecten</returns>
-        public List<Object> get(Type type, string where)
+        public List<Object> select(Type type, string where)
         {
             List<Object> res = new List<object>();
             string sql = "SELECT * FROM " + type.Name;
@@ -102,6 +102,8 @@ namespace Planning_Tool.Data
                 open = true;
             }
 
+            dropTables();
+
             classes = Properties.classes;
             command = new SQLiteCommand(connection);
 
@@ -132,6 +134,32 @@ namespace Planning_Tool.Data
 
                 sql += fields;
                 sql += ")";
+
+                command.CommandText = sql;
+                command.ExecuteNonQuery();
+            }
+        }
+
+        /// <summary>
+        /// Löscht Tabellen welche nur Temp. Daten enthält
+        /// </summary>
+        private void dropTables()
+        {
+            string sql;
+            Type[] tables;
+
+            if (!open)
+            {
+                connection.Open();
+                open = true;
+            }
+
+            tables = Properties.deleteTables;
+            command = new SQLiteCommand(connection);
+
+            foreach (Type t in tables)
+            {
+                sql = "DROP TABLE IF EXISTS " + t.Name;
 
                 command.CommandText = sql;
                 command.ExecuteNonQuery();
@@ -187,6 +215,59 @@ namespace Planning_Tool.Data
 
             sql += fields;
             sql += " " + where;
+
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+        }
+
+        /// <summary>
+        /// Speichert ein Object in die passende Tabelle
+        /// </summary>
+        /// <param name="obj">Object welches in der Datenbank aktuallisiert werden soll</param>
+        public void insert(Object obj)
+        {
+            string sql, values;
+            string fields;
+            string table = obj.GetType().Name;
+            PropertyInfo[] prop = obj.GetType().GetProperties();
+
+            if (!open)
+            {
+                connection.Open();
+                open = true;
+            }
+
+            command = new SQLiteCommand(connection);
+
+            sql = "INSERT INTO " + table;
+
+            int anz = 1;
+            fields = null;
+            values = null;
+            foreach (PropertyInfo p in prop)
+            {
+                if (p.GetValue(obj) != null)
+                {
+                    if (fields != null && anz <= prop.Length)
+                    {
+                        fields += ", ";
+                        values += ", ";
+                    }
+
+                    fields += p.Name;
+                    values += "\"" + p.GetValue(obj) + "\"";
+                }
+                anz++;
+            }
+
+            if (fields == null)
+            {
+                return;
+            }
+
+            sql += " (" + fields + ")";
+            sql += " VALUES (" + values + " )";
 
             command.CommandText = sql;
             command.ExecuteNonQuery();
