@@ -84,7 +84,8 @@ namespace Planning_Tool.Data
                 o++;
             }
             return res;
-        }//load
+        }
+
 
         /// <summary>
         /// Baut die Datenbank für sämtliche Klassen die Datenbanktabellen auf

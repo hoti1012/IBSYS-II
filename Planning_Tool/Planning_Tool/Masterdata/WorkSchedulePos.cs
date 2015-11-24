@@ -8,6 +8,8 @@ namespace Planning_Tool.Masterdata
 {
     class WorkSchedulePos
     {
+        public static string TABLE = typeof(WorkSchedulePos).Name;
+
         /// <summary>
         /// Nummer des Arbeitsplanes
         /// </summary>

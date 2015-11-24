@@ -8,7 +8,7 @@ namespace Planning_Tool.Masterdata
     /// </summary>
     public class Article
     {
-        public static string TABLE = "ARTICLE";
+        public static string TABLE = typeof(Article).Name;
 
         /// <summary>
         /// Artikelnummer

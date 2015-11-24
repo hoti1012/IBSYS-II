@@ -9,7 +9,7 @@ namespace Planning_Tool.Purchase
 {
     class OrderingPos
     {
-        public static string TABLE = "ORDERPOS";
+        public static string TABLE = typeof(OrderingPos).Name;
 
         /// <summary>
         /// Nummer der Bestellung
@@ -45,6 +45,11 @@ namespace Planning_Tool.Purchase
         /// gibt die geplante Ankunft an
         /// </summary>
         private double arrivals;
+
+        public void update()
+        {
+            OrderingPosFactory.update(this);
+        }
 
         public double Arrivals
         {

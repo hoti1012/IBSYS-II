@@ -8,7 +8,7 @@ namespace Planning_Tool.Masterdata
 {
     class WorkSchedule
     {
-        public static string TABLE = "WORKSCHEDULE";
+        public static string TABLE = typeof(WorkSchedule).Name;
 
         /// <summary>
         /// Arbeitsgang Nummer

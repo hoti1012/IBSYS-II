@@ -25,6 +25,16 @@ namespace Planning_Tool.Purchase
         /// </summary>
         private double mterialPrice;
 
+        public void update()
+        {
+            OrderingFactory.update(this);
+        }
+
+        public List<OrderingPos> getPositions()
+        {
+            return OrderingPosFactory.serach(this.ordering);
+        }
+
         public double MterialPrice
         {
             get { return mterialPrice; }
