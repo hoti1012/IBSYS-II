@@ -24,7 +24,8 @@ namespace Planning_Tool
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Main());
-            } finally
+            } 
+            finally
             {
                 if(manager != null)
                  manager.release();

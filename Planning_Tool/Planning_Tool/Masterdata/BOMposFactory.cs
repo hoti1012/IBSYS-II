@@ -14,19 +14,34 @@ namespace Planning_Tool.Masterdata
         /// Erzeugt eine Stücklistenposition
         /// </summary>
         /// <param name="bom"></param>
-        /// <returns></returns>
-        public static BOMpos create(string bom)
+        /// <returns>Die erzeugte Stücklistenposition</returns>
+        public static BOMpos create(string bom, string article)
         {
             DatabaseManager manager;
             BOMpos bomPosObj = null;
+            BOM bomObj = null;
+            Article articleObj = null;
 
             manager = new DatabaseManager();
             try
             {
-                if (bom != null)
+                if (bom != null && article != null)
                 {
+                    bomObj = BOMFactory.serch(bom);
+                    articleObj = ArticleFactory.search(article);
+                    if (bomObj == null)
+                    {
+                        throw new NotFoundException(bom);
+                    }
+                    if (articleObj == null)
+                    {
+                        throw new NotFoundException(article);
+                    }
+
                     bomPosObj = new BOMpos();
                     bomPosObj.bom = bom;
+                    bomPosObj.bompos = article;
+                    bomPosObj.designation = articleObj.Designation;
                     manager.insert(bomPosObj);
                 }
             }

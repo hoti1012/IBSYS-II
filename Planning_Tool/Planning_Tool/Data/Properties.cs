@@ -17,7 +17,9 @@ namespace Planning_Tool.Data
                                        ,typeof(Ordering)
                                        ,typeof(OrderingPos)
                                        ,typeof(BOM)
+                                       ,typeof(BOMpos)
                                        ,typeof(WorkSchedule)
+                                       ,typeof(WorkSchedulePos)
                                        };
 
         public static Type[] deleteTables = {typeof(Ordering)

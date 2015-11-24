@@ -6,14 +6,25 @@ using System.Threading.Tasks;
 
 namespace Planning_Tool.Masterdata
 {
-    class WorkSchedule
+    class WorkSchedulePos
     {
-        public static string TABLE = "WORKSCHEDULE";
-
         /// <summary>
-        /// Arbeitsgang Nummer
+        /// Nummer des Arbeitsplanes
         /// </summary>
         private string _workSchedule;
+
+        /// <summary>
+        /// Nummer des Arbeitsgangs
+        /// </summary>
+        private string _workSchedulePos;
+
+
+
+        public string workSchedulePos
+        {
+            get { return _workSchedulePos; }
+            set { _workSchedulePos = value; }
+        }
 
         public string workSchedule
         {

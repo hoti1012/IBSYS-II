@@ -93,6 +93,7 @@ namespace Planning_Tool.Data
         {
             string sql;
             string fields;
+            string primary;
             Type[] classes;
             PropertyInfo[] prop;
 
@@ -117,10 +118,6 @@ namespace Planning_Tool.Data
                 foreach(PropertyInfo p in prop) 
                 {
                     fields += p.Name + " " + p.PropertyType.Name;
-                    if (p.Name.Equals(t.Name,StringComparison.CurrentCultureIgnoreCase)) 
-                    {
-                        fields += " NOT NULL UNIQUE";
-                    }
                     if(anz < prop.Length)
                     {
                         fields += ", ";
@@ -133,6 +130,18 @@ namespace Planning_Tool.Data
                 }
 
                 sql += fields;
+                //Primary Key setzen (bei Pos Tabellen eine Kombination aus Kopf und Pos)
+                primary = ", PRIMARY KEY(" + t.Name;
+                if (t.Name.EndsWith("pos",StringComparison.CurrentCultureIgnoreCase))
+                {
+                    primary += ", " + t.Name.Remove(t.Name.Length-3) + ")";
+                }
+                else
+                {
+                    primary += ")";
+                }
+
+                sql += primary;
                 sql += ")";
 
                 command.CommandText = sql;
@@ -170,7 +179,6 @@ namespace Planning_Tool.Data
         /// Führt ein Datenbank update durch
         /// </summary>
         /// <param name="obj">Object welches in der Datenbank aktuallisiert werden soll</param>
-        /// <param name="where">where bedingung</param>
         public void update(Object obj)
         {
             string sql,where,value = null;

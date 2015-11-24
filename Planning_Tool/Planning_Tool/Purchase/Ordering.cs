@@ -8,7 +8,7 @@ namespace Planning_Tool.Purchase
 {
     class Ordering
     {
-        public static string TABLE = "ORDERING";
+        public static string TABLE = typeof(Ordering).Name;
 
         /// <summary>
         /// Nummer der Bestellung
@@ -16,7 +16,7 @@ namespace Planning_Tool.Purchase
         private string _ordering;
 
         /// <summary>
-        /// Preis der Bestellung
+        /// Preis der Gesamten Bestellung
         /// </summary>
         private double price;
 

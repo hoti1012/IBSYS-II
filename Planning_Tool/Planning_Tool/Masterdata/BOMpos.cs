@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Planning_Tool.Masterdata
 {
-    class BOMpos
+    public class BOMpos
     {
+        public static string TABLE = typeof(BOMpos).Name;
+
         /// <summary>
         /// Stücklistennummer
         /// </summary>
@@ -19,6 +21,11 @@ namespace Planning_Tool.Masterdata
         private string _bompos;
 
         /// <summary>
+        /// Artikelbezeichnung
+        /// </summary>
+        private string _designation;
+
+        /// <summary>
         /// Menge
         /// </summary>
         private int _amount;
@@ -28,13 +35,19 @@ namespace Planning_Tool.Masterdata
             BOMposFactory.Update(this);
         }
 
+        public string designation
+        {
+            get { return _designation; }
+            set { _designation = value; }
+        }
+
         public int amount
         {
             get { return _amount; }
             set { _amount = value; }
         }
 
-        public string BOMpos
+        public string bompos
         {
             get { return _bompos; }
             set { _bompos = value; }

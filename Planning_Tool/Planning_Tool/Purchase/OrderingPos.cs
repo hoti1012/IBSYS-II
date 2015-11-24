@@ -14,12 +14,12 @@ namespace Planning_Tool.Purchase
         /// <summary>
         /// Nummer der Bestellung
         /// </summary>
-        private string ordering;
+        private string _ordering;
 
         /// <summary>
-        /// artikelnummer der des zu bestellenden Artikels
+        /// artikelnummer des zu bestellenden Artikels
         /// </summary>
-        private string article;
+        private string _orderingpos;
 
         /// <summary>
         /// Beinhalet die Menge
@@ -66,7 +66,7 @@ namespace Planning_Tool.Purchase
             double res = 0, artPrice = 0;
             Article article;
 
-            article = ArticleFactory.search(this.article);
+            article = ArticleFactory.search(this._orderingpos);
             if (article != null)
             {
                 artPrice = article.Price;
@@ -107,16 +107,16 @@ namespace Planning_Tool.Purchase
             set { amount = value; }
         }
 
-        public string Article
+        public string orderingpos
         {
-            get { return article; }
-            set { article = value; }
+            get { return _orderingpos; }
+            set { _orderingpos = value; }
         }
 
-        public string Ordering
+        public string ordering
         {
-            get { return ordering; }
-            set { ordering = value; }
+            get { return _ordering; }
+            set { _ordering = value; }
         }
     }
 }

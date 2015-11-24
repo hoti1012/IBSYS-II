@@ -73,6 +73,11 @@ namespace Planning_Tool.Masterdata
             ArticleFactory.update(this);
         }
 
+        public BOM createBom()
+        {
+            return BOMFactory.create(this.article);
+        }
+
         public int Discount
         {
             get { return discount; }
