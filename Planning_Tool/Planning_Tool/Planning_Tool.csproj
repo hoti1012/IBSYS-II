@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Data\DatabaseManager.cs" />
     <Compile Include="Data\Properties.cs" />
+    <Compile Include="Exceptions\AlreadyExistsException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>

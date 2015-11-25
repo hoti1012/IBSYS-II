@@ -1,4 +1,6 @@
 ﻿using Planning_Tool.Data;
+using Planning_Tool.Exceptions;
+using Planning_Tool.Masterdata;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,6 +81,12 @@ namespace Planning_Tool.Purchase
         {
             DatabaseManager manager;
             OrderingPos posObj = null;
+            Article artObj = null;
+
+            if (order == null || pos == null)
+            {
+                //TODO: Fehler werfen
+            }
 
             manager = new DatabaseManager();
             try
@@ -88,9 +96,16 @@ namespace Planning_Tool.Purchase
                 {
                     //TODO: Fehler werfen
                 }
+                artObj = ArticleFactory.search(pos);
+                if(artObj == null)
+                {
+                    throw new NotFoundException(pos);
+                }
+
                 posObj = new OrderingPos();
                 posObj.ordering = order;
                 posObj.orderingpos = pos;
+                posObj.Amount = 1;
                 manager.insert(posObj);
             }
             finally

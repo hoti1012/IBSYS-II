@@ -283,6 +283,31 @@ namespace Planning_Tool.Data
 
         }
 
+        /// <summary>
+        /// Löscht Datensätze aus der Datenbank
+        /// </summary>
+        /// <param name="table">Name der Tabelle</param>
+        /// <param name="where">Where bedingung</param>
+        public void delete(string table,string where)
+        {
+            string sql;
+
+            if (!open)
+            {
+                connection.Open();
+                open = true;
+            }
+
+            command = new SQLiteCommand(connection);
+
+            sql = "DELETE FROM " + table;
+            sql += where;
+
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+
+        }
+
 
 
         public bool Open

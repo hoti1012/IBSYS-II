@@ -51,18 +51,6 @@ namespace Planning_Tool.Purchase
             OrderingPosFactory.update(this);
         }
 
-        public double Arrivals
-        {
-            get { return arrivals; }
-            set { arrivals = value; }
-        }
-
-        public bool IsOrdered
-        {
-            get { return isOrdered; }
-            set { isOrdered = value; }
-        }
-
         /// <summary>
         /// Berechnet den Preis der Bestellung
         /// </summary>
@@ -77,9 +65,9 @@ namespace Planning_Tool.Purchase
                 artPrice = article.Price;
                 if (amount >= article.Discount)
                 {
-                    artPrice *= 0.9; 
+                    artPrice *= 0.9;
                 }
-                 
+
                 res = article.Price * this.Amount;
                 if (isExpress)
                 {
@@ -90,32 +78,56 @@ namespace Planning_Tool.Purchase
                     res += article.OrderPriceNormal;
                 }
             }
-            Price = res;
+            price = res;
         }
-            
+
+        public double Arrivals
+        {
+            get { return arrivals; }
+            set { arrivals = value; }
+        }
+
+        public bool IsOrdered
+        {
+            get { return isOrdered; }
+            set { isOrdered = value; }
+        }   
 
         public double Price
         {
             get { return price; }
-            set { price = value; }
+
+            //Der Preis wird bei änderungen am Object automatisch gesetzt
+            //set { price = value; }
         }
 
         public bool IsExpress
         {
             get { return isExpress; }
-            set { isExpress = value; }
+            set 
+            { 
+                isExpress = value;
+                calcPrice();
+            }
         }
 
         public int Amount
         {
             get { return amount; }
-            set { amount = value; }
+            set 
+            { 
+                amount = value;
+                calcPrice();
+            }
         }
 
         public string orderingpos
         {
             get { return _orderingpos; }
-            set { _orderingpos = value; }
+            set { 
+                _orderingpos = value;
+                calcPrice();
+            }
         }
 
         public string ordering

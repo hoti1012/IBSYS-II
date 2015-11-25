@@ -35,6 +35,18 @@ namespace Planning_Tool.Purchase
             return OrderingPosFactory.serach(this.ordering);
         }
 
+        /// <summary>
+        /// Berechnet den gesamtpreis der Bestellung
+        /// </summary>
+        public void calcPrice()
+        {
+            List<OrderingPos> pos = this.getPositions();
+            foreach(OrderingPos o in pos)
+            {
+
+            }
+        }
+
         public double MterialPrice
         {
             get { return mterialPrice; }
