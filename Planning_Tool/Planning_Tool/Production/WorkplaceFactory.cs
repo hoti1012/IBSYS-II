@@ -11,7 +11,6 @@ namespace Planning_Tool.Production
 {
     public class WorkplaceFactory : PlanningObjectFactory
     {
-
-     
+        
     }
 }

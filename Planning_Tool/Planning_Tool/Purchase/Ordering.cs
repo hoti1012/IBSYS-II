@@ -26,10 +26,10 @@ namespace Planning_Tool.Purchase
         /// </summary>
         private double mterialPrice;
 
-        public double MterialPrice
+        public string ordering
         {
-            get { return mterialPrice; }
-            set { mterialPrice = value; }
+            get { return _ordering; }
+            set { _ordering = value; }
         }
 
         public double Price
@@ -38,10 +38,10 @@ namespace Planning_Tool.Purchase
             set { price = value; }
         }
 
-        public string ordering
+        public double MterialPrice
         {
-            get { return _ordering; }
-            set { _ordering = value; }
+            get { return mterialPrice; }
+            set { mterialPrice = value; }
         }
     }
 }

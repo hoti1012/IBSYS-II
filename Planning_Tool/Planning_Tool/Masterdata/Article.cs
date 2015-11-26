@@ -71,12 +71,6 @@ namespace Planning_Tool.Masterdata
             return BOMFactory.create(typeof(BOM),this.article) as BOM;
         }
 
-        public int Discount
-        {
-            get { return discount; }
-            set { discount = value; }
-        }
-
         public string article
         {
             get { return _article; }
@@ -96,13 +90,28 @@ namespace Planning_Tool.Masterdata
         public bool IsProduction
         {
             get { return isProduction; }
-            set { isProduction = value; }
+            set { isProduction = value;
+            if (value == true)
+            {
+                isPurchase = false;
+            }                  
+            }
         }
 
         public bool IsPurchase
         {
             get { return isPurchase; }
-            set { isPurchase = value; }
+            set { isPurchase = value;
+            if (value == true)
+            {
+                isProduction = false;
+            }     
+            }
+        }
+        public int Discount
+        {
+            get { return discount; }
+            set { discount = value; }
         }
 
         public double DiliverDeviation
@@ -120,7 +129,13 @@ namespace Planning_Tool.Masterdata
         public double DeliverTime
         {
             get { return deliverTime; }
-            set { deliverTime = value; }
+            set {
+                if (value > 0)
+                {
+                    deliverTimeExpress = Math.Round(value / 2,1);
+                    deliverTime = value;
+                }
+            }
         }
 
         public double OrderPriceExpress
@@ -132,7 +147,13 @@ namespace Planning_Tool.Masterdata
         public double OrderPriceNormal
         {
             get { return orderPriceNormal; }
-            set { orderPriceNormal = value; }
+            set {
+                if (value > 0)
+                {
+                    orderPriceNormal = value;
+                    orderPriceExpress = value * 10;
+                }
+            }
         }
 
         public double Price

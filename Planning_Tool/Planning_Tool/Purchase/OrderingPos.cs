@@ -78,6 +78,32 @@ namespace Planning_Tool.Purchase
             price = res;
         }
 
+        public string ordering
+        {
+            get { return _ordering; }
+            set { _ordering = value; }
+        }
+
+        public string orderingpos
+        {
+            get { return _orderingpos; }
+            set
+            {
+                _orderingpos = value;
+                calcPrice();
+            }
+        }
+
+        public int Amount
+        {
+            get { return amount; }
+            set
+            {
+                amount = value;
+                calcPrice();
+            }
+        }
+
         public double Arrivals
         {
             get { return arrivals; }
@@ -106,31 +132,6 @@ namespace Planning_Tool.Purchase
                 isExpress = value;
                 calcPrice();
             }
-        }
-
-        public int Amount
-        {
-            get { return amount; }
-            set 
-            { 
-                amount = value;
-                calcPrice();
-            }
-        }
-
-        public string orderingpos
-        {
-            get { return _orderingpos; }
-            set { 
-                _orderingpos = value;
-                calcPrice();
-            }
-        }
-
-        public string ordering
-        {
-            get { return _ordering; }
-            set { _ordering = value; }
         }
     }
 }

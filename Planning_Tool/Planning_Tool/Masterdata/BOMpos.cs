@@ -1,4 +1,5 @@
 ﻿using Planning_Tool.Core;
+using Planning_Tool.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,10 +32,31 @@ namespace Planning_Tool.Masterdata
         /// </summary>
         private int _amount;
 
+        public string bom
+        {
+            get { return _bom; }
+            set { _bom = value; }
+        }
+
+        public string bompos
+        {
+            get { return _bompos; }
+            set {
+                if(value != null){
+                    Article art = ArticleFactory.search(typeof(Article),value) as Article;
+                    if (art == null)
+                        throw new NotFoundException();
+                    
+                    _bompos = value;
+                    _designation = art.Designation;
+                }
+            }
+        }
+
         public string designation
         {
             get { return _designation; }
-            set { _designation = value; }
+            //set { _designation = value; }
         }
 
         public int amount
@@ -43,16 +65,5 @@ namespace Planning_Tool.Masterdata
             set { _amount = value; }
         }
 
-        public string bompos
-        {
-            get { return _bompos; }
-            set { _bompos = value; }
-        }
-
-        public string bom
-        {
-            get { return _bom; }
-            set { _bom = value; }
-        }
     }
 }

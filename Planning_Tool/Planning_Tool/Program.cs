@@ -22,6 +22,9 @@ namespace Planning_Tool
             {
                 manager.initialize();
 
+                //FillTable auskommentieren wenn das Programm zum ersten mal gestartet wird.
+                //FillTable.createMasterdata();
+
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Main());

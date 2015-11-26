@@ -52,6 +52,7 @@
     <Compile Include="Core\PlanningPosObject.cs" />
     <Compile Include="Core\PlanningPosObjectFactory.cs" />
     <Compile Include="Data\DatabaseManager.cs" />
+    <Compile Include="Data\FillTable.cs" />
     <Compile Include="Data\Properties.cs" />
     <Compile Include="Exceptions\AlreadyExistsException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
@@ -79,6 +80,8 @@
     <Compile Include="Purchase\OrderingFactory.cs" />
     <Compile Include="Purchase\OrderingPos.cs" />
     <Compile Include="Purchase\OrderingPosFactory.cs" />
+    <Compile Include="Masterdata\Stock.cs" />
+    <Compile Include="Masterdata\StockFactory.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

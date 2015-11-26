@@ -22,10 +22,12 @@ namespace Planning_Tool.Data
                                        ,typeof(WorkSchedule)
                                        ,typeof(WorkSchedulePos)
                                        ,typeof(Workplace)
+                                       ,typeof(Stock)
                                        };
 
         public static Type[] deleteTables = {typeof(Ordering)
                                             ,typeof(OrderingPos)
+                                            ,typeof(Stock)
                                             };
     }
 }

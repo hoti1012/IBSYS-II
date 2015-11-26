@@ -21,18 +21,16 @@ namespace Planning_Tool.Masterdata
         /// </summary>
         private string _workSchedulePos;
 
-
+        public string workSchedule
+        {
+            get { return _workSchedule; }
+            set { _workSchedule = value; }
+        }
 
         public string workSchedulePos
         {
             get { return _workSchedulePos; }
             set { _workSchedulePos = value; }
-        }
-
-        public string workSchedule
-        {
-            get { return _workSchedule; }
-            set { _workSchedule = value; }
         }
     }
 }

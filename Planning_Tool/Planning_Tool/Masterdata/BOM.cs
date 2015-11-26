@@ -1,4 +1,5 @@
 ﻿using Planning_Tool.Core;
+using Planning_Tool.Exceptions;
 using System;
 
 namespace Planning_Tool.Masterdata
@@ -30,7 +31,20 @@ namespace Planning_Tool.Masterdata
         public string bom
         {
             get { return _bom; }
-            set { _bom = value; }
+            set
+            {
+
+                if (value != null)
+                {
+                    Article art = ArticleFactory.search(typeof(Article), value) as Article;
+                    if (art == null)
+                        throw new NotFoundException();
+
+                    _bom = value;
+                    _designation = art.Designation;
+
+                }
+            }
         }
 
         public string designation
