@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Planning_Tool.Core;
+using System;
 
 namespace Planning_Tool.Masterdata
 {
-    public class BOM
+    public class BOM : PlanningObject
     {
         public static string TABLE = typeof(BOMpos).Name;
 
@@ -23,7 +24,7 @@ namespace Planning_Tool.Masterdata
         /// <returns>Stücklistenposition</returns>
         public BOMpos addPos(string article)
         {
-            return BOMposFactory.create(this.bom,article);
+            return BOMposFactory.create(typeof(BOMpos),this.bom,article) as BOMpos;
         }
 
         public string bom

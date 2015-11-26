@@ -308,6 +308,79 @@ namespace Planning_Tool.Data
 
         }
 
+        /// <summary>
+        /// Löscht ein Object aus der Datenbank
+        /// </summary>
+        /// <param name="obj"></param>
+        public void delete(Object obj)
+        {
+            Type type;
+            PropertyInfo[] prop;
+            string sql,secondValue = null,firstValue = null;
+            string headTable = null;
+            bool isPos = false;
+
+            if (!open)
+            {
+                connection.Open();
+                open = true;
+            }
+
+            if (obj == null)
+            {
+                return;
+            }
+
+            type = obj.GetType();
+            //prop = type.GetProperty(type.Name);
+            prop = obj.GetType().GetProperties();
+
+            if (type.Name.EndsWith("pos", StringComparison.CurrentCultureIgnoreCase))
+            {
+                isPos = true;
+                headTable = type.Name.Remove(type.Name.Length - 3);
+            }
+
+            command = new SQLiteCommand(connection);
+
+            foreach (PropertyInfo p in prop)
+            {
+                //Sich das Suchkriterium merken
+                if (p.Name.Equals(type.Name, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    firstValue = p.GetValue(obj).ToString();
+                    if (!isPos)
+                    {
+                        break;
+                    }
+                }
+                else if (isPos)
+                {
+                    if (p.Name.Equals(type.Name.Remove(type.Name.Length - 3), StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        secondValue = p.GetValue(obj).ToString();
+                    }
+                        
+                }
+            }
+
+            if (firstValue == null)
+            {
+                return;
+            }
+
+            sql = "DELETE FROM " + type.Name
+                + " WHERE " + type.Name + " = \"" + firstValue + "\"";
+
+            if (isPos)
+            {
+                sql += "AND " + headTable + " = \"" + secondValue + "\"";
+            }
+
+            command.CommandText = sql;
+            command.ExecuteNonQuery();
+        }
+
 
 
         public bool Open

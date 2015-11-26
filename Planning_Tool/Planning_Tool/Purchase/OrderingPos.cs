@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Planning_Tool.Masterdata;
+using Planning_Tool.Core;
 
 namespace Planning_Tool.Purchase
 {
-    class OrderingPos
+    class OrderingPos : PlanningPosObject
     {
         public static string TABLE = typeof(OrderingPos).Name;
 
@@ -46,10 +47,6 @@ namespace Planning_Tool.Purchase
         /// </summary>
         private double arrivals;
 
-        public void update()
-        {
-            OrderingPosFactory.update(this);
-        }
 
         /// <summary>
         /// Berechnet den Preis der Bestellung
@@ -59,7 +56,7 @@ namespace Planning_Tool.Purchase
             double res = 0, artPrice = 0;
             Article article;
 
-            article = ArticleFactory.search(this._orderingpos);
+            article = ArticleFactory.search(typeof(Article),this._orderingpos) as Article;
             if (article != null)
             {
                 artPrice = article.Price;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Planning_Tool.Core;
+using System;
 
 
 namespace Planning_Tool.Masterdata
@@ -6,7 +7,7 @@ namespace Planning_Tool.Masterdata
     /// <summary>
     /// Class Article
     /// </summary>
-    public class Article
+    public class Article : PlanningObject
     {
         public static string TABLE = typeof(Article).Name;
 
@@ -65,23 +66,43 @@ namespace Planning_Tool.Masterdata
         /// </summary>
         private int discount;
 
-        /// <summary>
-        /// Speichert sämtliche änderungen in die Datenbank
-        /// </summary>
-        public void update()
-        {
-            ArticleFactory.update(this);
-        }
-
         public BOM createBom()
         {
-            return BOMFactory.create(this.article);
+            return BOMFactory.create(typeof(BOM),this.article) as BOM;
         }
 
         public int Discount
         {
             get { return discount; }
             set { discount = value; }
+        }
+
+        public string article
+        {
+            get { return _article; }
+            set
+            {
+                if (_article == null)
+                    _article = value;
+            }
+        }
+
+        public string Designation
+        {
+            get { return designation; }
+            set { designation = value; }
+        }
+
+        public bool IsProduction
+        {
+            get { return isProduction; }
+            set { isProduction = value; }
+        }
+
+        public bool IsPurchase
+        {
+            get { return isPurchase; }
+            set { isPurchase = value; }
         }
 
         public double DiliverDeviation
@@ -120,32 +141,6 @@ namespace Planning_Tool.Masterdata
             set { price = value; }
         }
 
-        public bool IsProduction
-        {
-            get { return isProduction; }
-            set { isProduction = value; }
-        }
-
-        public bool IsPurchase
-        {
-            get { return isPurchase; }
-            set { isPurchase = value; }
-        }
-
-        public string article
-        {
-            get { return _article; }
-            set { //Artikelnummer soll nicht mehr geändert werden können 
-                if(_article == null)
-                    _article = value; 
-                }
-        }
-
-        public string Designation
-        {
-            get { return designation; }
-            set { designation = value; }
-        }
     }
 
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Planning_Tool.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Planning_Tool.Masterdata
 {
-    public class BOMpos
+    public class BOMpos : PlanningPosObject
     {
         public static string TABLE = typeof(BOMpos).Name;
 
@@ -29,11 +30,6 @@ namespace Planning_Tool.Masterdata
         /// Menge
         /// </summary>
         private int _amount;
-
-        public void update()
-        {
-            BOMposFactory.Update(this);
-        }
 
         public string designation
         {

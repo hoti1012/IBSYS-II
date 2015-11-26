@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Planning_Tool.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Planning_Tool.Purchase
 {
-    class Ordering
+    class Ordering : PlanningObject
     {
         public static string TABLE = typeof(Ordering).Name;
 
@@ -24,28 +25,6 @@ namespace Planning_Tool.Purchase
         /// Enthält den Preis der Bestellung
         /// </summary>
         private double mterialPrice;
-
-        public void update()
-        {
-            OrderingFactory.update(this);
-        }
-
-        public List<OrderingPos> getPositions()
-        {
-            return OrderingPosFactory.serach(this.ordering);
-        }
-
-        /// <summary>
-        /// Berechnet den gesamtpreis der Bestellung
-        /// </summary>
-        public void calcPrice()
-        {
-            List<OrderingPos> pos = this.getPositions();
-            foreach(OrderingPos o in pos)
-            {
-
-            }
-        }
 
         public double MterialPrice
         {

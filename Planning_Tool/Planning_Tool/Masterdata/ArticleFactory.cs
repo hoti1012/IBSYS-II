@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Planning_Tool.Data;
+using Planning_Tool.Core;
 
 namespace Planning_Tool.Masterdata
 {
-    class ArticleFactory
+    class ArticleFactory : PlanningObjectFactory
     {
-
+        /*
         /// <summary>
         /// Erstellt einen neuen Artikel
         /// </summary>
@@ -48,7 +49,7 @@ namespace Planning_Tool.Masterdata
         public static Article search(string article)
         {
             DatabaseManager manager = null;
-            string where = "WHERE " + typeof(Article).Name + " = " + article;
+            string where = "WHERE " + typeof(Article).Name + " = \"" + article + "\"";
             List<Object> objects;
             Article articleObj = null;
 
@@ -80,7 +81,7 @@ namespace Planning_Tool.Masterdata
 
             return articleObj;
         }
-
+        
         /// <summary>
         /// Liefert sämtliche einkaufs Artikel zurück
         /// </summary>
@@ -156,7 +157,8 @@ namespace Planning_Tool.Masterdata
 
             return articles;
         }
-
+        */
+        /*
         /// <summary>
         /// Speichert sämtliche änderungen in die Datenbank
         /// </summary>
@@ -173,5 +175,6 @@ namespace Planning_Tool.Masterdata
                 manager.release();
             }
         }
+        */
     }
 }
