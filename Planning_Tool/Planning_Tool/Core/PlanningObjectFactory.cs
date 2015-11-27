@@ -99,7 +99,8 @@ namespace Planning_Tool.Core
                 if (obj != null)
                 {
                     //TODO: noch zu Bearbeiten
-                    throw new AlreadyExistsException();
+                    //throw new AlreadyExistsException();
+                    return null;
                 }
 
                 obj = Activator.CreateInstance(type) as PlanningObject;

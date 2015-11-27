@@ -23,5 +23,15 @@ namespace Planning_Tool.Core
         {
             PlanningPosObjectFactory.delete(this);
         }
+
+        /// <summary>
+        /// Gibt das Kopfobject zu welcher das Positionsobject gehört zurück
+        /// </summary>
+        /// <returns>Kopfobject</returns>
+        public PlanningObject getHead(Type headType)
+        {
+            return PlanningPosObjectFactory.getHead(this,headType);
+        }
+
     }
 }

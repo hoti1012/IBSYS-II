@@ -10,6 +10,5 @@ namespace Planning_Tool.Purchase
 {
     class OrderingFactory : PlanningObjectFactory
     {
-
     }
 }

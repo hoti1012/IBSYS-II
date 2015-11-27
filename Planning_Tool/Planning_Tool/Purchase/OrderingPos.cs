@@ -38,6 +38,12 @@ namespace Planning_Tool.Purchase
         private double price;
 
         /// <summary>
+        /// Enthält den Materialpreis
+        /// </summary>
+        private double _mterialPrice;
+
+
+        /// <summary>
         /// Gibt an ob die Bestellung bereits getätigt wurde
         /// </summary>
         private bool isOrdered;
@@ -47,6 +53,12 @@ namespace Planning_Tool.Purchase
         /// </summary>
         private double arrivals;
 
+
+        public void update()
+        {
+            calcPrice();
+            base.update();
+        }
 
         /// <summary>
         /// Berechnet den Preis der Bestellung
@@ -66,6 +78,7 @@ namespace Planning_Tool.Purchase
                 }
 
                 res = article.Price * this.Amount;
+                _mterialPrice = res;
                 if (isExpress)
                 {
                     res += article.OrderPriceExpress;
@@ -76,7 +89,25 @@ namespace Planning_Tool.Purchase
                 }
             }
             price = res;
+            calcHead();
         }
+
+        //TODO: preis wird nicht berechnet
+        public void calcHead()
+        {
+           Ordering order = this.getHead(typeof(Ordering)) as Ordering;
+           order.calcPrice();
+           order.update();
+        }
+
+        public Ordering getHead()
+        {
+            Ordering ordering = null;
+            ordering = base.getHead(typeof(Ordering)) as Ordering;
+
+            return ordering;
+        }
+
 
         public string ordering
         {
@@ -90,7 +121,6 @@ namespace Planning_Tool.Purchase
             set
             {
                 _orderingpos = value;
-                calcPrice();
             }
         }
 
@@ -100,7 +130,6 @@ namespace Planning_Tool.Purchase
             set
             {
                 amount = value;
-                calcPrice();
             }
         }
 
@@ -121,7 +150,13 @@ namespace Planning_Tool.Purchase
             get { return price; }
 
             //Der Preis wird bei änderungen am Object automatisch gesetzt
-            //set { price = value; }
+            set { price = value; }
+        }
+
+        public double mterialPrice
+        {
+            get { return _mterialPrice; }
+            set { _mterialPrice = value; }
         }
 
         public bool IsExpress
@@ -130,7 +165,6 @@ namespace Planning_Tool.Purchase
             set 
             { 
                 isExpress = value;
-                calcPrice();
             }
         }
     }

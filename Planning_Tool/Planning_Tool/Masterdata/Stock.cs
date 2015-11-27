@@ -29,6 +29,16 @@ namespace Planning_Tool.Masterdata
         /// </summary>
         private double _stockvalue;
 
+        public static double getCompleteStockValue()
+        {
+            double res = 0;
+            List<Stock> stock = StockFactory.getAll();
+            foreach(Stock s in stock){
+                res += s._stockvalue;
+            }
+            return res;
+        }
+
         public string stock
         {
             get { return _stock; }

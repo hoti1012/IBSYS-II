@@ -161,5 +161,38 @@ namespace Planning_Tool.Core
             }
             return obj;
         }
+
+        internal static PlanningObject getHead(PlanningPosObject obj,Type headType)
+        {
+            PlanningObject head = null;
+            DatabaseManager manager;
+            string where;
+            List<Object> res;
+            Type type = obj.GetType();
+            PropertyInfo[] props = type.GetProperties();
+            string table = type.Name.Remove(type.Name.Length - 3);
+            string value = null;
+
+            manager = new DatabaseManager();
+            try
+            {
+                foreach (PropertyInfo p in props)
+                {
+                    if (p.Name.Equals(table, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        value = p.GetValue(obj).ToString();
+                    }
+                }
+                where = "WHERE " + table + " = \"" + value + "\"";
+                res = manager.select(headType, where);
+                if (res != null && res.Count > 0)
+                    head = res[0] as PlanningObject;
+            }
+            finally
+            {
+                manager.release();
+            }
+            return head;
+        }
     }
 }

@@ -82,6 +82,9 @@
     <Compile Include="Purchase\OrderingPosFactory.cs" />
     <Compile Include="Masterdata\Stock.cs" />
     <Compile Include="Masterdata\StockFactory.cs" />
+    <Compile Include="Time\Period.cs" />
+    <Compile Include="Time\PeriodFactory.cs" />
+    <Compile Include="XML\XML_Manager.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,9 +110,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="XML\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

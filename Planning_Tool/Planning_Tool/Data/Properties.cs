@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Planning_Tool.Masterdata;
 using Planning_Tool.Purchase;
 using Planning_Tool.Production;
+using Planning_Tool.Time;
 
 namespace Planning_Tool.Data
 {
@@ -23,6 +24,7 @@ namespace Planning_Tool.Data
                                        ,typeof(WorkSchedulePos)
                                        ,typeof(Workplace)
                                        ,typeof(Stock)
+                                       ,typeof(Period)
                                        };
 
         public static Type[] deleteTables = {typeof(Ordering)
