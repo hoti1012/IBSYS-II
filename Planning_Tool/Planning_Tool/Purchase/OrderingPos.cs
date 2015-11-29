@@ -58,6 +58,7 @@ namespace Planning_Tool.Purchase
         {
             calcPrice();
             base.update();
+            calcHead();
         }
 
         /// <summary>
@@ -89,7 +90,6 @@ namespace Planning_Tool.Purchase
                 }
             }
             price = res;
-            calcHead();
         }
 
         //TODO: preis wird nicht berechnet

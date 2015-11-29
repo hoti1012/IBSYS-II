@@ -1,4 +1,5 @@
 ﻿using Planning_Tool.Masterdata;
+using Planning_Tool.Production;
 using Planning_Tool.Purchase;
 using Planning_Tool.Time;
 using System;
@@ -30,6 +31,8 @@ namespace Planning_Tool.XML
             Period periodObj;
             Ordering orderObj;
             OrderingPos orderingPosObj;
+            Workplace wpObj;
+            WorkplacePos wpPosObj;
             try
             {
                 _doc.Load(_file);
@@ -71,6 +74,54 @@ namespace Planning_Tool.XML
                         }
                         orderingPosObj.IsOrdered = true;
                         orderingPosObj.update();
+                    }
+                }
+
+                //Offene Warteschlangen einlesen
+                foreach (XmlNode node in _root.GetElementsByTagName("waitinglistworkstations"))
+                {
+                    foreach (XmlNode n in node.ChildNodes)
+                    {
+                        wpObj = WorkplaceFactory.search(typeof(Workplace),n.Attributes["id"].Value) as Workplace;
+                        if (wpObj == null)
+                        {
+                            wpObj = WorkplaceFactory.create(typeof(Workplace), n.Attributes["id"].Value) as Workplace;
+                        }
+                        if (n.HasChildNodes)
+                        {
+                            wpPosObj = null;
+                            foreach (XmlNode pos in n.ChildNodes)
+                            {
+                                wpPosObj = WorkplacePosFactory.search(typeof(WorkplacePos),wpObj.workplace,pos.Attributes["item"].Value) as WorkplacePos;
+                                if(wpPosObj == null)
+                                {
+                                    wpPosObj = wpObj.addPos(pos.Attributes["item"].Value);
+                                }
+                                wpPosObj.amountWaitlist = Convert.ToInt32(pos.Attributes["amount"].Value);
+                                wpPosObj.update();
+                            }
+                        }
+                    }
+                }
+
+                wpObj = null;
+                //In Bearbeitung
+                foreach (XmlNode node in _root.GetElementsByTagName("ordersinwork"))
+                {
+                    foreach (XmlNode n in node.ChildNodes)
+                    {
+                        wpObj = WorkplaceFactory.search(typeof(Workplace), n.Attributes["id"].Value) as Workplace;
+                        if (wpObj == null)
+                        {
+                            wpObj = WorkplaceFactory.create(typeof(Workplace), n.Attributes["id"].Value) as Workplace;
+                        }
+                        wpPosObj = WorkplacePosFactory.search(typeof(WorkplacePos), wpObj.workplace, n.Attributes["item"].Value) as WorkplacePos;
+                        if (wpPosObj == null)
+                        {
+                            wpPosObj = wpObj.addPos(n.Attributes["item"].Value);
+                        }
+                        wpPosObj.amountInWork = Convert.ToInt32(n.Attributes["amount"].Value);
+                        wpPosObj.update();
                     }
                 }
             }

@@ -16,6 +16,13 @@ namespace Planning_Tool.Production
         /// </summary>
         private string _workplace;
 
+        public WorkplacePos addPos(string article)
+        {
+            WorkplacePos pos = null;
+            pos = WorkplacePosFactory.create(typeof(WorkplacePos), this._workplace, article) as WorkplacePos;
+            return pos;
+        }
+
         public string workplace
         {
             get { return _workplace; }
