@@ -25,6 +25,9 @@ namespace Planning_Tool.XML
             _doc = new XmlDocument();
         }
 
+        /// <summary>
+        /// Liest die Ergebnisxml aus
+        /// </summary>
         public void read()
         {
             Stock stockObj;
@@ -105,7 +108,7 @@ namespace Planning_Tool.XML
                 }
 
                 wpObj = null;
-                //In Bearbeitung
+                //Aufträge in Bearbeitung einlesen
                 foreach (XmlNode node in _root.GetElementsByTagName("ordersinwork"))
                 {
                     foreach (XmlNode n in node.ChildNodes)
@@ -127,9 +130,18 @@ namespace Planning_Tool.XML
             }
             finally
             {
-
+                _doc = null;
             }
             
+        }
+
+        /// <summary>
+        /// Schreibt die Inputxml
+        /// </summary>
+        public void write()
+        {
+            //TODO: Noch zu machen
+            throw new NotImplementedException();
         }
 
         public string file

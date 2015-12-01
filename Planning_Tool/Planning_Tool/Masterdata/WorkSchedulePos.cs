@@ -21,6 +21,11 @@ namespace Planning_Tool.Masterdata
         /// </summary>
         private string _workSchedulePos;
 
+        /// <summary>
+        /// Nummer des Arbeitsplatzes
+        /// </summary>
+        private string _workPlace;
+
         public string workSchedule
         {
             get { return _workSchedule; }
@@ -31,6 +36,12 @@ namespace Planning_Tool.Masterdata
         {
             get { return _workSchedulePos; }
             set { _workSchedulePos = value; }
+        }
+
+        public string workPlace
+        {
+            get { return _workPlace; }
+            set { _workPlace = value; }
         }
     }
 }
