@@ -28,6 +28,10 @@ namespace Planning_Tool.XML
             XmlElement _root = null;
             try
             {
+                if (path == null || path == "")
+                {
+                    throw new Exception("Bitte geben Sie einen Pfad ein");
+                }
                 _doc.Load(path);
                 _root = _doc.DocumentElement;
                 //Aktuelle periode einlesen
@@ -118,8 +122,9 @@ namespace Planning_Tool.XML
                     }
                 }
             }
-            catch(Exception e){
-                //TODO:Meldung ausgeben
+            finally
+            {
+                //nichts tun
             }
         }
 
