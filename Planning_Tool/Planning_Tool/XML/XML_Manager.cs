@@ -24,7 +24,7 @@ namespace Planning_Tool.XML
             OrderingPos orderingPosObj;
             Workplace wpObj;
             WorkplacePos wpPosObj;
-            XmlDocument _doc = null;
+            XmlDocument _doc = new XmlDocument();
             XmlElement _root = null;
             try
             {
@@ -32,6 +32,7 @@ namespace Planning_Tool.XML
                 {
                     throw new Exception("Bitte geben Sie einen Pfad ein");
                 }
+
                 _doc.Load(path);
                 _root = _doc.DocumentElement;
                 //Aktuelle periode einlesen
