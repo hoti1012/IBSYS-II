@@ -194,3 +194,5 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+/Planning_Tool/*.sln
+/Planning_Tool/Planning_Tool/*.csproj
