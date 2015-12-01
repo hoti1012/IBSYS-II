@@ -7,6 +7,7 @@ using Planning_Tool.Masterdata;
 using Planning_Tool.Purchase;
 using Planning_Tool.Production;
 using Planning_Tool.Time;
+using Planning_Tool.Forecasts;
 
 namespace Planning_Tool.Data
 {
@@ -27,12 +28,14 @@ namespace Planning_Tool.Data
                                        ,typeof(Period)
                                        ,typeof(Workplace)
                                        ,typeof(WorkplacePos)
+                                       ,typeof(Forecast)
                                        };
 
         public static Type[] deleteTables = {typeof(Ordering)
                                             ,typeof(OrderingPos)
                                             ,typeof(Stock)
                                             ,typeof(WorkplacePos)
+                                            ,typeof(Forecast)
                                             };
 
         //TODO: Bei fertigstellung auf false setzen

@@ -56,8 +56,12 @@
     <Compile Include="Data\Properties.cs" />
     <Compile Include="Exceptions\AlreadyExistsException.cs" />
     <Compile Include="Exceptions\ArticleNotFoundException.cs" />
+    <Compile Include="Exceptions\BetterWhithMoreInformationsException.cs" />
+    <Compile Include="Exceptions\NeedMoreInformationsException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Exceptions\WrongFormatException.cs" />
+    <Compile Include="Forecasts\Forecast.cs" />
+    <Compile Include="Forecasts\ForecastFactory.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
