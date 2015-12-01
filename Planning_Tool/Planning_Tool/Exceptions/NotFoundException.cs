@@ -8,6 +8,6 @@ namespace Planning_Tool.Exceptions
 {
     class NotFoundException : Exception
     {
-
+        public NotFoundException(string message) : base(message) { }
     }
 }

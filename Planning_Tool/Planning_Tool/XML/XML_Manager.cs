@@ -2,6 +2,7 @@
 using Planning_Tool.Production;
 using Planning_Tool.Purchase;
 using Planning_Tool.Time;
+using Planning_Tool.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,11 +31,21 @@ namespace Planning_Tool.XML
             {
                 if (path == null || path == "")
                 {
-                    throw new Exception("Bitte geben Sie einen Pfad ein");
+                    throw new NotFoundException("Bitte geben Sie einen Pfad ein");
                 }
 
                 _doc.Load(path);
+
+                if (!_doc.HasChildNodes)
+                {
+                    throw new WrongFormatException("Die XML-Datei ist leer oder im Falschen Format");
+                }
                 _root = _doc.DocumentElement;
+
+                if (!_root.HasAttributes)
+                {
+                    throw new WrongFormatException("Die eingelesene XML ist im falschen Format");
+                }
                 //Aktuelle periode einlesen
                 periodObj = PeriodFactory.create(typeof(Period), _root.Attributes["period"].Value) as Period;
                 
@@ -49,7 +60,7 @@ namespace Planning_Tool.XML
                             stockObj.amount = Convert.ToInt32(n.Attributes["amount"].Value);
                             stockObj.price = Convert.ToDouble(n.Attributes["price"].Value.Replace(".",","));
                             stockObj.stockvalue = Convert.ToDouble(n.Attributes["stockvalue"].Value.Replace(".",","));
-                            stockObj.update(); 
+                            stockObj.update();
                         }
                     }
                 }

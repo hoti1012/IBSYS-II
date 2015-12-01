@@ -41,7 +41,7 @@ namespace Planning_Tool.Purchase
             art = ArticleFactory.search(typeof(Article),article) as Article;
             if (art == null)
             {
-                throw new NotFoundException();
+                throw new ArticleNotFoundException(article);
             }
             posObj = OrderingPosFactory.create(typeof(OrderingPos), this._ordering, article) as OrderingPos;
 

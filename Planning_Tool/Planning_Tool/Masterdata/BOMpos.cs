@@ -45,7 +45,7 @@ namespace Planning_Tool.Masterdata
                 if(value != null){
                     Article art = ArticleFactory.search(typeof(Article),value) as Article;
                     if (art == null)
-                        throw new NotFoundException();
+                        throw new ArticleNotFoundException(value);
                     
                     _bompos = value;
                     _designation = art.Designation;

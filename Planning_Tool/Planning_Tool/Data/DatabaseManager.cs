@@ -25,7 +25,14 @@ namespace Planning_Tool.Data
         /// </summary>
         public DatabaseManager()
         {
-            connection = new SQLiteConnection("Data Source=" + DATABASE);
+            try
+            {
+                connection = new SQLiteConnection("Data Source=" + DATABASE);
+            }
+            finally
+            {
+                //nichts tun
+            }
         }
 
         /// <summary>

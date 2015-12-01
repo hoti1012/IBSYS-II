@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Planning_Tool.Exceptions
 {
-    class AlreadyExistsException : Exception
+    public class WrongFormatException : Exception
     {
-        public AlreadyExistsException(string message) : base(message) { }
+        public WrongFormatException(string message) : base(message) { }
     }
 }
