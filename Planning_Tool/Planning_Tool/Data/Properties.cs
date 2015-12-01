@@ -34,5 +34,8 @@ namespace Planning_Tool.Data
                                             ,typeof(Stock)
                                             ,typeof(WorkplacePos)
                                             };
+
+        //TODO: Bei fertigstellung auf false setzen
+        public static bool isTestmode = true;
     }
 }

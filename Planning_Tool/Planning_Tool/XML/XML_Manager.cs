@@ -147,12 +147,12 @@ namespace Planning_Tool.XML
         {
             try
             {
-                //TODO: Noch zu machen
-                throw new NotImplementedException();
+                //TODO: Funktion implementieren
+                throw new NotImplementedException("Diese Funktion muss noch implementiert werden");
             }
-            catch (Exception e)
+            finally
             {
-                //TODO: Meldung ausgeben
+                //nichts tun
             }
         }
     }

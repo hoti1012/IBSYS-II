@@ -134,8 +134,7 @@ namespace Planning_Tool.Core
                 obj = search(type, head, pos);
                 if(obj != null)
                 {
-                    //TODO: Fehlermeldung bearbeiten
-                    throw new AlreadyExistsException("");
+                    return null;
                 }
 
                 obj = Activator.CreateInstance(type) as PlanningPosObject;

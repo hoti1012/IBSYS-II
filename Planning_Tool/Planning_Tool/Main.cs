@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Planning_Tool.XML;
+using Planning_Tool.Data;
 	
 namespace Planning_Tool
 {
@@ -16,6 +17,19 @@ namespace Planning_Tool
         public Main()
         {
             InitializeComponent();
+            DatabaseManager manager = new DatabaseManager();
+            try
+            {
+                manager.initialize();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                manager.release();
+            }
         }
 
        

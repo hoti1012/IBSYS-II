@@ -18,23 +18,9 @@ namespace Planning_Tool
         [STAThread]
         static void Main()
         {
-            DatabaseManager manager = new DatabaseManager();
-            try
-            {
-                manager.initialize();
-
-                //FillTable auskommentieren wenn das Programm zum ersten mal gestartet wird.
-                //FillTable.createMasterdata();
-
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Main());
-            } 
-            finally
-            {
-                if(manager != null)
-                 manager.release();
-            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Main());
         }
     }
 }

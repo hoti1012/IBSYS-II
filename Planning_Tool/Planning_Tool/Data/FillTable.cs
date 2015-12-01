@@ -20,294 +20,381 @@ namespace Planning_Tool.Data
 
             //Kaufteile
             art = ArticleFactory.create(type, "21") as Article;
-            art.Designation = "Kette";
-            art.IsPurchase = true;
-            art.Price = 5;
-            art.OrderPriceNormal = 50.00;
-            art.Discount = 300;
-            art.DeliverTime = 1.8;
-            art.DiliverDeviation = 0.4;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Kette";
+                art.IsPurchase = true;
+                art.Price = 5;
+                art.OrderPriceNormal = 50.00;
+                art.Discount = 300;
+                art.DeliverTime = 1.8;
+                art.DiliverDeviation = 0.4;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "22") as Article;
-            art.Designation = "Kette";
-            art.IsPurchase = true;
-            art.Price = 6.50;
-            art.OrderPriceNormal = 50.00;
-            art.Discount = 300;
-            art.DeliverTime = 1.7;
-            art.DiliverDeviation = 0.4;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Kette";
+                art.IsPurchase = true;
+                art.Price = 6.50;
+                art.OrderPriceNormal = 50.00;
+                art.Discount = 300;
+                art.DeliverTime = 1.7;
+                art.DiliverDeviation = 0.4;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "23") as Article;
-            art.Designation = "Kette";
-            art.IsPurchase = true;
-            art.Price = 6.50;
-            art.OrderPriceNormal = 50.00;
-            art.Discount = 300;
-            art.DeliverTime = 1.2;
-            art.DiliverDeviation = 0.2;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Kette";
+                art.IsPurchase = true;
+                art.Price = 6.50;
+                art.OrderPriceNormal = 50.00;
+                art.Discount = 300;
+                art.DeliverTime = 1.2;
+                art.DiliverDeviation = 0.2;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "24") as Article;
-            art.Designation = "Mutter 3/8";
-            art.IsPurchase = true;
-            art.Price = 0.06;
-            art.Discount = 6100;
-            art.OrderPriceNormal = 100.00;
-            art.DeliverTime = 3.2;
-            art.DiliverDeviation = 0.3;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Mutter 3/8";
+                art.IsPurchase = true;
+                art.Price = 0.06;
+                art.Discount = 6100;
+                art.OrderPriceNormal = 100.00;
+                art.DeliverTime = 3.2;
+                art.DiliverDeviation = 0.3;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "25") as Article;
-            art.Designation = "Scheibe 3/8";
-            art.IsPurchase = true;
-            art.Price = 0.06;
-            art.Discount = 3600;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 0.9;
-            art.DiliverDeviation = 0.2;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Scheibe 3/8";
+                art.IsPurchase = true;
+                art.Price = 0.06;
+                art.Discount = 3600;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 0.9;
+                art.DiliverDeviation = 0.2;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "27") as Article;
-            art.Designation = "Schraube 3/8";
-            art.IsPurchase = true;
-            art.Price = 0.10;
-            art.Discount = 1800;
-            art.OrderPriceNormal = 75.00;
-            art.DeliverTime = 0.9;
-            art.DiliverDeviation = 0.2;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Schraube 3/8";
+                art.IsPurchase = true;
+                art.Price = 0.10;
+                art.Discount = 1800;
+                art.OrderPriceNormal = 75.00;
+                art.DeliverTime = 0.9;
+                art.DiliverDeviation = 0.2;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "28") as Article;
-            art.Designation = "Rohr 3/4";
-            art.IsPurchase = true;
-            art.Price = 1.20;
-            art.Discount = 4500;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.7;
-            art.DiliverDeviation = 0.4;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Rohr 3/4";
+                art.IsPurchase = true;
+                art.Price = 1.20;
+                art.Discount = 4500;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.7;
+                art.DiliverDeviation = 0.4;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "32") as Article;
-            art.Designation = "Farbe";
-            art.IsPurchase = true;
-            art.Price = 0.75;
-            art.Discount = 2700;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 2.1;
-            art.DiliverDeviation = 0.5;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Farbe";
+                art.IsPurchase = true;
+                art.Price = 0.75;
+                art.Discount = 2700;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 2.1;
+                art.DiliverDeviation = 0.5;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "33") as Article;
-            art.Designation = "Felge";
-            art.IsPurchase = true;
-            art.Price = 22.00;
-            art.Discount = 900;
-            art.OrderPriceNormal = 75.00;
-            art.DeliverTime = 1.9;
-            art.DiliverDeviation = 0.5;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Felge";
+                art.IsPurchase = true;
+                art.Price = 22.00;
+                art.Discount = 900;
+                art.OrderPriceNormal = 75.00;
+                art.DeliverTime = 1.9;
+                art.DiliverDeviation = 0.5;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "34") as Article;
-            art.Designation = "Speiche";
-            art.IsPurchase = true;
-            art.Price = 0.10;
-            art.Discount = 22000;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.6;
-            art.DiliverDeviation = 0.3;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Speiche";
+                art.IsPurchase = true;
+                art.Price = 0.10;
+                art.Discount = 22000;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.6;
+                art.DiliverDeviation = 0.3;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "35") as Article;
-            art.Designation = "Nabe";
-            art.IsPurchase = true;
-            art.Price = 1.00;
-            art.Discount = 3600;
-            art.OrderPriceNormal = 75.00;
-            art.DeliverTime = 2.2;
-            art.DiliverDeviation = 0.4;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Nabe";
+                art.IsPurchase = true;
+                art.Price = 1.00;
+                art.Discount = 3600;
+                art.OrderPriceNormal = 75.00;
+                art.DeliverTime = 2.2;
+                art.DiliverDeviation = 0.4;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "36") as Article;
-            art.Designation = "Freilauf";
-            art.IsPurchase = true;
-            art.Price = 8;
-            art.Discount = 900;
-            art.OrderPriceNormal = 100.00;
-            art.DeliverTime = 1.2;
-            art.DiliverDeviation = 0.1;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Freilauf";
+                art.IsPurchase = true;
+                art.Price = 8;
+                art.Discount = 900;
+                art.OrderPriceNormal = 100.00;
+                art.DeliverTime = 1.2;
+                art.DiliverDeviation = 0.1;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "37") as Article;
-            art.Designation = "Gabel";
-            art.IsPurchase = true;
-            art.Price = 1.50;
-            art.Discount = 900;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.5;
-            art.DiliverDeviation = 0.3;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Gabel";
+                art.IsPurchase = true;
+                art.Price = 1.50;
+                art.Discount = 900;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.5;
+                art.DiliverDeviation = 0.3;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "38") as Article;
-            art.Designation = "Welle";
-            art.IsPurchase = true;
-            art.Price = 1.50;
-            art.Discount = 300;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.7;
-            art.DiliverDeviation = 0.4;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Welle";
+                art.IsPurchase = true;
+                art.Price = 1.50;
+                art.Discount = 300;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.7;
+                art.DiliverDeviation = 0.4;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "39") as Article;
-            art.Designation = "Blech";
-            art.IsPurchase = true;
-            art.Price = 1.50;
-            art.Discount = 1800;
-            art.OrderPriceNormal = 75.00;
-            art.DeliverTime = 1.5;
-            art.DiliverDeviation = 0.3;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Blech";
+                art.IsPurchase = true;
+                art.Price = 1.50;
+                art.Discount = 1800;
+                art.OrderPriceNormal = 75.00;
+                art.DeliverTime = 1.5;
+                art.DiliverDeviation = 0.3;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "40") as Article;
-            art.Designation = "Lenker";
-            art.IsPurchase = true;
-            art.Price = 2.50;
-            art.Discount = 900;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.7;
-            art.DiliverDeviation = 0.2;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Lenker";
+                art.IsPurchase = true;
+                art.Price = 2.50;
+                art.Discount = 900;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.7;
+                art.DiliverDeviation = 0.2;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "41") as Article;
-            art.Designation = "Mutter 3/4";
-            art.IsPurchase = true;
-            art.Price = 0.06;
-            art.Discount = 900;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 0.9;
-            art.DiliverDeviation = 0.2;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Mutter 3/4";
+                art.IsPurchase = true;
+                art.Price = 0.06;
+                art.Discount = 900;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 0.9;
+                art.DiliverDeviation = 0.2;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "42") as Article;
-            art.Designation = "Griff";
-            art.IsPurchase = true;
-            art.Price = .10;
-            art.Discount = 1800;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.2;
-            art.DiliverDeviation = 0.3;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Griff";
+                art.IsPurchase = true;
+                art.Price = .10;
+                art.Discount = 1800;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.2;
+                art.DiliverDeviation = 0.3;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "43") as Article;
-            art.Designation = "Sattel";
-            art.IsPurchase = true;
-            art.Price = 5.00;
-            art.Discount = 2700;
-            art.OrderPriceNormal = 75.00;
-            art.DeliverTime = 2.0;
-            art.DiliverDeviation = 0.5;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Sattel";
+                art.IsPurchase = true;
+                art.Price = 5.00;
+                art.Discount = 2700;
+                art.OrderPriceNormal = 75.00;
+                art.DeliverTime = 2.0;
+                art.DiliverDeviation = 0.5;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "44") as Article;
-            art.Designation = "Stange 1/2";
-            art.IsPurchase = true;
-            art.Price = 0.50;
-            art.Discount = 900;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.0;
-            art.DiliverDeviation = 0.2;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Stange 1/2";
+                art.IsPurchase = true;
+                art.Price = 0.50;
+                art.Discount = 900;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.0;
+                art.DiliverDeviation = 0.2;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "45") as Article;
-            art.Designation = "Mutter 1/4";
-            art.IsPurchase = true;
-            art.Price = 0.06;
-            art.Discount = 900;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.7;
-            art.DiliverDeviation = 0.3;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Mutter 1/4";
+                art.IsPurchase = true;
+                art.Price = 0.06;
+                art.Discount = 900;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.7;
+                art.DiliverDeviation = 0.3;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "46") as Article;
-            art.Designation = "Schraube 1/4";
-            art.IsPurchase = true;
-            art.Price = 0.10;
-            art.Discount = 900;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 0.9;
-            art.DiliverDeviation = 0.3;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Schraube 1/4";
+                art.IsPurchase = true;
+                art.Price = 0.10;
+                art.Discount = 900;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 0.9;
+                art.DiliverDeviation = 0.3;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "47") as Article;
-            art.Designation = "Zahnkranz";
-            art.IsPurchase = true;
-            art.Price = 3.50;
-            art.Discount = 900;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.1;
-            art.DiliverDeviation = 0.1;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Zahnkranz";
+                art.IsPurchase = true;
+                art.Price = 3.50;
+                art.Discount = 900;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.1;
+                art.DiliverDeviation = 0.1;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "48") as Article;
-            art.Designation = "Pedal";
-            art.IsPurchase = true;
-            art.Price = 1.50;
-            art.Discount = 1800;
-            art.OrderPriceNormal = 75.00;
-            art.DeliverTime = 1.0;
-            art.DiliverDeviation = 0.1;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Pedal";
+                art.IsPurchase = true;
+                art.Price = 1.50;
+                art.Discount = 1800;
+                art.OrderPriceNormal = 75.00;
+                art.DeliverTime = 1.0;
+                art.DiliverDeviation = 0.1;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "52") as Article;
-            art.Designation = "Felge";
-            art.IsPurchase = true;
-            art.Price = 22.00;
-            art.Discount = 600;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.6;
-            art.DiliverDeviation = 0.4;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Felge";
+                art.IsPurchase = true;
+                art.Price = 22.00;
+                art.Discount = 600;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.6;
+                art.DiliverDeviation = 0.4;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "53") as Article;
-            art.Designation = "Speiche";
-            art.IsPurchase = true;
-            art.Price = 0.10;
-            art.Discount = 22000;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.6;
-            art.DiliverDeviation = 0.2;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Speiche";
+                art.IsPurchase = true;
+                art.Price = 0.10;
+                art.Discount = 22000;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.6;
+                art.DiliverDeviation = 0.2;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "57") as Article;
-            art.Designation = "Felge";
-            art.IsPurchase = true;
-            art.Price = 22.00;
-            art.Discount = 600;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.7;
-            art.DiliverDeviation = 0.3;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Felge";
+                art.IsPurchase = true;
+                art.Price = 22.00;
+                art.Discount = 600;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.7;
+                art.DiliverDeviation = 0.3;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "58") as Article;
-            art.Designation = "Speiche";
-            art.IsPurchase = true;
-            art.Price = 0.10;
-            art.Discount = 22000;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 1.6;
-            art.DiliverDeviation = 0.5;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Speiche";
+                art.IsPurchase = true;
+                art.Price = 0.10;
+                art.Discount = 22000;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 1.6;
+                art.DiliverDeviation = 0.5;
+                art.update();
+            }
 
             art = ArticleFactory.create(type, "59") as Article;
-            art.Designation = "Schweißdraht";
-            art.IsPurchase = true;
-            art.Price = 0.15;
-            art.Discount = 1800;
-            art.OrderPriceNormal = 50.00;
-            art.DeliverTime = 0.7;
-            art.DiliverDeviation = 0.2;
-            art.update();
+            if (art != null)
+            {
+                art.Designation = "Schweißdraht";
+                art.IsPurchase = true;
+                art.Price = 0.15;
+                art.Discount = 1800;
+                art.OrderPriceNormal = 50.00;
+                art.DeliverTime = 0.7;
+                art.DiliverDeviation = 0.2;
+                art.update();
+            }
 
 
 

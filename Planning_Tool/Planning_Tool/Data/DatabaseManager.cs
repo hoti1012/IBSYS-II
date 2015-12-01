@@ -154,6 +154,12 @@ namespace Planning_Tool.Data
 
                 command.CommandText = sql;
                 command.ExecuteNonQuery();
+
+            }
+
+            if (Properties.isTestmode)
+            {
+                FillTable.createMasterdata();
             }
         }
 
@@ -171,7 +177,14 @@ namespace Planning_Tool.Data
                 open = true;
             }
 
-            tables = Properties.deleteTables;
+            if (Properties.isTestmode)
+            {
+                tables = Properties.classes;
+            }
+            else
+            {
+                tables = Properties.deleteTables;
+            }
             command = new SQLiteCommand(connection);
 
             foreach (Type t in tables)

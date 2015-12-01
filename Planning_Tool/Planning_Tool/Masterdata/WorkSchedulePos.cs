@@ -17,14 +17,51 @@ namespace Planning_Tool.Masterdata
         private string _workSchedule;
 
         /// <summary>
-        /// Nummer des Arbeitsgangs
+        /// Nummer des Arbeitsplatzes
         /// </summary>
         private string _workSchedulePos;
 
         /// <summary>
-        /// Nummer des Arbeitsplatzes
+        /// Rüstzeit
         /// </summary>
-        private string _workPlace;
+        private int _makeReady;
+
+        /// <summary>
+        /// Stückarbeitszeit
+        /// </summary>
+        private int _workTime;
+
+        /// <summary>
+        /// Enthält die Positionsnummer des Nächsten Arbeitsgangs
+        /// </summary>
+        private string _nextPos;
+
+        /// <summary>
+        /// Gibt die nächste Position zurück
+        /// </summary>
+        /// <returns></returns>
+        public WorkSchedulePos getNextPos()
+        {
+            WorkSchedulePos pos = null;
+            try
+            {
+                if (_nextPos != null)
+                {
+                    pos = WorkSchedulePosFactory.search(typeof(WorkSchedulePos),_workSchedule,_nextPos) as WorkSchedulePos;
+                }
+            }
+            finally
+            {
+
+            }
+            return pos;
+        }
+
+        public string nextPos
+        {
+            get { return _nextPos; }
+            set { _nextPos = value; }
+        }
 
         public string workSchedule
         {
@@ -38,10 +75,16 @@ namespace Planning_Tool.Masterdata
             set { _workSchedulePos = value; }
         }
 
-        public string workPlace
+        public int makeReady
         {
-            get { return _workPlace; }
-            set { _workPlace = value; }
+            get { return _makeReady; }
+            set { _makeReady = value; }
+        }
+
+        public int workTime
+        {
+            get { return _workTime; }
+            set { _workTime = value; }
         }
     }
 }

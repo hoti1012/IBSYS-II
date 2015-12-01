@@ -53,7 +53,9 @@ namespace Planning_Tool.Purchase
         /// </summary>
         private double arrivals;
 
-
+        /// <summary>
+        /// Speichert die änderunngen in die Datenbank
+        /// </summary>
         public void update()
         {
             calcPrice();
@@ -92,7 +94,9 @@ namespace Planning_Tool.Purchase
             price = res;
         }
 
-        //TODO: preis wird nicht berechnet
+        /// <summary>
+        /// Sorgt dafür das die Kopfposition berechnet wird
+        /// </summary>
         public void calcHead()
         {
            Ordering order = this.getHead(typeof(Ordering)) as Ordering;
@@ -100,6 +104,10 @@ namespace Planning_Tool.Purchase
            order.update();
         }
 
+        /// <summary>
+        /// Gibt die Bestellung zurück
+        /// </summary>
+        /// <returns></returns>
         public Ordering getHead()
         {
             Ordering ordering = null;
