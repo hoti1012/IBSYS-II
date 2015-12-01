@@ -26,9 +26,6 @@ namespace Planning_Tool
                 //FillTable auskommentieren wenn das Programm zum ersten mal gestartet wird.
                 //FillTable.createMasterdata();
 
-                XML_Manager xml = new XML_Manager("test.xml");
-                xml.read();
-
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Main());

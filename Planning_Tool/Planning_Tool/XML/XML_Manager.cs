@@ -13,22 +13,10 @@ namespace Planning_Tool.XML
 {
     class XML_Manager
     {
-        private string _file;
-
-        private XmlDocument _doc;
-
-        private XmlElement _root;
-
-        public XML_Manager(string path)
-        {
-            _file = path;
-            _doc = new XmlDocument();
-        }
-
         /// <summary>
         /// Liest die Ergebnisxml aus
         /// </summary>
-        public void read()
+        public static void read(string path)
         {
             Stock stockObj;
             Period periodObj;
@@ -36,9 +24,11 @@ namespace Planning_Tool.XML
             OrderingPos orderingPosObj;
             Workplace wpObj;
             WorkplacePos wpPosObj;
+            XmlDocument _doc = null;
+            XmlElement _root = null;
             try
             {
-                _doc.Load(_file);
+                _doc.Load(path);
                 _root = _doc.DocumentElement;
                 //Aktuelle periode einlesen
                 periodObj = PeriodFactory.create(typeof(Period), _root.Attributes["period"].Value) as Period;
@@ -128,11 +118,9 @@ namespace Planning_Tool.XML
                     }
                 }
             }
-            finally
-            {
-                _doc = null;
+            catch(Exception e){
+                //TODO:Meldung ausgeben
             }
-            
         }
 
         /// <summary>
@@ -140,14 +128,15 @@ namespace Planning_Tool.XML
         /// </summary>
         public void write()
         {
-            //TODO: Noch zu machen
-            throw new NotImplementedException();
-        }
-
-        public string file
-        {
-            get { return _file; }
-            set { _file = value; }
+            try
+            {
+                //TODO: Noch zu machen
+                throw new NotImplementedException();
+            }
+            catch (Exception e)
+            {
+                //TODO: Meldung ausgeben
+            }
         }
     }
 }
