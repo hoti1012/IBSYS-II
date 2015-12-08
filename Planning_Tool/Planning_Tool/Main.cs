@@ -94,5 +94,10 @@ namespace Planning_Tool
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void label63_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
