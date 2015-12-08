@@ -1,5 +1,6 @@
 ﻿using Planning_Tool.Core;
 using Planning_Tool.Exceptions;
+using Planning_Tool.Production;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -110,6 +111,7 @@ namespace Planning_Tool.Forecasts
                 a1.update();
                 a2.update();
                 a3.update();
+                ProductionPlan.setForecasts();
             }
         }
 

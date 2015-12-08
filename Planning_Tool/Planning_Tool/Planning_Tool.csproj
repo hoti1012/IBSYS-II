@@ -78,6 +78,8 @@
     <Compile Include="Masterdata\WorkScheduleFactory.cs" />
     <Compile Include="Masterdata\WorkSchedulePos.cs" />
     <Compile Include="Masterdata\WorkSchedulePosFactory.cs" />
+    <Compile Include="Production\ProductionPlan.cs" />
+    <Compile Include="Production\ProductionPlanFactory.cs" />
     <Compile Include="Production\Workplace.cs" />
     <Compile Include="Production\WorkplaceFactory.cs" />
     <Compile Include="Production\WorkplacePos.cs" />

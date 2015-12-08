@@ -10,5 +10,17 @@ namespace Planning_Tool.Masterdata
 {
     class ArticleFactory : PlanningObjectFactory
     {
+        public static List<Article> getAllArticle()
+        {
+            List<Article> artList = new List<Article>();
+            List<PlanningObject> obj = null;
+            obj = PlanningObjectFactory.searchAll(typeof(Article));
+            foreach(PlanningObject o in obj)
+            {
+                artList.Add(o as Article);
+            }
+
+            return artList;
+        }
     }
 }

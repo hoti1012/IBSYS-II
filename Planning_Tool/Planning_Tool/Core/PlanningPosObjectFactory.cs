@@ -113,6 +113,37 @@ namespace Planning_Tool.Core
             return obj;
         }
 
+        /// <summary>
+        /// Sucht alle Objectposition welche eine die gesuchte Pos beinhalten
+        /// </summary>
+        /// <param name="type">Typ des gesuchten objects</param>
+        /// <param name="head">nummer des Kopfobjects</param>
+        /// <returns></returns>
+        public static List<PlanningPosObject> searchAllWithPos(Type type, string pos)
+        {
+            DatabaseManager manager;
+            string where;
+            List<Object> res;
+            List<PlanningPosObject> obj = new List<PlanningPosObject>();
+
+            manager = new DatabaseManager();
+            try
+            {
+                where = "WHERE " + type.Name + " = \"" + pos + "\"";
+
+                res = manager.select(type, where);
+
+                foreach (Object o in res)
+                {
+                    obj.Add(o as PlanningPosObject);
+                }
+            }
+            finally
+            {
+                manager.release();
+            }
+            return obj;
+        }
 
         /// <summary>
         /// Erzeugt eine Objectposition

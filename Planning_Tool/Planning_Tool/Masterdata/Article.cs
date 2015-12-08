@@ -1,5 +1,7 @@
 ﻿using Planning_Tool.Core;
+using Planning_Tool.Production;
 using System;
+using System.Collections.Generic;
 
 
 namespace Planning_Tool.Masterdata
@@ -65,6 +67,59 @@ namespace Planning_Tool.Masterdata
         /// Gibt die Menge an ab der es 10% rabatt gibt
         /// </summary>
         private int discount;
+
+        /// <summary>
+        /// Gibt den Lagerbestand zurück
+        /// </summary>
+        /// <returns></returns>
+        public int getStockAmount()
+        {
+            int res = 0;
+            Stock stock = null;
+
+            stock = StockFactory.search(typeof(Stock),this.article) as Stock;
+            if (stock != null)
+            {
+                res = stock.amount;
+            }
+            return res;
+        }
+
+        /// <summary>
+        /// Gibt die anzahl der in Arbeit zu diesem Artikel zurück
+        /// </summary>
+        /// <returns></returns>
+        public int getInWork()
+        {
+            int res = 0;
+            WorkplacePos wpPosObj = null;
+            List<PlanningPosObject> wpList = new List<PlanningPosObject>();
+            wpList = WorkplacePosFactory.searchAllWithPos(typeof(WorkplacePos),this.article);
+            foreach (PlanningPosObject wp in wpList)
+            {
+                wpPosObj = wp as WorkplacePos;
+                res += wpPosObj.amountInWork;
+            }
+            return res;
+        }
+
+        /// <summary>
+        /// Gibt die Warteschlage zu diesem Artikel zurück
+        /// </summary>
+        /// <returns></returns>
+        public int getWaitingList()
+        {
+            int res = 0;
+            WorkplacePos wpPosObj = null;
+            List<PlanningPosObject> wpList = new List<PlanningPosObject>();
+            wpList = WorkplacePosFactory.searchAllWithPos(typeof(WorkplacePos), this.article);
+            foreach (PlanningPosObject wp in wpList)
+            {
+                wpPosObj = wp as WorkplacePos;
+                res += wpPosObj.amountWaitlist;
+            }
+            return res;
+        }
 
         public BOM createBom()
         {
@@ -161,7 +216,6 @@ namespace Planning_Tool.Masterdata
             get { return price; }
             set { price = value; }
         }
-
     }
 
 }

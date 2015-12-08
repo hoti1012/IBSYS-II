@@ -80,6 +80,35 @@ namespace Planning_Tool.Core
         }
 
         /// <summary>
+        /// Sucht nach einem Object in der Datenbank
+        /// </summary>
+        /// <param name="type">Typ des gesuchten objects</param>
+        /// <returns>Alle Objecte</returns>
+        public static List<PlanningObject> searchAll(Type type)
+        {
+            DatabaseManager manager;
+            string where;
+            List<PlanningObject> obj = new List<PlanningObject>();
+            List<Object> res;
+
+            manager = new DatabaseManager();
+            try
+            {
+                res = manager.select(type,null);
+
+                foreach(Object o in res)
+                {
+                    obj.Add(o as PlanningObject);
+                }
+            }
+            finally
+            {
+                manager.release();
+            }
+            return obj;
+        }
+
+        /// <summary>
         /// Erzeugt ein Object
         /// </summary>
         /// <param name="type">Type des Objects</param>

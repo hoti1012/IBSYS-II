@@ -133,6 +133,7 @@ namespace Planning_Tool.XML
                         wpPosObj.update();
                     }
                 }
+                ProductionPlan.fillPlan();
             }
             finally
             {
