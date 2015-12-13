@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Planning_Tool.XML;
 using Planning_Tool.Data;
 using Planning_Tool.Forecasts;
+using Planning_Tool.Masterdata;
+using Planning_Tool.Exceptions;
 	
 namespace Planning_Tool
 {
@@ -19,6 +21,7 @@ namespace Planning_Tool
         {
             InitializeComponent();
             DatabaseManager manager = new DatabaseManager();
+            int count = 0;
             try
             {
                 manager.initialize();
@@ -31,6 +34,20 @@ namespace Planning_Tool
             {
                 manager.release();
             }
+        }
+
+        public static void fillFields()
+        {
+            fillProductionPlan();
+        }
+
+        private static void fillProductionPlan()
+        {
+            //P1
+
+            //P2
+
+            //P3
         }
 
        

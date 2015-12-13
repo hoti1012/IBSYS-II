@@ -91,10 +91,22 @@ namespace Planning_Tool.Production
                     if (pp != null)
                     {
                         pp._sellwich = forecast.currentAmount;
+                        pp.calcProduction();
                         pp.update();
+                        pp.calcSellwichBom();
                     }
                 }
             }
+        }
+
+        private void calcSellwichBom()
+        {
+            throw new NotImplementedException("Methode ist bisher noch nicht implementiert");
+        }
+
+        public void calcProduction()
+        {
+            _production = _sellwich + _safetyStock - _stock - _waitList - _inWork;
         }
 
         public string productionPlan
@@ -106,13 +118,20 @@ namespace Planning_Tool.Production
         public int sellwich
         {
             get { return _sellwich; }
-            set { _sellwich = value; }
+            set 
+            { 
+                _sellwich = value;
+                calcProduction();
+            }
         }
 
         public int safetyStock
         {
             get { return _safetyStock; }
-            set { _safetyStock = value; }
+            set { 
+                _safetyStock = value;
+                this.calcProduction();
+            }
         }
 
         public int stock

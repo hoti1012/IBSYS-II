@@ -32,6 +32,17 @@ namespace Planning_Tool.Masterdata
         /// </summary>
         private int _amount;
 
+        /// <summary>
+        /// Gibt an ob die Stücklistenposition eine Baugruppe ist
+        /// </summary>
+        /// <returns>true wenn bompos eine Baugruppe ist</returns>
+        public bool isModule()
+        {
+            if (BOMFactory.search(typeof(BOM), this._bompos) != null)
+                return true;
+            return false;
+        }
+
         public string bom
         {
             get { return _bom; }
@@ -56,7 +67,7 @@ namespace Planning_Tool.Masterdata
         public string designation
         {
             get { return _designation; }
-            //set { _designation = value; }
+            set { _designation = value; }
         }
 
         public int amount
