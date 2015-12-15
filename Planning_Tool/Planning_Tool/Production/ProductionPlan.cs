@@ -62,9 +62,9 @@ namespace Planning_Tool.Production
                     {
                         pp = ProductionPlanFactory.create(typeof(ProductionPlan), a.article) as ProductionPlan;
                     }
-                    pp.stock = a.getStockAmount();
-                    pp.waitList = a.getWaitingList();
-                    pp.inWork = a.getInWork();
+                    pp._stock = a.getStockAmount();
+                    pp._waitList = a.getWaitingList();
+                    pp._inWork = a.getInWork();
                     pp.update();
                 }
             }
@@ -91,10 +91,48 @@ namespace Planning_Tool.Production
                     if (pp != null)
                     {
                         pp._sellwich = forecast.currentAmount;
+                        pp.calcProduction();
                         pp.update();
+                        pp.calcSellwichBom();
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Berechnet die Aufträge
+        /// </summary>
+        private void calcSellwichBom()
+        {
+            List<ProductionPlan> list = ProductionPlanFactory.getProductionPlansFromBom(this.productionPlan);
+            foreach (ProductionPlan pp in list)
+            {
+                //TODO: Artikel die von mehreren Objecten verwendet werden Teilen
+                pp._sellwich = this.production + this.waitList;
+                pp.calcProduction();
+                pp.update();
+                pp.calcSellwichBom();
+            }
+        }
+
+        /// <summary>
+        /// Gibt an ob unter diesem Produktionsplan noch weitere Produktionspläne gibt
+        /// </summary>
+        /// <returns></returns>
+        public bool hasModule()
+        {
+            BOM bom = BOMFactory.search(typeof(BOM), this._productionPlan) as BOM;
+            if (bom != null)
+                return bom.hasModule();
+            return false;
+        }
+
+        /// <summary>
+        /// Berechnet die Produktion
+        /// </summary>
+        public void calcProduction()
+        {
+            _production = _sellwich + _safetyStock - _stock - _waitList - _inWork;
         }
 
         public string productionPlan
@@ -106,13 +144,18 @@ namespace Planning_Tool.Production
         public int sellwich
         {
             get { return _sellwich; }
-            set { _sellwich = value; }
+            set 
+            { 
+                _sellwich = value;
+            }
         }
 
         public int safetyStock
         {
             get { return _safetyStock; }
-            set { _safetyStock = value; }
+            set { 
+                _safetyStock = value;
+            }
         }
 
         public int stock
@@ -136,7 +179,10 @@ namespace Planning_Tool.Production
         public int production
         {
             get { return _production; }
-            set { _production = value; }
+            set 
+            { 
+                _production = value;
+            }
         }
     }
 }

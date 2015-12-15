@@ -121,6 +121,41 @@ namespace Planning_Tool.Masterdata
             return res;
         }
 
+        /// <summary>
+        /// Gibt alle Stücklistenpositionen zu diesem Artikel zurück
+        /// </summary>
+        public List<BOMpos> getAllBomPos()
+        {
+            List<BOMpos> bompos = new List<BOMpos>();
+            ArticleFactory.getAllBomPos(this._article, bompos);
+            return bompos;
+        }
+
+        /// <summary>
+        /// Gibt alle Baugruppen zu diesem Artikel zurück
+        /// </summary>
+        public List<BOMpos> getAllModule()
+        {
+            List<BOMpos> bompos = new List<BOMpos>();
+            ArticleFactory.getAllModule(this._article, bompos);
+            return bompos;
+        }
+
+        /// <summary>
+        /// Gibt alle direkten Baugruppen zu diesem Artikel zurück
+        /// </summary>
+        /// <returns></returns>
+        public List<BOMpos> getModule()
+        {
+            List<BOMpos> bompos = new List<BOMpos>();
+            ArticleFactory.getModule(this._article, bompos);
+            return bompos;
+        }
+
+        /// <summary>
+        /// Erzeugt einen Stücklistenkopf
+        /// </summary>
+        /// <returns></returns>
         public BOM createBom()
         {
             return BOMFactory.create(typeof(BOM),this.article) as BOM;

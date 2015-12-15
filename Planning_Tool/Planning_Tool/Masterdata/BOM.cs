@@ -1,6 +1,7 @@
 ﻿using Planning_Tool.Core;
 using Planning_Tool.Exceptions;
 using System;
+using System.Collections.Generic;
 
 namespace Planning_Tool.Masterdata
 {
@@ -45,6 +46,24 @@ namespace Planning_Tool.Masterdata
 
                 }
             }
+        }
+
+        /// <summary>
+        /// gibt an ob die Bompos noch unterbaugruppen enthält
+        /// </summary>
+        /// <returns></returns>
+        public bool hasModule()
+        {
+            BOMpos pos = null;
+            foreach (PlanningPosObject o in BOMposFactory.search(typeof(BOMpos), this._bom))
+            {
+                pos = o as BOMpos;
+                if (pos.isModule())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public string designation
