@@ -142,6 +142,17 @@ namespace Planning_Tool.Masterdata
         }
 
         /// <summary>
+        /// Gibt alle direkten Baugruppen zu diesem Artikel zurück
+        /// </summary>
+        /// <returns></returns>
+        public List<BOMpos> getModule()
+        {
+            List<BOMpos> bompos = new List<BOMpos>();
+            ArticleFactory.getModule(this._article, bompos);
+            return bompos;
+        }
+
+        /// <summary>
         /// Erzeugt einen Stücklistenkopf
         /// </summary>
         /// <returns></returns>

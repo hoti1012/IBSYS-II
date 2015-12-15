@@ -92,6 +92,11 @@
     <Compile Include="Purchase\OrderingPosFactory.cs" />
     <Compile Include="Masterdata\Stock.cs" />
     <Compile Include="Masterdata\StockFactory.cs" />
+    <Compile Include="SQLite.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQLite.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Time\Period.cs" />
     <Compile Include="Time\PeriodFactory.cs" />
     <Compile Include="XML\XML_Manager.cs" />
@@ -116,6 +121,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SQLite.xsc">
+      <DependentUpon>SQLite.xsd</DependentUpon>
+    </None>
+    <None Include="SQLite.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SQLite.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SQLite.xss">
+      <DependentUpon>SQLite.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

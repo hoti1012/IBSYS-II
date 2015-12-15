@@ -60,9 +60,22 @@ namespace Planning_Tool.Masterdata
             }
         }
 
+        /// <summary>
+        /// Gibt alle direkten Baugruppen zu diesem Artikel zurück
+        /// </summary>
+        /// <param name="bom"></param>
+        /// <param name="bompos"></param>
         public static void getModule(string bom, List<BOMpos> bompos)
         {
             BOMpos pos = null;
+            foreach(PlanningPosObject o in BOMposFactory.search(typeof(BOMpos),bom))
+            {
+                pos = o as BOMpos;
+                if (pos.isModule())
+                {
+                    bompos.Add(pos);
+                }
+            }
         }
     }
 }
