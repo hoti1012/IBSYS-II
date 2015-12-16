@@ -25,7 +25,7 @@ namespace Planning_Tool.Production
         /// <summary>
         /// Verkaufswunsch
         /// </summary>
-        private int _sellwich;
+        private int _sellwish;
 
         /// <summary>
         /// Sicherheitsbestand
@@ -62,16 +62,20 @@ namespace Planning_Tool.Production
             try
             {
                 artList = ArticleFactory.getAllArticle();
-                foreach (Article a in artList) { 
-                    pp = ProductionPlanFactory.search(typeof(ProductionPlan),a.article) as ProductionPlan;
-                    if (pp == null)
+                foreach (Article a in artList) {
+                    if (a.IsProduction)
                     {
-                        pp = ProductionPlanFactory.create(typeof(ProductionPlan), a.article) as ProductionPlan;
+                            
+                        pp = ProductionPlanFactory.search(typeof(ProductionPlan), a.article) as ProductionPlan;
+                        if (pp == null)
+                        {
+                            pp = ProductionPlanFactory.create(typeof(ProductionPlan), a.article) as ProductionPlan;
+                        }
+                        pp._stock = a.getStockAmount();
+                        pp._waitList = a.getWaitingList();
+                        pp._inWork = a.getInWork();
+                        pp.update();
                     }
-                    pp._stock = a.getStockAmount();
-                    pp._waitList = a.getWaitingList();
-                    pp._inWork = a.getInWork();
-                    pp.update();
                 }
             }
             finally
@@ -96,7 +100,7 @@ namespace Planning_Tool.Production
                     pp = ProductionPlanFactory.search(typeof(ProductionPlan), i.ToString()) as ProductionPlan;
                     if (pp != null)
                     {
-                        pp._sellwich = forecast.currentAmount;
+                        pp._sellwish = forecast.currentAmount;
                         pp.calcProduction();
                         pp.update();
                         pp.calcSellwichBom();
@@ -114,7 +118,7 @@ namespace Planning_Tool.Production
             foreach (ProductionPlan pp in list)
             {
                 //TODO: Artikel die von mehreren Objecten verwendet werden Teilen
-                pp._sellwich = this.production + this.waitList;
+                pp._sellwish = this.production + this.waitList;
                 pp.calcProduction();
                 pp.update();
                 pp.calcSellwichBom();
@@ -138,7 +142,7 @@ namespace Planning_Tool.Production
         /// </summary>
         public void calcProduction()
         {
-            _production = _sellwich + _safetyStock - _stock - _waitList - _inWork;
+            _production = _sellwish + _safetyStock - _stock - _waitList - _inWork;
         }
 
         public string productionPlan
@@ -153,6 +157,7 @@ namespace Planning_Tool.Production
                     throw new ArticleNotFoundException(value);
                 }
                 this._designation = art.Designation;
+                this._safetyStock = art.safetyStock;
             }
         }
 
@@ -162,12 +167,12 @@ namespace Planning_Tool.Production
             set { _designation = value; }
         }
 
-        public int sellwich
+        public int sellwish
         {
-            get { return _sellwich; }
+            get { return _sellwish; }
             set 
             { 
-                _sellwich = value;
+                _sellwish = value;
             }
         }
 

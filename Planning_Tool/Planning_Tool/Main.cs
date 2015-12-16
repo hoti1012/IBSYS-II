@@ -42,7 +42,11 @@ namespace Planning_Tool
             }
         }
 
-        public void getData(string selectCommand)
+        /// <summary>
+        /// Läd die Daten als DataAdapter aus der Datenbank
+        /// </summary>
+        /// <param name="selectCommand"></param>
+        private void getData(string selectCommand)
         {
             string connectionString = "Data Source=database.db";
             try
@@ -67,18 +71,28 @@ namespace Planning_Tool
             }
         }
 
+        /// <summary>
+        /// Füllt alle DataGridFelder neu
+        /// </summary>
         public void fillFields()
         {
             fillProductionPlan();
         }
 
+        /// <summary>
+        /// Füllt das DataGrid für die Produktionsübersicht
+        /// </summary>
         private void fillProductionPlan()
         {
             getData("select productionplan, designation, safetystock, stock, waitlist, inwork, production from  " + typeof(ProductionPlan).Name);
         }
 
        
-
+        /// <summary>
+        /// Öffnet die Auswahl für den Pfad zur XML
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
            OpenFileDialog xml_path = new OpenFileDialog();
@@ -121,6 +135,11 @@ namespace Planning_Tool
 
         }
 
+        /// <summary>
+        /// Speichert die Eingaben für die Forcast in die Forecasts
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveForecastButton_Click(object sender, EventArgs e)
         {
             try

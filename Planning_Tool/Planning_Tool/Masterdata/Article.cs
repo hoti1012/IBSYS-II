@@ -69,6 +69,31 @@ namespace Planning_Tool.Masterdata
         private int discount;
 
         /// <summary>
+        /// Sicherheitsbestand
+        /// </summary>
+        private int _safetyStock;
+
+        /// <summary>
+        /// Gibt eine Liste zurück in wecher die Artikelnummern sind in dem dieser Artikel verwendet wird
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getUse()
+        {
+            List<string> res = new List<string>();
+            foreach (Article art in Article.getAllMainArticle())
+            {
+                foreach (BOMpos pos in art.getAllBomPos())
+                {
+                    if (pos.bompos.Equals(this._article, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        res.Add(art._article);
+                    }
+                }
+            }
+            return res;
+        }
+
+        /// <summary>
         /// Gibt den Lagerbestand zurück
         /// </summary>
         /// <returns></returns>
@@ -161,6 +186,20 @@ namespace Planning_Tool.Masterdata
             return BOMFactory.create(typeof(BOM),this.article) as BOM;
         }
 
+        public static List<Article> getAllMainArticle()
+        {
+            string sql = "Select * from " + typeof(Article).Name;
+            sql += " WHERE NOT EXISTS (SELECT * FROM " + typeof(BOMpos).Name + " WHERE " + typeof(BOMpos).Name + " = " + typeof(Article).Name + ")";
+            List<PlanningObject> tmp = null;
+            List<Article> artList = new List<Article>();
+            tmp = ArticleFactory.select(typeof(Article),sql);
+            foreach (PlanningObject o in tmp)
+            {
+                artList.Add(o as Article);
+            }
+            return artList;
+        }
+
         public string article
         {
             get { return _article; }
@@ -250,6 +289,12 @@ namespace Planning_Tool.Masterdata
         {
             get { return price; }
             set { price = value; }
+        }
+
+        public int safetyStock
+        {
+            get { return _safetyStock; }
+            set { _safetyStock = value; }
         }
     }
 

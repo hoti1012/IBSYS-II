@@ -81,6 +81,10 @@
     <Compile Include="Masterdata\WorkScheduleFactory.cs" />
     <Compile Include="Masterdata\WorkSchedulePos.cs" />
     <Compile Include="Masterdata\WorkSchedulePosFactory.cs" />
+    <Compile Include="Production\OrderBOM.cs" />
+    <Compile Include="Production\OrderBOMFactory.cs" />
+    <Compile Include="Production\OrderBOMpos.cs" />
+    <Compile Include="Production\OrderBOMposFactory.cs" />
     <Compile Include="Production\ProductionPlan.cs" />
     <Compile Include="Production\ProductionPlanFactory.cs" />
     <Compile Include="Production\Workplace.cs" />
@@ -122,9 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

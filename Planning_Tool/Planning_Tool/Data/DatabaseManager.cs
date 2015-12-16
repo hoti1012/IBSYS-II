@@ -93,6 +93,42 @@ namespace Planning_Tool.Data
             return res;
         }
 
+        /// <summary>
+        /// Läd zu einer Klasse die gewünschten Daten aus der Datenbank
+        /// </summary>
+        /// <param name="type">Typ der Klasse</param>
+        /// <param name="where">SQL where wenn beschtimmte bedingungen gelten sollen</param>
+        /// <returns>List<Object> mit den Gefunden Objecten</returns>
+        public List<Object> freeSelect(Type type, string sql)
+        {
+            List<Object> res = new List<object>();
+            PropertyInfo[] properties;
+
+            if (!open)
+            {
+                connection.Open();
+                open = true;
+            }
+
+            command = new SQLiteCommand(connection);
+            command.CommandText = sql;
+            reader = command.ExecuteReader();
+
+            int o = 0;
+            while (reader.Read())
+            {
+                res.Add(Activator.CreateInstance(type));
+                properties = res[o].GetType().GetProperties();
+                for (int i = 0; i < properties.Length; i++)
+                {
+                    if (reader[properties[i].Name].GetType() != typeof(System.DBNull))
+
+                        properties[i].SetValue(res[o], reader[properties[i].Name]);
+                }
+                o++;
+            }
+            return res;
+        }
 
         /// <summary>
         /// Baut die Datenbank für sämtliche Klassen die Datenbanktabellen auf

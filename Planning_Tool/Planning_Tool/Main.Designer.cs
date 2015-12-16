@@ -341,6 +341,13 @@
             this.tb_pp_20_pr = new System.Windows.Forms.TextBox();
             this.tab_uebersicht = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Teil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_pp_bezeichnung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.safetstock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_pp_lagerbestand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_pp_warteschlange = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_pp_inbearbeitung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.production = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_kapazitätsplanung = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label63 = new System.Windows.Forms.Label();
@@ -718,13 +725,6 @@
             this.column_reihenfolge_nachvorne = new System.Windows.Forms.DataGridViewButtonColumn();
             this.column_reihenfolge_nachhinten = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tab_uebersicht_xmloutput = new System.Windows.Forms.TabPage();
-            this.Teil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_pp_bezeichnung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.safetstock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_pp_lagerbestand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_pp_warteschlange = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_pp_inbearbeitung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.production = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tab_startseite.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1277,7 +1277,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
             this.tableLayoutPanel2.Controls.Add(this.label21, 0, 14);
             this.tableLayoutPanel2.Controls.Add(this.label27, 6, 2);
             this.tableLayoutPanel2.Controls.Add(this.label20, 0, 13);
@@ -1403,7 +1403,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(530, 2);
+            this.label27.Location = new System.Drawing.Point(529, 2);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(58, 13);
@@ -1423,7 +1423,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(127, 2);
+            this.label23.Location = new System.Drawing.Point(126, 2);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(97, 13);
@@ -1523,7 +1523,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(436, 2);
+            this.label26.Location = new System.Drawing.Point(435, 2);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(75, 13);
@@ -1533,7 +1533,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(245, 2);
+            this.label24.Location = new System.Drawing.Point(244, 2);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(72, 13);
@@ -1543,7 +1543,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(345, 2);
+            this.label25.Location = new System.Drawing.Point(344, 2);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(79, 13);
@@ -1662,7 +1662,7 @@
             // 
             // tb_pp_p1_sb
             // 
-            this.tb_pp_p1_sb.Location = new System.Drawing.Point(127, 37);
+            this.tb_pp_p1_sb.Location = new System.Drawing.Point(126, 37);
             this.tb_pp_p1_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p1_sb.Name = "tb_pp_p1_sb";
             this.tb_pp_p1_sb.Size = new System.Drawing.Size(76, 20);
@@ -1670,7 +1670,7 @@
             // 
             // tb_pp_26P1_sb
             // 
-            this.tb_pp_26P1_sb.Location = new System.Drawing.Point(127, 74);
+            this.tb_pp_26P1_sb.Location = new System.Drawing.Point(126, 74);
             this.tb_pp_26P1_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P1_sb.Name = "tb_pp_26P1_sb";
             this.tb_pp_26P1_sb.Size = new System.Drawing.Size(76, 20);
@@ -1678,7 +1678,7 @@
             // 
             // tb_pp_51_sb
             // 
-            this.tb_pp_51_sb.Location = new System.Drawing.Point(127, 98);
+            this.tb_pp_51_sb.Location = new System.Drawing.Point(126, 98);
             this.tb_pp_51_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_51_sb.Name = "tb_pp_51_sb";
             this.tb_pp_51_sb.Size = new System.Drawing.Size(76, 20);
@@ -1686,7 +1686,7 @@
             // 
             // tb_pp_16P1_sb
             // 
-            this.tb_pp_16P1_sb.Location = new System.Drawing.Point(127, 130);
+            this.tb_pp_16P1_sb.Location = new System.Drawing.Point(126, 130);
             this.tb_pp_16P1_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P1_sb.Name = "tb_pp_16P1_sb";
             this.tb_pp_16P1_sb.Size = new System.Drawing.Size(76, 20);
@@ -1703,7 +1703,7 @@
             // 
             // tb_pp_17P1_sb
             // 
-            this.tb_pp_17P1_sb.Location = new System.Drawing.Point(127, 151);
+            this.tb_pp_17P1_sb.Location = new System.Drawing.Point(126, 151);
             this.tb_pp_17P1_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P1_sb.Name = "tb_pp_17P1_sb";
             this.tb_pp_17P1_sb.Size = new System.Drawing.Size(76, 20);
@@ -1711,7 +1711,7 @@
             // 
             // tb_pp_50_sb
             // 
-            this.tb_pp_50_sb.Location = new System.Drawing.Point(127, 175);
+            this.tb_pp_50_sb.Location = new System.Drawing.Point(126, 175);
             this.tb_pp_50_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_50_sb.Name = "tb_pp_50_sb";
             this.tb_pp_50_sb.Size = new System.Drawing.Size(76, 20);
@@ -1719,7 +1719,7 @@
             // 
             // tb_pp_4_sb
             // 
-            this.tb_pp_4_sb.Location = new System.Drawing.Point(127, 204);
+            this.tb_pp_4_sb.Location = new System.Drawing.Point(126, 204);
             this.tb_pp_4_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_4_sb.Name = "tb_pp_4_sb";
             this.tb_pp_4_sb.Size = new System.Drawing.Size(76, 20);
@@ -1736,7 +1736,7 @@
             // 
             // tb_pp_10_sb
             // 
-            this.tb_pp_10_sb.Location = new System.Drawing.Point(127, 227);
+            this.tb_pp_10_sb.Location = new System.Drawing.Point(126, 227);
             this.tb_pp_10_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_10_sb.Name = "tb_pp_10_sb";
             this.tb_pp_10_sb.Size = new System.Drawing.Size(76, 20);
@@ -1744,7 +1744,7 @@
             // 
             // tb_pp_49_sb
             // 
-            this.tb_pp_49_sb.Location = new System.Drawing.Point(127, 248);
+            this.tb_pp_49_sb.Location = new System.Drawing.Point(126, 248);
             this.tb_pp_49_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_49_sb.Name = "tb_pp_49_sb";
             this.tb_pp_49_sb.Size = new System.Drawing.Size(76, 20);
@@ -1752,7 +1752,7 @@
             // 
             // tb_pp_7_sb
             // 
-            this.tb_pp_7_sb.Location = new System.Drawing.Point(127, 282);
+            this.tb_pp_7_sb.Location = new System.Drawing.Point(126, 282);
             this.tb_pp_7_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_7_sb.Name = "tb_pp_7_sb";
             this.tb_pp_7_sb.Size = new System.Drawing.Size(76, 20);
@@ -1760,7 +1760,7 @@
             // 
             // tb_pp_13_sb
             // 
-            this.tb_pp_13_sb.Location = new System.Drawing.Point(127, 304);
+            this.tb_pp_13_sb.Location = new System.Drawing.Point(126, 304);
             this.tb_pp_13_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_13_sb.Name = "tb_pp_13_sb";
             this.tb_pp_13_sb.Size = new System.Drawing.Size(76, 20);
@@ -1768,7 +1768,7 @@
             // 
             // tb_pp_18_sb
             // 
-            this.tb_pp_18_sb.Location = new System.Drawing.Point(127, 328);
+            this.tb_pp_18_sb.Location = new System.Drawing.Point(126, 328);
             this.tb_pp_18_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_18_sb.Name = "tb_pp_18_sb";
             this.tb_pp_18_sb.Size = new System.Drawing.Size(76, 20);
@@ -1777,7 +1777,7 @@
             // tb_pp_p1_lb
             // 
             this.tb_pp_p1_lb.Enabled = false;
-            this.tb_pp_p1_lb.Location = new System.Drawing.Point(245, 37);
+            this.tb_pp_p1_lb.Location = new System.Drawing.Point(244, 37);
             this.tb_pp_p1_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p1_lb.Name = "tb_pp_p1_lb";
             this.tb_pp_p1_lb.Size = new System.Drawing.Size(76, 20);
@@ -1786,7 +1786,7 @@
             // tb_pp_26P1_lb
             // 
             this.tb_pp_26P1_lb.Enabled = false;
-            this.tb_pp_26P1_lb.Location = new System.Drawing.Point(245, 74);
+            this.tb_pp_26P1_lb.Location = new System.Drawing.Point(244, 74);
             this.tb_pp_26P1_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P1_lb.Name = "tb_pp_26P1_lb";
             this.tb_pp_26P1_lb.Size = new System.Drawing.Size(76, 20);
@@ -1795,7 +1795,7 @@
             // tb_pp_51_lb
             // 
             this.tb_pp_51_lb.Enabled = false;
-            this.tb_pp_51_lb.Location = new System.Drawing.Point(245, 98);
+            this.tb_pp_51_lb.Location = new System.Drawing.Point(244, 98);
             this.tb_pp_51_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_51_lb.Name = "tb_pp_51_lb";
             this.tb_pp_51_lb.Size = new System.Drawing.Size(76, 20);
@@ -1804,7 +1804,7 @@
             // tb_pp_16P1_lb
             // 
             this.tb_pp_16P1_lb.Enabled = false;
-            this.tb_pp_16P1_lb.Location = new System.Drawing.Point(245, 130);
+            this.tb_pp_16P1_lb.Location = new System.Drawing.Point(244, 130);
             this.tb_pp_16P1_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P1_lb.Name = "tb_pp_16P1_lb";
             this.tb_pp_16P1_lb.Size = new System.Drawing.Size(76, 20);
@@ -1813,7 +1813,7 @@
             // tb_pp_17P1_lb
             // 
             this.tb_pp_17P1_lb.Enabled = false;
-            this.tb_pp_17P1_lb.Location = new System.Drawing.Point(245, 151);
+            this.tb_pp_17P1_lb.Location = new System.Drawing.Point(244, 151);
             this.tb_pp_17P1_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P1_lb.Name = "tb_pp_17P1_lb";
             this.tb_pp_17P1_lb.Size = new System.Drawing.Size(76, 20);
@@ -1822,7 +1822,7 @@
             // tb_pp_50_lb
             // 
             this.tb_pp_50_lb.Enabled = false;
-            this.tb_pp_50_lb.Location = new System.Drawing.Point(245, 175);
+            this.tb_pp_50_lb.Location = new System.Drawing.Point(244, 175);
             this.tb_pp_50_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_50_lb.Name = "tb_pp_50_lb";
             this.tb_pp_50_lb.Size = new System.Drawing.Size(76, 20);
@@ -1831,7 +1831,7 @@
             // tb_pp_4_lb
             // 
             this.tb_pp_4_lb.Enabled = false;
-            this.tb_pp_4_lb.Location = new System.Drawing.Point(245, 204);
+            this.tb_pp_4_lb.Location = new System.Drawing.Point(244, 204);
             this.tb_pp_4_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_4_lb.Name = "tb_pp_4_lb";
             this.tb_pp_4_lb.Size = new System.Drawing.Size(76, 20);
@@ -1840,7 +1840,7 @@
             // tb_pp_10_lb
             // 
             this.tb_pp_10_lb.Enabled = false;
-            this.tb_pp_10_lb.Location = new System.Drawing.Point(245, 227);
+            this.tb_pp_10_lb.Location = new System.Drawing.Point(244, 227);
             this.tb_pp_10_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_10_lb.Name = "tb_pp_10_lb";
             this.tb_pp_10_lb.Size = new System.Drawing.Size(76, 20);
@@ -1849,7 +1849,7 @@
             // tb_pp_49_lb
             // 
             this.tb_pp_49_lb.Enabled = false;
-            this.tb_pp_49_lb.Location = new System.Drawing.Point(245, 248);
+            this.tb_pp_49_lb.Location = new System.Drawing.Point(244, 248);
             this.tb_pp_49_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_49_lb.Name = "tb_pp_49_lb";
             this.tb_pp_49_lb.Size = new System.Drawing.Size(76, 20);
@@ -1858,7 +1858,7 @@
             // tb_pp_7_lb
             // 
             this.tb_pp_7_lb.Enabled = false;
-            this.tb_pp_7_lb.Location = new System.Drawing.Point(245, 282);
+            this.tb_pp_7_lb.Location = new System.Drawing.Point(244, 282);
             this.tb_pp_7_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_7_lb.Name = "tb_pp_7_lb";
             this.tb_pp_7_lb.Size = new System.Drawing.Size(76, 20);
@@ -1867,7 +1867,7 @@
             // tb_pp_13_lb
             // 
             this.tb_pp_13_lb.Enabled = false;
-            this.tb_pp_13_lb.Location = new System.Drawing.Point(245, 304);
+            this.tb_pp_13_lb.Location = new System.Drawing.Point(244, 304);
             this.tb_pp_13_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_13_lb.Name = "tb_pp_13_lb";
             this.tb_pp_13_lb.Size = new System.Drawing.Size(76, 20);
@@ -1876,7 +1876,7 @@
             // tb_pp_18_lb
             // 
             this.tb_pp_18_lb.Enabled = false;
-            this.tb_pp_18_lb.Location = new System.Drawing.Point(245, 328);
+            this.tb_pp_18_lb.Location = new System.Drawing.Point(244, 328);
             this.tb_pp_18_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_18_lb.Name = "tb_pp_18_lb";
             this.tb_pp_18_lb.Size = new System.Drawing.Size(76, 20);
@@ -1885,7 +1885,7 @@
             // tb_pp_p1_ws
             // 
             this.tb_pp_p1_ws.Enabled = false;
-            this.tb_pp_p1_ws.Location = new System.Drawing.Point(345, 37);
+            this.tb_pp_p1_ws.Location = new System.Drawing.Point(344, 37);
             this.tb_pp_p1_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p1_ws.Name = "tb_pp_p1_ws";
             this.tb_pp_p1_ws.Size = new System.Drawing.Size(76, 20);
@@ -1894,7 +1894,7 @@
             // tb_pp_26P1_ws
             // 
             this.tb_pp_26P1_ws.Enabled = false;
-            this.tb_pp_26P1_ws.Location = new System.Drawing.Point(345, 74);
+            this.tb_pp_26P1_ws.Location = new System.Drawing.Point(344, 74);
             this.tb_pp_26P1_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P1_ws.Name = "tb_pp_26P1_ws";
             this.tb_pp_26P1_ws.Size = new System.Drawing.Size(76, 20);
@@ -1903,7 +1903,7 @@
             // tb_pp_51_ws
             // 
             this.tb_pp_51_ws.Enabled = false;
-            this.tb_pp_51_ws.Location = new System.Drawing.Point(345, 98);
+            this.tb_pp_51_ws.Location = new System.Drawing.Point(344, 98);
             this.tb_pp_51_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_51_ws.Name = "tb_pp_51_ws";
             this.tb_pp_51_ws.Size = new System.Drawing.Size(76, 20);
@@ -1912,7 +1912,7 @@
             // tb_pp_16P1_ws
             // 
             this.tb_pp_16P1_ws.Enabled = false;
-            this.tb_pp_16P1_ws.Location = new System.Drawing.Point(345, 130);
+            this.tb_pp_16P1_ws.Location = new System.Drawing.Point(344, 130);
             this.tb_pp_16P1_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P1_ws.Name = "tb_pp_16P1_ws";
             this.tb_pp_16P1_ws.Size = new System.Drawing.Size(76, 20);
@@ -1921,7 +1921,7 @@
             // tb_pp_17P1_ws
             // 
             this.tb_pp_17P1_ws.Enabled = false;
-            this.tb_pp_17P1_ws.Location = new System.Drawing.Point(345, 151);
+            this.tb_pp_17P1_ws.Location = new System.Drawing.Point(344, 151);
             this.tb_pp_17P1_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P1_ws.Name = "tb_pp_17P1_ws";
             this.tb_pp_17P1_ws.Size = new System.Drawing.Size(76, 20);
@@ -1930,7 +1930,7 @@
             // tb_pp_50_ws
             // 
             this.tb_pp_50_ws.Enabled = false;
-            this.tb_pp_50_ws.Location = new System.Drawing.Point(345, 175);
+            this.tb_pp_50_ws.Location = new System.Drawing.Point(344, 175);
             this.tb_pp_50_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_50_ws.Name = "tb_pp_50_ws";
             this.tb_pp_50_ws.Size = new System.Drawing.Size(76, 20);
@@ -1939,7 +1939,7 @@
             // tb_pp_4_ws
             // 
             this.tb_pp_4_ws.Enabled = false;
-            this.tb_pp_4_ws.Location = new System.Drawing.Point(345, 204);
+            this.tb_pp_4_ws.Location = new System.Drawing.Point(344, 204);
             this.tb_pp_4_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_4_ws.Name = "tb_pp_4_ws";
             this.tb_pp_4_ws.Size = new System.Drawing.Size(76, 20);
@@ -1948,7 +1948,7 @@
             // tb_pp_10_ws
             // 
             this.tb_pp_10_ws.Enabled = false;
-            this.tb_pp_10_ws.Location = new System.Drawing.Point(345, 227);
+            this.tb_pp_10_ws.Location = new System.Drawing.Point(344, 227);
             this.tb_pp_10_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_10_ws.Name = "tb_pp_10_ws";
             this.tb_pp_10_ws.Size = new System.Drawing.Size(76, 20);
@@ -1957,7 +1957,7 @@
             // tb_pp_49_ws
             // 
             this.tb_pp_49_ws.Enabled = false;
-            this.tb_pp_49_ws.Location = new System.Drawing.Point(345, 248);
+            this.tb_pp_49_ws.Location = new System.Drawing.Point(344, 248);
             this.tb_pp_49_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_49_ws.Name = "tb_pp_49_ws";
             this.tb_pp_49_ws.Size = new System.Drawing.Size(76, 20);
@@ -1966,7 +1966,7 @@
             // tb_pp_7_ws
             // 
             this.tb_pp_7_ws.Enabled = false;
-            this.tb_pp_7_ws.Location = new System.Drawing.Point(345, 282);
+            this.tb_pp_7_ws.Location = new System.Drawing.Point(344, 282);
             this.tb_pp_7_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_7_ws.Name = "tb_pp_7_ws";
             this.tb_pp_7_ws.Size = new System.Drawing.Size(76, 20);
@@ -1975,7 +1975,7 @@
             // tb_pp_13_ws
             // 
             this.tb_pp_13_ws.Enabled = false;
-            this.tb_pp_13_ws.Location = new System.Drawing.Point(345, 304);
+            this.tb_pp_13_ws.Location = new System.Drawing.Point(344, 304);
             this.tb_pp_13_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_13_ws.Name = "tb_pp_13_ws";
             this.tb_pp_13_ws.Size = new System.Drawing.Size(76, 20);
@@ -1984,7 +1984,7 @@
             // tb_pp_18_ws
             // 
             this.tb_pp_18_ws.Enabled = false;
-            this.tb_pp_18_ws.Location = new System.Drawing.Point(345, 328);
+            this.tb_pp_18_ws.Location = new System.Drawing.Point(344, 328);
             this.tb_pp_18_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_18_ws.Name = "tb_pp_18_ws";
             this.tb_pp_18_ws.Size = new System.Drawing.Size(76, 20);
@@ -1993,7 +1993,7 @@
             // tb_pp_p1_iB
             // 
             this.tb_pp_p1_iB.Enabled = false;
-            this.tb_pp_p1_iB.Location = new System.Drawing.Point(436, 37);
+            this.tb_pp_p1_iB.Location = new System.Drawing.Point(435, 37);
             this.tb_pp_p1_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p1_iB.Name = "tb_pp_p1_iB";
             this.tb_pp_p1_iB.Size = new System.Drawing.Size(76, 20);
@@ -2002,7 +2002,7 @@
             // tb_pp_26P1_iB
             // 
             this.tb_pp_26P1_iB.Enabled = false;
-            this.tb_pp_26P1_iB.Location = new System.Drawing.Point(436, 74);
+            this.tb_pp_26P1_iB.Location = new System.Drawing.Point(435, 74);
             this.tb_pp_26P1_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P1_iB.Name = "tb_pp_26P1_iB";
             this.tb_pp_26P1_iB.Size = new System.Drawing.Size(76, 20);
@@ -2011,7 +2011,7 @@
             // tb_pp_51_iB
             // 
             this.tb_pp_51_iB.Enabled = false;
-            this.tb_pp_51_iB.Location = new System.Drawing.Point(436, 98);
+            this.tb_pp_51_iB.Location = new System.Drawing.Point(435, 98);
             this.tb_pp_51_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_51_iB.Name = "tb_pp_51_iB";
             this.tb_pp_51_iB.Size = new System.Drawing.Size(76, 20);
@@ -2020,7 +2020,7 @@
             // tb_pp_16P1_iB
             // 
             this.tb_pp_16P1_iB.Enabled = false;
-            this.tb_pp_16P1_iB.Location = new System.Drawing.Point(436, 130);
+            this.tb_pp_16P1_iB.Location = new System.Drawing.Point(435, 130);
             this.tb_pp_16P1_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P1_iB.Name = "tb_pp_16P1_iB";
             this.tb_pp_16P1_iB.Size = new System.Drawing.Size(76, 20);
@@ -2029,7 +2029,7 @@
             // tb_pp_17P1_iB
             // 
             this.tb_pp_17P1_iB.Enabled = false;
-            this.tb_pp_17P1_iB.Location = new System.Drawing.Point(436, 151);
+            this.tb_pp_17P1_iB.Location = new System.Drawing.Point(435, 151);
             this.tb_pp_17P1_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P1_iB.Name = "tb_pp_17P1_iB";
             this.tb_pp_17P1_iB.Size = new System.Drawing.Size(76, 20);
@@ -2038,7 +2038,7 @@
             // tb_pp_50_iB
             // 
             this.tb_pp_50_iB.Enabled = false;
-            this.tb_pp_50_iB.Location = new System.Drawing.Point(436, 175);
+            this.tb_pp_50_iB.Location = new System.Drawing.Point(435, 175);
             this.tb_pp_50_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_50_iB.Name = "tb_pp_50_iB";
             this.tb_pp_50_iB.Size = new System.Drawing.Size(76, 20);
@@ -2047,7 +2047,7 @@
             // tb_pp_4_iB
             // 
             this.tb_pp_4_iB.Enabled = false;
-            this.tb_pp_4_iB.Location = new System.Drawing.Point(436, 204);
+            this.tb_pp_4_iB.Location = new System.Drawing.Point(435, 204);
             this.tb_pp_4_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_4_iB.Name = "tb_pp_4_iB";
             this.tb_pp_4_iB.Size = new System.Drawing.Size(76, 20);
@@ -2056,7 +2056,7 @@
             // tb_pp_10_iB
             // 
             this.tb_pp_10_iB.Enabled = false;
-            this.tb_pp_10_iB.Location = new System.Drawing.Point(436, 227);
+            this.tb_pp_10_iB.Location = new System.Drawing.Point(435, 227);
             this.tb_pp_10_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_10_iB.Name = "tb_pp_10_iB";
             this.tb_pp_10_iB.Size = new System.Drawing.Size(76, 20);
@@ -2065,7 +2065,7 @@
             // tb_pp_49_iB
             // 
             this.tb_pp_49_iB.Enabled = false;
-            this.tb_pp_49_iB.Location = new System.Drawing.Point(436, 248);
+            this.tb_pp_49_iB.Location = new System.Drawing.Point(435, 248);
             this.tb_pp_49_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_49_iB.Name = "tb_pp_49_iB";
             this.tb_pp_49_iB.Size = new System.Drawing.Size(76, 20);
@@ -2074,7 +2074,7 @@
             // tb_pp_7_iB
             // 
             this.tb_pp_7_iB.Enabled = false;
-            this.tb_pp_7_iB.Location = new System.Drawing.Point(436, 282);
+            this.tb_pp_7_iB.Location = new System.Drawing.Point(435, 282);
             this.tb_pp_7_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_7_iB.Name = "tb_pp_7_iB";
             this.tb_pp_7_iB.Size = new System.Drawing.Size(76, 20);
@@ -2083,7 +2083,7 @@
             // tb_pp_18_iB
             // 
             this.tb_pp_18_iB.Enabled = false;
-            this.tb_pp_18_iB.Location = new System.Drawing.Point(436, 328);
+            this.tb_pp_18_iB.Location = new System.Drawing.Point(435, 328);
             this.tb_pp_18_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_18_iB.Name = "tb_pp_18_iB";
             this.tb_pp_18_iB.Size = new System.Drawing.Size(76, 20);
@@ -2092,7 +2092,7 @@
             // tb_pp_13_iB
             // 
             this.tb_pp_13_iB.Enabled = false;
-            this.tb_pp_13_iB.Location = new System.Drawing.Point(436, 304);
+            this.tb_pp_13_iB.Location = new System.Drawing.Point(435, 304);
             this.tb_pp_13_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_13_iB.Name = "tb_pp_13_iB";
             this.tb_pp_13_iB.Size = new System.Drawing.Size(76, 20);
@@ -2101,7 +2101,7 @@
             // tb_pp_p1_pr
             // 
             this.tb_pp_p1_pr.Enabled = false;
-            this.tb_pp_p1_pr.Location = new System.Drawing.Point(530, 37);
+            this.tb_pp_p1_pr.Location = new System.Drawing.Point(529, 37);
             this.tb_pp_p1_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p1_pr.Name = "tb_pp_p1_pr";
             this.tb_pp_p1_pr.Size = new System.Drawing.Size(76, 20);
@@ -2110,7 +2110,7 @@
             // tb_pp_26P1_pr
             // 
             this.tb_pp_26P1_pr.Enabled = false;
-            this.tb_pp_26P1_pr.Location = new System.Drawing.Point(530, 74);
+            this.tb_pp_26P1_pr.Location = new System.Drawing.Point(529, 74);
             this.tb_pp_26P1_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P1_pr.Name = "tb_pp_26P1_pr";
             this.tb_pp_26P1_pr.Size = new System.Drawing.Size(76, 20);
@@ -2119,7 +2119,7 @@
             // tb_pp_51_pr
             // 
             this.tb_pp_51_pr.Enabled = false;
-            this.tb_pp_51_pr.Location = new System.Drawing.Point(530, 98);
+            this.tb_pp_51_pr.Location = new System.Drawing.Point(529, 98);
             this.tb_pp_51_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_51_pr.Name = "tb_pp_51_pr";
             this.tb_pp_51_pr.Size = new System.Drawing.Size(76, 20);
@@ -2128,7 +2128,7 @@
             // tb_pp_16P1_pr
             // 
             this.tb_pp_16P1_pr.Enabled = false;
-            this.tb_pp_16P1_pr.Location = new System.Drawing.Point(530, 130);
+            this.tb_pp_16P1_pr.Location = new System.Drawing.Point(529, 130);
             this.tb_pp_16P1_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P1_pr.Name = "tb_pp_16P1_pr";
             this.tb_pp_16P1_pr.Size = new System.Drawing.Size(76, 20);
@@ -2137,7 +2137,7 @@
             // tb_pp_17P1_pr
             // 
             this.tb_pp_17P1_pr.Enabled = false;
-            this.tb_pp_17P1_pr.Location = new System.Drawing.Point(530, 151);
+            this.tb_pp_17P1_pr.Location = new System.Drawing.Point(529, 151);
             this.tb_pp_17P1_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P1_pr.Name = "tb_pp_17P1_pr";
             this.tb_pp_17P1_pr.Size = new System.Drawing.Size(76, 20);
@@ -2146,7 +2146,7 @@
             // tb_pp_50_pr
             // 
             this.tb_pp_50_pr.Enabled = false;
-            this.tb_pp_50_pr.Location = new System.Drawing.Point(530, 175);
+            this.tb_pp_50_pr.Location = new System.Drawing.Point(529, 175);
             this.tb_pp_50_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_50_pr.Name = "tb_pp_50_pr";
             this.tb_pp_50_pr.Size = new System.Drawing.Size(76, 20);
@@ -2155,7 +2155,7 @@
             // tb_pp_4_pr
             // 
             this.tb_pp_4_pr.Enabled = false;
-            this.tb_pp_4_pr.Location = new System.Drawing.Point(530, 204);
+            this.tb_pp_4_pr.Location = new System.Drawing.Point(529, 204);
             this.tb_pp_4_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_4_pr.Name = "tb_pp_4_pr";
             this.tb_pp_4_pr.Size = new System.Drawing.Size(76, 20);
@@ -2164,7 +2164,7 @@
             // tb_pp_10_pr
             // 
             this.tb_pp_10_pr.Enabled = false;
-            this.tb_pp_10_pr.Location = new System.Drawing.Point(530, 227);
+            this.tb_pp_10_pr.Location = new System.Drawing.Point(529, 227);
             this.tb_pp_10_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_10_pr.Name = "tb_pp_10_pr";
             this.tb_pp_10_pr.Size = new System.Drawing.Size(76, 20);
@@ -2173,7 +2173,7 @@
             // tb_pp_49_pr
             // 
             this.tb_pp_49_pr.Enabled = false;
-            this.tb_pp_49_pr.Location = new System.Drawing.Point(530, 248);
+            this.tb_pp_49_pr.Location = new System.Drawing.Point(529, 248);
             this.tb_pp_49_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_49_pr.Name = "tb_pp_49_pr";
             this.tb_pp_49_pr.Size = new System.Drawing.Size(76, 20);
@@ -2182,7 +2182,7 @@
             // tb_pp_7_pr
             // 
             this.tb_pp_7_pr.Enabled = false;
-            this.tb_pp_7_pr.Location = new System.Drawing.Point(530, 282);
+            this.tb_pp_7_pr.Location = new System.Drawing.Point(529, 282);
             this.tb_pp_7_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_7_pr.Name = "tb_pp_7_pr";
             this.tb_pp_7_pr.Size = new System.Drawing.Size(76, 20);
@@ -2191,7 +2191,7 @@
             // tb_pp_13_pr
             // 
             this.tb_pp_13_pr.Enabled = false;
-            this.tb_pp_13_pr.Location = new System.Drawing.Point(530, 304);
+            this.tb_pp_13_pr.Location = new System.Drawing.Point(529, 304);
             this.tb_pp_13_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_13_pr.Name = "tb_pp_13_pr";
             this.tb_pp_13_pr.Size = new System.Drawing.Size(76, 20);
@@ -2200,7 +2200,7 @@
             // tb_pp_18_pr
             // 
             this.tb_pp_18_pr.Enabled = false;
-            this.tb_pp_18_pr.Location = new System.Drawing.Point(530, 328);
+            this.tb_pp_18_pr.Location = new System.Drawing.Point(529, 328);
             this.tb_pp_18_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_18_pr.Name = "tb_pp_18_pr";
             this.tb_pp_18_pr.Size = new System.Drawing.Size(76, 20);
@@ -2228,7 +2228,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
             this.tableLayoutPanel3.Controls.Add(this.label28, 0, 14);
             this.tableLayoutPanel3.Controls.Add(this.label29, 6, 2);
             this.tableLayoutPanel3.Controls.Add(this.label30, 0, 13);
@@ -2354,7 +2354,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(530, 2);
+            this.label29.Location = new System.Drawing.Point(529, 2);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(58, 13);
@@ -2374,7 +2374,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(127, 2);
+            this.label31.Location = new System.Drawing.Point(126, 2);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(97, 13);
@@ -2474,7 +2474,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(436, 2);
+            this.label41.Location = new System.Drawing.Point(435, 2);
             this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(75, 13);
@@ -2484,7 +2484,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(245, 2);
+            this.label42.Location = new System.Drawing.Point(244, 2);
             this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(72, 13);
@@ -2494,7 +2494,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(345, 2);
+            this.label43.Location = new System.Drawing.Point(344, 2);
             this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(79, 13);
@@ -2603,7 +2603,7 @@
             // 
             // tb_pp_p2_sb
             // 
-            this.tb_pp_p2_sb.Location = new System.Drawing.Point(127, 37);
+            this.tb_pp_p2_sb.Location = new System.Drawing.Point(126, 37);
             this.tb_pp_p2_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p2_sb.Name = "tb_pp_p2_sb";
             this.tb_pp_p2_sb.Size = new System.Drawing.Size(76, 20);
@@ -2611,7 +2611,7 @@
             // 
             // tb_pp_26P2_sb
             // 
-            this.tb_pp_26P2_sb.Location = new System.Drawing.Point(127, 74);
+            this.tb_pp_26P2_sb.Location = new System.Drawing.Point(126, 74);
             this.tb_pp_26P2_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P2_sb.Name = "tb_pp_26P2_sb";
             this.tb_pp_26P2_sb.Size = new System.Drawing.Size(76, 20);
@@ -2619,7 +2619,7 @@
             // 
             // tb_pp_56_sb
             // 
-            this.tb_pp_56_sb.Location = new System.Drawing.Point(127, 98);
+            this.tb_pp_56_sb.Location = new System.Drawing.Point(126, 98);
             this.tb_pp_56_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_56_sb.Name = "tb_pp_56_sb";
             this.tb_pp_56_sb.Size = new System.Drawing.Size(76, 20);
@@ -2627,7 +2627,7 @@
             // 
             // tb_pp_16P2_sb
             // 
-            this.tb_pp_16P2_sb.Location = new System.Drawing.Point(127, 130);
+            this.tb_pp_16P2_sb.Location = new System.Drawing.Point(126, 130);
             this.tb_pp_16P2_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P2_sb.Name = "tb_pp_16P2_sb";
             this.tb_pp_16P2_sb.Size = new System.Drawing.Size(76, 20);
@@ -2644,7 +2644,7 @@
             // 
             // tb_pp_17P2_sb
             // 
-            this.tb_pp_17P2_sb.Location = new System.Drawing.Point(127, 151);
+            this.tb_pp_17P2_sb.Location = new System.Drawing.Point(126, 151);
             this.tb_pp_17P2_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P2_sb.Name = "tb_pp_17P2_sb";
             this.tb_pp_17P2_sb.Size = new System.Drawing.Size(76, 20);
@@ -2652,7 +2652,7 @@
             // 
             // tb_pp_17_sb
             // 
-            this.tb_pp_17_sb.Location = new System.Drawing.Point(127, 175);
+            this.tb_pp_17_sb.Location = new System.Drawing.Point(126, 175);
             this.tb_pp_17_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17_sb.Name = "tb_pp_17_sb";
             this.tb_pp_17_sb.Size = new System.Drawing.Size(76, 20);
@@ -2660,7 +2660,7 @@
             // 
             // tb_pp_5_sb
             // 
-            this.tb_pp_5_sb.Location = new System.Drawing.Point(127, 204);
+            this.tb_pp_5_sb.Location = new System.Drawing.Point(126, 204);
             this.tb_pp_5_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_5_sb.Name = "tb_pp_5_sb";
             this.tb_pp_5_sb.Size = new System.Drawing.Size(76, 20);
@@ -2677,7 +2677,7 @@
             // 
             // tb_pp_11_sb
             // 
-            this.tb_pp_11_sb.Location = new System.Drawing.Point(127, 227);
+            this.tb_pp_11_sb.Location = new System.Drawing.Point(126, 227);
             this.tb_pp_11_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_11_sb.Name = "tb_pp_11_sb";
             this.tb_pp_11_sb.Size = new System.Drawing.Size(76, 20);
@@ -2685,7 +2685,7 @@
             // 
             // tb_pp_54_sb
             // 
-            this.tb_pp_54_sb.Location = new System.Drawing.Point(127, 248);
+            this.tb_pp_54_sb.Location = new System.Drawing.Point(126, 248);
             this.tb_pp_54_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_54_sb.Name = "tb_pp_54_sb";
             this.tb_pp_54_sb.Size = new System.Drawing.Size(76, 20);
@@ -2693,7 +2693,7 @@
             // 
             // tb_pp_8_sb
             // 
-            this.tb_pp_8_sb.Location = new System.Drawing.Point(127, 282);
+            this.tb_pp_8_sb.Location = new System.Drawing.Point(126, 282);
             this.tb_pp_8_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_8_sb.Name = "tb_pp_8_sb";
             this.tb_pp_8_sb.Size = new System.Drawing.Size(76, 20);
@@ -2701,7 +2701,7 @@
             // 
             // tb_pp_14_sb
             // 
-            this.tb_pp_14_sb.Location = new System.Drawing.Point(127, 304);
+            this.tb_pp_14_sb.Location = new System.Drawing.Point(126, 304);
             this.tb_pp_14_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_14_sb.Name = "tb_pp_14_sb";
             this.tb_pp_14_sb.Size = new System.Drawing.Size(76, 20);
@@ -2709,7 +2709,7 @@
             // 
             // tb_pp_19_sb
             // 
-            this.tb_pp_19_sb.Location = new System.Drawing.Point(127, 328);
+            this.tb_pp_19_sb.Location = new System.Drawing.Point(126, 328);
             this.tb_pp_19_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_19_sb.Name = "tb_pp_19_sb";
             this.tb_pp_19_sb.Size = new System.Drawing.Size(76, 20);
@@ -2718,7 +2718,7 @@
             // tb_pp_p2_lb
             // 
             this.tb_pp_p2_lb.Enabled = false;
-            this.tb_pp_p2_lb.Location = new System.Drawing.Point(245, 37);
+            this.tb_pp_p2_lb.Location = new System.Drawing.Point(244, 37);
             this.tb_pp_p2_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p2_lb.Name = "tb_pp_p2_lb";
             this.tb_pp_p2_lb.Size = new System.Drawing.Size(76, 20);
@@ -2727,7 +2727,7 @@
             // tb_pp_26P2_lb
             // 
             this.tb_pp_26P2_lb.Enabled = false;
-            this.tb_pp_26P2_lb.Location = new System.Drawing.Point(245, 74);
+            this.tb_pp_26P2_lb.Location = new System.Drawing.Point(244, 74);
             this.tb_pp_26P2_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P2_lb.Name = "tb_pp_26P2_lb";
             this.tb_pp_26P2_lb.Size = new System.Drawing.Size(76, 20);
@@ -2736,7 +2736,7 @@
             // tb_pp_56_lb
             // 
             this.tb_pp_56_lb.Enabled = false;
-            this.tb_pp_56_lb.Location = new System.Drawing.Point(245, 98);
+            this.tb_pp_56_lb.Location = new System.Drawing.Point(244, 98);
             this.tb_pp_56_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_56_lb.Name = "tb_pp_56_lb";
             this.tb_pp_56_lb.Size = new System.Drawing.Size(76, 20);
@@ -2745,7 +2745,7 @@
             // tb_pp_16P2_lb
             // 
             this.tb_pp_16P2_lb.Enabled = false;
-            this.tb_pp_16P2_lb.Location = new System.Drawing.Point(245, 130);
+            this.tb_pp_16P2_lb.Location = new System.Drawing.Point(244, 130);
             this.tb_pp_16P2_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P2_lb.Name = "tb_pp_16P2_lb";
             this.tb_pp_16P2_lb.Size = new System.Drawing.Size(76, 20);
@@ -2754,7 +2754,7 @@
             // tb_pp_17P2_lb
             // 
             this.tb_pp_17P2_lb.Enabled = false;
-            this.tb_pp_17P2_lb.Location = new System.Drawing.Point(245, 151);
+            this.tb_pp_17P2_lb.Location = new System.Drawing.Point(244, 151);
             this.tb_pp_17P2_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P2_lb.Name = "tb_pp_17P2_lb";
             this.tb_pp_17P2_lb.Size = new System.Drawing.Size(76, 20);
@@ -2763,7 +2763,7 @@
             // tb_pp_17_lb
             // 
             this.tb_pp_17_lb.Enabled = false;
-            this.tb_pp_17_lb.Location = new System.Drawing.Point(245, 175);
+            this.tb_pp_17_lb.Location = new System.Drawing.Point(244, 175);
             this.tb_pp_17_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17_lb.Name = "tb_pp_17_lb";
             this.tb_pp_17_lb.Size = new System.Drawing.Size(76, 20);
@@ -2772,7 +2772,7 @@
             // tb_pp_5_lb
             // 
             this.tb_pp_5_lb.Enabled = false;
-            this.tb_pp_5_lb.Location = new System.Drawing.Point(245, 204);
+            this.tb_pp_5_lb.Location = new System.Drawing.Point(244, 204);
             this.tb_pp_5_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_5_lb.Name = "tb_pp_5_lb";
             this.tb_pp_5_lb.Size = new System.Drawing.Size(76, 20);
@@ -2781,7 +2781,7 @@
             // tb_pp_11_lb
             // 
             this.tb_pp_11_lb.Enabled = false;
-            this.tb_pp_11_lb.Location = new System.Drawing.Point(245, 227);
+            this.tb_pp_11_lb.Location = new System.Drawing.Point(244, 227);
             this.tb_pp_11_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_11_lb.Name = "tb_pp_11_lb";
             this.tb_pp_11_lb.Size = new System.Drawing.Size(76, 20);
@@ -2790,7 +2790,7 @@
             // tb_pp_54_lb
             // 
             this.tb_pp_54_lb.Enabled = false;
-            this.tb_pp_54_lb.Location = new System.Drawing.Point(245, 248);
+            this.tb_pp_54_lb.Location = new System.Drawing.Point(244, 248);
             this.tb_pp_54_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_54_lb.Name = "tb_pp_54_lb";
             this.tb_pp_54_lb.Size = new System.Drawing.Size(76, 20);
@@ -2799,7 +2799,7 @@
             // tb_pp_8_lb
             // 
             this.tb_pp_8_lb.Enabled = false;
-            this.tb_pp_8_lb.Location = new System.Drawing.Point(245, 282);
+            this.tb_pp_8_lb.Location = new System.Drawing.Point(244, 282);
             this.tb_pp_8_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_8_lb.Name = "tb_pp_8_lb";
             this.tb_pp_8_lb.Size = new System.Drawing.Size(76, 20);
@@ -2808,7 +2808,7 @@
             // tb_pp_14_lb
             // 
             this.tb_pp_14_lb.Enabled = false;
-            this.tb_pp_14_lb.Location = new System.Drawing.Point(245, 304);
+            this.tb_pp_14_lb.Location = new System.Drawing.Point(244, 304);
             this.tb_pp_14_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_14_lb.Name = "tb_pp_14_lb";
             this.tb_pp_14_lb.Size = new System.Drawing.Size(76, 20);
@@ -2817,7 +2817,7 @@
             // tb_pp_19_lb
             // 
             this.tb_pp_19_lb.Enabled = false;
-            this.tb_pp_19_lb.Location = new System.Drawing.Point(245, 328);
+            this.tb_pp_19_lb.Location = new System.Drawing.Point(244, 328);
             this.tb_pp_19_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_19_lb.Name = "tb_pp_19_lb";
             this.tb_pp_19_lb.Size = new System.Drawing.Size(76, 20);
@@ -2826,7 +2826,7 @@
             // tb_pp_p2_ws
             // 
             this.tb_pp_p2_ws.Enabled = false;
-            this.tb_pp_p2_ws.Location = new System.Drawing.Point(345, 37);
+            this.tb_pp_p2_ws.Location = new System.Drawing.Point(344, 37);
             this.tb_pp_p2_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p2_ws.Name = "tb_pp_p2_ws";
             this.tb_pp_p2_ws.Size = new System.Drawing.Size(76, 20);
@@ -2835,7 +2835,7 @@
             // tb_pp_26P2_ws
             // 
             this.tb_pp_26P2_ws.Enabled = false;
-            this.tb_pp_26P2_ws.Location = new System.Drawing.Point(345, 74);
+            this.tb_pp_26P2_ws.Location = new System.Drawing.Point(344, 74);
             this.tb_pp_26P2_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P2_ws.Name = "tb_pp_26P2_ws";
             this.tb_pp_26P2_ws.Size = new System.Drawing.Size(76, 20);
@@ -2844,7 +2844,7 @@
             // tb_pp_56_ws
             // 
             this.tb_pp_56_ws.Enabled = false;
-            this.tb_pp_56_ws.Location = new System.Drawing.Point(345, 98);
+            this.tb_pp_56_ws.Location = new System.Drawing.Point(344, 98);
             this.tb_pp_56_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_56_ws.Name = "tb_pp_56_ws";
             this.tb_pp_56_ws.Size = new System.Drawing.Size(76, 20);
@@ -2853,7 +2853,7 @@
             // tb_pp_16P2_ws
             // 
             this.tb_pp_16P2_ws.Enabled = false;
-            this.tb_pp_16P2_ws.Location = new System.Drawing.Point(345, 130);
+            this.tb_pp_16P2_ws.Location = new System.Drawing.Point(344, 130);
             this.tb_pp_16P2_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P2_ws.Name = "tb_pp_16P2_ws";
             this.tb_pp_16P2_ws.Size = new System.Drawing.Size(76, 20);
@@ -2862,7 +2862,7 @@
             // tb_pp_17P2_ws
             // 
             this.tb_pp_17P2_ws.Enabled = false;
-            this.tb_pp_17P2_ws.Location = new System.Drawing.Point(345, 151);
+            this.tb_pp_17P2_ws.Location = new System.Drawing.Point(344, 151);
             this.tb_pp_17P2_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P2_ws.Name = "tb_pp_17P2_ws";
             this.tb_pp_17P2_ws.Size = new System.Drawing.Size(76, 20);
@@ -2871,7 +2871,7 @@
             // tb_pp_17_ws
             // 
             this.tb_pp_17_ws.Enabled = false;
-            this.tb_pp_17_ws.Location = new System.Drawing.Point(345, 175);
+            this.tb_pp_17_ws.Location = new System.Drawing.Point(344, 175);
             this.tb_pp_17_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17_ws.Name = "tb_pp_17_ws";
             this.tb_pp_17_ws.Size = new System.Drawing.Size(76, 20);
@@ -2880,7 +2880,7 @@
             // tb_pp_5_ws
             // 
             this.tb_pp_5_ws.Enabled = false;
-            this.tb_pp_5_ws.Location = new System.Drawing.Point(345, 204);
+            this.tb_pp_5_ws.Location = new System.Drawing.Point(344, 204);
             this.tb_pp_5_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_5_ws.Name = "tb_pp_5_ws";
             this.tb_pp_5_ws.Size = new System.Drawing.Size(76, 20);
@@ -2889,7 +2889,7 @@
             // tb_pp_11_ws
             // 
             this.tb_pp_11_ws.Enabled = false;
-            this.tb_pp_11_ws.Location = new System.Drawing.Point(345, 227);
+            this.tb_pp_11_ws.Location = new System.Drawing.Point(344, 227);
             this.tb_pp_11_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_11_ws.Name = "tb_pp_11_ws";
             this.tb_pp_11_ws.Size = new System.Drawing.Size(76, 20);
@@ -2898,7 +2898,7 @@
             // tb_pp_54_ws
             // 
             this.tb_pp_54_ws.Enabled = false;
-            this.tb_pp_54_ws.Location = new System.Drawing.Point(345, 248);
+            this.tb_pp_54_ws.Location = new System.Drawing.Point(344, 248);
             this.tb_pp_54_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_54_ws.Name = "tb_pp_54_ws";
             this.tb_pp_54_ws.Size = new System.Drawing.Size(76, 20);
@@ -2907,7 +2907,7 @@
             // tb_pp_8_ws
             // 
             this.tb_pp_8_ws.Enabled = false;
-            this.tb_pp_8_ws.Location = new System.Drawing.Point(345, 282);
+            this.tb_pp_8_ws.Location = new System.Drawing.Point(344, 282);
             this.tb_pp_8_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_8_ws.Name = "tb_pp_8_ws";
             this.tb_pp_8_ws.Size = new System.Drawing.Size(76, 20);
@@ -2916,7 +2916,7 @@
             // tb_pp_14_ws
             // 
             this.tb_pp_14_ws.Enabled = false;
-            this.tb_pp_14_ws.Location = new System.Drawing.Point(345, 304);
+            this.tb_pp_14_ws.Location = new System.Drawing.Point(344, 304);
             this.tb_pp_14_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_14_ws.Name = "tb_pp_14_ws";
             this.tb_pp_14_ws.Size = new System.Drawing.Size(76, 20);
@@ -2925,7 +2925,7 @@
             // tb_pp_19_ws
             // 
             this.tb_pp_19_ws.Enabled = false;
-            this.tb_pp_19_ws.Location = new System.Drawing.Point(345, 328);
+            this.tb_pp_19_ws.Location = new System.Drawing.Point(344, 328);
             this.tb_pp_19_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_19_ws.Name = "tb_pp_19_ws";
             this.tb_pp_19_ws.Size = new System.Drawing.Size(76, 20);
@@ -2934,7 +2934,7 @@
             // tb_pp_p2_iB
             // 
             this.tb_pp_p2_iB.Enabled = false;
-            this.tb_pp_p2_iB.Location = new System.Drawing.Point(436, 37);
+            this.tb_pp_p2_iB.Location = new System.Drawing.Point(435, 37);
             this.tb_pp_p2_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p2_iB.Name = "tb_pp_p2_iB";
             this.tb_pp_p2_iB.Size = new System.Drawing.Size(76, 20);
@@ -2943,7 +2943,7 @@
             // tb_pp_26P2_iB
             // 
             this.tb_pp_26P2_iB.Enabled = false;
-            this.tb_pp_26P2_iB.Location = new System.Drawing.Point(436, 74);
+            this.tb_pp_26P2_iB.Location = new System.Drawing.Point(435, 74);
             this.tb_pp_26P2_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P2_iB.Name = "tb_pp_26P2_iB";
             this.tb_pp_26P2_iB.Size = new System.Drawing.Size(76, 20);
@@ -2952,7 +2952,7 @@
             // tb_pp_56_iB
             // 
             this.tb_pp_56_iB.Enabled = false;
-            this.tb_pp_56_iB.Location = new System.Drawing.Point(436, 98);
+            this.tb_pp_56_iB.Location = new System.Drawing.Point(435, 98);
             this.tb_pp_56_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_56_iB.Name = "tb_pp_56_iB";
             this.tb_pp_56_iB.Size = new System.Drawing.Size(76, 20);
@@ -2961,7 +2961,7 @@
             // tb_pp_16P2_iB
             // 
             this.tb_pp_16P2_iB.Enabled = false;
-            this.tb_pp_16P2_iB.Location = new System.Drawing.Point(436, 130);
+            this.tb_pp_16P2_iB.Location = new System.Drawing.Point(435, 130);
             this.tb_pp_16P2_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P2_iB.Name = "tb_pp_16P2_iB";
             this.tb_pp_16P2_iB.Size = new System.Drawing.Size(76, 20);
@@ -2970,7 +2970,7 @@
             // tb_pp_17P2_iB
             // 
             this.tb_pp_17P2_iB.Enabled = false;
-            this.tb_pp_17P2_iB.Location = new System.Drawing.Point(436, 151);
+            this.tb_pp_17P2_iB.Location = new System.Drawing.Point(435, 151);
             this.tb_pp_17P2_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P2_iB.Name = "tb_pp_17P2_iB";
             this.tb_pp_17P2_iB.Size = new System.Drawing.Size(76, 20);
@@ -2979,7 +2979,7 @@
             // tb_pp_17_iB
             // 
             this.tb_pp_17_iB.Enabled = false;
-            this.tb_pp_17_iB.Location = new System.Drawing.Point(436, 175);
+            this.tb_pp_17_iB.Location = new System.Drawing.Point(435, 175);
             this.tb_pp_17_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17_iB.Name = "tb_pp_17_iB";
             this.tb_pp_17_iB.Size = new System.Drawing.Size(76, 20);
@@ -2988,7 +2988,7 @@
             // tb_pp_5_iB
             // 
             this.tb_pp_5_iB.Enabled = false;
-            this.tb_pp_5_iB.Location = new System.Drawing.Point(436, 204);
+            this.tb_pp_5_iB.Location = new System.Drawing.Point(435, 204);
             this.tb_pp_5_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_5_iB.Name = "tb_pp_5_iB";
             this.tb_pp_5_iB.Size = new System.Drawing.Size(76, 20);
@@ -2997,7 +2997,7 @@
             // tb_pp_11_iB
             // 
             this.tb_pp_11_iB.Enabled = false;
-            this.tb_pp_11_iB.Location = new System.Drawing.Point(436, 227);
+            this.tb_pp_11_iB.Location = new System.Drawing.Point(435, 227);
             this.tb_pp_11_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_11_iB.Name = "tb_pp_11_iB";
             this.tb_pp_11_iB.Size = new System.Drawing.Size(76, 20);
@@ -3006,7 +3006,7 @@
             // tb_pp_54_iB
             // 
             this.tb_pp_54_iB.Enabled = false;
-            this.tb_pp_54_iB.Location = new System.Drawing.Point(436, 248);
+            this.tb_pp_54_iB.Location = new System.Drawing.Point(435, 248);
             this.tb_pp_54_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_54_iB.Name = "tb_pp_54_iB";
             this.tb_pp_54_iB.Size = new System.Drawing.Size(76, 20);
@@ -3015,7 +3015,7 @@
             // tb_pp_8_iB
             // 
             this.tb_pp_8_iB.Enabled = false;
-            this.tb_pp_8_iB.Location = new System.Drawing.Point(436, 282);
+            this.tb_pp_8_iB.Location = new System.Drawing.Point(435, 282);
             this.tb_pp_8_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_8_iB.Name = "tb_pp_8_iB";
             this.tb_pp_8_iB.Size = new System.Drawing.Size(76, 20);
@@ -3024,7 +3024,7 @@
             // tb_pp_19_iB
             // 
             this.tb_pp_19_iB.Enabled = false;
-            this.tb_pp_19_iB.Location = new System.Drawing.Point(436, 328);
+            this.tb_pp_19_iB.Location = new System.Drawing.Point(435, 328);
             this.tb_pp_19_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_19_iB.Name = "tb_pp_19_iB";
             this.tb_pp_19_iB.Size = new System.Drawing.Size(76, 20);
@@ -3033,7 +3033,7 @@
             // tb_pp_14_iB
             // 
             this.tb_pp_14_iB.Enabled = false;
-            this.tb_pp_14_iB.Location = new System.Drawing.Point(436, 304);
+            this.tb_pp_14_iB.Location = new System.Drawing.Point(435, 304);
             this.tb_pp_14_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_14_iB.Name = "tb_pp_14_iB";
             this.tb_pp_14_iB.Size = new System.Drawing.Size(76, 20);
@@ -3042,7 +3042,7 @@
             // tb_pp_p2_pr
             // 
             this.tb_pp_p2_pr.Enabled = false;
-            this.tb_pp_p2_pr.Location = new System.Drawing.Point(530, 37);
+            this.tb_pp_p2_pr.Location = new System.Drawing.Point(529, 37);
             this.tb_pp_p2_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_p2_pr.Name = "tb_pp_p2_pr";
             this.tb_pp_p2_pr.Size = new System.Drawing.Size(76, 20);
@@ -3051,7 +3051,7 @@
             // tb_pp_26P2_pr
             // 
             this.tb_pp_26P2_pr.Enabled = false;
-            this.tb_pp_26P2_pr.Location = new System.Drawing.Point(530, 74);
+            this.tb_pp_26P2_pr.Location = new System.Drawing.Point(529, 74);
             this.tb_pp_26P2_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P2_pr.Name = "tb_pp_26P2_pr";
             this.tb_pp_26P2_pr.Size = new System.Drawing.Size(76, 20);
@@ -3060,7 +3060,7 @@
             // tb_pp_56_pr
             // 
             this.tb_pp_56_pr.Enabled = false;
-            this.tb_pp_56_pr.Location = new System.Drawing.Point(530, 98);
+            this.tb_pp_56_pr.Location = new System.Drawing.Point(529, 98);
             this.tb_pp_56_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_56_pr.Name = "tb_pp_56_pr";
             this.tb_pp_56_pr.Size = new System.Drawing.Size(76, 20);
@@ -3069,7 +3069,7 @@
             // tb_pp_16P2_pr
             // 
             this.tb_pp_16P2_pr.Enabled = false;
-            this.tb_pp_16P2_pr.Location = new System.Drawing.Point(530, 130);
+            this.tb_pp_16P2_pr.Location = new System.Drawing.Point(529, 130);
             this.tb_pp_16P2_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P2_pr.Name = "tb_pp_16P2_pr";
             this.tb_pp_16P2_pr.Size = new System.Drawing.Size(76, 20);
@@ -3078,7 +3078,7 @@
             // tb_pp_17P2_pr
             // 
             this.tb_pp_17P2_pr.Enabled = false;
-            this.tb_pp_17P2_pr.Location = new System.Drawing.Point(530, 151);
+            this.tb_pp_17P2_pr.Location = new System.Drawing.Point(529, 151);
             this.tb_pp_17P2_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P2_pr.Name = "tb_pp_17P2_pr";
             this.tb_pp_17P2_pr.Size = new System.Drawing.Size(76, 20);
@@ -3087,7 +3087,7 @@
             // tb_pp_17_pr
             // 
             this.tb_pp_17_pr.Enabled = false;
-            this.tb_pp_17_pr.Location = new System.Drawing.Point(530, 175);
+            this.tb_pp_17_pr.Location = new System.Drawing.Point(529, 175);
             this.tb_pp_17_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17_pr.Name = "tb_pp_17_pr";
             this.tb_pp_17_pr.Size = new System.Drawing.Size(76, 20);
@@ -3096,7 +3096,7 @@
             // tb_pp_5_pr
             // 
             this.tb_pp_5_pr.Enabled = false;
-            this.tb_pp_5_pr.Location = new System.Drawing.Point(530, 204);
+            this.tb_pp_5_pr.Location = new System.Drawing.Point(529, 204);
             this.tb_pp_5_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_5_pr.Name = "tb_pp_5_pr";
             this.tb_pp_5_pr.Size = new System.Drawing.Size(76, 20);
@@ -3105,7 +3105,7 @@
             // tb_pp_11_pr
             // 
             this.tb_pp_11_pr.Enabled = false;
-            this.tb_pp_11_pr.Location = new System.Drawing.Point(530, 227);
+            this.tb_pp_11_pr.Location = new System.Drawing.Point(529, 227);
             this.tb_pp_11_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_11_pr.Name = "tb_pp_11_pr";
             this.tb_pp_11_pr.Size = new System.Drawing.Size(76, 20);
@@ -3114,7 +3114,7 @@
             // tb_pp_54_pr
             // 
             this.tb_pp_54_pr.Enabled = false;
-            this.tb_pp_54_pr.Location = new System.Drawing.Point(530, 248);
+            this.tb_pp_54_pr.Location = new System.Drawing.Point(529, 248);
             this.tb_pp_54_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_54_pr.Name = "tb_pp_54_pr";
             this.tb_pp_54_pr.Size = new System.Drawing.Size(76, 20);
@@ -3123,7 +3123,7 @@
             // tb_pp_8_pr
             // 
             this.tb_pp_8_pr.Enabled = false;
-            this.tb_pp_8_pr.Location = new System.Drawing.Point(530, 282);
+            this.tb_pp_8_pr.Location = new System.Drawing.Point(529, 282);
             this.tb_pp_8_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_8_pr.Name = "tb_pp_8_pr";
             this.tb_pp_8_pr.Size = new System.Drawing.Size(76, 20);
@@ -3132,7 +3132,7 @@
             // tb_pp_14_pr
             // 
             this.tb_pp_14_pr.Enabled = false;
-            this.tb_pp_14_pr.Location = new System.Drawing.Point(530, 304);
+            this.tb_pp_14_pr.Location = new System.Drawing.Point(529, 304);
             this.tb_pp_14_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_14_pr.Name = "tb_pp_14_pr";
             this.tb_pp_14_pr.Size = new System.Drawing.Size(76, 20);
@@ -3141,7 +3141,7 @@
             // tb_pp_19_pr
             // 
             this.tb_pp_19_pr.Enabled = false;
-            this.tb_pp_19_pr.Location = new System.Drawing.Point(530, 328);
+            this.tb_pp_19_pr.Location = new System.Drawing.Point(529, 328);
             this.tb_pp_19_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_19_pr.Name = "tb_pp_19_pr";
             this.tb_pp_19_pr.Size = new System.Drawing.Size(76, 20);
@@ -3178,7 +3178,7 @@
             this.table_P3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.table_P3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.table_P3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.table_P3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.table_P3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
             this.table_P3.Controls.Add(this.label44, 0, 14);
             this.table_P3.Controls.Add(this.label46, 6, 2);
             this.table_P3.Controls.Add(this.label47, 0, 13);
@@ -3304,7 +3304,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(530, 2);
+            this.label46.Location = new System.Drawing.Point(529, 2);
             this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(58, 13);
@@ -3324,7 +3324,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(127, 2);
+            this.label48.Location = new System.Drawing.Point(126, 2);
             this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(97, 13);
@@ -3424,7 +3424,7 @@
             // label58
             // 
             this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(436, 2);
+            this.label58.Location = new System.Drawing.Point(435, 2);
             this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(75, 13);
@@ -3434,7 +3434,7 @@
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(245, 2);
+            this.label59.Location = new System.Drawing.Point(244, 2);
             this.label59.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(72, 13);
@@ -3444,7 +3444,7 @@
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(345, 2);
+            this.label60.Location = new System.Drawing.Point(344, 2);
             this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(79, 13);
@@ -3563,7 +3563,7 @@
             // 
             // tb_pp_P3_sb
             // 
-            this.tb_pp_P3_sb.Location = new System.Drawing.Point(127, 37);
+            this.tb_pp_P3_sb.Location = new System.Drawing.Point(126, 37);
             this.tb_pp_P3_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_P3_sb.Name = "tb_pp_P3_sb";
             this.tb_pp_P3_sb.Size = new System.Drawing.Size(76, 20);
@@ -3571,7 +3571,7 @@
             // 
             // tb_pp_26P3_sb
             // 
-            this.tb_pp_26P3_sb.Location = new System.Drawing.Point(127, 74);
+            this.tb_pp_26P3_sb.Location = new System.Drawing.Point(126, 74);
             this.tb_pp_26P3_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P3_sb.Name = "tb_pp_26P3_sb";
             this.tb_pp_26P3_sb.Size = new System.Drawing.Size(76, 20);
@@ -3579,7 +3579,7 @@
             // 
             // tb_pp_31_sb
             // 
-            this.tb_pp_31_sb.Location = new System.Drawing.Point(127, 98);
+            this.tb_pp_31_sb.Location = new System.Drawing.Point(126, 98);
             this.tb_pp_31_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_31_sb.Name = "tb_pp_31_sb";
             this.tb_pp_31_sb.Size = new System.Drawing.Size(76, 20);
@@ -3587,7 +3587,7 @@
             // 
             // tb_pp_16P3_sb
             // 
-            this.tb_pp_16P3_sb.Location = new System.Drawing.Point(127, 130);
+            this.tb_pp_16P3_sb.Location = new System.Drawing.Point(126, 130);
             this.tb_pp_16P3_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P3_sb.Name = "tb_pp_16P3_sb";
             this.tb_pp_16P3_sb.Size = new System.Drawing.Size(76, 20);
@@ -3604,7 +3604,7 @@
             // 
             // tb_pp_17P3_sb
             // 
-            this.tb_pp_17P3_sb.Location = new System.Drawing.Point(127, 151);
+            this.tb_pp_17P3_sb.Location = new System.Drawing.Point(126, 151);
             this.tb_pp_17P3_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P3_sb.Name = "tb_pp_17P3_sb";
             this.tb_pp_17P3_sb.Size = new System.Drawing.Size(76, 20);
@@ -3612,7 +3612,7 @@
             // 
             // tb_pp_30_sb
             // 
-            this.tb_pp_30_sb.Location = new System.Drawing.Point(127, 175);
+            this.tb_pp_30_sb.Location = new System.Drawing.Point(126, 175);
             this.tb_pp_30_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_30_sb.Name = "tb_pp_30_sb";
             this.tb_pp_30_sb.Size = new System.Drawing.Size(76, 20);
@@ -3620,7 +3620,7 @@
             // 
             // tb_pp_6_sb
             // 
-            this.tb_pp_6_sb.Location = new System.Drawing.Point(127, 204);
+            this.tb_pp_6_sb.Location = new System.Drawing.Point(126, 204);
             this.tb_pp_6_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_6_sb.Name = "tb_pp_6_sb";
             this.tb_pp_6_sb.Size = new System.Drawing.Size(76, 20);
@@ -3637,7 +3637,7 @@
             // 
             // tb_pp_12_sb
             // 
-            this.tb_pp_12_sb.Location = new System.Drawing.Point(127, 227);
+            this.tb_pp_12_sb.Location = new System.Drawing.Point(126, 227);
             this.tb_pp_12_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_12_sb.Name = "tb_pp_12_sb";
             this.tb_pp_12_sb.Size = new System.Drawing.Size(76, 20);
@@ -3645,7 +3645,7 @@
             // 
             // tb_pp_29_sb
             // 
-            this.tb_pp_29_sb.Location = new System.Drawing.Point(127, 248);
+            this.tb_pp_29_sb.Location = new System.Drawing.Point(126, 248);
             this.tb_pp_29_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_29_sb.Name = "tb_pp_29_sb";
             this.tb_pp_29_sb.Size = new System.Drawing.Size(76, 20);
@@ -3653,7 +3653,7 @@
             // 
             // tb_pp_9_sb
             // 
-            this.tb_pp_9_sb.Location = new System.Drawing.Point(127, 282);
+            this.tb_pp_9_sb.Location = new System.Drawing.Point(126, 282);
             this.tb_pp_9_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_9_sb.Name = "tb_pp_9_sb";
             this.tb_pp_9_sb.Size = new System.Drawing.Size(76, 20);
@@ -3661,7 +3661,7 @@
             // 
             // tb_pp_15_sb
             // 
-            this.tb_pp_15_sb.Location = new System.Drawing.Point(127, 304);
+            this.tb_pp_15_sb.Location = new System.Drawing.Point(126, 304);
             this.tb_pp_15_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_15_sb.Name = "tb_pp_15_sb";
             this.tb_pp_15_sb.Size = new System.Drawing.Size(76, 20);
@@ -3669,7 +3669,7 @@
             // 
             // tb_pp_20_sb
             // 
-            this.tb_pp_20_sb.Location = new System.Drawing.Point(127, 328);
+            this.tb_pp_20_sb.Location = new System.Drawing.Point(126, 328);
             this.tb_pp_20_sb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_20_sb.Name = "tb_pp_20_sb";
             this.tb_pp_20_sb.Size = new System.Drawing.Size(76, 20);
@@ -3678,7 +3678,7 @@
             // tb_pp_P3_lb
             // 
             this.tb_pp_P3_lb.Enabled = false;
-            this.tb_pp_P3_lb.Location = new System.Drawing.Point(245, 37);
+            this.tb_pp_P3_lb.Location = new System.Drawing.Point(244, 37);
             this.tb_pp_P3_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_P3_lb.Name = "tb_pp_P3_lb";
             this.tb_pp_P3_lb.Size = new System.Drawing.Size(76, 20);
@@ -3687,7 +3687,7 @@
             // tb_pp_26P3_lb
             // 
             this.tb_pp_26P3_lb.Enabled = false;
-            this.tb_pp_26P3_lb.Location = new System.Drawing.Point(245, 74);
+            this.tb_pp_26P3_lb.Location = new System.Drawing.Point(244, 74);
             this.tb_pp_26P3_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P3_lb.Name = "tb_pp_26P3_lb";
             this.tb_pp_26P3_lb.Size = new System.Drawing.Size(76, 20);
@@ -3696,7 +3696,7 @@
             // tb_pp_31_lb
             // 
             this.tb_pp_31_lb.Enabled = false;
-            this.tb_pp_31_lb.Location = new System.Drawing.Point(245, 98);
+            this.tb_pp_31_lb.Location = new System.Drawing.Point(244, 98);
             this.tb_pp_31_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_31_lb.Name = "tb_pp_31_lb";
             this.tb_pp_31_lb.Size = new System.Drawing.Size(76, 20);
@@ -3705,7 +3705,7 @@
             // tb_pp_16P3_lb
             // 
             this.tb_pp_16P3_lb.Enabled = false;
-            this.tb_pp_16P3_lb.Location = new System.Drawing.Point(245, 130);
+            this.tb_pp_16P3_lb.Location = new System.Drawing.Point(244, 130);
             this.tb_pp_16P3_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P3_lb.Name = "tb_pp_16P3_lb";
             this.tb_pp_16P3_lb.Size = new System.Drawing.Size(76, 20);
@@ -3714,7 +3714,7 @@
             // tb_pp_17P3_lb
             // 
             this.tb_pp_17P3_lb.Enabled = false;
-            this.tb_pp_17P3_lb.Location = new System.Drawing.Point(245, 151);
+            this.tb_pp_17P3_lb.Location = new System.Drawing.Point(244, 151);
             this.tb_pp_17P3_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P3_lb.Name = "tb_pp_17P3_lb";
             this.tb_pp_17P3_lb.Size = new System.Drawing.Size(76, 20);
@@ -3723,7 +3723,7 @@
             // tb_pp_30_lb
             // 
             this.tb_pp_30_lb.Enabled = false;
-            this.tb_pp_30_lb.Location = new System.Drawing.Point(245, 175);
+            this.tb_pp_30_lb.Location = new System.Drawing.Point(244, 175);
             this.tb_pp_30_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_30_lb.Name = "tb_pp_30_lb";
             this.tb_pp_30_lb.Size = new System.Drawing.Size(76, 20);
@@ -3732,7 +3732,7 @@
             // tb_pp_6_lb
             // 
             this.tb_pp_6_lb.Enabled = false;
-            this.tb_pp_6_lb.Location = new System.Drawing.Point(245, 204);
+            this.tb_pp_6_lb.Location = new System.Drawing.Point(244, 204);
             this.tb_pp_6_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_6_lb.Name = "tb_pp_6_lb";
             this.tb_pp_6_lb.Size = new System.Drawing.Size(76, 20);
@@ -3741,7 +3741,7 @@
             // tb_pp_12_lb
             // 
             this.tb_pp_12_lb.Enabled = false;
-            this.tb_pp_12_lb.Location = new System.Drawing.Point(245, 227);
+            this.tb_pp_12_lb.Location = new System.Drawing.Point(244, 227);
             this.tb_pp_12_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_12_lb.Name = "tb_pp_12_lb";
             this.tb_pp_12_lb.Size = new System.Drawing.Size(76, 20);
@@ -3750,7 +3750,7 @@
             // tb_pp_29_lb
             // 
             this.tb_pp_29_lb.Enabled = false;
-            this.tb_pp_29_lb.Location = new System.Drawing.Point(245, 248);
+            this.tb_pp_29_lb.Location = new System.Drawing.Point(244, 248);
             this.tb_pp_29_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_29_lb.Name = "tb_pp_29_lb";
             this.tb_pp_29_lb.Size = new System.Drawing.Size(76, 20);
@@ -3759,7 +3759,7 @@
             // tb_pp_9_lb
             // 
             this.tb_pp_9_lb.Enabled = false;
-            this.tb_pp_9_lb.Location = new System.Drawing.Point(245, 282);
+            this.tb_pp_9_lb.Location = new System.Drawing.Point(244, 282);
             this.tb_pp_9_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_9_lb.Name = "tb_pp_9_lb";
             this.tb_pp_9_lb.Size = new System.Drawing.Size(76, 20);
@@ -3768,7 +3768,7 @@
             // tb_pp_15_lb
             // 
             this.tb_pp_15_lb.Enabled = false;
-            this.tb_pp_15_lb.Location = new System.Drawing.Point(245, 304);
+            this.tb_pp_15_lb.Location = new System.Drawing.Point(244, 304);
             this.tb_pp_15_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_15_lb.Name = "tb_pp_15_lb";
             this.tb_pp_15_lb.Size = new System.Drawing.Size(76, 20);
@@ -3777,7 +3777,7 @@
             // tb_pp_20_lb
             // 
             this.tb_pp_20_lb.Enabled = false;
-            this.tb_pp_20_lb.Location = new System.Drawing.Point(245, 328);
+            this.tb_pp_20_lb.Location = new System.Drawing.Point(244, 328);
             this.tb_pp_20_lb.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_20_lb.Name = "tb_pp_20_lb";
             this.tb_pp_20_lb.Size = new System.Drawing.Size(76, 20);
@@ -3786,7 +3786,7 @@
             // tb_pp_P3_ws
             // 
             this.tb_pp_P3_ws.Enabled = false;
-            this.tb_pp_P3_ws.Location = new System.Drawing.Point(345, 37);
+            this.tb_pp_P3_ws.Location = new System.Drawing.Point(344, 37);
             this.tb_pp_P3_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_P3_ws.Name = "tb_pp_P3_ws";
             this.tb_pp_P3_ws.Size = new System.Drawing.Size(76, 20);
@@ -3795,7 +3795,7 @@
             // tb_pp_26P3_ws
             // 
             this.tb_pp_26P3_ws.Enabled = false;
-            this.tb_pp_26P3_ws.Location = new System.Drawing.Point(345, 74);
+            this.tb_pp_26P3_ws.Location = new System.Drawing.Point(344, 74);
             this.tb_pp_26P3_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P3_ws.Name = "tb_pp_26P3_ws";
             this.tb_pp_26P3_ws.Size = new System.Drawing.Size(76, 20);
@@ -3804,7 +3804,7 @@
             // tb_pp_31_ws
             // 
             this.tb_pp_31_ws.Enabled = false;
-            this.tb_pp_31_ws.Location = new System.Drawing.Point(345, 98);
+            this.tb_pp_31_ws.Location = new System.Drawing.Point(344, 98);
             this.tb_pp_31_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_31_ws.Name = "tb_pp_31_ws";
             this.tb_pp_31_ws.Size = new System.Drawing.Size(76, 20);
@@ -3813,7 +3813,7 @@
             // tb_pp_16P3_ws
             // 
             this.tb_pp_16P3_ws.Enabled = false;
-            this.tb_pp_16P3_ws.Location = new System.Drawing.Point(345, 130);
+            this.tb_pp_16P3_ws.Location = new System.Drawing.Point(344, 130);
             this.tb_pp_16P3_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P3_ws.Name = "tb_pp_16P3_ws";
             this.tb_pp_16P3_ws.Size = new System.Drawing.Size(76, 20);
@@ -3822,7 +3822,7 @@
             // tb_pp_17P3_ws
             // 
             this.tb_pp_17P3_ws.Enabled = false;
-            this.tb_pp_17P3_ws.Location = new System.Drawing.Point(345, 151);
+            this.tb_pp_17P3_ws.Location = new System.Drawing.Point(344, 151);
             this.tb_pp_17P3_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P3_ws.Name = "tb_pp_17P3_ws";
             this.tb_pp_17P3_ws.Size = new System.Drawing.Size(76, 20);
@@ -3831,7 +3831,7 @@
             // tb_pp_30_ws
             // 
             this.tb_pp_30_ws.Enabled = false;
-            this.tb_pp_30_ws.Location = new System.Drawing.Point(345, 175);
+            this.tb_pp_30_ws.Location = new System.Drawing.Point(344, 175);
             this.tb_pp_30_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_30_ws.Name = "tb_pp_30_ws";
             this.tb_pp_30_ws.Size = new System.Drawing.Size(76, 20);
@@ -3840,7 +3840,7 @@
             // tb_pp_6_ws
             // 
             this.tb_pp_6_ws.Enabled = false;
-            this.tb_pp_6_ws.Location = new System.Drawing.Point(345, 204);
+            this.tb_pp_6_ws.Location = new System.Drawing.Point(344, 204);
             this.tb_pp_6_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_6_ws.Name = "tb_pp_6_ws";
             this.tb_pp_6_ws.Size = new System.Drawing.Size(76, 20);
@@ -3849,7 +3849,7 @@
             // tb_pp_12_ws
             // 
             this.tb_pp_12_ws.Enabled = false;
-            this.tb_pp_12_ws.Location = new System.Drawing.Point(345, 227);
+            this.tb_pp_12_ws.Location = new System.Drawing.Point(344, 227);
             this.tb_pp_12_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_12_ws.Name = "tb_pp_12_ws";
             this.tb_pp_12_ws.Size = new System.Drawing.Size(76, 20);
@@ -3858,7 +3858,7 @@
             // tb_pp_29_ws
             // 
             this.tb_pp_29_ws.Enabled = false;
-            this.tb_pp_29_ws.Location = new System.Drawing.Point(345, 248);
+            this.tb_pp_29_ws.Location = new System.Drawing.Point(344, 248);
             this.tb_pp_29_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_29_ws.Name = "tb_pp_29_ws";
             this.tb_pp_29_ws.Size = new System.Drawing.Size(76, 20);
@@ -3867,7 +3867,7 @@
             // tb_pp_9_ws
             // 
             this.tb_pp_9_ws.Enabled = false;
-            this.tb_pp_9_ws.Location = new System.Drawing.Point(345, 282);
+            this.tb_pp_9_ws.Location = new System.Drawing.Point(344, 282);
             this.tb_pp_9_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_9_ws.Name = "tb_pp_9_ws";
             this.tb_pp_9_ws.Size = new System.Drawing.Size(76, 20);
@@ -3876,7 +3876,7 @@
             // tb_pp_15_ws
             // 
             this.tb_pp_15_ws.Enabled = false;
-            this.tb_pp_15_ws.Location = new System.Drawing.Point(345, 304);
+            this.tb_pp_15_ws.Location = new System.Drawing.Point(344, 304);
             this.tb_pp_15_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_15_ws.Name = "tb_pp_15_ws";
             this.tb_pp_15_ws.Size = new System.Drawing.Size(76, 20);
@@ -3885,7 +3885,7 @@
             // tb_pp_20_ws
             // 
             this.tb_pp_20_ws.Enabled = false;
-            this.tb_pp_20_ws.Location = new System.Drawing.Point(345, 328);
+            this.tb_pp_20_ws.Location = new System.Drawing.Point(344, 328);
             this.tb_pp_20_ws.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_20_ws.Name = "tb_pp_20_ws";
             this.tb_pp_20_ws.Size = new System.Drawing.Size(76, 20);
@@ -3894,7 +3894,7 @@
             // tb_pp_P3_iB
             // 
             this.tb_pp_P3_iB.Enabled = false;
-            this.tb_pp_P3_iB.Location = new System.Drawing.Point(436, 37);
+            this.tb_pp_P3_iB.Location = new System.Drawing.Point(435, 37);
             this.tb_pp_P3_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_P3_iB.Name = "tb_pp_P3_iB";
             this.tb_pp_P3_iB.Size = new System.Drawing.Size(76, 20);
@@ -3903,7 +3903,7 @@
             // tb_pp_26P3_iB
             // 
             this.tb_pp_26P3_iB.Enabled = false;
-            this.tb_pp_26P3_iB.Location = new System.Drawing.Point(436, 74);
+            this.tb_pp_26P3_iB.Location = new System.Drawing.Point(435, 74);
             this.tb_pp_26P3_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P3_iB.Name = "tb_pp_26P3_iB";
             this.tb_pp_26P3_iB.Size = new System.Drawing.Size(76, 20);
@@ -3912,7 +3912,7 @@
             // tb_pp_31_iB
             // 
             this.tb_pp_31_iB.Enabled = false;
-            this.tb_pp_31_iB.Location = new System.Drawing.Point(436, 98);
+            this.tb_pp_31_iB.Location = new System.Drawing.Point(435, 98);
             this.tb_pp_31_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_31_iB.Name = "tb_pp_31_iB";
             this.tb_pp_31_iB.Size = new System.Drawing.Size(76, 20);
@@ -3921,7 +3921,7 @@
             // tb_pp_16P3_iB
             // 
             this.tb_pp_16P3_iB.Enabled = false;
-            this.tb_pp_16P3_iB.Location = new System.Drawing.Point(436, 130);
+            this.tb_pp_16P3_iB.Location = new System.Drawing.Point(435, 130);
             this.tb_pp_16P3_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P3_iB.Name = "tb_pp_16P3_iB";
             this.tb_pp_16P3_iB.Size = new System.Drawing.Size(76, 20);
@@ -3930,7 +3930,7 @@
             // tb_pp_17P3_iB
             // 
             this.tb_pp_17P3_iB.Enabled = false;
-            this.tb_pp_17P3_iB.Location = new System.Drawing.Point(436, 151);
+            this.tb_pp_17P3_iB.Location = new System.Drawing.Point(435, 151);
             this.tb_pp_17P3_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P3_iB.Name = "tb_pp_17P3_iB";
             this.tb_pp_17P3_iB.Size = new System.Drawing.Size(76, 20);
@@ -3939,7 +3939,7 @@
             // tb_pp_30_iB
             // 
             this.tb_pp_30_iB.Enabled = false;
-            this.tb_pp_30_iB.Location = new System.Drawing.Point(436, 175);
+            this.tb_pp_30_iB.Location = new System.Drawing.Point(435, 175);
             this.tb_pp_30_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_30_iB.Name = "tb_pp_30_iB";
             this.tb_pp_30_iB.Size = new System.Drawing.Size(76, 20);
@@ -3948,7 +3948,7 @@
             // tb_pp_6_iB
             // 
             this.tb_pp_6_iB.Enabled = false;
-            this.tb_pp_6_iB.Location = new System.Drawing.Point(436, 204);
+            this.tb_pp_6_iB.Location = new System.Drawing.Point(435, 204);
             this.tb_pp_6_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_6_iB.Name = "tb_pp_6_iB";
             this.tb_pp_6_iB.Size = new System.Drawing.Size(76, 20);
@@ -3957,7 +3957,7 @@
             // tb_pp_12_iB
             // 
             this.tb_pp_12_iB.Enabled = false;
-            this.tb_pp_12_iB.Location = new System.Drawing.Point(436, 227);
+            this.tb_pp_12_iB.Location = new System.Drawing.Point(435, 227);
             this.tb_pp_12_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_12_iB.Name = "tb_pp_12_iB";
             this.tb_pp_12_iB.Size = new System.Drawing.Size(76, 20);
@@ -3966,7 +3966,7 @@
             // tb_pp_29_iB
             // 
             this.tb_pp_29_iB.Enabled = false;
-            this.tb_pp_29_iB.Location = new System.Drawing.Point(436, 248);
+            this.tb_pp_29_iB.Location = new System.Drawing.Point(435, 248);
             this.tb_pp_29_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_29_iB.Name = "tb_pp_29_iB";
             this.tb_pp_29_iB.Size = new System.Drawing.Size(76, 20);
@@ -3975,7 +3975,7 @@
             // tb_pp_9_iB
             // 
             this.tb_pp_9_iB.Enabled = false;
-            this.tb_pp_9_iB.Location = new System.Drawing.Point(436, 282);
+            this.tb_pp_9_iB.Location = new System.Drawing.Point(435, 282);
             this.tb_pp_9_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_9_iB.Name = "tb_pp_9_iB";
             this.tb_pp_9_iB.Size = new System.Drawing.Size(76, 20);
@@ -3984,7 +3984,7 @@
             // tb_pp_20_iB
             // 
             this.tb_pp_20_iB.Enabled = false;
-            this.tb_pp_20_iB.Location = new System.Drawing.Point(436, 328);
+            this.tb_pp_20_iB.Location = new System.Drawing.Point(435, 328);
             this.tb_pp_20_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_20_iB.Name = "tb_pp_20_iB";
             this.tb_pp_20_iB.Size = new System.Drawing.Size(76, 20);
@@ -3993,7 +3993,7 @@
             // tb_pp_15_iB
             // 
             this.tb_pp_15_iB.Enabled = false;
-            this.tb_pp_15_iB.Location = new System.Drawing.Point(436, 304);
+            this.tb_pp_15_iB.Location = new System.Drawing.Point(435, 304);
             this.tb_pp_15_iB.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_15_iB.Name = "tb_pp_15_iB";
             this.tb_pp_15_iB.Size = new System.Drawing.Size(76, 20);
@@ -4002,7 +4002,7 @@
             // tb_pp_P3_pr
             // 
             this.tb_pp_P3_pr.Enabled = false;
-            this.tb_pp_P3_pr.Location = new System.Drawing.Point(530, 37);
+            this.tb_pp_P3_pr.Location = new System.Drawing.Point(529, 37);
             this.tb_pp_P3_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_P3_pr.Name = "tb_pp_P3_pr";
             this.tb_pp_P3_pr.Size = new System.Drawing.Size(76, 20);
@@ -4011,7 +4011,7 @@
             // tb_pp_26P3_pr
             // 
             this.tb_pp_26P3_pr.Enabled = false;
-            this.tb_pp_26P3_pr.Location = new System.Drawing.Point(530, 74);
+            this.tb_pp_26P3_pr.Location = new System.Drawing.Point(529, 74);
             this.tb_pp_26P3_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_26P3_pr.Name = "tb_pp_26P3_pr";
             this.tb_pp_26P3_pr.Size = new System.Drawing.Size(76, 20);
@@ -4020,7 +4020,7 @@
             // tb_pp_31_pr
             // 
             this.tb_pp_31_pr.Enabled = false;
-            this.tb_pp_31_pr.Location = new System.Drawing.Point(530, 98);
+            this.tb_pp_31_pr.Location = new System.Drawing.Point(529, 98);
             this.tb_pp_31_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_31_pr.Name = "tb_pp_31_pr";
             this.tb_pp_31_pr.Size = new System.Drawing.Size(76, 20);
@@ -4029,7 +4029,7 @@
             // tb_pp_16P3_pr
             // 
             this.tb_pp_16P3_pr.Enabled = false;
-            this.tb_pp_16P3_pr.Location = new System.Drawing.Point(530, 130);
+            this.tb_pp_16P3_pr.Location = new System.Drawing.Point(529, 130);
             this.tb_pp_16P3_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_16P3_pr.Name = "tb_pp_16P3_pr";
             this.tb_pp_16P3_pr.Size = new System.Drawing.Size(76, 20);
@@ -4038,7 +4038,7 @@
             // tb_pp_17P3_pr
             // 
             this.tb_pp_17P3_pr.Enabled = false;
-            this.tb_pp_17P3_pr.Location = new System.Drawing.Point(530, 151);
+            this.tb_pp_17P3_pr.Location = new System.Drawing.Point(529, 151);
             this.tb_pp_17P3_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_17P3_pr.Name = "tb_pp_17P3_pr";
             this.tb_pp_17P3_pr.Size = new System.Drawing.Size(76, 20);
@@ -4047,7 +4047,7 @@
             // tb_pp_30_pr
             // 
             this.tb_pp_30_pr.Enabled = false;
-            this.tb_pp_30_pr.Location = new System.Drawing.Point(530, 175);
+            this.tb_pp_30_pr.Location = new System.Drawing.Point(529, 175);
             this.tb_pp_30_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_30_pr.Name = "tb_pp_30_pr";
             this.tb_pp_30_pr.Size = new System.Drawing.Size(76, 20);
@@ -4056,7 +4056,7 @@
             // tb_pp_6_pr
             // 
             this.tb_pp_6_pr.Enabled = false;
-            this.tb_pp_6_pr.Location = new System.Drawing.Point(530, 204);
+            this.tb_pp_6_pr.Location = new System.Drawing.Point(529, 204);
             this.tb_pp_6_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_6_pr.Name = "tb_pp_6_pr";
             this.tb_pp_6_pr.Size = new System.Drawing.Size(76, 20);
@@ -4065,7 +4065,7 @@
             // tb_pp_12_pr
             // 
             this.tb_pp_12_pr.Enabled = false;
-            this.tb_pp_12_pr.Location = new System.Drawing.Point(530, 227);
+            this.tb_pp_12_pr.Location = new System.Drawing.Point(529, 227);
             this.tb_pp_12_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_12_pr.Name = "tb_pp_12_pr";
             this.tb_pp_12_pr.Size = new System.Drawing.Size(76, 20);
@@ -4074,7 +4074,7 @@
             // tb_pp_29_pr
             // 
             this.tb_pp_29_pr.Enabled = false;
-            this.tb_pp_29_pr.Location = new System.Drawing.Point(530, 248);
+            this.tb_pp_29_pr.Location = new System.Drawing.Point(529, 248);
             this.tb_pp_29_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_29_pr.Name = "tb_pp_29_pr";
             this.tb_pp_29_pr.Size = new System.Drawing.Size(76, 20);
@@ -4083,7 +4083,7 @@
             // tb_pp_9_pr
             // 
             this.tb_pp_9_pr.Enabled = false;
-            this.tb_pp_9_pr.Location = new System.Drawing.Point(530, 282);
+            this.tb_pp_9_pr.Location = new System.Drawing.Point(529, 282);
             this.tb_pp_9_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_9_pr.Name = "tb_pp_9_pr";
             this.tb_pp_9_pr.Size = new System.Drawing.Size(76, 20);
@@ -4092,7 +4092,7 @@
             // tb_pp_15_pr
             // 
             this.tb_pp_15_pr.Enabled = false;
-            this.tb_pp_15_pr.Location = new System.Drawing.Point(530, 304);
+            this.tb_pp_15_pr.Location = new System.Drawing.Point(529, 304);
             this.tb_pp_15_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_15_pr.Name = "tb_pp_15_pr";
             this.tb_pp_15_pr.Size = new System.Drawing.Size(76, 20);
@@ -4101,7 +4101,7 @@
             // tb_pp_20_pr
             // 
             this.tb_pp_20_pr.Enabled = false;
-            this.tb_pp_20_pr.Location = new System.Drawing.Point(530, 328);
+            this.tb_pp_20_pr.Location = new System.Drawing.Point(529, 328);
             this.tb_pp_20_pr.Margin = new System.Windows.Forms.Padding(2);
             this.tb_pp_20_pr.Name = "tb_pp_20_pr";
             this.tb_pp_20_pr.Size = new System.Drawing.Size(76, 20);
@@ -4138,6 +4138,65 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(859, 436);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Teil
+            // 
+            this.Teil.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Teil.DataPropertyName = "productionplan";
+            this.Teil.HeaderText = "Teil";
+            this.Teil.Name = "Teil";
+            this.Teil.ReadOnly = true;
+            this.Teil.Width = 49;
+            // 
+            // column_pp_bezeichnung
+            // 
+            this.column_pp_bezeichnung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.column_pp_bezeichnung.DataPropertyName = "designation";
+            this.column_pp_bezeichnung.HeaderText = "Bezeichnung";
+            this.column_pp_bezeichnung.Name = "column_pp_bezeichnung";
+            this.column_pp_bezeichnung.ReadOnly = true;
+            this.column_pp_bezeichnung.Width = 94;
+            // 
+            // safetstock
+            // 
+            this.safetstock.DataPropertyName = "safetystock";
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.safetstock.DefaultCellStyle = dataGridViewCellStyle1;
+            this.safetstock.HeaderText = "Gewünschter Lagerbestand";
+            this.safetstock.Name = "safetstock";
+            // 
+            // column_pp_lagerbestand
+            // 
+            this.column_pp_lagerbestand.DataPropertyName = "stock";
+            this.column_pp_lagerbestand.HeaderText = "Lagerbestand";
+            this.column_pp_lagerbestand.Name = "column_pp_lagerbestand";
+            this.column_pp_lagerbestand.ReadOnly = true;
+            // 
+            // column_pp_warteschlange
+            // 
+            this.column_pp_warteschlange.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.column_pp_warteschlange.DataPropertyName = "waitlist";
+            this.column_pp_warteschlange.HeaderText = "Warteschlange";
+            this.column_pp_warteschlange.Name = "column_pp_warteschlange";
+            this.column_pp_warteschlange.ReadOnly = true;
+            this.column_pp_warteschlange.Width = 104;
+            // 
+            // column_pp_inbearbeitung
+            // 
+            this.column_pp_inbearbeitung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.column_pp_inbearbeitung.DataPropertyName = "inwork";
+            this.column_pp_inbearbeitung.HeaderText = "in Bearbeitung";
+            this.column_pp_inbearbeitung.Name = "column_pp_inbearbeitung";
+            this.column_pp_inbearbeitung.ReadOnly = true;
+            this.column_pp_inbearbeitung.Width = 92;
+            // 
+            // production
+            // 
+            this.production.DataPropertyName = "production";
+            this.production.HeaderText = "Produktion";
+            this.production.Name = "production";
+            this.production.ReadOnly = true;
             // 
             // tab_kapazitätsplanung
             // 
@@ -4185,7 +4244,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel4.Controls.Add(this.label63, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label64, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.label65, 3, 0);
@@ -4582,7 +4641,7 @@
             this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label63.Name = "label63";
             this.tableLayoutPanel4.SetRowSpan(this.label63, 2);
-            this.label63.Size = new System.Drawing.Size(124, 60);
+            this.label63.Size = new System.Drawing.Size(123, 60);
             this.label63.TabIndex = 0;
             this.label63.Text = "Bezeichnung";
             this.label63.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -4595,7 +4654,7 @@
             this.label64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label64.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(169, 0);
+            this.label64.Location = new System.Drawing.Point(168, 0);
             this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label64.Name = "label64";
             this.tableLayoutPanel4.SetRowSpan(this.label64, 2);
@@ -4610,7 +4669,7 @@
             this.label65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label65.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(223, 0);
+            this.label65.Location = new System.Drawing.Point(222, 0);
             this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label65.Name = "label65";
             this.tableLayoutPanel4.SetRowSpan(this.label65, 2);
@@ -4624,7 +4683,7 @@
             this.label80.AutoSize = true;
             this.label80.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label80.Location = new System.Drawing.Point(169, 60);
+            this.label80.Location = new System.Drawing.Point(168, 60);
             this.label80.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(50, 31);
@@ -4637,7 +4696,7 @@
             this.label81.AutoSize = true;
             this.label81.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label81.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label81.Location = new System.Drawing.Point(169, 91);
+            this.label81.Location = new System.Drawing.Point(168, 91);
             this.label81.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(50, 21);
@@ -4650,7 +4709,7 @@
             this.label82.AutoSize = true;
             this.label82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label82.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label82.Location = new System.Drawing.Point(169, 112);
+            this.label82.Location = new System.Drawing.Point(168, 112);
             this.label82.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(50, 21);
@@ -4663,7 +4722,7 @@
             this.label83.AutoSize = true;
             this.label83.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label83.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label83.Location = new System.Drawing.Point(169, 133);
+            this.label83.Location = new System.Drawing.Point(168, 133);
             this.label83.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(50, 23);
@@ -4676,7 +4735,7 @@
             this.label84.AutoSize = true;
             this.label84.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label84.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label84.Location = new System.Drawing.Point(169, 156);
+            this.label84.Location = new System.Drawing.Point(168, 156);
             this.label84.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(50, 16);
@@ -4689,7 +4748,7 @@
             this.label85.AutoSize = true;
             this.label85.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label85.Location = new System.Drawing.Point(169, 172);
+            this.label85.Location = new System.Drawing.Point(168, 172);
             this.label85.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(50, 16);
@@ -4702,7 +4761,7 @@
             this.label86.AutoSize = true;
             this.label86.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label86.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label86.Location = new System.Drawing.Point(169, 188);
+            this.label86.Location = new System.Drawing.Point(168, 188);
             this.label86.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(50, 16);
@@ -4715,7 +4774,7 @@
             this.label87.AutoSize = true;
             this.label87.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label87.Location = new System.Drawing.Point(169, 204);
+            this.label87.Location = new System.Drawing.Point(168, 204);
             this.label87.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(50, 16);
@@ -4728,7 +4787,7 @@
             this.label88.AutoSize = true;
             this.label88.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label88.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label88.Location = new System.Drawing.Point(169, 220);
+            this.label88.Location = new System.Drawing.Point(168, 220);
             this.label88.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(50, 16);
@@ -4741,7 +4800,7 @@
             this.label89.AutoSize = true;
             this.label89.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label89.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label89.Location = new System.Drawing.Point(169, 236);
+            this.label89.Location = new System.Drawing.Point(168, 236);
             this.label89.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(50, 16);
@@ -4754,7 +4813,7 @@
             this.label90.AutoSize = true;
             this.label90.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label90.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label90.Location = new System.Drawing.Point(169, 252);
+            this.label90.Location = new System.Drawing.Point(168, 252);
             this.label90.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(50, 16);
@@ -4767,7 +4826,7 @@
             this.label91.AutoSize = true;
             this.label91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label91.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label91.Location = new System.Drawing.Point(169, 268);
+            this.label91.Location = new System.Drawing.Point(168, 268);
             this.label91.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(50, 16);
@@ -4780,7 +4839,7 @@
             this.label92.AutoSize = true;
             this.label92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label92.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label92.Location = new System.Drawing.Point(169, 284);
+            this.label92.Location = new System.Drawing.Point(168, 284);
             this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(50, 16);
@@ -4793,7 +4852,7 @@
             this.label93.AutoSize = true;
             this.label93.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label93.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label93.Location = new System.Drawing.Point(169, 300);
+            this.label93.Location = new System.Drawing.Point(168, 300);
             this.label93.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(50, 16);
@@ -4806,7 +4865,7 @@
             this.label94.AutoSize = true;
             this.label94.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label94.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label94.Location = new System.Drawing.Point(169, 316);
+            this.label94.Location = new System.Drawing.Point(168, 316);
             this.label94.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(50, 16);
@@ -4819,7 +4878,7 @@
             this.label95.AutoSize = true;
             this.label95.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label95.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label95.Location = new System.Drawing.Point(169, 332);
+            this.label95.Location = new System.Drawing.Point(168, 332);
             this.label95.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(50, 16);
@@ -4832,7 +4891,7 @@
             this.label96.AutoSize = true;
             this.label96.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label96.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label96.Location = new System.Drawing.Point(169, 348);
+            this.label96.Location = new System.Drawing.Point(168, 348);
             this.label96.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(50, 16);
@@ -4845,7 +4904,7 @@
             this.label97.AutoSize = true;
             this.label97.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label97.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label97.Location = new System.Drawing.Point(169, 364);
+            this.label97.Location = new System.Drawing.Point(168, 364);
             this.label97.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(50, 16);
@@ -4858,7 +4917,7 @@
             this.label98.AutoSize = true;
             this.label98.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label98.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label98.Location = new System.Drawing.Point(169, 380);
+            this.label98.Location = new System.Drawing.Point(168, 380);
             this.label98.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(50, 16);
@@ -4871,7 +4930,7 @@
             this.label99.AutoSize = true;
             this.label99.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label99.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label99.Location = new System.Drawing.Point(169, 396);
+            this.label99.Location = new System.Drawing.Point(168, 396);
             this.label99.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(50, 16);
@@ -4884,7 +4943,7 @@
             this.label100.AutoSize = true;
             this.label100.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label100.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label100.Location = new System.Drawing.Point(169, 412);
+            this.label100.Location = new System.Drawing.Point(168, 412);
             this.label100.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(50, 16);
@@ -4897,7 +4956,7 @@
             this.label101.AutoSize = true;
             this.label101.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label101.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label101.Location = new System.Drawing.Point(169, 428);
+            this.label101.Location = new System.Drawing.Point(168, 428);
             this.label101.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(50, 16);
@@ -4910,7 +4969,7 @@
             this.label102.AutoSize = true;
             this.label102.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label102.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label102.Location = new System.Drawing.Point(169, 444);
+            this.label102.Location = new System.Drawing.Point(168, 444);
             this.label102.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(50, 16);
@@ -4923,7 +4982,7 @@
             this.label103.AutoSize = true;
             this.label103.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label103.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label103.Location = new System.Drawing.Point(169, 460);
+            this.label103.Location = new System.Drawing.Point(168, 460);
             this.label103.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(50, 16);
@@ -4936,7 +4995,7 @@
             this.label104.AutoSize = true;
             this.label104.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label104.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label104.Location = new System.Drawing.Point(169, 476);
+            this.label104.Location = new System.Drawing.Point(168, 476);
             this.label104.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(50, 16);
@@ -4949,7 +5008,7 @@
             this.label105.AutoSize = true;
             this.label105.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label105.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label105.Location = new System.Drawing.Point(169, 492);
+            this.label105.Location = new System.Drawing.Point(168, 492);
             this.label105.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label105.Name = "label105";
             this.label105.Size = new System.Drawing.Size(50, 16);
@@ -4962,7 +5021,7 @@
             this.label106.AutoSize = true;
             this.label106.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label106.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label106.Location = new System.Drawing.Point(169, 508);
+            this.label106.Location = new System.Drawing.Point(168, 508);
             this.label106.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label106.Name = "label106";
             this.label106.Size = new System.Drawing.Size(50, 16);
@@ -4975,7 +5034,7 @@
             this.label107.AutoSize = true;
             this.label107.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label107.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label107.Location = new System.Drawing.Point(169, 524);
+            this.label107.Location = new System.Drawing.Point(168, 524);
             this.label107.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label107.Name = "label107";
             this.label107.Size = new System.Drawing.Size(50, 16);
@@ -4988,7 +5047,7 @@
             this.label108.AutoSize = true;
             this.label108.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label108.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label108.Location = new System.Drawing.Point(169, 540);
+            this.label108.Location = new System.Drawing.Point(168, 540);
             this.label108.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label108.Name = "label108";
             this.label108.Size = new System.Drawing.Size(50, 16);
@@ -5001,7 +5060,7 @@
             this.label109.AutoSize = true;
             this.label109.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label109.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label109.Location = new System.Drawing.Point(169, 556);
+            this.label109.Location = new System.Drawing.Point(168, 556);
             this.label109.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label109.Name = "label109";
             this.label109.Size = new System.Drawing.Size(50, 16);
@@ -5014,7 +5073,7 @@
             this.label110.AutoSize = true;
             this.label110.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label110.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label110.Location = new System.Drawing.Point(130, 60);
+            this.label110.Location = new System.Drawing.Point(129, 60);
             this.label110.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label110.Name = "label110";
             this.label110.Size = new System.Drawing.Size(35, 31);
@@ -5027,7 +5086,7 @@
             this.label111.AutoSize = true;
             this.label111.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label111.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label111.Location = new System.Drawing.Point(130, 133);
+            this.label111.Location = new System.Drawing.Point(129, 133);
             this.label111.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label111.Name = "label111";
             this.label111.Size = new System.Drawing.Size(35, 23);
@@ -5040,7 +5099,7 @@
             this.label112.AutoSize = true;
             this.label112.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label112.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label112.Location = new System.Drawing.Point(130, 188);
+            this.label112.Location = new System.Drawing.Point(129, 188);
             this.label112.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label112.Name = "label112";
             this.label112.Size = new System.Drawing.Size(35, 16);
@@ -5053,7 +5112,7 @@
             this.label113.AutoSize = true;
             this.label113.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label113.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label113.Location = new System.Drawing.Point(130, 236);
+            this.label113.Location = new System.Drawing.Point(129, 236);
             this.label113.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label113.Name = "label113";
             this.label113.Size = new System.Drawing.Size(35, 16);
@@ -5066,7 +5125,7 @@
             this.label114.AutoSize = true;
             this.label114.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label114.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label114.Location = new System.Drawing.Point(130, 316);
+            this.label114.Location = new System.Drawing.Point(129, 316);
             this.label114.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label114.Name = "label114";
             this.label114.Size = new System.Drawing.Size(35, 16);
@@ -5079,7 +5138,7 @@
             this.label115.AutoSize = true;
             this.label115.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label115.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label115.Location = new System.Drawing.Point(130, 380);
+            this.label115.Location = new System.Drawing.Point(129, 380);
             this.label115.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label115.Name = "label115";
             this.label115.Size = new System.Drawing.Size(35, 16);
@@ -5092,7 +5151,7 @@
             this.label116.AutoSize = true;
             this.label116.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label116.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label116.Location = new System.Drawing.Point(130, 428);
+            this.label116.Location = new System.Drawing.Point(129, 428);
             this.label116.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label116.Name = "label116";
             this.label116.Size = new System.Drawing.Size(35, 16);
@@ -5105,7 +5164,7 @@
             this.label117.AutoSize = true;
             this.label117.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label117.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label117.Location = new System.Drawing.Point(130, 476);
+            this.label117.Location = new System.Drawing.Point(129, 476);
             this.label117.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label117.Name = "label117";
             this.label117.Size = new System.Drawing.Size(35, 16);
@@ -5118,7 +5177,7 @@
             this.label118.AutoSize = true;
             this.label118.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label118.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label118.Location = new System.Drawing.Point(130, 524);
+            this.label118.Location = new System.Drawing.Point(129, 524);
             this.label118.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label118.Name = "label118";
             this.label118.Size = new System.Drawing.Size(35, 16);
@@ -5131,7 +5190,7 @@
             this.label119.AutoSize = true;
             this.label119.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label119.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label119.Location = new System.Drawing.Point(130, 91);
+            this.label119.Location = new System.Drawing.Point(129, 91);
             this.label119.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(35, 21);
@@ -5144,7 +5203,7 @@
             this.label120.AutoSize = true;
             this.label120.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label120.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label120.Location = new System.Drawing.Point(130, 156);
+            this.label120.Location = new System.Drawing.Point(129, 156);
             this.label120.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label120.Name = "label120";
             this.label120.Size = new System.Drawing.Size(35, 16);
@@ -5157,7 +5216,7 @@
             this.label121.AutoSize = true;
             this.label121.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label121.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label121.Location = new System.Drawing.Point(130, 204);
+            this.label121.Location = new System.Drawing.Point(129, 204);
             this.label121.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label121.Name = "label121";
             this.label121.Size = new System.Drawing.Size(35, 16);
@@ -5170,7 +5229,7 @@
             this.label122.AutoSize = true;
             this.label122.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label122.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label122.Location = new System.Drawing.Point(130, 252);
+            this.label122.Location = new System.Drawing.Point(129, 252);
             this.label122.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label122.Name = "label122";
             this.label122.Size = new System.Drawing.Size(35, 16);
@@ -5183,7 +5242,7 @@
             this.label123.AutoSize = true;
             this.label123.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label123.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label123.Location = new System.Drawing.Point(130, 332);
+            this.label123.Location = new System.Drawing.Point(129, 332);
             this.label123.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label123.Name = "label123";
             this.label123.Size = new System.Drawing.Size(35, 16);
@@ -5196,7 +5255,7 @@
             this.label124.AutoSize = true;
             this.label124.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label124.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label124.Location = new System.Drawing.Point(130, 396);
+            this.label124.Location = new System.Drawing.Point(129, 396);
             this.label124.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label124.Name = "label124";
             this.label124.Size = new System.Drawing.Size(35, 16);
@@ -5209,7 +5268,7 @@
             this.label125.AutoSize = true;
             this.label125.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label125.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label125.Location = new System.Drawing.Point(130, 444);
+            this.label125.Location = new System.Drawing.Point(129, 444);
             this.label125.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label125.Name = "label125";
             this.label125.Size = new System.Drawing.Size(35, 16);
@@ -5222,7 +5281,7 @@
             this.label126.AutoSize = true;
             this.label126.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label126.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label126.Location = new System.Drawing.Point(130, 492);
+            this.label126.Location = new System.Drawing.Point(129, 492);
             this.label126.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label126.Name = "label126";
             this.label126.Size = new System.Drawing.Size(35, 16);
@@ -5235,7 +5294,7 @@
             this.label127.AutoSize = true;
             this.label127.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label127.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label127.Location = new System.Drawing.Point(130, 540);
+            this.label127.Location = new System.Drawing.Point(129, 540);
             this.label127.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label127.Name = "label127";
             this.label127.Size = new System.Drawing.Size(35, 16);
@@ -5248,7 +5307,7 @@
             this.label128.AutoSize = true;
             this.label128.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label128.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label128.Location = new System.Drawing.Point(130, 112);
+            this.label128.Location = new System.Drawing.Point(129, 112);
             this.label128.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label128.Name = "label128";
             this.label128.Size = new System.Drawing.Size(35, 21);
@@ -5261,7 +5320,7 @@
             this.label129.AutoSize = true;
             this.label129.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label129.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label129.Location = new System.Drawing.Point(130, 172);
+            this.label129.Location = new System.Drawing.Point(129, 172);
             this.label129.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label129.Name = "label129";
             this.label129.Size = new System.Drawing.Size(35, 16);
@@ -5274,7 +5333,7 @@
             this.label130.AutoSize = true;
             this.label130.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label130.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label130.Location = new System.Drawing.Point(130, 268);
+            this.label130.Location = new System.Drawing.Point(129, 268);
             this.label130.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label130.Name = "label130";
             this.label130.Size = new System.Drawing.Size(35, 16);
@@ -5287,7 +5346,7 @@
             this.label131.AutoSize = true;
             this.label131.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label131.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label131.Location = new System.Drawing.Point(130, 348);
+            this.label131.Location = new System.Drawing.Point(129, 348);
             this.label131.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label131.Name = "label131";
             this.label131.Size = new System.Drawing.Size(35, 16);
@@ -5300,7 +5359,7 @@
             this.label132.AutoSize = true;
             this.label132.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label132.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label132.Location = new System.Drawing.Point(130, 412);
+            this.label132.Location = new System.Drawing.Point(129, 412);
             this.label132.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label132.Name = "label132";
             this.label132.Size = new System.Drawing.Size(35, 16);
@@ -5313,7 +5372,7 @@
             this.label133.AutoSize = true;
             this.label133.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label133.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label133.Location = new System.Drawing.Point(130, 460);
+            this.label133.Location = new System.Drawing.Point(129, 460);
             this.label133.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label133.Name = "label133";
             this.label133.Size = new System.Drawing.Size(35, 16);
@@ -5326,7 +5385,7 @@
             this.label134.AutoSize = true;
             this.label134.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label134.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label134.Location = new System.Drawing.Point(130, 508);
+            this.label134.Location = new System.Drawing.Point(129, 508);
             this.label134.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label134.Name = "label134";
             this.label134.Size = new System.Drawing.Size(35, 16);
@@ -5339,7 +5398,7 @@
             this.label135.AutoSize = true;
             this.label135.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label135.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label135.Location = new System.Drawing.Point(130, 556);
+            this.label135.Location = new System.Drawing.Point(129, 556);
             this.label135.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label135.Name = "label135";
             this.label135.Size = new System.Drawing.Size(35, 16);
@@ -5352,7 +5411,7 @@
             this.label136.AutoSize = true;
             this.label136.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label136.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label136.Location = new System.Drawing.Point(130, 220);
+            this.label136.Location = new System.Drawing.Point(129, 220);
             this.label136.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label136.Name = "label136";
             this.label136.Size = new System.Drawing.Size(35, 16);
@@ -5365,7 +5424,7 @@
             this.label137.AutoSize = true;
             this.label137.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label137.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label137.Location = new System.Drawing.Point(130, 284);
+            this.label137.Location = new System.Drawing.Point(129, 284);
             this.label137.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label137.Name = "label137";
             this.label137.Size = new System.Drawing.Size(35, 16);
@@ -5378,7 +5437,7 @@
             this.label138.AutoSize = true;
             this.label138.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label138.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label138.Location = new System.Drawing.Point(130, 300);
+            this.label138.Location = new System.Drawing.Point(129, 300);
             this.label138.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label138.Name = "label138";
             this.label138.Size = new System.Drawing.Size(35, 16);
@@ -5391,7 +5450,7 @@
             this.label139.AutoSize = true;
             this.label139.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label139.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label139.Location = new System.Drawing.Point(130, 364);
+            this.label139.Location = new System.Drawing.Point(129, 364);
             this.label139.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label139.Name = "label139";
             this.label139.Size = new System.Drawing.Size(35, 16);
@@ -5407,10 +5466,10 @@
             this.tableLayoutPanel4.SetColumnSpan(this.label140, 28);
             this.label140.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label140.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label140.Location = new System.Drawing.Point(309, 0);
+            this.label140.Location = new System.Drawing.Point(308, 0);
             this.label140.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(891, 35);
+            this.label140.Size = new System.Drawing.Size(892, 35);
             this.label140.TabIndex = 78;
             this.label140.Text = "Arbeitsplatz";
             this.label140.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -5422,7 +5481,7 @@
             this.label67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label67, 2);
             this.label67.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label67.Location = new System.Drawing.Point(309, 35);
+            this.label67.Location = new System.Drawing.Point(308, 35);
             this.label67.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(71, 25);
@@ -5436,7 +5495,7 @@
             this.label66.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label66, 2);
             this.label66.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label66.Location = new System.Drawing.Point(384, 35);
+            this.label66.Location = new System.Drawing.Point(383, 35);
             this.label66.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(60, 25);
@@ -5450,7 +5509,7 @@
             this.label70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label70, 2);
             this.label70.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label70.Location = new System.Drawing.Point(602, 35);
+            this.label70.Location = new System.Drawing.Point(601, 35);
             this.label70.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(52, 25);
@@ -5464,7 +5523,7 @@
             this.label71.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label71, 2);
             this.label71.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label71.Location = new System.Drawing.Point(658, 35);
+            this.label71.Location = new System.Drawing.Point(657, 35);
             this.label71.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(60, 25);
@@ -5478,7 +5537,7 @@
             this.label72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label72, 2);
             this.label72.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label72.Location = new System.Drawing.Point(722, 35);
+            this.label72.Location = new System.Drawing.Point(721, 35);
             this.label72.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(63, 25);
@@ -5492,7 +5551,7 @@
             this.label73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label73, 2);
             this.label73.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label73.Location = new System.Drawing.Point(789, 35);
+            this.label73.Location = new System.Drawing.Point(788, 35);
             this.label73.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(66, 25);
@@ -5506,7 +5565,7 @@
             this.label74.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label74, 2);
             this.label74.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label74.Location = new System.Drawing.Point(859, 35);
+            this.label74.Location = new System.Drawing.Point(858, 35);
             this.label74.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(59, 25);
@@ -5520,7 +5579,7 @@
             this.label75.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label75, 2);
             this.label75.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label75.Location = new System.Drawing.Point(922, 35);
+            this.label75.Location = new System.Drawing.Point(921, 35);
             this.label75.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(64, 25);
@@ -5534,7 +5593,7 @@
             this.label76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label76, 2);
             this.label76.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label76.Location = new System.Drawing.Point(990, 35);
+            this.label76.Location = new System.Drawing.Point(989, 35);
             this.label76.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(54, 25);
@@ -5548,7 +5607,7 @@
             this.label77.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label77, 2);
             this.label77.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label77.Location = new System.Drawing.Point(1048, 35);
+            this.label77.Location = new System.Drawing.Point(1047, 35);
             this.label77.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(39, 25);
@@ -5562,7 +5621,7 @@
             this.label78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label78, 2);
             this.label78.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label78.Location = new System.Drawing.Point(1091, 35);
+            this.label78.Location = new System.Drawing.Point(1090, 35);
             this.label78.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(48, 25);
@@ -5576,10 +5635,10 @@
             this.label79.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label79, 2);
             this.label79.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label79.Location = new System.Drawing.Point(1143, 35);
+            this.label79.Location = new System.Drawing.Point(1142, 35);
             this.label79.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(57, 25);
+            this.label79.Size = new System.Drawing.Size(58, 25);
             this.label79.TabIndex = 17;
             this.label79.Text = "15";
             // 
@@ -5590,7 +5649,7 @@
             this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label68, 2);
             this.label68.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label68.Location = new System.Drawing.Point(448, 35);
+            this.label68.Location = new System.Drawing.Point(447, 35);
             this.label68.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(77, 25);
@@ -5604,7 +5663,7 @@
             this.label69.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.label69, 2);
             this.label69.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label69.Location = new System.Drawing.Point(529, 35);
+            this.label69.Location = new System.Drawing.Point(528, 35);
             this.label69.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(69, 25);
@@ -5620,7 +5679,7 @@
             this.Hinterrad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Hinterrad.Name = "Hinterrad";
             this.tableLayoutPanel4.SetRowSpan(this.Hinterrad, 3);
-            this.Hinterrad.Size = new System.Drawing.Size(124, 73);
+            this.Hinterrad.Size = new System.Drawing.Size(123, 73);
             this.Hinterrad.TabIndex = 79;
             this.Hinterrad.Text = "Hinterrad";
             this.Hinterrad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5634,7 +5693,7 @@
             this.label141.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label141.Name = "label141";
             this.tableLayoutPanel4.SetRowSpan(this.label141, 3);
-            this.label141.Size = new System.Drawing.Size(124, 55);
+            this.label141.Size = new System.Drawing.Size(123, 55);
             this.label141.TabIndex = 80;
             this.label141.Text = "Vorderrad";
             this.label141.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5648,7 +5707,7 @@
             this.label142.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label142.Name = "label142";
             this.tableLayoutPanel4.SetRowSpan(this.label142, 3);
-            this.label142.Size = new System.Drawing.Size(124, 48);
+            this.label142.Size = new System.Drawing.Size(123, 48);
             this.label142.TabIndex = 81;
             this.label142.Text = "Schutzblech hinten";
             this.label142.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5662,7 +5721,7 @@
             this.label143.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label143.Name = "label143";
             this.tableLayoutPanel4.SetRowSpan(this.label143, 3);
-            this.label143.Size = new System.Drawing.Size(124, 48);
+            this.label143.Size = new System.Drawing.Size(123, 48);
             this.label143.TabIndex = 82;
             this.label143.Text = "Schutzblech vorne";
             this.label143.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5675,7 +5734,7 @@
             this.label144.Location = new System.Drawing.Point(2, 284);
             this.label144.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(124, 16);
+            this.label144.Size = new System.Drawing.Size(123, 16);
             this.label144.TabIndex = 83;
             this.label144.Text = "Lenker";
             this.label144.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5688,7 +5747,7 @@
             this.label145.Location = new System.Drawing.Point(2, 300);
             this.label145.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(124, 16);
+            this.label145.Size = new System.Drawing.Size(123, 16);
             this.label145.TabIndex = 84;
             this.label145.Text = "Sattel";
             this.label145.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5702,7 +5761,7 @@
             this.label146.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label146.Name = "label146";
             this.tableLayoutPanel4.SetRowSpan(this.label146, 3);
-            this.label146.Size = new System.Drawing.Size(124, 48);
+            this.label146.Size = new System.Drawing.Size(123, 48);
             this.label146.TabIndex = 85;
             this.label146.Text = "Rahmen";
             this.label146.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5715,7 +5774,7 @@
             this.label147.Location = new System.Drawing.Point(2, 364);
             this.label147.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(124, 16);
+            this.label147.Size = new System.Drawing.Size(123, 16);
             this.label147.TabIndex = 86;
             this.label147.Text = "Pedale";
             this.label147.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5729,7 +5788,7 @@
             this.label148.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label148.Name = "label148";
             this.tableLayoutPanel4.SetRowSpan(this.label148, 3);
-            this.label148.Size = new System.Drawing.Size(124, 48);
+            this.label148.Size = new System.Drawing.Size(123, 48);
             this.label148.TabIndex = 87;
             this.label148.Text = "Vorderrad komplett";
             this.label148.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5743,7 +5802,7 @@
             this.label149.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label149.Name = "label149";
             this.tableLayoutPanel4.SetRowSpan(this.label149, 3);
-            this.label149.Size = new System.Drawing.Size(124, 48);
+            this.label149.Size = new System.Drawing.Size(123, 48);
             this.label149.TabIndex = 88;
             this.label149.Text = "Rahmen und Räder";
             this.label149.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5757,7 +5816,7 @@
             this.label150.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label150.Name = "label150";
             this.tableLayoutPanel4.SetRowSpan(this.label150, 3);
-            this.label150.Size = new System.Drawing.Size(124, 48);
+            this.label150.Size = new System.Drawing.Size(123, 48);
             this.label150.TabIndex = 89;
             this.label150.Text = "Fahrrad ohne Pedale";
             this.label150.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5771,7 +5830,7 @@
             this.label151.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label151.Name = "label151";
             this.tableLayoutPanel4.SetRowSpan(this.label151, 3);
-            this.label151.Size = new System.Drawing.Size(124, 48);
+            this.label151.Size = new System.Drawing.Size(123, 48);
             this.label151.TabIndex = 90;
             this.label151.Text = "Fahrrad komplett";
             this.label151.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5787,7 +5846,7 @@
             this.label152.Location = new System.Drawing.Point(2, 572);
             this.label152.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label152.Name = "label152";
-            this.label152.Size = new System.Drawing.Size(303, 16);
+            this.label152.Size = new System.Drawing.Size(302, 16);
             this.label152.TabIndex = 91;
             this.label152.Text = "Kapazitätsbedarf (neu)";
             this.label152.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -5803,7 +5862,7 @@
             this.label153.Location = new System.Drawing.Point(2, 588);
             this.label153.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label153.Name = "label153";
-            this.label153.Size = new System.Drawing.Size(303, 16);
+            this.label153.Size = new System.Drawing.Size(302, 16);
             this.label153.TabIndex = 92;
             this.label153.Text = "Rüstzeit (neu)";
             // 
@@ -5818,7 +5877,7 @@
             this.label154.Location = new System.Drawing.Point(2, 604);
             this.label154.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label154.Name = "label154";
-            this.label154.Size = new System.Drawing.Size(303, 16);
+            this.label154.Size = new System.Drawing.Size(302, 16);
             this.label154.TabIndex = 93;
             this.label154.Text = "kap. bed. (Rückstand Vorperiode)";
             // 
@@ -5833,7 +5892,7 @@
             this.label155.Location = new System.Drawing.Point(2, 620);
             this.label155.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label155.Name = "label155";
-            this.label155.Size = new System.Drawing.Size(303, 16);
+            this.label155.Size = new System.Drawing.Size(302, 16);
             this.label155.TabIndex = 94;
             this.label155.Text = "Gesamt-kapazitätsbedarf";
             // 
@@ -5848,7 +5907,7 @@
             this.label156.Location = new System.Drawing.Point(2, 636);
             this.label156.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(303, 17);
+            this.label156.Size = new System.Drawing.Size(302, 17);
             this.label156.TabIndex = 95;
             this.label156.Text = "Schichten und Überstunden";
             // 
@@ -5857,7 +5916,7 @@
             this.label157.AutoSize = true;
             this.label157.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label157.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label157.Location = new System.Drawing.Point(309, 380);
+            this.label157.Location = new System.Drawing.Point(308, 380);
             this.label157.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label157.Name = "label157";
             this.label157.Size = new System.Drawing.Size(28, 16);
@@ -5870,7 +5929,7 @@
             this.label158.AutoSize = true;
             this.label158.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label158.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label158.Location = new System.Drawing.Point(309, 396);
+            this.label158.Location = new System.Drawing.Point(308, 396);
             this.label158.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label158.Name = "label158";
             this.label158.Size = new System.Drawing.Size(28, 16);
@@ -5883,7 +5942,7 @@
             this.label159.AutoSize = true;
             this.label159.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label159.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label159.Location = new System.Drawing.Point(309, 412);
+            this.label159.Location = new System.Drawing.Point(308, 412);
             this.label159.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label159.Name = "label159";
             this.label159.Size = new System.Drawing.Size(28, 16);
@@ -5896,7 +5955,7 @@
             this.label160.AutoSize = true;
             this.label160.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label160.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label160.Location = new System.Drawing.Point(384, 428);
+            this.label160.Location = new System.Drawing.Point(383, 428);
             this.label160.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label160.Name = "label160";
             this.label160.Size = new System.Drawing.Size(24, 16);
@@ -5910,7 +5969,7 @@
             this.label161.AutoSize = true;
             this.label161.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label161.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label161.Location = new System.Drawing.Point(384, 444);
+            this.label161.Location = new System.Drawing.Point(383, 444);
             this.label161.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label161.Name = "label161";
             this.label161.Size = new System.Drawing.Size(24, 16);
@@ -5923,7 +5982,7 @@
             this.label162.AutoSize = true;
             this.label162.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label162.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label162.Location = new System.Drawing.Point(384, 460);
+            this.label162.Location = new System.Drawing.Point(383, 460);
             this.label162.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label162.Name = "label162";
             this.label162.Size = new System.Drawing.Size(24, 16);
@@ -5936,7 +5995,7 @@
             this.label163.AutoSize = true;
             this.label163.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label163.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label163.Location = new System.Drawing.Point(448, 476);
+            this.label163.Location = new System.Drawing.Point(447, 476);
             this.label163.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label163.Name = "label163";
             this.label163.Size = new System.Drawing.Size(34, 16);
@@ -5949,7 +6008,7 @@
             this.label164.AutoSize = true;
             this.label164.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label164.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label164.Location = new System.Drawing.Point(448, 492);
+            this.label164.Location = new System.Drawing.Point(447, 492);
             this.label164.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label164.Name = "label164";
             this.label164.Size = new System.Drawing.Size(34, 16);
@@ -5962,7 +6021,7 @@
             this.label165.AutoSize = true;
             this.label165.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label165.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label165.Location = new System.Drawing.Point(448, 508);
+            this.label165.Location = new System.Drawing.Point(447, 508);
             this.label165.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label165.Name = "label165";
             this.label165.Size = new System.Drawing.Size(34, 16);
@@ -5975,7 +6034,7 @@
             this.label166.AutoSize = true;
             this.label166.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label166.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label166.Location = new System.Drawing.Point(529, 524);
+            this.label166.Location = new System.Drawing.Point(528, 524);
             this.label166.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label166.Name = "label166";
             this.label166.Size = new System.Drawing.Size(19, 16);
@@ -5988,7 +6047,7 @@
             this.label167.AutoSize = true;
             this.label167.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label167.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label167.Location = new System.Drawing.Point(529, 540);
+            this.label167.Location = new System.Drawing.Point(528, 540);
             this.label167.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label167.Name = "label167";
             this.label167.Size = new System.Drawing.Size(19, 16);
@@ -6001,7 +6060,7 @@
             this.label168.AutoSize = true;
             this.label168.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label168.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label168.Location = new System.Drawing.Point(529, 556);
+            this.label168.Location = new System.Drawing.Point(528, 556);
             this.label168.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label168.Name = "label168";
             this.label168.Size = new System.Drawing.Size(19, 16);
@@ -6014,7 +6073,7 @@
             this.label169.AutoSize = true;
             this.label169.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label169.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label169.Location = new System.Drawing.Point(602, 284);
+            this.label169.Location = new System.Drawing.Point(601, 284);
             this.label169.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label169.Name = "label169";
             this.label169.Size = new System.Drawing.Size(17, 16);
@@ -6027,7 +6086,7 @@
             this.label170.AutoSize = true;
             this.label170.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label170.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label170.Location = new System.Drawing.Point(658, 188);
+            this.label170.Location = new System.Drawing.Point(657, 188);
             this.label170.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label170.Name = "label170";
             this.label170.Size = new System.Drawing.Size(22, 16);
@@ -6040,7 +6099,7 @@
             this.label171.AutoSize = true;
             this.label171.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label171.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label171.Location = new System.Drawing.Point(658, 204);
+            this.label171.Location = new System.Drawing.Point(657, 204);
             this.label171.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label171.Name = "label171";
             this.label171.Size = new System.Drawing.Size(22, 16);
@@ -6053,7 +6112,7 @@
             this.label172.AutoSize = true;
             this.label172.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label172.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label172.Location = new System.Drawing.Point(658, 220);
+            this.label172.Location = new System.Drawing.Point(657, 220);
             this.label172.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label172.Name = "label172";
             this.label172.Size = new System.Drawing.Size(22, 16);
@@ -6066,7 +6125,7 @@
             this.label173.AutoSize = true;
             this.label173.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label173.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label173.Location = new System.Drawing.Point(658, 236);
+            this.label173.Location = new System.Drawing.Point(657, 236);
             this.label173.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label173.Name = "label173";
             this.label173.Size = new System.Drawing.Size(22, 16);
@@ -6079,7 +6138,7 @@
             this.label174.AutoSize = true;
             this.label174.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label174.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label174.Location = new System.Drawing.Point(658, 252);
+            this.label174.Location = new System.Drawing.Point(657, 252);
             this.label174.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label174.Name = "label174";
             this.label174.Size = new System.Drawing.Size(22, 16);
@@ -6092,7 +6151,7 @@
             this.label175.AutoSize = true;
             this.label175.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label175.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label175.Location = new System.Drawing.Point(658, 268);
+            this.label175.Location = new System.Drawing.Point(657, 268);
             this.label175.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label175.Name = "label175";
             this.label175.Size = new System.Drawing.Size(22, 16);
@@ -6105,7 +6164,7 @@
             this.label176.AutoSize = true;
             this.label176.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label176.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label176.Location = new System.Drawing.Point(658, 316);
+            this.label176.Location = new System.Drawing.Point(657, 316);
             this.label176.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label176.Name = "label176";
             this.label176.Size = new System.Drawing.Size(22, 16);
@@ -6118,7 +6177,7 @@
             this.label177.AutoSize = true;
             this.label177.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label177.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label177.Location = new System.Drawing.Point(658, 332);
+            this.label177.Location = new System.Drawing.Point(657, 332);
             this.label177.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label177.Name = "label177";
             this.label177.Size = new System.Drawing.Size(22, 16);
@@ -6131,7 +6190,7 @@
             this.label178.AutoSize = true;
             this.label178.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label178.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label178.Location = new System.Drawing.Point(658, 348);
+            this.label178.Location = new System.Drawing.Point(657, 348);
             this.label178.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label178.Name = "label178";
             this.label178.Size = new System.Drawing.Size(22, 16);
@@ -6144,7 +6203,7 @@
             this.label179.AutoSize = true;
             this.label179.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label179.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label179.Location = new System.Drawing.Point(658, 364);
+            this.label179.Location = new System.Drawing.Point(657, 364);
             this.label179.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label179.Name = "label179";
             this.label179.Size = new System.Drawing.Size(22, 16);
@@ -6157,7 +6216,7 @@
             this.label180.AutoSize = true;
             this.label180.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label180.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label180.Location = new System.Drawing.Point(602, 316);
+            this.label180.Location = new System.Drawing.Point(601, 316);
             this.label180.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label180.Name = "label180";
             this.label180.Size = new System.Drawing.Size(17, 16);
@@ -6170,7 +6229,7 @@
             this.label181.AutoSize = true;
             this.label181.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label181.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label181.Location = new System.Drawing.Point(602, 332);
+            this.label181.Location = new System.Drawing.Point(601, 332);
             this.label181.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label181.Name = "label181";
             this.label181.Size = new System.Drawing.Size(17, 16);
@@ -6183,7 +6242,7 @@
             this.label182.AutoSize = true;
             this.label182.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label182.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label182.Location = new System.Drawing.Point(602, 348);
+            this.label182.Location = new System.Drawing.Point(601, 348);
             this.label182.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label182.Name = "label182";
             this.label182.Size = new System.Drawing.Size(17, 16);
@@ -6196,7 +6255,7 @@
             this.label183.AutoSize = true;
             this.label183.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label183.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label183.Location = new System.Drawing.Point(789, 188);
+            this.label183.Location = new System.Drawing.Point(788, 188);
             this.label183.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label183.Name = "label183";
             this.label183.Size = new System.Drawing.Size(21, 16);
@@ -6209,7 +6268,7 @@
             this.label184.AutoSize = true;
             this.label184.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label184.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label184.Location = new System.Drawing.Point(789, 204);
+            this.label184.Location = new System.Drawing.Point(788, 204);
             this.label184.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label184.Name = "label184";
             this.label184.Size = new System.Drawing.Size(21, 16);
@@ -6222,7 +6281,7 @@
             this.label185.AutoSize = true;
             this.label185.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label185.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label185.Location = new System.Drawing.Point(789, 220);
+            this.label185.Location = new System.Drawing.Point(788, 220);
             this.label185.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label185.Name = "label185";
             this.label185.Size = new System.Drawing.Size(21, 16);
@@ -6235,7 +6294,7 @@
             this.label186.AutoSize = true;
             this.label186.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label186.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label186.Location = new System.Drawing.Point(789, 236);
+            this.label186.Location = new System.Drawing.Point(788, 236);
             this.label186.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label186.Name = "label186";
             this.label186.Size = new System.Drawing.Size(21, 16);
@@ -6248,7 +6307,7 @@
             this.label187.AutoSize = true;
             this.label187.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label187.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label187.Location = new System.Drawing.Point(789, 252);
+            this.label187.Location = new System.Drawing.Point(788, 252);
             this.label187.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label187.Name = "label187";
             this.label187.Size = new System.Drawing.Size(21, 16);
@@ -6261,7 +6320,7 @@
             this.label188.AutoSize = true;
             this.label188.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label188.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label188.Location = new System.Drawing.Point(789, 268);
+            this.label188.Location = new System.Drawing.Point(788, 268);
             this.label188.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label188.Name = "label188";
             this.label188.Size = new System.Drawing.Size(21, 16);
@@ -6274,7 +6333,7 @@
             this.label189.AutoSize = true;
             this.label189.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label189.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label189.Location = new System.Drawing.Point(722, 316);
+            this.label189.Location = new System.Drawing.Point(721, 316);
             this.label189.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label189.Name = "label189";
             this.label189.Size = new System.Drawing.Size(18, 16);
@@ -6287,7 +6346,7 @@
             this.label190.AutoSize = true;
             this.label190.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label190.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label190.Location = new System.Drawing.Point(722, 332);
+            this.label190.Location = new System.Drawing.Point(721, 332);
             this.label190.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label190.Name = "label190";
             this.label190.Size = new System.Drawing.Size(18, 16);
@@ -6300,7 +6359,7 @@
             this.label191.AutoSize = true;
             this.label191.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label191.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label191.Location = new System.Drawing.Point(722, 348);
+            this.label191.Location = new System.Drawing.Point(721, 348);
             this.label191.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label191.Name = "label191";
             this.label191.Size = new System.Drawing.Size(18, 16);
@@ -6313,7 +6372,7 @@
             this.label192.AutoSize = true;
             this.label192.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label192.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label192.Location = new System.Drawing.Point(722, 188);
+            this.label192.Location = new System.Drawing.Point(721, 188);
             this.label192.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label192.Name = "label192";
             this.label192.Size = new System.Drawing.Size(18, 16);
@@ -6326,7 +6385,7 @@
             this.label193.AutoSize = true;
             this.label193.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label193.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label193.Location = new System.Drawing.Point(722, 204);
+            this.label193.Location = new System.Drawing.Point(721, 204);
             this.label193.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label193.Name = "label193";
             this.label193.Size = new System.Drawing.Size(18, 16);
@@ -6339,7 +6398,7 @@
             this.label194.AutoSize = true;
             this.label194.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label194.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label194.Location = new System.Drawing.Point(722, 220);
+            this.label194.Location = new System.Drawing.Point(721, 220);
             this.label194.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label194.Name = "label194";
             this.label194.Size = new System.Drawing.Size(18, 16);
@@ -6352,7 +6411,7 @@
             this.label195.AutoSize = true;
             this.label195.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label195.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label195.Location = new System.Drawing.Point(722, 236);
+            this.label195.Location = new System.Drawing.Point(721, 236);
             this.label195.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label195.Name = "label195";
             this.label195.Size = new System.Drawing.Size(18, 16);
@@ -6365,7 +6424,7 @@
             this.label196.AutoSize = true;
             this.label196.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label196.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label196.Location = new System.Drawing.Point(722, 252);
+            this.label196.Location = new System.Drawing.Point(721, 252);
             this.label196.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label196.Name = "label196";
             this.label196.Size = new System.Drawing.Size(18, 16);
@@ -6378,7 +6437,7 @@
             this.label197.AutoSize = true;
             this.label197.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label197.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label197.Location = new System.Drawing.Point(722, 268);
+            this.label197.Location = new System.Drawing.Point(721, 268);
             this.label197.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label197.Name = "label197";
             this.label197.Size = new System.Drawing.Size(18, 16);
@@ -6391,7 +6450,7 @@
             this.label198.AutoSize = true;
             this.label198.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label198.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label198.Location = new System.Drawing.Point(789, 316);
+            this.label198.Location = new System.Drawing.Point(788, 316);
             this.label198.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label198.Name = "label198";
             this.label198.Size = new System.Drawing.Size(21, 16);
@@ -6404,7 +6463,7 @@
             this.label199.AutoSize = true;
             this.label199.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label199.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label199.Location = new System.Drawing.Point(789, 332);
+            this.label199.Location = new System.Drawing.Point(788, 332);
             this.label199.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label199.Name = "label199";
             this.label199.Size = new System.Drawing.Size(21, 16);
@@ -6417,7 +6476,7 @@
             this.label200.AutoSize = true;
             this.label200.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label200.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label200.Location = new System.Drawing.Point(789, 348);
+            this.label200.Location = new System.Drawing.Point(788, 348);
             this.label200.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label200.Name = "label200";
             this.label200.Size = new System.Drawing.Size(21, 16);
@@ -6430,7 +6489,7 @@
             this.label201.AutoSize = true;
             this.label201.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label201.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label201.Location = new System.Drawing.Point(859, 60);
+            this.label201.Location = new System.Drawing.Point(858, 60);
             this.label201.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label201.Name = "label201";
             this.label201.Size = new System.Drawing.Size(24, 31);
@@ -6443,7 +6502,7 @@
             this.label202.AutoSize = true;
             this.label202.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label202.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label202.Location = new System.Drawing.Point(859, 91);
+            this.label202.Location = new System.Drawing.Point(858, 91);
             this.label202.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label202.Name = "label202";
             this.label202.Size = new System.Drawing.Size(24, 21);
@@ -6456,7 +6515,7 @@
             this.label203.AutoSize = true;
             this.label203.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label203.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label203.Location = new System.Drawing.Point(859, 112);
+            this.label203.Location = new System.Drawing.Point(858, 112);
             this.label203.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label203.Name = "label203";
             this.label203.Size = new System.Drawing.Size(24, 21);
@@ -6469,7 +6528,7 @@
             this.label204.AutoSize = true;
             this.label204.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label204.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label204.Location = new System.Drawing.Point(859, 133);
+            this.label204.Location = new System.Drawing.Point(858, 133);
             this.label204.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label204.Name = "label204";
             this.label204.Size = new System.Drawing.Size(24, 23);
@@ -6482,7 +6541,7 @@
             this.label205.AutoSize = true;
             this.label205.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label205.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label205.Location = new System.Drawing.Point(859, 156);
+            this.label205.Location = new System.Drawing.Point(858, 156);
             this.label205.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label205.Name = "label205";
             this.label205.Size = new System.Drawing.Size(24, 16);
@@ -6495,7 +6554,7 @@
             this.label206.AutoSize = true;
             this.label206.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label206.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label206.Location = new System.Drawing.Point(859, 172);
+            this.label206.Location = new System.Drawing.Point(858, 172);
             this.label206.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label206.Name = "label206";
             this.label206.Size = new System.Drawing.Size(24, 16);
@@ -6508,7 +6567,7 @@
             this.label207.AutoSize = true;
             this.label207.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label207.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label207.Location = new System.Drawing.Point(922, 60);
+            this.label207.Location = new System.Drawing.Point(921, 60);
             this.label207.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label207.Name = "label207";
             this.label207.Size = new System.Drawing.Size(27, 31);
@@ -6521,7 +6580,7 @@
             this.label208.AutoSize = true;
             this.label208.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label208.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label208.Location = new System.Drawing.Point(922, 91);
+            this.label208.Location = new System.Drawing.Point(921, 91);
             this.label208.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label208.Name = "label208";
             this.label208.Size = new System.Drawing.Size(27, 21);
@@ -6534,7 +6593,7 @@
             this.label209.AutoSize = true;
             this.label209.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label209.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label209.Location = new System.Drawing.Point(922, 112);
+            this.label209.Location = new System.Drawing.Point(921, 112);
             this.label209.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label209.Name = "label209";
             this.label209.Size = new System.Drawing.Size(27, 21);
@@ -6547,7 +6606,7 @@
             this.label210.AutoSize = true;
             this.label210.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label210.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label210.Location = new System.Drawing.Point(922, 133);
+            this.label210.Location = new System.Drawing.Point(921, 133);
             this.label210.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label210.Name = "label210";
             this.label210.Size = new System.Drawing.Size(27, 23);
@@ -6560,7 +6619,7 @@
             this.label211.AutoSize = true;
             this.label211.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label211.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label211.Location = new System.Drawing.Point(922, 156);
+            this.label211.Location = new System.Drawing.Point(921, 156);
             this.label211.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label211.Name = "label211";
             this.label211.Size = new System.Drawing.Size(27, 16);
@@ -6573,7 +6632,7 @@
             this.label212.AutoSize = true;
             this.label212.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label212.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label212.Location = new System.Drawing.Point(922, 172);
+            this.label212.Location = new System.Drawing.Point(921, 172);
             this.label212.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label212.Name = "label212";
             this.label212.Size = new System.Drawing.Size(27, 16);
@@ -6586,7 +6645,7 @@
             this.label213.AutoSize = true;
             this.label213.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label213.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label213.Location = new System.Drawing.Point(990, 188);
+            this.label213.Location = new System.Drawing.Point(989, 188);
             this.label213.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label213.Name = "label213";
             this.label213.Size = new System.Drawing.Size(22, 16);
@@ -6599,7 +6658,7 @@
             this.label214.AutoSize = true;
             this.label214.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label214.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label214.Location = new System.Drawing.Point(990, 204);
+            this.label214.Location = new System.Drawing.Point(989, 204);
             this.label214.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label214.Name = "label214";
             this.label214.Size = new System.Drawing.Size(22, 16);
@@ -6612,7 +6671,7 @@
             this.label215.AutoSize = true;
             this.label215.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label215.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label215.Location = new System.Drawing.Point(990, 220);
+            this.label215.Location = new System.Drawing.Point(989, 220);
             this.label215.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label215.Name = "label215";
             this.label215.Size = new System.Drawing.Size(22, 16);
@@ -6625,7 +6684,7 @@
             this.label216.AutoSize = true;
             this.label216.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label216.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label216.Location = new System.Drawing.Point(990, 236);
+            this.label216.Location = new System.Drawing.Point(989, 236);
             this.label216.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label216.Name = "label216";
             this.label216.Size = new System.Drawing.Size(22, 16);
@@ -6638,7 +6697,7 @@
             this.label217.AutoSize = true;
             this.label217.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label217.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label217.Location = new System.Drawing.Point(990, 252);
+            this.label217.Location = new System.Drawing.Point(989, 252);
             this.label217.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label217.Name = "label217";
             this.label217.Size = new System.Drawing.Size(22, 16);
@@ -6651,7 +6710,7 @@
             this.label218.AutoSize = true;
             this.label218.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label218.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label218.Location = new System.Drawing.Point(990, 268);
+            this.label218.Location = new System.Drawing.Point(989, 268);
             this.label218.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label218.Name = "label218";
             this.label218.Size = new System.Drawing.Size(22, 16);
@@ -6664,7 +6723,7 @@
             this.label219.AutoSize = true;
             this.label219.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label219.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label219.Location = new System.Drawing.Point(1048, 188);
+            this.label219.Location = new System.Drawing.Point(1047, 188);
             this.label219.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label219.Name = "label219";
             this.label219.Size = new System.Drawing.Size(22, 16);
@@ -6677,7 +6736,7 @@
             this.label220.AutoSize = true;
             this.label220.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label220.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label220.Location = new System.Drawing.Point(1048, 220);
+            this.label220.Location = new System.Drawing.Point(1047, 220);
             this.label220.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label220.Name = "label220";
             this.label220.Size = new System.Drawing.Size(22, 16);
@@ -6690,7 +6749,7 @@
             this.label221.AutoSize = true;
             this.label221.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label221.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label221.Location = new System.Drawing.Point(1048, 204);
+            this.label221.Location = new System.Drawing.Point(1047, 204);
             this.label221.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label221.Name = "label221";
             this.label221.Size = new System.Drawing.Size(22, 16);
@@ -6703,7 +6762,7 @@
             this.label222.AutoSize = true;
             this.label222.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label222.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label222.Location = new System.Drawing.Point(1048, 236);
+            this.label222.Location = new System.Drawing.Point(1047, 236);
             this.label222.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label222.Name = "label222";
             this.label222.Size = new System.Drawing.Size(22, 16);
@@ -6716,7 +6775,7 @@
             this.label223.AutoSize = true;
             this.label223.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label223.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label223.Location = new System.Drawing.Point(1048, 252);
+            this.label223.Location = new System.Drawing.Point(1047, 252);
             this.label223.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label223.Name = "label223";
             this.label223.Size = new System.Drawing.Size(22, 16);
@@ -6729,7 +6788,7 @@
             this.label224.AutoSize = true;
             this.label224.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label224.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label224.Location = new System.Drawing.Point(1048, 268);
+            this.label224.Location = new System.Drawing.Point(1047, 268);
             this.label224.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label224.Name = "label224";
             this.label224.Size = new System.Drawing.Size(22, 16);
@@ -6742,7 +6801,7 @@
             this.label225.AutoSize = true;
             this.label225.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label225.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label225.Location = new System.Drawing.Point(1091, 284);
+            this.label225.Location = new System.Drawing.Point(1090, 284);
             this.label225.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label225.Name = "label225";
             this.label225.Size = new System.Drawing.Size(22, 16);
@@ -6755,7 +6814,7 @@
             this.label226.AutoSize = true;
             this.label226.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label226.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label226.Location = new System.Drawing.Point(1143, 300);
+            this.label226.Location = new System.Drawing.Point(1142, 300);
             this.label226.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label226.Name = "label226";
             this.label226.Size = new System.Drawing.Size(19, 16);
@@ -6768,7 +6827,7 @@
             this.label227.AutoSize = true;
             this.label227.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label227.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label227.Location = new System.Drawing.Point(1143, 364);
+            this.label227.Location = new System.Drawing.Point(1142, 364);
             this.label227.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label227.Name = "label227";
             this.label227.Size = new System.Drawing.Size(19, 16);
@@ -6782,7 +6841,7 @@
             this.kp_e49_a1.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e49_a1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e49_a1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e49_a1.Location = new System.Drawing.Point(341, 380);
+            this.kp_e49_a1.Location = new System.Drawing.Point(340, 380);
             this.kp_e49_a1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e49_a1.Name = "kp_e49_a1";
             this.kp_e49_a1.Size = new System.Drawing.Size(39, 16);
@@ -6795,7 +6854,7 @@
             this.kp_e54_a1.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e54_a1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e54_a1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e54_a1.Location = new System.Drawing.Point(341, 396);
+            this.kp_e54_a1.Location = new System.Drawing.Point(340, 396);
             this.kp_e54_a1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e54_a1.Name = "kp_e54_a1";
             this.kp_e54_a1.Size = new System.Drawing.Size(39, 16);
@@ -6808,7 +6867,7 @@
             this.kp_e29_a1.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e29_a1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e29_a1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e29_a1.Location = new System.Drawing.Point(341, 412);
+            this.kp_e29_a1.Location = new System.Drawing.Point(340, 412);
             this.kp_e29_a1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e29_a1.Name = "kp_e29_a1";
             this.kp_e29_a1.Size = new System.Drawing.Size(39, 16);
@@ -6821,7 +6880,7 @@
             this.kp_e50_a2.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e50_a2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e50_a2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e50_a2.Location = new System.Drawing.Point(412, 428);
+            this.kp_e50_a2.Location = new System.Drawing.Point(411, 428);
             this.kp_e50_a2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e50_a2.Name = "kp_e50_a2";
             this.kp_e50_a2.Size = new System.Drawing.Size(32, 16);
@@ -6834,7 +6893,7 @@
             this.kp_e55_a2.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e55_a2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e55_a2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e55_a2.Location = new System.Drawing.Point(412, 444);
+            this.kp_e55_a2.Location = new System.Drawing.Point(411, 444);
             this.kp_e55_a2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e55_a2.Name = "kp_e55_a2";
             this.kp_e55_a2.Size = new System.Drawing.Size(32, 16);
@@ -6847,7 +6906,7 @@
             this.kp_e30_a2.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e30_a2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e30_a2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e30_a2.Location = new System.Drawing.Point(412, 460);
+            this.kp_e30_a2.Location = new System.Drawing.Point(411, 460);
             this.kp_e30_a2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e30_a2.Name = "kp_e30_a2";
             this.kp_e30_a2.Size = new System.Drawing.Size(32, 16);
@@ -6860,7 +6919,7 @@
             this.kp_e51_a3.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e51_a3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e51_a3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e51_a3.Location = new System.Drawing.Point(486, 476);
+            this.kp_e51_a3.Location = new System.Drawing.Point(485, 476);
             this.kp_e51_a3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e51_a3.Name = "kp_e51_a3";
             this.kp_e51_a3.Size = new System.Drawing.Size(39, 16);
@@ -6873,7 +6932,7 @@
             this.kp_e56_a3.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e56_a3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e56_a3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e56_a3.Location = new System.Drawing.Point(486, 492);
+            this.kp_e56_a3.Location = new System.Drawing.Point(485, 492);
             this.kp_e56_a3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e56_a3.Name = "kp_e56_a3";
             this.kp_e56_a3.Size = new System.Drawing.Size(39, 16);
@@ -6886,7 +6945,7 @@
             this.kp_e31_a3.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e31_a3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e31_a3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e31_a3.Location = new System.Drawing.Point(486, 508);
+            this.kp_e31_a3.Location = new System.Drawing.Point(485, 508);
             this.kp_e31_a3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e31_a3.Name = "kp_e31_a3";
             this.kp_e31_a3.Size = new System.Drawing.Size(39, 16);
@@ -6899,7 +6958,7 @@
             this.kp_p1_a4.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_p1_a4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_p1_a4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_p1_a4.Location = new System.Drawing.Point(552, 524);
+            this.kp_p1_a4.Location = new System.Drawing.Point(551, 524);
             this.kp_p1_a4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_p1_a4.Name = "kp_p1_a4";
             this.kp_p1_a4.Size = new System.Drawing.Size(46, 16);
@@ -6912,7 +6971,7 @@
             this.kp_p2_a4.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_p2_a4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_p2_a4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_p2_a4.Location = new System.Drawing.Point(552, 540);
+            this.kp_p2_a4.Location = new System.Drawing.Point(551, 540);
             this.kp_p2_a4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_p2_a4.Name = "kp_p2_a4";
             this.kp_p2_a4.Size = new System.Drawing.Size(46, 16);
@@ -6925,7 +6984,7 @@
             this.kp_p3_a4.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_p3_a4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_p3_a4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_p3_a4.Location = new System.Drawing.Point(552, 556);
+            this.kp_p3_a4.Location = new System.Drawing.Point(551, 556);
             this.kp_p3_a4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_p3_a4.Name = "kp_p3_a4";
             this.kp_p3_a4.Size = new System.Drawing.Size(46, 16);
@@ -6938,7 +6997,7 @@
             this.kp_e16_a6.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e16_a6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e16_a6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e16_a6.Location = new System.Drawing.Point(623, 284);
+            this.kp_e16_a6.Location = new System.Drawing.Point(622, 284);
             this.kp_e16_a6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e16_a6.Name = "kp_e16_a6";
             this.kp_e16_a6.Size = new System.Drawing.Size(31, 16);
@@ -6951,7 +7010,7 @@
             this.kp_e18_a6.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e18_a6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e18_a6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e18_a6.Location = new System.Drawing.Point(623, 316);
+            this.kp_e18_a6.Location = new System.Drawing.Point(622, 316);
             this.kp_e18_a6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e18_a6.Name = "kp_e18_a6";
             this.kp_e18_a6.Size = new System.Drawing.Size(31, 16);
@@ -6964,7 +7023,7 @@
             this.kp_e19_a6.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e19_a6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e19_a6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e19_a6.Location = new System.Drawing.Point(623, 332);
+            this.kp_e19_a6.Location = new System.Drawing.Point(622, 332);
             this.kp_e19_a6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e19_a6.Name = "kp_e19_a6";
             this.kp_e19_a6.Size = new System.Drawing.Size(31, 16);
@@ -6977,7 +7036,7 @@
             this.kp_e20_a6.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e20_a6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e20_a6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e20_a6.Location = new System.Drawing.Point(623, 348);
+            this.kp_e20_a6.Location = new System.Drawing.Point(622, 348);
             this.kp_e20_a6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e20_a6.Name = "kp_e20_a6";
             this.kp_e20_a6.Size = new System.Drawing.Size(31, 16);
@@ -6990,7 +7049,7 @@
             this.kp_e10_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e10_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e10_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e10_a7.Location = new System.Drawing.Point(684, 188);
+            this.kp_e10_a7.Location = new System.Drawing.Point(683, 188);
             this.kp_e10_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e10_a7.Name = "kp_e10_a7";
             this.kp_e10_a7.Size = new System.Drawing.Size(34, 16);
@@ -7003,7 +7062,7 @@
             this.kp_e11_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e11_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e11_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e11_a7.Location = new System.Drawing.Point(684, 204);
+            this.kp_e11_a7.Location = new System.Drawing.Point(683, 204);
             this.kp_e11_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e11_a7.Name = "kp_e11_a7";
             this.kp_e11_a7.Size = new System.Drawing.Size(34, 16);
@@ -7016,7 +7075,7 @@
             this.kp_e12_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e12_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e12_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e12_a7.Location = new System.Drawing.Point(684, 220);
+            this.kp_e12_a7.Location = new System.Drawing.Point(683, 220);
             this.kp_e12_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e12_a7.Name = "kp_e12_a7";
             this.kp_e12_a7.Size = new System.Drawing.Size(34, 16);
@@ -7029,7 +7088,7 @@
             this.kp_e13_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e13_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e13_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e13_a7.Location = new System.Drawing.Point(684, 236);
+            this.kp_e13_a7.Location = new System.Drawing.Point(683, 236);
             this.kp_e13_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e13_a7.Name = "kp_e13_a7";
             this.kp_e13_a7.Size = new System.Drawing.Size(34, 16);
@@ -7042,7 +7101,7 @@
             this.kp_e14_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e14_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e14_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e14_a7.Location = new System.Drawing.Point(684, 252);
+            this.kp_e14_a7.Location = new System.Drawing.Point(683, 252);
             this.kp_e14_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e14_a7.Name = "kp_e14_a7";
             this.kp_e14_a7.Size = new System.Drawing.Size(34, 16);
@@ -7055,7 +7114,7 @@
             this.kp_e15_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e15_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e15_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e15_a7.Location = new System.Drawing.Point(684, 268);
+            this.kp_e15_a7.Location = new System.Drawing.Point(683, 268);
             this.kp_e15_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e15_a7.Name = "kp_e15_a7";
             this.kp_e15_a7.Size = new System.Drawing.Size(34, 16);
@@ -7068,7 +7127,7 @@
             this.kp_e18_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e18_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e18_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e18_a7.Location = new System.Drawing.Point(684, 316);
+            this.kp_e18_a7.Location = new System.Drawing.Point(683, 316);
             this.kp_e18_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e18_a7.Name = "kp_e18_a7";
             this.kp_e18_a7.Size = new System.Drawing.Size(34, 16);
@@ -7081,7 +7140,7 @@
             this.kp_e19_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e19_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e19_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e19_a7.Location = new System.Drawing.Point(684, 332);
+            this.kp_e19_a7.Location = new System.Drawing.Point(683, 332);
             this.kp_e19_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e19_a7.Name = "kp_e19_a7";
             this.kp_e19_a7.Size = new System.Drawing.Size(34, 16);
@@ -7094,7 +7153,7 @@
             this.kp_e20_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e20_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e20_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e20_a7.Location = new System.Drawing.Point(684, 348);
+            this.kp_e20_a7.Location = new System.Drawing.Point(683, 348);
             this.kp_e20_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e20_a7.Name = "kp_e20_a7";
             this.kp_e20_a7.Size = new System.Drawing.Size(34, 16);
@@ -7107,7 +7166,7 @@
             this.kp_e26_a7.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e26_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e26_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e26_a7.Location = new System.Drawing.Point(684, 364);
+            this.kp_e26_a7.Location = new System.Drawing.Point(683, 364);
             this.kp_e26_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e26_a7.Name = "kp_e26_a7";
             this.kp_e26_a7.Size = new System.Drawing.Size(34, 16);
@@ -7120,7 +7179,7 @@
             this.kp_e10_a8.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e10_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e10_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e10_a8.Location = new System.Drawing.Point(744, 188);
+            this.kp_e10_a8.Location = new System.Drawing.Point(743, 188);
             this.kp_e10_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e10_a8.Name = "kp_e10_a8";
             this.kp_e10_a8.Size = new System.Drawing.Size(41, 16);
@@ -7133,7 +7192,7 @@
             this.kp_e11_a8.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e11_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e11_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e11_a8.Location = new System.Drawing.Point(744, 204);
+            this.kp_e11_a8.Location = new System.Drawing.Point(743, 204);
             this.kp_e11_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e11_a8.Name = "kp_e11_a8";
             this.kp_e11_a8.Size = new System.Drawing.Size(41, 16);
@@ -7146,7 +7205,7 @@
             this.kp_e12_a8.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e12_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e12_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e12_a8.Location = new System.Drawing.Point(744, 220);
+            this.kp_e12_a8.Location = new System.Drawing.Point(743, 220);
             this.kp_e12_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e12_a8.Name = "kp_e12_a8";
             this.kp_e12_a8.Size = new System.Drawing.Size(41, 16);
@@ -7159,7 +7218,7 @@
             this.kp_e13_a8.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e13_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e13_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e13_a8.Location = new System.Drawing.Point(744, 236);
+            this.kp_e13_a8.Location = new System.Drawing.Point(743, 236);
             this.kp_e13_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e13_a8.Name = "kp_e13_a8";
             this.kp_e13_a8.Size = new System.Drawing.Size(41, 16);
@@ -7172,7 +7231,7 @@
             this.kp_e14_a8.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e14_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e14_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e14_a8.Location = new System.Drawing.Point(744, 252);
+            this.kp_e14_a8.Location = new System.Drawing.Point(743, 252);
             this.kp_e14_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e14_a8.Name = "kp_e14_a8";
             this.kp_e14_a8.Size = new System.Drawing.Size(41, 16);
@@ -7185,7 +7244,7 @@
             this.kp_e15_a8.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e15_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e15_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e15_a8.Location = new System.Drawing.Point(744, 268);
+            this.kp_e15_a8.Location = new System.Drawing.Point(743, 268);
             this.kp_e15_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e15_a8.Name = "kp_e15_a8";
             this.kp_e15_a8.Size = new System.Drawing.Size(41, 16);
@@ -7198,7 +7257,7 @@
             this.kp_e18_a8.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e18_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e18_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e18_a8.Location = new System.Drawing.Point(744, 316);
+            this.kp_e18_a8.Location = new System.Drawing.Point(743, 316);
             this.kp_e18_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e18_a8.Name = "kp_e18_a8";
             this.kp_e18_a8.Size = new System.Drawing.Size(41, 16);
@@ -7211,7 +7270,7 @@
             this.kp_e19_a8.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e19_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e19_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e19_a8.Location = new System.Drawing.Point(744, 332);
+            this.kp_e19_a8.Location = new System.Drawing.Point(743, 332);
             this.kp_e19_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e19_a8.Name = "kp_e19_a8";
             this.kp_e19_a8.Size = new System.Drawing.Size(41, 16);
@@ -7224,7 +7283,7 @@
             this.kp_e20_a8.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e20_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e20_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e20_a8.Location = new System.Drawing.Point(744, 348);
+            this.kp_e20_a8.Location = new System.Drawing.Point(743, 348);
             this.kp_e20_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e20_a8.Name = "kp_e20_a8";
             this.kp_e20_a8.Size = new System.Drawing.Size(41, 16);
@@ -7237,7 +7296,7 @@
             this.kp_e10_a9.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e10_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e10_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e10_a9.Location = new System.Drawing.Point(814, 188);
+            this.kp_e10_a9.Location = new System.Drawing.Point(813, 188);
             this.kp_e10_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e10_a9.Name = "kp_e10_a9";
             this.kp_e10_a9.Size = new System.Drawing.Size(41, 16);
@@ -7250,7 +7309,7 @@
             this.kp_e11_a9.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e11_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e11_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e11_a9.Location = new System.Drawing.Point(814, 204);
+            this.kp_e11_a9.Location = new System.Drawing.Point(813, 204);
             this.kp_e11_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e11_a9.Name = "kp_e11_a9";
             this.kp_e11_a9.Size = new System.Drawing.Size(41, 16);
@@ -7263,7 +7322,7 @@
             this.kp_e12_a9.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e12_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e12_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e12_a9.Location = new System.Drawing.Point(814, 220);
+            this.kp_e12_a9.Location = new System.Drawing.Point(813, 220);
             this.kp_e12_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e12_a9.Name = "kp_e12_a9";
             this.kp_e12_a9.Size = new System.Drawing.Size(41, 16);
@@ -7276,7 +7335,7 @@
             this.kp_e13_a9.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e13_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e13_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e13_a9.Location = new System.Drawing.Point(814, 236);
+            this.kp_e13_a9.Location = new System.Drawing.Point(813, 236);
             this.kp_e13_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e13_a9.Name = "kp_e13_a9";
             this.kp_e13_a9.Size = new System.Drawing.Size(41, 16);
@@ -7289,7 +7348,7 @@
             this.kp_e14_a9.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e14_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e14_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e14_a9.Location = new System.Drawing.Point(814, 252);
+            this.kp_e14_a9.Location = new System.Drawing.Point(813, 252);
             this.kp_e14_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e14_a9.Name = "kp_e14_a9";
             this.kp_e14_a9.Size = new System.Drawing.Size(41, 16);
@@ -7302,7 +7361,7 @@
             this.kp_e15_a9.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e15_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e15_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e15_a9.Location = new System.Drawing.Point(814, 268);
+            this.kp_e15_a9.Location = new System.Drawing.Point(813, 268);
             this.kp_e15_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e15_a9.Name = "kp_e15_a9";
             this.kp_e15_a9.Size = new System.Drawing.Size(41, 16);
@@ -7315,7 +7374,7 @@
             this.kp_e18_a9.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e18_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e18_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e18_a9.Location = new System.Drawing.Point(814, 316);
+            this.kp_e18_a9.Location = new System.Drawing.Point(813, 316);
             this.kp_e18_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e18_a9.Name = "kp_e18_a9";
             this.kp_e18_a9.Size = new System.Drawing.Size(41, 16);
@@ -7328,7 +7387,7 @@
             this.kp_e19_a9.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e19_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e19_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e19_a9.Location = new System.Drawing.Point(814, 332);
+            this.kp_e19_a9.Location = new System.Drawing.Point(813, 332);
             this.kp_e19_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e19_a9.Name = "kp_e19_a9";
             this.kp_e19_a9.Size = new System.Drawing.Size(41, 16);
@@ -7341,7 +7400,7 @@
             this.kp_e20_a9.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e20_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e20_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e20_a9.Location = new System.Drawing.Point(814, 348);
+            this.kp_e20_a9.Location = new System.Drawing.Point(813, 348);
             this.kp_e20_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e20_a9.Name = "kp_e20_a9";
             this.kp_e20_a9.Size = new System.Drawing.Size(41, 16);
@@ -7354,7 +7413,7 @@
             this.kp_e4_a10.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e4_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e4_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e4_a10.Location = new System.Drawing.Point(887, 60);
+            this.kp_e4_a10.Location = new System.Drawing.Point(886, 60);
             this.kp_e4_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e4_a10.Name = "kp_e4_a10";
             this.kp_e4_a10.Size = new System.Drawing.Size(31, 31);
@@ -7367,7 +7426,7 @@
             this.kp_e5_a10.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e5_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e5_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e5_a10.Location = new System.Drawing.Point(887, 91);
+            this.kp_e5_a10.Location = new System.Drawing.Point(886, 91);
             this.kp_e5_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e5_a10.Name = "kp_e5_a10";
             this.kp_e5_a10.Size = new System.Drawing.Size(31, 21);
@@ -7380,7 +7439,7 @@
             this.kp_e6_a10.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e6_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e6_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e6_a10.Location = new System.Drawing.Point(887, 112);
+            this.kp_e6_a10.Location = new System.Drawing.Point(886, 112);
             this.kp_e6_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e6_a10.Name = "kp_e6_a10";
             this.kp_e6_a10.Size = new System.Drawing.Size(31, 21);
@@ -7393,7 +7452,7 @@
             this.kp_e7_a10.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e7_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e7_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e7_a10.Location = new System.Drawing.Point(887, 133);
+            this.kp_e7_a10.Location = new System.Drawing.Point(886, 133);
             this.kp_e7_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e7_a10.Name = "kp_e7_a10";
             this.kp_e7_a10.Size = new System.Drawing.Size(31, 23);
@@ -7406,7 +7465,7 @@
             this.kp_e8_a10.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e8_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e8_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e8_a10.Location = new System.Drawing.Point(887, 156);
+            this.kp_e8_a10.Location = new System.Drawing.Point(886, 156);
             this.kp_e8_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e8_a10.Name = "kp_e8_a10";
             this.kp_e8_a10.Size = new System.Drawing.Size(31, 16);
@@ -7419,7 +7478,7 @@
             this.kp_e9_a10.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e9_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e9_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e9_a10.Location = new System.Drawing.Point(887, 172);
+            this.kp_e9_a10.Location = new System.Drawing.Point(886, 172);
             this.kp_e9_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e9_a10.Name = "kp_e9_a10";
             this.kp_e9_a10.Size = new System.Drawing.Size(31, 16);
@@ -7432,7 +7491,7 @@
             this.kp_e5_a11.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e5_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e5_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e5_a11.Location = new System.Drawing.Point(953, 91);
+            this.kp_e5_a11.Location = new System.Drawing.Point(952, 91);
             this.kp_e5_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e5_a11.Name = "kp_e5_a11";
             this.kp_e5_a11.Size = new System.Drawing.Size(33, 21);
@@ -7445,7 +7504,7 @@
             this.kp_e6_a11.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e6_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e6_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e6_a11.Location = new System.Drawing.Point(953, 112);
+            this.kp_e6_a11.Location = new System.Drawing.Point(952, 112);
             this.kp_e6_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e6_a11.Name = "kp_e6_a11";
             this.kp_e6_a11.Size = new System.Drawing.Size(33, 21);
@@ -7458,7 +7517,7 @@
             this.kp_e7_a11.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e7_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e7_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e7_a11.Location = new System.Drawing.Point(953, 133);
+            this.kp_e7_a11.Location = new System.Drawing.Point(952, 133);
             this.kp_e7_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e7_a11.Name = "kp_e7_a11";
             this.kp_e7_a11.Size = new System.Drawing.Size(33, 23);
@@ -7471,7 +7530,7 @@
             this.kp_e8_a11.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e8_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e8_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e8_a11.Location = new System.Drawing.Point(953, 156);
+            this.kp_e8_a11.Location = new System.Drawing.Point(952, 156);
             this.kp_e8_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e8_a11.Name = "kp_e8_a11";
             this.kp_e8_a11.Size = new System.Drawing.Size(33, 16);
@@ -7484,7 +7543,7 @@
             this.kp_e9_a11.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e9_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e9_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e9_a11.Location = new System.Drawing.Point(953, 172);
+            this.kp_e9_a11.Location = new System.Drawing.Point(952, 172);
             this.kp_e9_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e9_a11.Name = "kp_e9_a11";
             this.kp_e9_a11.Size = new System.Drawing.Size(33, 16);
@@ -7497,7 +7556,7 @@
             this.kp_e10_a12.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e10_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e10_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e10_a12.Location = new System.Drawing.Point(1016, 188);
+            this.kp_e10_a12.Location = new System.Drawing.Point(1015, 188);
             this.kp_e10_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e10_a12.Name = "kp_e10_a12";
             this.kp_e10_a12.Size = new System.Drawing.Size(28, 16);
@@ -7510,7 +7569,7 @@
             this.kp_e11_a12.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e11_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e11_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e11_a12.Location = new System.Drawing.Point(1016, 204);
+            this.kp_e11_a12.Location = new System.Drawing.Point(1015, 204);
             this.kp_e11_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e11_a12.Name = "kp_e11_a12";
             this.kp_e11_a12.Size = new System.Drawing.Size(28, 16);
@@ -7523,7 +7582,7 @@
             this.kp_e12_a12.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e12_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e12_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e12_a12.Location = new System.Drawing.Point(1016, 220);
+            this.kp_e12_a12.Location = new System.Drawing.Point(1015, 220);
             this.kp_e12_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e12_a12.Name = "kp_e12_a12";
             this.kp_e12_a12.Size = new System.Drawing.Size(28, 16);
@@ -7536,7 +7595,7 @@
             this.kp_e13_a12.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e13_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e13_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e13_a12.Location = new System.Drawing.Point(1016, 236);
+            this.kp_e13_a12.Location = new System.Drawing.Point(1015, 236);
             this.kp_e13_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e13_a12.Name = "kp_e13_a12";
             this.kp_e13_a12.Size = new System.Drawing.Size(28, 16);
@@ -7549,7 +7608,7 @@
             this.kp_e14_a12.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e14_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e14_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e14_a12.Location = new System.Drawing.Point(1016, 252);
+            this.kp_e14_a12.Location = new System.Drawing.Point(1015, 252);
             this.kp_e14_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e14_a12.Name = "kp_e14_a12";
             this.kp_e14_a12.Size = new System.Drawing.Size(28, 16);
@@ -7562,7 +7621,7 @@
             this.kp_e15_a12.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e15_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e15_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e15_a12.Location = new System.Drawing.Point(1016, 268);
+            this.kp_e15_a12.Location = new System.Drawing.Point(1015, 268);
             this.kp_e15_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e15_a12.Name = "kp_e15_a12";
             this.kp_e15_a12.Size = new System.Drawing.Size(28, 16);
@@ -7575,7 +7634,7 @@
             this.kp_e10_a13.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e10_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e10_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e10_a13.Location = new System.Drawing.Point(1074, 188);
+            this.kp_e10_a13.Location = new System.Drawing.Point(1073, 188);
             this.kp_e10_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e10_a13.Name = "kp_e10_a13";
             this.kp_e10_a13.Size = new System.Drawing.Size(13, 16);
@@ -7588,7 +7647,7 @@
             this.kp_e11_a13.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e11_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e11_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e11_a13.Location = new System.Drawing.Point(1074, 204);
+            this.kp_e11_a13.Location = new System.Drawing.Point(1073, 204);
             this.kp_e11_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e11_a13.Name = "kp_e11_a13";
             this.kp_e11_a13.Size = new System.Drawing.Size(13, 16);
@@ -7601,7 +7660,7 @@
             this.kp_e12_a13.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e12_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e12_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e12_a13.Location = new System.Drawing.Point(1074, 220);
+            this.kp_e12_a13.Location = new System.Drawing.Point(1073, 220);
             this.kp_e12_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e12_a13.Name = "kp_e12_a13";
             this.kp_e12_a13.Size = new System.Drawing.Size(13, 16);
@@ -7614,7 +7673,7 @@
             this.kp_e13_a13.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e13_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e13_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e13_a13.Location = new System.Drawing.Point(1074, 236);
+            this.kp_e13_a13.Location = new System.Drawing.Point(1073, 236);
             this.kp_e13_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e13_a13.Name = "kp_e13_a13";
             this.kp_e13_a13.Size = new System.Drawing.Size(13, 16);
@@ -7627,7 +7686,7 @@
             this.kp_e14_a13.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e14_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e14_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e14_a13.Location = new System.Drawing.Point(1074, 252);
+            this.kp_e14_a13.Location = new System.Drawing.Point(1073, 252);
             this.kp_e14_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e14_a13.Name = "kp_e14_a13";
             this.kp_e14_a13.Size = new System.Drawing.Size(13, 16);
@@ -7640,7 +7699,7 @@
             this.kp_e15_a13.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e15_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e15_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e15_a13.Location = new System.Drawing.Point(1074, 268);
+            this.kp_e15_a13.Location = new System.Drawing.Point(1073, 268);
             this.kp_e15_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e15_a13.Name = "kp_e15_a13";
             this.kp_e15_a13.Size = new System.Drawing.Size(13, 16);
@@ -7653,7 +7712,7 @@
             this.kp_e16_a14.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e16_a14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e16_a14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e16_a14.Location = new System.Drawing.Point(1117, 284);
+            this.kp_e16_a14.Location = new System.Drawing.Point(1116, 284);
             this.kp_e16_a14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e16_a14.Name = "kp_e16_a14";
             this.kp_e16_a14.Size = new System.Drawing.Size(22, 16);
@@ -7666,10 +7725,10 @@
             this.kp_e17_a15.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e17_a15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e17_a15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e17_a15.Location = new System.Drawing.Point(1166, 300);
+            this.kp_e17_a15.Location = new System.Drawing.Point(1165, 300);
             this.kp_e17_a15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e17_a15.Name = "kp_e17_a15";
-            this.kp_e17_a15.Size = new System.Drawing.Size(34, 16);
+            this.kp_e17_a15.Size = new System.Drawing.Size(35, 16);
             this.kp_e17_a15.TabIndex = 235;
             this.kp_e17_a15.Text = "-";
             // 
@@ -7679,10 +7738,10 @@
             this.kp_e26_a15.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e26_a15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e26_a15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e26_a15.Location = new System.Drawing.Point(1166, 364);
+            this.kp_e26_a15.Location = new System.Drawing.Point(1165, 364);
             this.kp_e26_a15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e26_a15.Name = "kp_e26_a15";
-            this.kp_e26_a15.Size = new System.Drawing.Size(34, 16);
+            this.kp_e26_a15.Size = new System.Drawing.Size(35, 16);
             this.kp_e26_a15.TabIndex = 236;
             this.kp_e26_a15.Text = "-";
             // 
@@ -7693,7 +7752,7 @@
             this.kp_kapazitätsbedarf_a1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a1, 2);
             this.kp_kapazitätsbedarf_a1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a1.Location = new System.Drawing.Point(309, 572);
+            this.kp_kapazitätsbedarf_a1.Location = new System.Drawing.Point(308, 572);
             this.kp_kapazitätsbedarf_a1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a1.Name = "kp_kapazitätsbedarf_a1";
             this.kp_kapazitätsbedarf_a1.Size = new System.Drawing.Size(71, 16);
@@ -7707,7 +7766,7 @@
             this.kp_ruestzeit_a1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a1, 2);
             this.kp_ruestzeit_a1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a1.Location = new System.Drawing.Point(309, 588);
+            this.kp_ruestzeit_a1.Location = new System.Drawing.Point(308, 588);
             this.kp_ruestzeit_a1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a1.Name = "kp_ruestzeit_a1";
             this.kp_ruestzeit_a1.Size = new System.Drawing.Size(71, 16);
@@ -7721,7 +7780,7 @@
             this.kp_rueckstand_vorperiode_a1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a1, 2);
             this.kp_rueckstand_vorperiode_a1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a1.Location = new System.Drawing.Point(309, 604);
+            this.kp_rueckstand_vorperiode_a1.Location = new System.Drawing.Point(308, 604);
             this.kp_rueckstand_vorperiode_a1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a1.Name = "kp_rueckstand_vorperiode_a1";
             this.kp_rueckstand_vorperiode_a1.Size = new System.Drawing.Size(71, 16);
@@ -7735,7 +7794,7 @@
             this.kp_kapazitätsbedarf_a2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a2, 2);
             this.kp_kapazitätsbedarf_a2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a2.Location = new System.Drawing.Point(384, 572);
+            this.kp_kapazitätsbedarf_a2.Location = new System.Drawing.Point(383, 572);
             this.kp_kapazitätsbedarf_a2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a2.Name = "kp_kapazitätsbedarf_a2";
             this.kp_kapazitätsbedarf_a2.Size = new System.Drawing.Size(60, 16);
@@ -7749,7 +7808,7 @@
             this.kp_ruestzeit_a2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a2, 2);
             this.kp_ruestzeit_a2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a2.Location = new System.Drawing.Point(384, 588);
+            this.kp_ruestzeit_a2.Location = new System.Drawing.Point(383, 588);
             this.kp_ruestzeit_a2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a2.Name = "kp_ruestzeit_a2";
             this.kp_ruestzeit_a2.Size = new System.Drawing.Size(60, 16);
@@ -7763,7 +7822,7 @@
             this.kp_rueckstand_vorperiode_a2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a2, 2);
             this.kp_rueckstand_vorperiode_a2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a2.Location = new System.Drawing.Point(384, 604);
+            this.kp_rueckstand_vorperiode_a2.Location = new System.Drawing.Point(383, 604);
             this.kp_rueckstand_vorperiode_a2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a2.Name = "kp_rueckstand_vorperiode_a2";
             this.kp_rueckstand_vorperiode_a2.Size = new System.Drawing.Size(60, 16);
@@ -7777,7 +7836,7 @@
             this.kp_kapazitätsbedarf_a3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a3, 2);
             this.kp_kapazitätsbedarf_a3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a3.Location = new System.Drawing.Point(448, 572);
+            this.kp_kapazitätsbedarf_a3.Location = new System.Drawing.Point(447, 572);
             this.kp_kapazitätsbedarf_a3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a3.Name = "kp_kapazitätsbedarf_a3";
             this.kp_kapazitätsbedarf_a3.Size = new System.Drawing.Size(77, 16);
@@ -7791,7 +7850,7 @@
             this.kp_ruestzeit_a3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a3, 2);
             this.kp_ruestzeit_a3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a3.Location = new System.Drawing.Point(448, 588);
+            this.kp_ruestzeit_a3.Location = new System.Drawing.Point(447, 588);
             this.kp_ruestzeit_a3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a3.Name = "kp_ruestzeit_a3";
             this.kp_ruestzeit_a3.Size = new System.Drawing.Size(77, 16);
@@ -7805,7 +7864,7 @@
             this.kp_rueckstand_vorperiode_a3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a3, 2);
             this.kp_rueckstand_vorperiode_a3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a3.Location = new System.Drawing.Point(448, 604);
+            this.kp_rueckstand_vorperiode_a3.Location = new System.Drawing.Point(447, 604);
             this.kp_rueckstand_vorperiode_a3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a3.Name = "kp_rueckstand_vorperiode_a3";
             this.kp_rueckstand_vorperiode_a3.Size = new System.Drawing.Size(77, 16);
@@ -7819,7 +7878,7 @@
             this.kp_kapazitätsbedarf_a4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a4, 2);
             this.kp_kapazitätsbedarf_a4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a4.Location = new System.Drawing.Point(529, 572);
+            this.kp_kapazitätsbedarf_a4.Location = new System.Drawing.Point(528, 572);
             this.kp_kapazitätsbedarf_a4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a4.Name = "kp_kapazitätsbedarf_a4";
             this.kp_kapazitätsbedarf_a4.Size = new System.Drawing.Size(69, 16);
@@ -7833,7 +7892,7 @@
             this.kp_ruestzeit_a4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a4, 2);
             this.kp_ruestzeit_a4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a4.Location = new System.Drawing.Point(529, 588);
+            this.kp_ruestzeit_a4.Location = new System.Drawing.Point(528, 588);
             this.kp_ruestzeit_a4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a4.Name = "kp_ruestzeit_a4";
             this.kp_ruestzeit_a4.Size = new System.Drawing.Size(69, 16);
@@ -7847,7 +7906,7 @@
             this.kp_rueckstand_vorperiode_a4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a4, 2);
             this.kp_rueckstand_vorperiode_a4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a4.Location = new System.Drawing.Point(529, 604);
+            this.kp_rueckstand_vorperiode_a4.Location = new System.Drawing.Point(528, 604);
             this.kp_rueckstand_vorperiode_a4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a4.Name = "kp_rueckstand_vorperiode_a4";
             this.kp_rueckstand_vorperiode_a4.Size = new System.Drawing.Size(69, 16);
@@ -7861,7 +7920,7 @@
             this.kp_kapazitätsbedarf_a6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a6, 2);
             this.kp_kapazitätsbedarf_a6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a6.Location = new System.Drawing.Point(602, 572);
+            this.kp_kapazitätsbedarf_a6.Location = new System.Drawing.Point(601, 572);
             this.kp_kapazitätsbedarf_a6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a6.Name = "kp_kapazitätsbedarf_a6";
             this.kp_kapazitätsbedarf_a6.Size = new System.Drawing.Size(52, 16);
@@ -7875,7 +7934,7 @@
             this.kp_ruestzeit_a5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a5, 2);
             this.kp_ruestzeit_a5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a5.Location = new System.Drawing.Point(602, 588);
+            this.kp_ruestzeit_a5.Location = new System.Drawing.Point(601, 588);
             this.kp_ruestzeit_a5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a5.Name = "kp_ruestzeit_a5";
             this.kp_ruestzeit_a5.Size = new System.Drawing.Size(52, 16);
@@ -7889,7 +7948,7 @@
             this.kp_rueckstand_vorperiode_a6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a6, 2);
             this.kp_rueckstand_vorperiode_a6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a6.Location = new System.Drawing.Point(602, 604);
+            this.kp_rueckstand_vorperiode_a6.Location = new System.Drawing.Point(601, 604);
             this.kp_rueckstand_vorperiode_a6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a6.Name = "kp_rueckstand_vorperiode_a6";
             this.kp_rueckstand_vorperiode_a6.Size = new System.Drawing.Size(52, 16);
@@ -7903,7 +7962,7 @@
             this.kp_kapazitätsbedarf_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a7, 2);
             this.kp_kapazitätsbedarf_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a7.Location = new System.Drawing.Point(658, 572);
+            this.kp_kapazitätsbedarf_a7.Location = new System.Drawing.Point(657, 572);
             this.kp_kapazitätsbedarf_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a7.Name = "kp_kapazitätsbedarf_a7";
             this.kp_kapazitätsbedarf_a7.Size = new System.Drawing.Size(60, 16);
@@ -7917,7 +7976,7 @@
             this.kp_ruestzeit_a6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a6, 2);
             this.kp_ruestzeit_a6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a6.Location = new System.Drawing.Point(658, 588);
+            this.kp_ruestzeit_a6.Location = new System.Drawing.Point(657, 588);
             this.kp_ruestzeit_a6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a6.Name = "kp_ruestzeit_a6";
             this.kp_ruestzeit_a6.Size = new System.Drawing.Size(60, 16);
@@ -7931,7 +7990,7 @@
             this.kp_rueckstand_vorperiode_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a7, 2);
             this.kp_rueckstand_vorperiode_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a7.Location = new System.Drawing.Point(658, 604);
+            this.kp_rueckstand_vorperiode_a7.Location = new System.Drawing.Point(657, 604);
             this.kp_rueckstand_vorperiode_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a7.Name = "kp_rueckstand_vorperiode_a7";
             this.kp_rueckstand_vorperiode_a7.Size = new System.Drawing.Size(60, 16);
@@ -7945,7 +8004,7 @@
             this.kp_rueckstand_vorperiode_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a8, 2);
             this.kp_rueckstand_vorperiode_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a8.Location = new System.Drawing.Point(722, 604);
+            this.kp_rueckstand_vorperiode_a8.Location = new System.Drawing.Point(721, 604);
             this.kp_rueckstand_vorperiode_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a8.Name = "kp_rueckstand_vorperiode_a8";
             this.kp_rueckstand_vorperiode_a8.Size = new System.Drawing.Size(63, 16);
@@ -7959,7 +8018,7 @@
             this.kp_ruestzeit_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a7, 2);
             this.kp_ruestzeit_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a7.Location = new System.Drawing.Point(722, 588);
+            this.kp_ruestzeit_a7.Location = new System.Drawing.Point(721, 588);
             this.kp_ruestzeit_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a7.Name = "kp_ruestzeit_a7";
             this.kp_ruestzeit_a7.Size = new System.Drawing.Size(63, 16);
@@ -7973,7 +8032,7 @@
             this.kp_kapazitätsbedarf_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a8, 2);
             this.kp_kapazitätsbedarf_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a8.Location = new System.Drawing.Point(722, 572);
+            this.kp_kapazitätsbedarf_a8.Location = new System.Drawing.Point(721, 572);
             this.kp_kapazitätsbedarf_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a8.Name = "kp_kapazitätsbedarf_a8";
             this.kp_kapazitätsbedarf_a8.Size = new System.Drawing.Size(63, 16);
@@ -7987,7 +8046,7 @@
             this.kp_kapazitätsbedarf_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a9, 2);
             this.kp_kapazitätsbedarf_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a9.Location = new System.Drawing.Point(789, 572);
+            this.kp_kapazitätsbedarf_a9.Location = new System.Drawing.Point(788, 572);
             this.kp_kapazitätsbedarf_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a9.Name = "kp_kapazitätsbedarf_a9";
             this.kp_kapazitätsbedarf_a9.Size = new System.Drawing.Size(66, 16);
@@ -8001,7 +8060,7 @@
             this.kp_ruestzeit_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a8, 2);
             this.kp_ruestzeit_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a8.Location = new System.Drawing.Point(789, 588);
+            this.kp_ruestzeit_a8.Location = new System.Drawing.Point(788, 588);
             this.kp_ruestzeit_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a8.Name = "kp_ruestzeit_a8";
             this.kp_ruestzeit_a8.Size = new System.Drawing.Size(66, 16);
@@ -8015,7 +8074,7 @@
             this.kp_kapazitätsbedarf_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a10, 2);
             this.kp_kapazitätsbedarf_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a10.Location = new System.Drawing.Point(859, 572);
+            this.kp_kapazitätsbedarf_a10.Location = new System.Drawing.Point(858, 572);
             this.kp_kapazitätsbedarf_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a10.Name = "kp_kapazitätsbedarf_a10";
             this.kp_kapazitätsbedarf_a10.Size = new System.Drawing.Size(59, 16);
@@ -8029,7 +8088,7 @@
             this.kp_ruestzeit_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a9, 2);
             this.kp_ruestzeit_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a9.Location = new System.Drawing.Point(859, 588);
+            this.kp_ruestzeit_a9.Location = new System.Drawing.Point(858, 588);
             this.kp_ruestzeit_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a9.Name = "kp_ruestzeit_a9";
             this.kp_ruestzeit_a9.Size = new System.Drawing.Size(59, 16);
@@ -8043,7 +8102,7 @@
             this.kp_kapazitätsbedarf_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a11, 2);
             this.kp_kapazitätsbedarf_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a11.Location = new System.Drawing.Point(922, 572);
+            this.kp_kapazitätsbedarf_a11.Location = new System.Drawing.Point(921, 572);
             this.kp_kapazitätsbedarf_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a11.Name = "kp_kapazitätsbedarf_a11";
             this.kp_kapazitätsbedarf_a11.Size = new System.Drawing.Size(64, 16);
@@ -8057,7 +8116,7 @@
             this.kp_ruestzeit_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a10, 2);
             this.kp_ruestzeit_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a10.Location = new System.Drawing.Point(922, 588);
+            this.kp_ruestzeit_a10.Location = new System.Drawing.Point(921, 588);
             this.kp_ruestzeit_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a10.Name = "kp_ruestzeit_a10";
             this.kp_ruestzeit_a10.Size = new System.Drawing.Size(64, 16);
@@ -8071,7 +8130,7 @@
             this.kp_kapazitätsbedarf_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a12, 2);
             this.kp_kapazitätsbedarf_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a12.Location = new System.Drawing.Point(990, 572);
+            this.kp_kapazitätsbedarf_a12.Location = new System.Drawing.Point(989, 572);
             this.kp_kapazitätsbedarf_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a12.Name = "kp_kapazitätsbedarf_a12";
             this.kp_kapazitätsbedarf_a12.Size = new System.Drawing.Size(54, 16);
@@ -8085,7 +8144,7 @@
             this.kp_ruestzeit_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a12, 2);
             this.kp_ruestzeit_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a12.Location = new System.Drawing.Point(990, 588);
+            this.kp_ruestzeit_a12.Location = new System.Drawing.Point(989, 588);
             this.kp_ruestzeit_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a12.Name = "kp_ruestzeit_a12";
             this.kp_ruestzeit_a12.Size = new System.Drawing.Size(54, 16);
@@ -8099,7 +8158,7 @@
             this.kp_kapazitätsbedarf_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a13, 2);
             this.kp_kapazitätsbedarf_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a13.Location = new System.Drawing.Point(1048, 572);
+            this.kp_kapazitätsbedarf_a13.Location = new System.Drawing.Point(1047, 572);
             this.kp_kapazitätsbedarf_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a13.Name = "kp_kapazitätsbedarf_a13";
             this.kp_kapazitätsbedarf_a13.Size = new System.Drawing.Size(39, 16);
@@ -8113,7 +8172,7 @@
             this.kp_ruestzeit_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a13, 2);
             this.kp_ruestzeit_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a13.Location = new System.Drawing.Point(1048, 588);
+            this.kp_ruestzeit_a13.Location = new System.Drawing.Point(1047, 588);
             this.kp_ruestzeit_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a13.Name = "kp_ruestzeit_a13";
             this.kp_ruestzeit_a13.Size = new System.Drawing.Size(39, 16);
@@ -8127,7 +8186,7 @@
             this.kp_kapazitätsbedarf_a14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a14, 2);
             this.kp_kapazitätsbedarf_a14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a14.Location = new System.Drawing.Point(1091, 572);
+            this.kp_kapazitätsbedarf_a14.Location = new System.Drawing.Point(1090, 572);
             this.kp_kapazitätsbedarf_a14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a14.Name = "kp_kapazitätsbedarf_a14";
             this.kp_kapazitätsbedarf_a14.Size = new System.Drawing.Size(48, 16);
@@ -8141,7 +8200,7 @@
             this.kp_ruestzeit_a14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a14, 2);
             this.kp_ruestzeit_a14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a14.Location = new System.Drawing.Point(1091, 588);
+            this.kp_ruestzeit_a14.Location = new System.Drawing.Point(1090, 588);
             this.kp_ruestzeit_a14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a14.Name = "kp_ruestzeit_a14";
             this.kp_ruestzeit_a14.Size = new System.Drawing.Size(48, 16);
@@ -8155,10 +8214,10 @@
             this.kp_kapazitätsbedarf_a15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_kapazitätsbedarf_a15, 2);
             this.kp_kapazitätsbedarf_a15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_kapazitätsbedarf_a15.Location = new System.Drawing.Point(1143, 572);
+            this.kp_kapazitätsbedarf_a15.Location = new System.Drawing.Point(1142, 572);
             this.kp_kapazitätsbedarf_a15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_kapazitätsbedarf_a15.Name = "kp_kapazitätsbedarf_a15";
-            this.kp_kapazitätsbedarf_a15.Size = new System.Drawing.Size(57, 16);
+            this.kp_kapazitätsbedarf_a15.Size = new System.Drawing.Size(58, 16);
             this.kp_kapazitätsbedarf_a15.TabIndex = 250;
             this.kp_kapazitätsbedarf_a15.Text = "-";
             // 
@@ -8169,10 +8228,10 @@
             this.kp_ruestzeit_a15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_ruestzeit_a15, 2);
             this.kp_ruestzeit_a15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_ruestzeit_a15.Location = new System.Drawing.Point(1143, 588);
+            this.kp_ruestzeit_a15.Location = new System.Drawing.Point(1142, 588);
             this.kp_ruestzeit_a15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_ruestzeit_a15.Name = "kp_ruestzeit_a15";
-            this.kp_ruestzeit_a15.Size = new System.Drawing.Size(57, 16);
+            this.kp_ruestzeit_a15.Size = new System.Drawing.Size(58, 16);
             this.kp_ruestzeit_a15.TabIndex = 258;
             this.kp_ruestzeit_a15.Text = "-";
             // 
@@ -8183,7 +8242,7 @@
             this.kp_gesamtkapa_a1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a1, 2);
             this.kp_gesamtkapa_a1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a1.Location = new System.Drawing.Point(309, 620);
+            this.kp_gesamtkapa_a1.Location = new System.Drawing.Point(308, 620);
             this.kp_gesamtkapa_a1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a1.Name = "kp_gesamtkapa_a1";
             this.kp_gesamtkapa_a1.Size = new System.Drawing.Size(71, 16);
@@ -8197,7 +8256,7 @@
             this.kp_gesamtkapa_a2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a2, 2);
             this.kp_gesamtkapa_a2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a2.Location = new System.Drawing.Point(384, 620);
+            this.kp_gesamtkapa_a2.Location = new System.Drawing.Point(383, 620);
             this.kp_gesamtkapa_a2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a2.Name = "kp_gesamtkapa_a2";
             this.kp_gesamtkapa_a2.Size = new System.Drawing.Size(60, 16);
@@ -8211,7 +8270,7 @@
             this.kp_gesamtkapa_a3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a3, 2);
             this.kp_gesamtkapa_a3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a3.Location = new System.Drawing.Point(448, 620);
+            this.kp_gesamtkapa_a3.Location = new System.Drawing.Point(447, 620);
             this.kp_gesamtkapa_a3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a3.Name = "kp_gesamtkapa_a3";
             this.kp_gesamtkapa_a3.Size = new System.Drawing.Size(77, 16);
@@ -8225,7 +8284,7 @@
             this.kp_gesamtkapa_a4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a4, 2);
             this.kp_gesamtkapa_a4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a4.Location = new System.Drawing.Point(529, 620);
+            this.kp_gesamtkapa_a4.Location = new System.Drawing.Point(528, 620);
             this.kp_gesamtkapa_a4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a4.Name = "kp_gesamtkapa_a4";
             this.kp_gesamtkapa_a4.Size = new System.Drawing.Size(69, 16);
@@ -8239,7 +8298,7 @@
             this.kp_gesamtkapa_a6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a6, 2);
             this.kp_gesamtkapa_a6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a6.Location = new System.Drawing.Point(602, 620);
+            this.kp_gesamtkapa_a6.Location = new System.Drawing.Point(601, 620);
             this.kp_gesamtkapa_a6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a6.Name = "kp_gesamtkapa_a6";
             this.kp_gesamtkapa_a6.Size = new System.Drawing.Size(52, 16);
@@ -8253,7 +8312,7 @@
             this.kp_gesamtkapa_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a7, 2);
             this.kp_gesamtkapa_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a7.Location = new System.Drawing.Point(658, 620);
+            this.kp_gesamtkapa_a7.Location = new System.Drawing.Point(657, 620);
             this.kp_gesamtkapa_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a7.Name = "kp_gesamtkapa_a7";
             this.kp_gesamtkapa_a7.Size = new System.Drawing.Size(60, 16);
@@ -8267,10 +8326,10 @@
             this.kp_rueckstand_vorperiode_a15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a15, 2);
             this.kp_rueckstand_vorperiode_a15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a15.Location = new System.Drawing.Point(1143, 604);
+            this.kp_rueckstand_vorperiode_a15.Location = new System.Drawing.Point(1142, 604);
             this.kp_rueckstand_vorperiode_a15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a15.Name = "kp_rueckstand_vorperiode_a15";
-            this.kp_rueckstand_vorperiode_a15.Size = new System.Drawing.Size(57, 16);
+            this.kp_rueckstand_vorperiode_a15.Size = new System.Drawing.Size(58, 16);
             this.kp_rueckstand_vorperiode_a15.TabIndex = 293;
             this.kp_rueckstand_vorperiode_a15.Text = "-";
             // 
@@ -8281,7 +8340,7 @@
             this.kp_rueckstand_vorperiode_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a9, 2);
             this.kp_rueckstand_vorperiode_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a9.Location = new System.Drawing.Point(789, 604);
+            this.kp_rueckstand_vorperiode_a9.Location = new System.Drawing.Point(788, 604);
             this.kp_rueckstand_vorperiode_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a9.Name = "kp_rueckstand_vorperiode_a9";
             this.kp_rueckstand_vorperiode_a9.Size = new System.Drawing.Size(66, 16);
@@ -8295,7 +8354,7 @@
             this.kp_rueckstand_vorperiode_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a10, 2);
             this.kp_rueckstand_vorperiode_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a10.Location = new System.Drawing.Point(859, 604);
+            this.kp_rueckstand_vorperiode_a10.Location = new System.Drawing.Point(858, 604);
             this.kp_rueckstand_vorperiode_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a10.Name = "kp_rueckstand_vorperiode_a10";
             this.kp_rueckstand_vorperiode_a10.Size = new System.Drawing.Size(59, 16);
@@ -8309,7 +8368,7 @@
             this.kp_rueckstand_vorperiode_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a11, 2);
             this.kp_rueckstand_vorperiode_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a11.Location = new System.Drawing.Point(922, 604);
+            this.kp_rueckstand_vorperiode_a11.Location = new System.Drawing.Point(921, 604);
             this.kp_rueckstand_vorperiode_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a11.Name = "kp_rueckstand_vorperiode_a11";
             this.kp_rueckstand_vorperiode_a11.Size = new System.Drawing.Size(64, 16);
@@ -8323,7 +8382,7 @@
             this.kp_rueckstand_vorperiode_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a12, 2);
             this.kp_rueckstand_vorperiode_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a12.Location = new System.Drawing.Point(990, 604);
+            this.kp_rueckstand_vorperiode_a12.Location = new System.Drawing.Point(989, 604);
             this.kp_rueckstand_vorperiode_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a12.Name = "kp_rueckstand_vorperiode_a12";
             this.kp_rueckstand_vorperiode_a12.Size = new System.Drawing.Size(54, 16);
@@ -8337,7 +8396,7 @@
             this.kp_rueckstand_vorperiode_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a13, 2);
             this.kp_rueckstand_vorperiode_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a13.Location = new System.Drawing.Point(1048, 604);
+            this.kp_rueckstand_vorperiode_a13.Location = new System.Drawing.Point(1047, 604);
             this.kp_rueckstand_vorperiode_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a13.Name = "kp_rueckstand_vorperiode_a13";
             this.kp_rueckstand_vorperiode_a13.Size = new System.Drawing.Size(39, 16);
@@ -8351,7 +8410,7 @@
             this.kp_rueckstand_vorperiode_a14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_rueckstand_vorperiode_a14, 2);
             this.kp_rueckstand_vorperiode_a14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_rueckstand_vorperiode_a14.Location = new System.Drawing.Point(1091, 604);
+            this.kp_rueckstand_vorperiode_a14.Location = new System.Drawing.Point(1090, 604);
             this.kp_rueckstand_vorperiode_a14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_rueckstand_vorperiode_a14.Name = "kp_rueckstand_vorperiode_a14";
             this.kp_rueckstand_vorperiode_a14.Size = new System.Drawing.Size(48, 16);
@@ -8365,7 +8424,7 @@
             this.kp_gesamtkapa_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a8, 2);
             this.kp_gesamtkapa_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a8.Location = new System.Drawing.Point(722, 620);
+            this.kp_gesamtkapa_a8.Location = new System.Drawing.Point(721, 620);
             this.kp_gesamtkapa_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a8.Name = "kp_gesamtkapa_a8";
             this.kp_gesamtkapa_a8.Size = new System.Drawing.Size(63, 16);
@@ -8379,7 +8438,7 @@
             this.kp_gesamtkapa_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a9, 2);
             this.kp_gesamtkapa_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a9.Location = new System.Drawing.Point(789, 620);
+            this.kp_gesamtkapa_a9.Location = new System.Drawing.Point(788, 620);
             this.kp_gesamtkapa_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a9.Name = "kp_gesamtkapa_a9";
             this.kp_gesamtkapa_a9.Size = new System.Drawing.Size(66, 16);
@@ -8393,7 +8452,7 @@
             this.kp_gesamtkapa_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a10, 2);
             this.kp_gesamtkapa_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a10.Location = new System.Drawing.Point(859, 620);
+            this.kp_gesamtkapa_a10.Location = new System.Drawing.Point(858, 620);
             this.kp_gesamtkapa_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a10.Name = "kp_gesamtkapa_a10";
             this.kp_gesamtkapa_a10.Size = new System.Drawing.Size(59, 16);
@@ -8407,7 +8466,7 @@
             this.kp_gesamtkapa_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a11, 2);
             this.kp_gesamtkapa_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a11.Location = new System.Drawing.Point(922, 620);
+            this.kp_gesamtkapa_a11.Location = new System.Drawing.Point(921, 620);
             this.kp_gesamtkapa_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a11.Name = "kp_gesamtkapa_a11";
             this.kp_gesamtkapa_a11.Size = new System.Drawing.Size(64, 16);
@@ -8421,7 +8480,7 @@
             this.kp_gesamtkapa_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a12, 2);
             this.kp_gesamtkapa_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a12.Location = new System.Drawing.Point(990, 620);
+            this.kp_gesamtkapa_a12.Location = new System.Drawing.Point(989, 620);
             this.kp_gesamtkapa_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a12.Name = "kp_gesamtkapa_a12";
             this.kp_gesamtkapa_a12.Size = new System.Drawing.Size(54, 16);
@@ -8435,7 +8494,7 @@
             this.kp_gesamtkapa_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a13, 2);
             this.kp_gesamtkapa_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a13.Location = new System.Drawing.Point(1048, 620);
+            this.kp_gesamtkapa_a13.Location = new System.Drawing.Point(1047, 620);
             this.kp_gesamtkapa_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a13.Name = "kp_gesamtkapa_a13";
             this.kp_gesamtkapa_a13.Size = new System.Drawing.Size(39, 16);
@@ -8449,7 +8508,7 @@
             this.kp_gesamtkapa_a14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a14, 2);
             this.kp_gesamtkapa_a14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a14.Location = new System.Drawing.Point(1091, 620);
+            this.kp_gesamtkapa_a14.Location = new System.Drawing.Point(1090, 620);
             this.kp_gesamtkapa_a14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a14.Name = "kp_gesamtkapa_a14";
             this.kp_gesamtkapa_a14.Size = new System.Drawing.Size(48, 16);
@@ -8463,10 +8522,10 @@
             this.kp_gesamtkapa_a15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_gesamtkapa_a15, 2);
             this.kp_gesamtkapa_a15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_gesamtkapa_a15.Location = new System.Drawing.Point(1143, 620);
+            this.kp_gesamtkapa_a15.Location = new System.Drawing.Point(1142, 620);
             this.kp_gesamtkapa_a15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_gesamtkapa_a15.Name = "kp_gesamtkapa_a15";
-            this.kp_gesamtkapa_a15.Size = new System.Drawing.Size(57, 16);
+            this.kp_gesamtkapa_a15.Size = new System.Drawing.Size(58, 16);
             this.kp_gesamtkapa_a15.TabIndex = 292;
             this.kp_gesamtkapa_a15.Text = "-";
             // 
@@ -8477,7 +8536,7 @@
             this.kp_schichten_ueberstunden_a4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a4, 2);
             this.kp_schichten_ueberstunden_a4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a4.Location = new System.Drawing.Point(529, 636);
+            this.kp_schichten_ueberstunden_a4.Location = new System.Drawing.Point(528, 636);
             this.kp_schichten_ueberstunden_a4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a4.Name = "kp_schichten_ueberstunden_a4";
             this.kp_schichten_ueberstunden_a4.Size = new System.Drawing.Size(69, 17);
@@ -8491,7 +8550,7 @@
             this.kp_schichten_ueberstunden_a6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a6, 2);
             this.kp_schichten_ueberstunden_a6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a6.Location = new System.Drawing.Point(602, 636);
+            this.kp_schichten_ueberstunden_a6.Location = new System.Drawing.Point(601, 636);
             this.kp_schichten_ueberstunden_a6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a6.Name = "kp_schichten_ueberstunden_a6";
             this.kp_schichten_ueberstunden_a6.Size = new System.Drawing.Size(52, 17);
@@ -8505,7 +8564,7 @@
             this.kp_schichten_ueberstunden_a7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a7, 2);
             this.kp_schichten_ueberstunden_a7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a7.Location = new System.Drawing.Point(658, 636);
+            this.kp_schichten_ueberstunden_a7.Location = new System.Drawing.Point(657, 636);
             this.kp_schichten_ueberstunden_a7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a7.Name = "kp_schichten_ueberstunden_a7";
             this.kp_schichten_ueberstunden_a7.Size = new System.Drawing.Size(60, 17);
@@ -8519,7 +8578,7 @@
             this.kp_schichten_ueberstunden_a8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a8, 2);
             this.kp_schichten_ueberstunden_a8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a8.Location = new System.Drawing.Point(722, 636);
+            this.kp_schichten_ueberstunden_a8.Location = new System.Drawing.Point(721, 636);
             this.kp_schichten_ueberstunden_a8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a8.Name = "kp_schichten_ueberstunden_a8";
             this.kp_schichten_ueberstunden_a8.Size = new System.Drawing.Size(63, 17);
@@ -8533,7 +8592,7 @@
             this.kp_schichten_ueberstunden_a9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a9, 2);
             this.kp_schichten_ueberstunden_a9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a9.Location = new System.Drawing.Point(789, 636);
+            this.kp_schichten_ueberstunden_a9.Location = new System.Drawing.Point(788, 636);
             this.kp_schichten_ueberstunden_a9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a9.Name = "kp_schichten_ueberstunden_a9";
             this.kp_schichten_ueberstunden_a9.Size = new System.Drawing.Size(66, 17);
@@ -8547,7 +8606,7 @@
             this.kp_schichten_ueberstunden_a3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a3, 2);
             this.kp_schichten_ueberstunden_a3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a3.Location = new System.Drawing.Point(448, 636);
+            this.kp_schichten_ueberstunden_a3.Location = new System.Drawing.Point(447, 636);
             this.kp_schichten_ueberstunden_a3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a3.Name = "kp_schichten_ueberstunden_a3";
             this.kp_schichten_ueberstunden_a3.Size = new System.Drawing.Size(77, 17);
@@ -8561,7 +8620,7 @@
             this.kp_schichten_ueberstunden_a2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a2, 2);
             this.kp_schichten_ueberstunden_a2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a2.Location = new System.Drawing.Point(384, 636);
+            this.kp_schichten_ueberstunden_a2.Location = new System.Drawing.Point(383, 636);
             this.kp_schichten_ueberstunden_a2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a2.Name = "kp_schichten_ueberstunden_a2";
             this.kp_schichten_ueberstunden_a2.Size = new System.Drawing.Size(60, 17);
@@ -8575,7 +8634,7 @@
             this.kp_schichten_ueberstunden_a10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a10, 2);
             this.kp_schichten_ueberstunden_a10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a10.Location = new System.Drawing.Point(859, 636);
+            this.kp_schichten_ueberstunden_a10.Location = new System.Drawing.Point(858, 636);
             this.kp_schichten_ueberstunden_a10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a10.Name = "kp_schichten_ueberstunden_a10";
             this.kp_schichten_ueberstunden_a10.Size = new System.Drawing.Size(59, 17);
@@ -8589,7 +8648,7 @@
             this.kp_schichten_ueberstunden_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a11, 2);
             this.kp_schichten_ueberstunden_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a11.Location = new System.Drawing.Point(922, 636);
+            this.kp_schichten_ueberstunden_a11.Location = new System.Drawing.Point(921, 636);
             this.kp_schichten_ueberstunden_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a11.Name = "kp_schichten_ueberstunden_a11";
             this.kp_schichten_ueberstunden_a11.Size = new System.Drawing.Size(64, 17);
@@ -8603,7 +8662,7 @@
             this.kp_schichten_ueberstunden_a12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a12, 2);
             this.kp_schichten_ueberstunden_a12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a12.Location = new System.Drawing.Point(990, 636);
+            this.kp_schichten_ueberstunden_a12.Location = new System.Drawing.Point(989, 636);
             this.kp_schichten_ueberstunden_a12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a12.Name = "kp_schichten_ueberstunden_a12";
             this.kp_schichten_ueberstunden_a12.Size = new System.Drawing.Size(54, 17);
@@ -8617,7 +8676,7 @@
             this.kp_schichten_ueberstunden_a13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a13, 2);
             this.kp_schichten_ueberstunden_a13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a13.Location = new System.Drawing.Point(1048, 636);
+            this.kp_schichten_ueberstunden_a13.Location = new System.Drawing.Point(1047, 636);
             this.kp_schichten_ueberstunden_a13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a13.Name = "kp_schichten_ueberstunden_a13";
             this.kp_schichten_ueberstunden_a13.Size = new System.Drawing.Size(39, 17);
@@ -8631,7 +8690,7 @@
             this.kp_schichten_ueberstunden_a1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a1, 2);
             this.kp_schichten_ueberstunden_a1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a1.Location = new System.Drawing.Point(309, 636);
+            this.kp_schichten_ueberstunden_a1.Location = new System.Drawing.Point(308, 636);
             this.kp_schichten_ueberstunden_a1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a1.Name = "kp_schichten_ueberstunden_a1";
             this.kp_schichten_ueberstunden_a1.Size = new System.Drawing.Size(71, 17);
@@ -8645,7 +8704,7 @@
             this.kp_schichten_ueberstunden_a14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a14, 2);
             this.kp_schichten_ueberstunden_a14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a14.Location = new System.Drawing.Point(1091, 636);
+            this.kp_schichten_ueberstunden_a14.Location = new System.Drawing.Point(1090, 636);
             this.kp_schichten_ueberstunden_a14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a14.Name = "kp_schichten_ueberstunden_a14";
             this.kp_schichten_ueberstunden_a14.Size = new System.Drawing.Size(48, 17);
@@ -8659,10 +8718,10 @@
             this.kp_schichten_ueberstunden_a15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel4.SetColumnSpan(this.kp_schichten_ueberstunden_a15, 2);
             this.kp_schichten_ueberstunden_a15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_schichten_ueberstunden_a15.Location = new System.Drawing.Point(1143, 636);
+            this.kp_schichten_ueberstunden_a15.Location = new System.Drawing.Point(1142, 636);
             this.kp_schichten_ueberstunden_a15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_schichten_ueberstunden_a15.Name = "kp_schichten_ueberstunden_a15";
-            this.kp_schichten_ueberstunden_a15.Size = new System.Drawing.Size(57, 17);
+            this.kp_schichten_ueberstunden_a15.Size = new System.Drawing.Size(58, 17);
             this.kp_schichten_ueberstunden_a15.TabIndex = 306;
             this.kp_schichten_ueberstunden_a15.Text = "-";
             // 
@@ -8672,7 +8731,7 @@
             this.kp_e4_a11.BackColor = System.Drawing.Color.Gainsboro;
             this.kp_e4_a11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e4_a11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e4_a11.Location = new System.Drawing.Point(953, 60);
+            this.kp_e4_a11.Location = new System.Drawing.Point(952, 60);
             this.kp_e4_a11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e4_a11.Name = "kp_e4_a11";
             this.kp_e4_a11.Size = new System.Drawing.Size(33, 31);
@@ -8685,7 +8744,7 @@
             this.kp_e4_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e4_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e4_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e4_am.Location = new System.Drawing.Point(223, 60);
+            this.kp_e4_am.Location = new System.Drawing.Point(222, 60);
             this.kp_e4_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e4_am.Name = "kp_e4_am";
             this.kp_e4_am.Size = new System.Drawing.Size(82, 31);
@@ -8698,7 +8757,7 @@
             this.kp_e5_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e5_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e5_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e5_am.Location = new System.Drawing.Point(223, 91);
+            this.kp_e5_am.Location = new System.Drawing.Point(222, 91);
             this.kp_e5_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e5_am.Name = "kp_e5_am";
             this.kp_e5_am.Size = new System.Drawing.Size(82, 21);
@@ -8711,7 +8770,7 @@
             this.kp_e6_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e6_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e6_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e6_am.Location = new System.Drawing.Point(223, 112);
+            this.kp_e6_am.Location = new System.Drawing.Point(222, 112);
             this.kp_e6_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e6_am.Name = "kp_e6_am";
             this.kp_e6_am.Size = new System.Drawing.Size(82, 21);
@@ -8724,7 +8783,7 @@
             this.kp_e7_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e7_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e7_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e7_am.Location = new System.Drawing.Point(223, 133);
+            this.kp_e7_am.Location = new System.Drawing.Point(222, 133);
             this.kp_e7_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e7_am.Name = "kp_e7_am";
             this.kp_e7_am.Size = new System.Drawing.Size(82, 23);
@@ -8737,7 +8796,7 @@
             this.kp_e8_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e8_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e8_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e8_am.Location = new System.Drawing.Point(223, 156);
+            this.kp_e8_am.Location = new System.Drawing.Point(222, 156);
             this.kp_e8_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e8_am.Name = "kp_e8_am";
             this.kp_e8_am.Size = new System.Drawing.Size(82, 16);
@@ -8750,7 +8809,7 @@
             this.kp_e9_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e9_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e9_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e9_am.Location = new System.Drawing.Point(223, 172);
+            this.kp_e9_am.Location = new System.Drawing.Point(222, 172);
             this.kp_e9_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e9_am.Name = "kp_e9_am";
             this.kp_e9_am.Size = new System.Drawing.Size(82, 16);
@@ -8763,7 +8822,7 @@
             this.kp_e10_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e10_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e10_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e10_am.Location = new System.Drawing.Point(223, 188);
+            this.kp_e10_am.Location = new System.Drawing.Point(222, 188);
             this.kp_e10_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e10_am.Name = "kp_e10_am";
             this.kp_e10_am.Size = new System.Drawing.Size(82, 16);
@@ -8776,7 +8835,7 @@
             this.kp_e11_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e11_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e11_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e11_am.Location = new System.Drawing.Point(223, 204);
+            this.kp_e11_am.Location = new System.Drawing.Point(222, 204);
             this.kp_e11_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e11_am.Name = "kp_e11_am";
             this.kp_e11_am.Size = new System.Drawing.Size(82, 16);
@@ -8789,7 +8848,7 @@
             this.kp_e12_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e12_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e12_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e12_am.Location = new System.Drawing.Point(223, 220);
+            this.kp_e12_am.Location = new System.Drawing.Point(222, 220);
             this.kp_e12_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e12_am.Name = "kp_e12_am";
             this.kp_e12_am.Size = new System.Drawing.Size(82, 16);
@@ -8802,7 +8861,7 @@
             this.kp_e14_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e14_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e14_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e14_am.Location = new System.Drawing.Point(223, 252);
+            this.kp_e14_am.Location = new System.Drawing.Point(222, 252);
             this.kp_e14_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e14_am.Name = "kp_e14_am";
             this.kp_e14_am.Size = new System.Drawing.Size(82, 16);
@@ -8815,7 +8874,7 @@
             this.kp_e13_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e13_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e13_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e13_am.Location = new System.Drawing.Point(223, 236);
+            this.kp_e13_am.Location = new System.Drawing.Point(222, 236);
             this.kp_e13_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e13_am.Name = "kp_e13_am";
             this.kp_e13_am.Size = new System.Drawing.Size(82, 16);
@@ -8828,7 +8887,7 @@
             this.kp_e15_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e15_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e15_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e15_am.Location = new System.Drawing.Point(223, 268);
+            this.kp_e15_am.Location = new System.Drawing.Point(222, 268);
             this.kp_e15_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e15_am.Name = "kp_e15_am";
             this.kp_e15_am.Size = new System.Drawing.Size(82, 16);
@@ -8841,7 +8900,7 @@
             this.kp_e16_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e16_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e16_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e16_am.Location = new System.Drawing.Point(223, 284);
+            this.kp_e16_am.Location = new System.Drawing.Point(222, 284);
             this.kp_e16_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e16_am.Name = "kp_e16_am";
             this.kp_e16_am.Size = new System.Drawing.Size(82, 16);
@@ -8854,7 +8913,7 @@
             this.kp_e17_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e17_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e17_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e17_am.Location = new System.Drawing.Point(223, 300);
+            this.kp_e17_am.Location = new System.Drawing.Point(222, 300);
             this.kp_e17_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e17_am.Name = "kp_e17_am";
             this.kp_e17_am.Size = new System.Drawing.Size(82, 16);
@@ -8867,7 +8926,7 @@
             this.kp_e18_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e18_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e18_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e18_am.Location = new System.Drawing.Point(223, 316);
+            this.kp_e18_am.Location = new System.Drawing.Point(222, 316);
             this.kp_e18_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e18_am.Name = "kp_e18_am";
             this.kp_e18_am.Size = new System.Drawing.Size(82, 16);
@@ -8880,7 +8939,7 @@
             this.kp_e19_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e19_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e19_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e19_am.Location = new System.Drawing.Point(223, 332);
+            this.kp_e19_am.Location = new System.Drawing.Point(222, 332);
             this.kp_e19_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e19_am.Name = "kp_e19_am";
             this.kp_e19_am.Size = new System.Drawing.Size(82, 16);
@@ -8893,7 +8952,7 @@
             this.kp_e20_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e20_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e20_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e20_am.Location = new System.Drawing.Point(223, 348);
+            this.kp_e20_am.Location = new System.Drawing.Point(222, 348);
             this.kp_e20_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e20_am.Name = "kp_e20_am";
             this.kp_e20_am.Size = new System.Drawing.Size(82, 16);
@@ -8906,7 +8965,7 @@
             this.kp_e26_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e26_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e26_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e26_am.Location = new System.Drawing.Point(223, 364);
+            this.kp_e26_am.Location = new System.Drawing.Point(222, 364);
             this.kp_e26_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e26_am.Name = "kp_e26_am";
             this.kp_e26_am.Size = new System.Drawing.Size(82, 16);
@@ -8919,7 +8978,7 @@
             this.kp_e49_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e49_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e49_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e49_am.Location = new System.Drawing.Point(223, 380);
+            this.kp_e49_am.Location = new System.Drawing.Point(222, 380);
             this.kp_e49_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e49_am.Name = "kp_e49_am";
             this.kp_e49_am.Size = new System.Drawing.Size(82, 16);
@@ -8932,7 +8991,7 @@
             this.kp_e54_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e54_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e54_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e54_am.Location = new System.Drawing.Point(223, 396);
+            this.kp_e54_am.Location = new System.Drawing.Point(222, 396);
             this.kp_e54_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e54_am.Name = "kp_e54_am";
             this.kp_e54_am.Size = new System.Drawing.Size(82, 16);
@@ -8945,7 +9004,7 @@
             this.kp_e50_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e50_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e50_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e50_am.Location = new System.Drawing.Point(223, 412);
+            this.kp_e50_am.Location = new System.Drawing.Point(222, 412);
             this.kp_e50_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e50_am.Name = "kp_e50_am";
             this.kp_e50_am.Size = new System.Drawing.Size(82, 16);
@@ -8958,7 +9017,7 @@
             this.label390.BackColor = System.Drawing.Color.Lavender;
             this.label390.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label390.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label390.Location = new System.Drawing.Point(223, 428);
+            this.label390.Location = new System.Drawing.Point(222, 428);
             this.label390.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label390.Name = "label390";
             this.label390.Size = new System.Drawing.Size(82, 16);
@@ -8971,7 +9030,7 @@
             this.kp_e55_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e55_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e55_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e55_am.Location = new System.Drawing.Point(223, 444);
+            this.kp_e55_am.Location = new System.Drawing.Point(222, 444);
             this.kp_e55_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e55_am.Name = "kp_e55_am";
             this.kp_e55_am.Size = new System.Drawing.Size(82, 16);
@@ -8984,7 +9043,7 @@
             this.kp_e30_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e30_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e30_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e30_am.Location = new System.Drawing.Point(223, 460);
+            this.kp_e30_am.Location = new System.Drawing.Point(222, 460);
             this.kp_e30_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e30_am.Name = "kp_e30_am";
             this.kp_e30_am.Size = new System.Drawing.Size(82, 16);
@@ -8997,7 +9056,7 @@
             this.kp_e51_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e51_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e51_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e51_am.Location = new System.Drawing.Point(223, 476);
+            this.kp_e51_am.Location = new System.Drawing.Point(222, 476);
             this.kp_e51_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e51_am.Name = "kp_e51_am";
             this.kp_e51_am.Size = new System.Drawing.Size(82, 16);
@@ -9010,7 +9069,7 @@
             this.kp_e56_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e56_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e56_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e56_am.Location = new System.Drawing.Point(223, 492);
+            this.kp_e56_am.Location = new System.Drawing.Point(222, 492);
             this.kp_e56_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e56_am.Name = "kp_e56_am";
             this.kp_e56_am.Size = new System.Drawing.Size(82, 16);
@@ -9023,7 +9082,7 @@
             this.kp_e31_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_e31_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_e31_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_e31_am.Location = new System.Drawing.Point(223, 508);
+            this.kp_e31_am.Location = new System.Drawing.Point(222, 508);
             this.kp_e31_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_e31_am.Name = "kp_e31_am";
             this.kp_e31_am.Size = new System.Drawing.Size(82, 16);
@@ -9036,7 +9095,7 @@
             this.kp_p1_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_p1_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_p1_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_p1_am.Location = new System.Drawing.Point(223, 524);
+            this.kp_p1_am.Location = new System.Drawing.Point(222, 524);
             this.kp_p1_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_p1_am.Name = "kp_p1_am";
             this.kp_p1_am.Size = new System.Drawing.Size(82, 16);
@@ -9049,7 +9108,7 @@
             this.kp_p2_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_p2_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_p2_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_p2_am.Location = new System.Drawing.Point(223, 540);
+            this.kp_p2_am.Location = new System.Drawing.Point(222, 540);
             this.kp_p2_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_p2_am.Name = "kp_p2_am";
             this.kp_p2_am.Size = new System.Drawing.Size(82, 16);
@@ -9062,7 +9121,7 @@
             this.kp_p3_am.BackColor = System.Drawing.Color.Lavender;
             this.kp_p3_am.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kp_p3_am.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kp_p3_am.Location = new System.Drawing.Point(223, 556);
+            this.kp_p3_am.Location = new System.Drawing.Point(222, 556);
             this.kp_p3_am.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.kp_p3_am.Name = "kp_p3_am";
             this.kp_p3_am.Size = new System.Drawing.Size(82, 16);
@@ -9074,7 +9133,7 @@
             this.label399.AutoSize = true;
             this.label399.BackColor = System.Drawing.Color.DarkGray;
             this.label399.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label399.Location = new System.Drawing.Point(130, 0);
+            this.label399.Location = new System.Drawing.Point(129, 0);
             this.label399.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label399.Name = "label399";
             this.tableLayoutPanel4.SetRowSpan(this.label399, 2);
@@ -9374,65 +9433,6 @@
             this.tab_uebersicht_xmloutput.TabIndex = 7;
             this.tab_uebersicht_xmloutput.Text = "Gesamtübersicht / XML Output";
             this.tab_uebersicht_xmloutput.UseVisualStyleBackColor = true;
-            // 
-            // Teil
-            // 
-            this.Teil.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Teil.DataPropertyName = "productionplan";
-            this.Teil.HeaderText = "Teil";
-            this.Teil.Name = "Teil";
-            this.Teil.ReadOnly = true;
-            this.Teil.Width = 49;
-            // 
-            // column_pp_bezeichnung
-            // 
-            this.column_pp_bezeichnung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.column_pp_bezeichnung.DataPropertyName = "designation";
-            this.column_pp_bezeichnung.HeaderText = "Bezeichnung";
-            this.column_pp_bezeichnung.Name = "column_pp_bezeichnung";
-            this.column_pp_bezeichnung.ReadOnly = true;
-            this.column_pp_bezeichnung.Width = 94;
-            // 
-            // safetstock
-            // 
-            this.safetstock.DataPropertyName = "safetystock";
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.safetstock.DefaultCellStyle = dataGridViewCellStyle1;
-            this.safetstock.HeaderText = "Gewünschter Lagerbestand";
-            this.safetstock.Name = "safetstock";
-            // 
-            // column_pp_lagerbestand
-            // 
-            this.column_pp_lagerbestand.DataPropertyName = "stock";
-            this.column_pp_lagerbestand.HeaderText = "Lagerbestand";
-            this.column_pp_lagerbestand.Name = "column_pp_lagerbestand";
-            this.column_pp_lagerbestand.ReadOnly = true;
-            // 
-            // column_pp_warteschlange
-            // 
-            this.column_pp_warteschlange.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.column_pp_warteschlange.DataPropertyName = "waitlist";
-            this.column_pp_warteschlange.HeaderText = "Warteschlange";
-            this.column_pp_warteschlange.Name = "column_pp_warteschlange";
-            this.column_pp_warteschlange.ReadOnly = true;
-            this.column_pp_warteschlange.Width = 104;
-            // 
-            // column_pp_inbearbeitung
-            // 
-            this.column_pp_inbearbeitung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.column_pp_inbearbeitung.DataPropertyName = "inwork";
-            this.column_pp_inbearbeitung.HeaderText = "in Bearbeitung";
-            this.column_pp_inbearbeitung.Name = "column_pp_inbearbeitung";
-            this.column_pp_inbearbeitung.ReadOnly = true;
-            this.column_pp_inbearbeitung.Width = 92;
-            // 
-            // production
-            // 
-            this.production.DataPropertyName = "production";
-            this.production.HeaderText = "Produktion";
-            this.production.Name = "production";
-            this.production.ReadOnly = true;
             // 
             // Main
             // 

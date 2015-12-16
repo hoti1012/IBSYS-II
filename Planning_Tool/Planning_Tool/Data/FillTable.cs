@@ -405,6 +405,7 @@ namespace Planning_Tool.Data
             art.Designation = "Rahmen";
             art.IsProduction = true;
             art.Price = 13.15;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("28");
@@ -421,6 +422,7 @@ namespace Planning_Tool.Data
             art.Designation = "Schutzblech v.";
             art.IsProduction = true;
             art.Price = 12.40;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("32");
@@ -434,6 +436,7 @@ namespace Planning_Tool.Data
             art.Designation = "Vorderradgruppe";
             art.IsProduction = true;
             art.Price = 35.85;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("35");
@@ -456,6 +459,7 @@ namespace Planning_Tool.Data
             art.Designation = "Vorderrad cpl.";
             art.IsProduction = true;
             art.Price = 64.64;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -478,6 +482,7 @@ namespace Planning_Tool.Data
             art.Designation = "Schutzblech hinten";
             art.IsProduction = true;
             art.Price = 12.40;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("32");
@@ -491,6 +496,7 @@ namespace Planning_Tool.Data
             art.Designation = "Hinterradgruppe";
             art.IsProduction = true;
             art.Price = 40.85;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("35");
@@ -510,6 +516,7 @@ namespace Planning_Tool.Data
             art.Designation = "Rahmen u. Räder";
             art.IsProduction = true;
             art.Price = 120.63;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -532,6 +539,7 @@ namespace Planning_Tool.Data
             art.Designation = "Sattel";
             art.IsProduction = true;
             art.Price = 7.16;
+            art.safetyStock = 300;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("43");
@@ -551,6 +559,7 @@ namespace Planning_Tool.Data
             art.Designation = "Lenker";
             art.IsProduction = true;
             art.Price = 7.02;
+            art.safetyStock = 300;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -573,6 +582,7 @@ namespace Planning_Tool.Data
             art.Designation = "Fahrrad o. Pedal";
             art.IsProduction = true;
             art.Price = 137.47;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -595,6 +605,7 @@ namespace Planning_Tool.Data
             art.Designation = "Pedal";
             art.IsProduction = true;
             art.Price = 10.50;
+            art.safetyStock = 300;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("44");
@@ -611,6 +622,7 @@ namespace Planning_Tool.Data
             art.Designation = "Kinderfahrrad";
             art.IsProduction = true;
             art.Price = 156.13;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("21");
@@ -634,6 +646,7 @@ namespace Planning_Tool.Data
             art.Designation = "Rahmen";
             art.IsProduction = true;
             art.Price = 14.35;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("28");
@@ -650,6 +663,7 @@ namespace Planning_Tool.Data
             art.Designation = "Schutzblech v.";
             art.IsProduction = true;
             art.Price = 14.65;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("32");
@@ -663,6 +677,7 @@ namespace Planning_Tool.Data
             art.Designation = "Vorderradgruppe";
             art.IsProduction = true;
             art.Price = 35.85;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("35");
@@ -685,6 +700,7 @@ namespace Planning_Tool.Data
             art.Designation = "Vorderrad";
             art.IsProduction = true;
             art.Price = 68.09;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -707,6 +723,7 @@ namespace Planning_Tool.Data
             art.Designation = "Schutzblech h.";
             art.IsProduction = true;
             art.Price = 14.65;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("32");
@@ -720,6 +737,7 @@ namespace Planning_Tool.Data
             art.Designation = "Hinterradgruppe";
             art.IsProduction = true;
             art.Price = 39.85;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("35");
@@ -739,6 +757,7 @@ namespace Planning_Tool.Data
             art.Designation = "Rahmen u. Räder";
             art.IsProduction = true;
             art.Price = 125.33;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -761,6 +780,7 @@ namespace Planning_Tool.Data
             art.Designation = "Fahrrad ohne Pedal";
             art.IsProduction = true;
             art.Price = 142.67;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -783,6 +803,7 @@ namespace Planning_Tool.Data
             art.Designation = "Damenfahrrad";
             art.IsProduction = true;
             art.Price = 163.33;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("22");
@@ -806,6 +827,7 @@ namespace Planning_Tool.Data
             art.Designation = "Rahmen";
             art.IsProduction = true;
             art.Price = 15.55;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("28");
@@ -822,6 +844,7 @@ namespace Planning_Tool.Data
             art.Designation = "Schutzblech v.";
             art.IsProduction = true;
             art.Price = 14.65;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("32");
@@ -835,6 +858,7 @@ namespace Planning_Tool.Data
             art.Designation = "Vorderradgruppe";
             art.IsProduction = true;
             art.Price = 35.85;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("33");
@@ -857,6 +881,7 @@ namespace Planning_Tool.Data
             art.Designation = "Vorderrad mont.";
             art.IsProduction = true;
             art.Price = 69.29;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -879,6 +904,7 @@ namespace Planning_Tool.Data
             art.Designation = "Schutzblech h.";
             art.IsProduction = true;
             art.Price = 14.65;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("32");
@@ -892,6 +918,7 @@ namespace Planning_Tool.Data
             art.Designation = "Hinterradgruppe";
             art.IsProduction = true;
             art.Price = 40.85;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("33");
@@ -911,6 +938,7 @@ namespace Planning_Tool.Data
             art.Designation = "Rahmen o. Räder";
             art.IsProduction = true;
             art.Price = 127.53;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -933,6 +961,7 @@ namespace Planning_Tool.Data
             art.Designation = "Rahmen o. Ped.";
             art.IsProduction = true;
             art.Price = 144.42;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("24");
@@ -955,6 +984,7 @@ namespace Planning_Tool.Data
             art.Designation = "Herrenfahrrad";
             art.IsProduction = true;
             art.Price = 165.08;
+            art.safetyStock = 100;
             art.update();
             bom = art.createBom();
             bomPos = bom.addPos("23");
