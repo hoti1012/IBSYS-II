@@ -13,15 +13,20 @@ using Planning_Tool.Forecasts;
 using Planning_Tool.Masterdata;
 using Planning_Tool.Exceptions;
 using Planning_Tool.Production;
+using System.Data.SQLite;
 	
 namespace Planning_Tool
 {
     public partial class Main : Form
     {
+        private SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter();
+        private BindingSource ppOverviewBinding = new BindingSource();
+
         public Main()
         {
             InitializeComponent();
             DatabaseManager manager = new DatabaseManager();
+            dataGridView1.DataSource = ppOverviewBinding;
             int count = 0;
             try
             {
@@ -37,6 +42,24 @@ namespace Planning_Tool
             }
         }
 
+        public void getData(string selectCommand)
+        {
+            string connectionString = "Data Source=database.db";
+
+            dataAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
+
+            SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(dataAdapter);
+
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+
+            if (selectCommand.Contains(typeof(ProductionPlan).Name))
+            {
+                ppOverviewBinding.DataSource = table;
+            }
+        }
+
         public void fillFields()
         {
             fillProductionPlan();
@@ -44,164 +67,10 @@ namespace Planning_Tool
 
         private void fillProductionPlan()
         {
-            ProductionPlan pp1 = null;
-            List<ProductionPlan> pp1Pos = null;
-            ProductionPlan pp2 = null;
-            ProductionPlan pp3 = null;
-            
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "1") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_p1_vw.Text = pp1.sellwich.ToString();
-                tb_pp_p1_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_p1_ws.Text = pp1.waitList.ToString();
-                tb_pp_p1_iB.Text = pp1.inWork.ToString();
-                tb_pp_p1_lb.Text = pp1.stock.ToString();
-                tb_pp_p1_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "16") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_16P1_vw.Text = pp1.sellwich.ToString();
-                tb_pp_16P1_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_16P1_ws.Text = pp1.waitList.ToString();
-                tb_pp_16P1_iB.Text = pp1.inWork.ToString();
-                tb_pp_16P1_lb.Text = pp1.stock.ToString();
-                tb_pp_16P1_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "51") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_51_vw.Text = pp1.sellwich.ToString();
-                tb_pp_51_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_51_ws.Text = pp1.waitList.ToString();
-                tb_pp_51_iB.Text = pp1.inWork.ToString();
-                tb_pp_51_lb.Text = pp1.stock.ToString();
-                tb_pp_51_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "26") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_26P1_vw.Text = pp1.sellwich.ToString();
-                tb_pp_26P1_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_26P1_ws.Text = pp1.waitList.ToString();
-                tb_pp_26P1_iB.Text = pp1.inWork.ToString();
-                tb_pp_26P1_lb.Text = pp1.stock.ToString();
-                tb_pp_26P1_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "17") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_17P1_vw.Text = pp1.sellwich.ToString();
-                tb_pp_17P1_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_17P1_ws.Text = pp1.waitList.ToString();
-                tb_pp_17P1_iB.Text = pp1.inWork.ToString();
-                tb_pp_17P1_lb.Text = pp1.stock.ToString();
-                tb_pp_17P1_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "50") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_50_vw.Text = pp1.sellwich.ToString();
-                tb_pp_50_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_50_ws.Text = pp1.waitList.ToString();
-                tb_pp_50_iB.Text = pp1.inWork.ToString();
-                tb_pp_50_lb.Text = pp1.stock.ToString();
-                tb_pp_50_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "4") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_4_vw.Text = pp1.sellwich.ToString();
-                tb_pp_4_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_4_ws.Text = pp1.waitList.ToString();
-                tb_pp_4_iB.Text = pp1.inWork.ToString();
-                tb_pp_4_lb.Text = pp1.stock.ToString();
-                tb_pp_4_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "10") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_10_vw.Text = pp1.sellwich.ToString();
-                tb_pp_10_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_10_ws.Text = pp1.waitList.ToString();
-                tb_pp_10_iB.Text = pp1.inWork.ToString();
-                tb_pp_10_lb.Text = pp1.stock.ToString();
-                tb_pp_10_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "49") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_49_vw.Text = pp1.sellwich.ToString();
-                tb_pp_49_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_49_ws.Text = pp1.waitList.ToString();
-                tb_pp_49_iB.Text = pp1.inWork.ToString();
-                tb_pp_49_lb.Text = pp1.stock.ToString();
-                tb_pp_49_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "7") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_7_vw.Text = pp1.sellwich.ToString();
-                tb_pp_7_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_7_ws.Text = pp1.waitList.ToString();
-                tb_pp_7_iB.Text = pp1.inWork.ToString();
-                tb_pp_7_lb.Text = pp1.stock.ToString();
-                tb_pp_7_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "13") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_13_vw.Text = pp1.sellwich.ToString();
-                tb_pp_13_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_13_ws.Text = pp1.waitList.ToString();
-                tb_pp_13_iB.Text = pp1.inWork.ToString();
-                tb_pp_13_lb.Text = pp1.stock.ToString();
-                tb_pp_13_pr.Text = pp1.production.ToString();
-            }
-
-            pp1 = ProductionPlanFactory.search(typeof(ProductionPlan), "18") as ProductionPlan;
-            if (pp1 != null)
-            {
-                //P1
-                tb_pp_18_vw.Text = pp1.sellwich.ToString();
-                tb_pp_18_sb.Text = pp1.safetyStock.ToString();
-                tb_pp_18_ws.Text = pp1.waitList.ToString();
-                tb_pp_18_iB.Text = pp1.inWork.ToString();
-                tb_pp_18_lb.Text = pp1.stock.ToString();
-                tb_pp_18_pr.Text = pp1.production.ToString();
-            }
-            //P2
-
-            //P3
+            getData("select productionplan as Teil from  " + typeof(ProductionPlan).Name);
         }
 
        
-        private void startButton_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
