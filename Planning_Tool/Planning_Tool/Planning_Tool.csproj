@@ -32,10 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SQLite.Designer">
+      <HintPath>.\SQLite.Designer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
-      <HintPath>Data\System.Data.SQLite.dll</HintPath>
+      <HintPath>.\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,11 +95,6 @@
     <Compile Include="Purchase\OrderingPosFactory.cs" />
     <Compile Include="Masterdata\Stock.cs" />
     <Compile Include="Masterdata\StockFactory.cs" />
-    <Compile Include="SQLite.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SQLite.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Time\Period.cs" />
     <Compile Include="Time\PeriodFactory.cs" />
     <Compile Include="XML\XML_Manager.cs" />
@@ -121,22 +119,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SQLite.xsc">
-      <DependentUpon>SQLite.xsd</DependentUpon>
-    </None>
-    <None Include="SQLite.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SQLite.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="SQLite.xss">
-      <DependentUpon>SQLite.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

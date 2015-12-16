@@ -45,18 +45,25 @@ namespace Planning_Tool
         public void getData(string selectCommand)
         {
             string connectionString = "Data Source=database.db";
-
-            dataAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
-
-            SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(dataAdapter);
-
-            DataTable table = new DataTable();
-            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-            dataAdapter.Fill(table);
-
-            if (selectCommand.Contains(typeof(ProductionPlan).Name))
+            try
             {
-                ppOverviewBinding.DataSource = table;
+
+                dataAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
+
+                SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(dataAdapter);
+
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table);
+
+                if (selectCommand.Contains(typeof(ProductionPlan).Name))
+                {
+                    ppOverviewBinding.DataSource = table;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -67,7 +74,7 @@ namespace Planning_Tool
 
         private void fillProductionPlan()
         {
-            getData("select productionplan as Teil from  " + typeof(ProductionPlan).Name);
+            getData("select productionplan, designation, safetystock, stock, waitlist, inwork, production from  " + typeof(ProductionPlan).Name);
         }
 
        
