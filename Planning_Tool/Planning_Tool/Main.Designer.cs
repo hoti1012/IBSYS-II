@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_startseite = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
@@ -725,6 +725,27 @@
             this.column_reihenfolge_aufteilen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column_reihenfolge_nachvorne = new System.Windows.Forms.DataGridViewButtonColumn();
             this.column_reihenfolge_nachhinten = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.label228 = new System.Windows.Forms.Label();
+            this.fertigungsaufträge = new System.Windows.Forms.Label();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.column_arbeitsplatz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_ueberstunden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_schichten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kapazitätsplanung = new System.Windows.Forms.Label();
+            this.label229 = new System.Windows.Forms.Label();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.column_kaufteil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellungen_menge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellungen_eil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fertigungsaufträge_teil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fertigungsaufträge_menge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label230 = new System.Windows.Forms.Label();
+            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.direktverkäufe_fahrrad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direktverkäufe_menge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direktverkäufe_preis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xml_export = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tab_startseite.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -765,6 +786,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tab_reihenfolge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.tab_uebersicht_xmloutput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -4098,9 +4124,9 @@
             // safetstock
             // 
             this.safetstock.DataPropertyName = "safetystock";
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.safetstock.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.safetstock.DefaultCellStyle = dataGridViewCellStyle6;
             this.safetstock.HeaderText = "Gewünschter Lagerbestand";
             this.safetstock.Name = "safetstock";
             // 
@@ -8881,6 +8907,16 @@
             // 
             // tab_uebersicht_xmloutput
             // 
+            this.tab_uebersicht_xmloutput.Controls.Add(this.xml_export);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.dataGridView9);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.label230);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.dataGridView8);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.label229);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.kapazitätsplanung);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.dataGridView7);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.fertigungsaufträge);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.label228);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.dataGridView6);
             this.tab_uebersicht_xmloutput.Location = new System.Drawing.Point(4, 25);
             this.tab_uebersicht_xmloutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab_uebersicht_xmloutput.Name = "tab_uebersicht_xmloutput";
@@ -9059,11 +9095,192 @@
             this.column_reihenfolge_nachhinten.ToolTipText = "Die Fertigung dieses Teils bekommt eine niedrigere Priorität als es zur Zeit besi" +
     "tzt";
             // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AllowUserToAddRows = false;
+            this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.AllowUserToResizeColumns = false;
+            this.dataGridView6.AllowUserToResizeRows = false;
+            this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fertigungsaufträge_teil,
+            this.fertigungsaufträge_menge});
+            this.dataGridView6.Location = new System.Drawing.Point(28, 123);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowHeadersVisible = false;
+            this.dataGridView6.RowTemplate.Height = 24;
+            this.dataGridView6.Size = new System.Drawing.Size(250, 603);
+            this.dataGridView6.TabIndex = 0;
+            // 
+            // label228
+            // 
+            this.label228.AutoSize = true;
+            this.label228.Location = new System.Drawing.Point(25, 20);
+            this.label228.Name = "label228";
+            this.label228.Size = new System.Drawing.Size(709, 51);
+            this.label228.TabIndex = 1;
+            this.label228.Text = resources.GetString("label228.Text");
+            // 
+            // fertigungsaufträge
+            // 
+            this.fertigungsaufträge.AutoSize = true;
+            this.fertigungsaufträge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fertigungsaufträge.Location = new System.Drawing.Point(28, 85);
+            this.fertigungsaufträge.Name = "fertigungsaufträge";
+            this.fertigungsaufträge.Size = new System.Drawing.Size(167, 20);
+            this.fertigungsaufträge.TabIndex = 2;
+            this.fertigungsaufträge.Text = "Fertigungsaufträge";
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.column_arbeitsplatz,
+            this.column_ueberstunden,
+            this.column_schichten});
+            this.dataGridView7.Location = new System.Drawing.Point(299, 123);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.RowHeadersVisible = false;
+            this.dataGridView7.RowTemplate.Height = 24;
+            this.dataGridView7.Size = new System.Drawing.Size(417, 603);
+            this.dataGridView7.TabIndex = 3;
+            // 
+            // column_arbeitsplatz
+            // 
+            this.column_arbeitsplatz.DataPropertyName = "arbeitsplatz";
+            this.column_arbeitsplatz.HeaderText = "Arbeitsplatz";
+            this.column_arbeitsplatz.Name = "column_arbeitsplatz";
+            // 
+            // column_ueberstunden
+            // 
+            this.column_ueberstunden.DataPropertyName = "ueberstunden";
+            this.column_ueberstunden.HeaderText = "Überstunden";
+            this.column_ueberstunden.Name = "column_ueberstunden";
+            // 
+            // column_schichten
+            // 
+            this.column_schichten.DataPropertyName = "schichten";
+            this.column_schichten.HeaderText = "Schichten";
+            this.column_schichten.Name = "column_schichten";
+            // 
+            // kapazitätsplanung
+            // 
+            this.kapazitätsplanung.AutoSize = true;
+            this.kapazitätsplanung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kapazitätsplanung.Location = new System.Drawing.Point(295, 85);
+            this.kapazitätsplanung.Name = "kapazitätsplanung";
+            this.kapazitätsplanung.Size = new System.Drawing.Size(163, 20);
+            this.kapazitätsplanung.TabIndex = 4;
+            this.kapazitätsplanung.Text = "Kapazitätsplanung";
+            // 
+            // label229
+            // 
+            this.label229.AutoSize = true;
+            this.label229.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label229.Location = new System.Drawing.Point(733, 85);
+            this.label229.Name = "label229";
+            this.label229.Size = new System.Drawing.Size(118, 20);
+            this.label229.TabIndex = 5;
+            this.label229.Text = "Bestellungen";
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.column_kaufteil,
+            this.bestellungen_menge,
+            this.bestellungen_eil});
+            this.dataGridView8.Location = new System.Drawing.Point(737, 123);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.RowHeadersVisible = false;
+            this.dataGridView8.RowTemplate.Height = 24;
+            this.dataGridView8.Size = new System.Drawing.Size(409, 603);
+            this.dataGridView8.TabIndex = 6;
+            // 
+            // column_kaufteil
+            // 
+            this.column_kaufteil.HeaderText = "K-Teil";
+            this.column_kaufteil.Name = "column_kaufteil";
+            // 
+            // bestellungen_menge
+            // 
+            this.bestellungen_menge.HeaderText = "Menge";
+            this.bestellungen_menge.Name = "bestellungen_menge";
+            // 
+            // bestellungen_eil
+            // 
+            this.bestellungen_eil.HeaderText = "Eil?";
+            this.bestellungen_eil.Name = "bestellungen_eil";
+            // 
+            // fertigungsaufträge_teil
+            // 
+            this.fertigungsaufträge_teil.DataPropertyName = "teil";
+            this.fertigungsaufträge_teil.HeaderText = "Teil";
+            this.fertigungsaufträge_teil.Name = "fertigungsaufträge_teil";
+            // 
+            // fertigungsaufträge_menge
+            // 
+            this.fertigungsaufträge_menge.DataPropertyName = "menge";
+            this.fertigungsaufträge_menge.HeaderText = "Menge";
+            this.fertigungsaufträge_menge.Name = "fertigungsaufträge_menge";
+            // 
+            // label230
+            // 
+            this.label230.AutoSize = true;
+            this.label230.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label230.Location = new System.Drawing.Point(1163, 85);
+            this.label230.Name = "label230";
+            this.label230.Size = new System.Drawing.Size(131, 20);
+            this.label230.TabIndex = 7;
+            this.label230.Text = "Direktverkäufe";
+            // 
+            // dataGridView9
+            // 
+            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView9.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.direktverkäufe_fahrrad,
+            this.direktverkäufe_menge,
+            this.direktverkäufe_preis});
+            this.dataGridView9.Location = new System.Drawing.Point(1167, 123);
+            this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.RowHeadersVisible = false;
+            this.dataGridView9.RowTemplate.Height = 24;
+            this.dataGridView9.Size = new System.Drawing.Size(419, 303);
+            this.dataGridView9.TabIndex = 8;
+            // 
+            // direktverkäufe_fahrrad
+            // 
+            this.direktverkäufe_fahrrad.DataPropertyName = "fahrrad";
+            this.direktverkäufe_fahrrad.HeaderText = "Fahrrad";
+            this.direktverkäufe_fahrrad.Name = "direktverkäufe_fahrrad";
+            // 
+            // direktverkäufe_menge
+            // 
+            this.direktverkäufe_menge.DataPropertyName = "menge";
+            this.direktverkäufe_menge.HeaderText = "Menge";
+            this.direktverkäufe_menge.Name = "direktverkäufe_menge";
+            // 
+            // direktverkäufe_preis
+            // 
+            this.direktverkäufe_preis.DataPropertyName = "preis";
+            this.direktverkäufe_preis.HeaderText = "Preis";
+            this.direktverkäufe_preis.Name = "direktverkäufe_preis";
+            // 
+            // xml_export
+            // 
+            this.xml_export.Location = new System.Drawing.Point(1242, 546);
+            this.xml_export.Name = "xml_export";
+            this.xml_export.Size = new System.Drawing.Size(270, 107);
+            this.xml_export.TabIndex = 9;
+            this.xml_export.Text = "XML Export";
+            this.xml_export.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 750);
+            this.ClientSize = new System.Drawing.Size(1666, 852);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -9116,6 +9333,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tab_reihenfolge.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.tab_uebersicht_xmloutput.ResumeLayout(false);
+            this.tab_uebersicht_xmloutput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -9817,6 +10040,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn column_reihenfolge_aufteilen;
         private System.Windows.Forms.DataGridViewButtonColumn column_reihenfolge_nachvorne;
         private System.Windows.Forms.DataGridViewButtonColumn column_reihenfolge_nachhinten;
+        private System.Windows.Forms.Button xml_export;
+        private System.Windows.Forms.DataGridView dataGridView9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direktverkäufe_fahrrad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direktverkäufe_menge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direktverkäufe_preis;
+        private System.Windows.Forms.Label label230;
+        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_kaufteil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bestellungen_menge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bestellungen_eil;
+        private System.Windows.Forms.Label label229;
+        private System.Windows.Forms.Label kapazitätsplanung;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_arbeitsplatz;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_ueberstunden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_schichten;
+        private System.Windows.Forms.Label fertigungsaufträge;
+        private System.Windows.Forms.Label label228;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fertigungsaufträge_teil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fertigungsaufträge_menge;
 
     }
 }
