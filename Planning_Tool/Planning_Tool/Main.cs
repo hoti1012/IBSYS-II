@@ -110,6 +110,33 @@ namespace Planning_Tool
 
         }
 
+        //Pad anzeigen, wenn es sich um eine Datei handelt
+        private void xml_path_input_textbox_DragEnter(object sender,
+        System.Windows.Forms.DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void xml_path_input_textbox_DragDrop(object sender, System.Windows.Forms.DragEventArgs e)
+        {
+            int i;
+            String s;
+
+            // Position für die Anzeige des Pfades.
+            i = xml_path_input_textbox.SelectionStart;
+            s = xml_path_input_textbox.Text.Substring(i);
+            xml_path_input_textbox.Text = xml_path_input_textbox.Text.Substring(0, i);
+
+            // Pfad anzeigen.
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files) xml_path_input_textbox.Text = file + s;
+        }
+
+
+
         private void xml_importieren_button_Click(object sender, EventArgs e)
         {
            
@@ -124,8 +151,8 @@ namespace Planning_Tool
                 {
                     MessageBox.Show(ex.Message);
                 }
-                    
-           
+
+               
 
            
         }
