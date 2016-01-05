@@ -14,6 +14,7 @@ using Planning_Tool.Masterdata;
 using Planning_Tool.Exceptions;
 using Planning_Tool.Production;
 using System.Data.SQLite;
+using System.Threading;
 	
 namespace Planning_Tool
 {
@@ -21,12 +22,15 @@ namespace Planning_Tool
     {
         private SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter();
         private BindingSource ppOverviewBinding = new BindingSource();
+        private BindingSource saftyStockViewBinding = new BindingSource();
+        private Loading loading;
 
         public Main()
         {
             InitializeComponent();
             DatabaseManager manager = new DatabaseManager();
             dataGridView1.DataSource = ppOverviewBinding;
+            dataGridView10.DataSource = saftyStockViewBinding;
             int count = 0;
             try
             {
@@ -46,7 +50,7 @@ namespace Planning_Tool
         /// Läd die Daten als DataAdapter aus der Datenbank
         /// </summary>
         /// <param name="selectCommand"></param>
-        private void getData(string selectCommand)
+        private void getData(string selectCommand, string view)
         {
             string connectionString = "Data Source=database.db";
             try
@@ -60,9 +64,13 @@ namespace Planning_Tool
                 table.Locale = System.Globalization.CultureInfo.InvariantCulture;
                 dataAdapter.Fill(table);
 
-                if (selectCommand.Contains(typeof(ProductionPlan).Name))
+                if (view.Equals("ppOverviewBinding", StringComparison.CurrentCultureIgnoreCase))
                 {
                     ppOverviewBinding.DataSource = table;
+                }
+                else if (view.Equals("saftyStockViewBinding", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    saftyStockViewBinding.DataSource = table;
                 }
             }
             catch (Exception ex)
@@ -76,6 +84,7 @@ namespace Planning_Tool
         /// </summary>
         public void fillFields()
         {
+            fillSaftyStockView();
             fillProductionPlan();
         }
 
@@ -84,7 +93,15 @@ namespace Planning_Tool
         /// </summary>
         private void fillProductionPlan()
         {
-            getData("select productionplan, designation, safetystock, stock, waitlist, inwork, production from  " + typeof(ProductionPlan).Name);
+            getData("select productionplan, designation, safetystock, stock, waitlist, inwork, production from  " + typeof(ProductionPlan).Name,"ppOverviewBinding");
+        }
+
+        /// <summary>
+        /// Füllt das DataGrid für die Produktionsübersicht
+        /// </summary>
+        private void fillSaftyStockView()
+        {
+            getData("select productionplan, designation, safetystock from  " + typeof(ProductionPlan).Name,"saftyStockViewBinding");
         }
 
        
@@ -142,19 +159,54 @@ namespace Planning_Tool
            
                 try
                 {
-                    XML_Manager.read(xml_path_input_textbox.Text);
-                    MessageBox.Show("Import erfolgreich!");
-                    xml_path_input_textbox.Text = "";
+                    loading = new Loading("XML wird Importiert");
+                    loading.Show();
+                    new Thread(xmlImportieren).Start();
                 }
 
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }
+                }  
+        }
 
-               
+        /// <summary>
+        /// Importiert die XML
+        /// </summary>
+        private void xmlImportieren()
+        {
+            try
+            {
+                XML_Manager.read(xml_path_input_textbox.Text);
+                this.Invoke((Action)closeLoding);
+                this.Invoke((Action)cleanXMLPath);
+            }
+            catch(Exception ex)
+            {
+                this.Invoke((Action)closeLoding);
 
-           
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Leert den pfad
+        /// </summary>
+        public void cleanXMLPath()
+        {
+            xml_path_input_textbox.Text = null;
+        }
+
+        /// <summary>
+        /// Schließt das Ladefenster
+        /// </summary>
+        private void closeLoding()
+        {
+            if (loading != null)
+            {
+                loading.Close();
+                loading = null;
+            }
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -171,9 +223,9 @@ namespace Planning_Tool
         {
             try
             {
-                Forecast.saveForecasts(Convert.ToInt32(A1_P0.Value), Convert.ToInt32(A1_P1.Value), Convert.ToInt32(A1_P2.Value), Convert.ToInt32(A1_P3.Value),
-                                        Convert.ToInt32(A2_P0.Value), Convert.ToInt32(A2_P1.Value), Convert.ToInt32(A2_P2.Value), Convert.ToInt32(A2_P3.Value),
-                                        Convert.ToInt32(A3_P0.Value), Convert.ToInt32(A3_P1.Value), Convert.ToInt32(A3_P2.Value), Convert.ToInt32(A3_P3.Value));
+                loading = new Loading("Daten für die Produktionsplanung werden vorbereitet");
+                loading.Show();
+                new Thread(saveForecast).Start();
             }
             catch (Exception ex)
             {
@@ -185,6 +237,22 @@ namespace Planning_Tool
             }
         }
 
+        private void saveForecast()
+        {
+            try
+            {
+                Forecast.saveForecasts(Convert.ToInt32(A1_P0.Value), Convert.ToInt32(A1_P1.Value), Convert.ToInt32(A1_P2.Value), Convert.ToInt32(A1_P3.Value),
+                                            Convert.ToInt32(A2_P0.Value), Convert.ToInt32(A2_P1.Value), Convert.ToInt32(A2_P2.Value), Convert.ToInt32(A2_P3.Value),
+                                            Convert.ToInt32(A3_P0.Value), Convert.ToInt32(A3_P1.Value), Convert.ToInt32(A3_P2.Value), Convert.ToInt32(A3_P3.Value));
+                this.Invoke((Action)closeLoding);
+            }
+            catch (Exception ex)
+            {
+                this.Invoke((Action)closeLoding);
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void label63_Click(object sender, EventArgs e)
         {
 
@@ -193,6 +261,17 @@ namespace Planning_Tool
         private void label160_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView10_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void save_saftyStock_Click(object sender, EventArgs e)
+        {
+            dataAdapter.Update((DataTable)saftyStockViewBinding.DataSource);
+            //dataAdapter.Update((DataTable)saftyStockViewBinding.DataSource);
         }
     }
 }
