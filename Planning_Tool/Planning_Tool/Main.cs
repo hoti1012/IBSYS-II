@@ -20,17 +20,18 @@ namespace Planning_Tool
 {
     public partial class Main : Form
     {
-        private SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter();
-        private BindingSource ppOverviewBinding = new BindingSource();
-        private BindingSource saftyStockViewBinding = new BindingSource();
+        private SQLiteDataAdapter ppStockAdapter = new SQLiteDataAdapter();
+        private SQLiteDataAdapter ppDirektSaleAdapter = new SQLiteDataAdapter();
+        private BindingSource ppStockBinding = new BindingSource();
+        private BindingSource ppDirektSaleBinding = new BindingSource();
         private Loading loading;
 
         public Main()
         {
             InitializeComponent();
             DatabaseManager manager = new DatabaseManager();
-            dataGridView1.DataSource = ppOverviewBinding;
-            dataGridView10.DataSource = saftyStockViewBinding;
+            pDirektSale.DataSource = ppDirektSaleBinding;
+            pStock.DataSource = ppStockBinding; 
             int count = 0;
             try
             {
@@ -50,28 +51,41 @@ namespace Planning_Tool
         /// Läd die Daten als DataAdapter aus der Datenbank
         /// </summary>
         /// <param name="selectCommand"></param>
-        private void getData(string selectCommand, string view)
+        private void getDataStock(string selectCommand)
         {
             string connectionString = "Data Source=database.db";
             try
             {
-
-                dataAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
-
-                SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(dataAdapter);
+                ppStockAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
+                SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(ppStockAdapter);
 
                 DataTable table = new DataTable();
                 table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                dataAdapter.Fill(table);
+                ppStockAdapter.Fill(table);
+                ppStockBinding.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-                if (view.Equals("ppOverviewBinding", StringComparison.CurrentCultureIgnoreCase))
-                {
-                    ppOverviewBinding.DataSource = table;
-                }
-                else if (view.Equals("saftyStockViewBinding", StringComparison.CurrentCultureIgnoreCase))
-                {
-                    saftyStockViewBinding.DataSource = table;
-                }
+        /// <summary>
+        /// Läd die Daten als DataAdapter aus der Datenbank
+        /// </summary>
+        /// <param name="selectCommand"></param>
+        private void getDataDirekt(string selectCommand)
+        {
+            string connectionString = "Data Source=database.db";
+            try
+            {
+                ppDirektSaleAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
+                SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(ppDirektSaleAdapter);
+
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                ppDirektSaleAdapter.Fill(table);
+                ppDirektSaleBinding.DataSource = table;
             }
             catch (Exception ex)
             {
@@ -84,24 +98,46 @@ namespace Planning_Tool
         /// </summary>
         public void fillFields()
         {
-            fillSaftyStockView();
-            fillProductionPlan();
+            fillppDirektSaleBinding();
+            fillppStockBinding();
+        }
+
+        /// <summary>
+        /// Speichert die änderungen in den views
+        /// </summary>
+        private void updateFields()
+        {
+            updateppStockBinding();
+            updateppDirektSaleBinding();
         }
 
         /// <summary>
         /// Füllt das DataGrid für die Produktionsübersicht
         /// </summary>
-        private void fillProductionPlan()
+        private void fillppDirektSaleBinding()
         {
-            getData("select productionplan, designation, safetystock, stock, waitlist, inwork, production from  " + typeof(ProductionPlan).Name,"ppOverviewBinding");
+            string select = "select * from  " + typeof(DirektSale).Name;
+            getDataDirekt(select);
+        }
+
+        private void updateppDirektSaleBinding()
+        {
+            ppDirektSaleAdapter.Update((DataTable)ppDirektSaleBinding.DataSource);
         }
 
         /// <summary>
         /// Füllt das DataGrid für die Produktionsübersicht
         /// </summary>
-        private void fillSaftyStockView()
+        private void fillppStockBinding()
         {
-            getData("select productionplan, designation, safetystock from  " + typeof(ProductionPlan).Name,"saftyStockViewBinding");
+            string select = "select stock, designation, use, amount, safetystock from  " + typeof(Stock).Name
+                          + " WHERE safetystock > 0 ORDER BY STOCK";
+            getDataStock(select);
+        }
+
+        private void updateppStockBinding()
+        {
+            ppStockAdapter.Update((DataTable)ppStockBinding.DataSource);
         }
 
        
@@ -152,8 +188,6 @@ namespace Planning_Tool
             foreach (string file in files) xml_path_input_textbox.Text = file + s;
         }
 
-
-
         private void xml_importieren_button_Click(object sender, EventArgs e)
         {
            
@@ -180,6 +214,7 @@ namespace Planning_Tool
                 XML_Manager.read(xml_path_input_textbox.Text);
                 this.Invoke((Action)closeLoding);
                 this.Invoke((Action)cleanXMLPath);
+                this.Invoke((Action)fillFields);
             }
             catch(Exception ex)
             {
@@ -231,10 +266,6 @@ namespace Planning_Tool
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                    fillFields();
-            }
         }
 
         private void saveForecast()
@@ -244,6 +275,7 @@ namespace Planning_Tool
                 Forecast.saveForecasts(Convert.ToInt32(A1_P0.Value), Convert.ToInt32(A1_P1.Value), Convert.ToInt32(A1_P2.Value), Convert.ToInt32(A1_P3.Value),
                                             Convert.ToInt32(A2_P0.Value), Convert.ToInt32(A2_P1.Value), Convert.ToInt32(A2_P2.Value), Convert.ToInt32(A2_P3.Value),
                                             Convert.ToInt32(A3_P0.Value), Convert.ToInt32(A3_P1.Value), Convert.ToInt32(A3_P2.Value), Convert.ToInt32(A3_P3.Value));
+                updateFields();
                 this.Invoke((Action)closeLoding);
             }
             catch (Exception ex)
@@ -270,8 +302,16 @@ namespace Planning_Tool
 
         private void save_saftyStock_Click(object sender, EventArgs e)
         {
-            dataAdapter.Update((DataTable)saftyStockViewBinding.DataSource);
-            //dataAdapter.Update((DataTable)saftyStockViewBinding.DataSource);
+        }
+
+        private void dataGridView6_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label236_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Planning_Tool.Core;
+using Planning_Tool.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,24 @@ namespace Planning_Tool.Masterdata
         private string _stock;
 
         /// <summary>
+        /// Beschreibung des Artikels
+        /// </summary>
+        private string _designation;
+
+        /// <summary>
+        /// Gibt die Verwendung an
+        /// </summary>
+        private int _use;
+
+        /// <summary>
         /// Anzahl im Lager
         /// </summary>
         private int _amount;
+
+        /// <summary>
+        /// Gibt den sicherheitsbestand an
+        /// </summary>
+        private int _safetyStock;
 
         /// <summary>
         /// Stückpreis
@@ -42,13 +58,44 @@ namespace Planning_Tool.Masterdata
         public string stock
         {
             get { return _stock; }
-            set { _stock = value; }
+            set 
+            { 
+                if (value != null)
+                {
+                    Article art = ArticleFactory.search(typeof(Article), value) as Article;
+                    if (art == null)
+                        throw new ArticleNotFoundException(value);
+
+                    _stock = value;
+                    _designation = art.Designation;
+                    _use = art.getUse().Count;
+                    _safetyStock = art.safetyStock;
+                }
+            }
+        }
+
+        public string designation
+        {
+            get { return _designation; }
+            set { _designation = value; }
+        }
+
+        public int use
+        {
+            get { return _use; }
+            set { _use = value; }
         }
 
         public int amount
         {
             get { return _amount; }
             set { _amount = value; }
+        }
+
+        public int safetyStock
+        {
+            get { return _safetyStock; }
+            set { _safetyStock = value; }
         }
 
         public double price

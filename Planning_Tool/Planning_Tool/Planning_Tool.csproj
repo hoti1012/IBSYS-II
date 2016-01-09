@@ -87,6 +87,8 @@
     <Compile Include="Masterdata\WorkScheduleFactory.cs" />
     <Compile Include="Masterdata\WorkSchedulePos.cs" />
     <Compile Include="Masterdata\WorkSchedulePosFactory.cs" />
+    <Compile Include="Production\DirektSale.cs" />
+    <Compile Include="Production\DirektSaleFactory.cs" />
     <Compile Include="Production\OrderBOM.cs" />
     <Compile Include="Production\OrderBOMFactory.cs" />
     <Compile Include="Production\OrderBOMpos.cs" />

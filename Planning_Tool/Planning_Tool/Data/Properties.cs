@@ -30,6 +30,7 @@ namespace Planning_Tool.Data
                                        ,typeof(WorkplacePos)
                                        ,typeof(Forecast)
                                        ,typeof(ProductionPlan)
+                                       ,typeof(DirektSale)
                                        };
 
         public static Type[] deleteTables = {typeof(Ordering)
@@ -38,6 +39,7 @@ namespace Planning_Tool.Data
                                             ,typeof(WorkplacePos)
                                             ,typeof(Forecast)
                                             ,typeof(ProductionPlan)
+                                            ,typeof(DirektSale)
                                             };
 
         //TODO: Bei fertigstellung auf false setzen

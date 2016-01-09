@@ -44,5 +44,13 @@ namespace Planning_Tool.Production
             get { return _sellwish; }
             set { _sellwish = value; }
         }
+
+        /// <summary>
+        /// Löst die Auftragsstückliste auf
+        /// </summary>
+        public void ExplodeBOM()
+        {
+
+        }
     }
 }
