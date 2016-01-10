@@ -139,6 +139,17 @@ namespace Planning_Tool.Core
         }
 
         /// <summary>
+        /// Gibt alle Positionen zu diesem Kopfobject zurück
+        /// </summary>
+        /// <param name="type">Type</param>
+        /// <param name="head">Nummer des Kopfobjects</param>
+        /// <returns>Eine Liste mit allen Positionsobjecten</returns>
+        public static List<PlanningPosObject> searchAllPos(Type type,string head)
+        {
+            return PlanningPosObjectFactory.search(type, head);
+        }
+
+        /// <summary>
         /// Erzeugt ein Object
         /// </summary>
         /// <param name="type">Type des Objects</param>
@@ -157,8 +168,6 @@ namespace Planning_Tool.Core
                 obj = search(type, head);
                 if (obj != null)
                 {
-                    //TODO: noch zu Bearbeiten
-                    //throw new AlreadyExistsException();
                     return null;
                 }
 

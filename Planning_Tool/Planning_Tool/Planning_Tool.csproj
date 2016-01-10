@@ -95,6 +95,7 @@
     <Compile Include="Production\OrderBOMposFactory.cs" />
     <Compile Include="Production\ProductionPlan.cs" />
     <Compile Include="Production\ProductionPlanFactory.cs" />
+    <Compile Include="Production\ProductionUtil.cs" />
     <Compile Include="Production\Workplace.cs" />
     <Compile Include="Production\WorkplaceFactory.cs" />
     <Compile Include="Production\WorkplacePos.cs" />

@@ -37,20 +37,103 @@ namespace Planning_Tool.Production
             set { _designation = value; }
         }
 
-        private int _sellwish;
+        private int _amount;
 
-        public int sellwisch
+        public int amount
         {
-            get { return _sellwish; }
-            set { _sellwish = value; }
+            get { return _amount; }
+            set { _amount = value; }
+        }
+
+        /// <summary>
+        /// Gibt alle Positionen zu dieser Stückliste zurück
+        /// </summary>
+        /// <returns>Eine Liste mit allen Positionen</returns>
+        public List<OrderBOMpos> getAllPos()
+        {
+            List<OrderBOMpos> res = new List<OrderBOMpos>();
+            foreach (PlanningPosObject p in PlanningObjectFactory.searchAllPos(typeof(OrderBOMpos), this._orderBOM))
+            {
+                res.Add(p as OrderBOMpos);
+            }
+            return res;
+        }
+
+        public List<OrderBOMpos> getAllPosToExplode()
+        {
+            List<OrderBOMpos> res = new List<OrderBOMpos>();
+            foreach (OrderBOMpos o in this.getAllPos())
+            {
+                if(o.isBom && !o.isExplode)
+                    res.Add(o);
+            }
+            return res;
         }
 
         /// <summary>
         /// Löst die Auftragsstückliste auf
         /// </summary>
-        public void ExplodeBOM()
+        public void explodeBOM()
         {
+            firstExplode();
+            fullExplode();
+        }
 
+        /// <summary>
+        /// Löst die Auftragsstückliste erstmals auf
+        /// </summary>
+        public void firstExplode()
+        {
+            foreach (PlanningPosObject p in PlanningPosObjectFactory.search(typeof(BOMpos),this.orderBOM))
+            {
+                BOMpos bom = p as BOMpos;
+                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, bom.bompos) as OrderBOMpos;
+                Stock stock = StockFactory.search(typeof(Stock), bom.bompos) as Stock;
+                Article art = ArticleFactory.search(typeof(Article), bom.bompos) as Article;
+                if (bom.isModule())
+                {
+                    int use = art.getUse().Count;
+                    if (use <= 0)
+                        use = 1;
+                    int amount = (this.amount * bom.amount + (stock.safetyStock / use)) - (art.getWaitingList() / use) - (art.getInWork() / use) - (stock.amount / use);
+                    if (amount < 0)
+                        amount = 0;
+
+                    oBom.dependence = null;
+                    oBom.isBom = true;
+                    oBom.amount = amount;
+                    oBom.isExplode = false;
+                    oBom.update();
+                }
+                else
+                {
+                    int use = art.getUse().Count;
+                    if (use <= 0)
+                        use = 1;
+                    int amount = this.amount * bom.amount;
+                    if (amount < 0)
+                        amount = 0;
+
+                    oBom.dependence = null;
+                    oBom.isBom = false;
+                    oBom.amount = amount;
+                    oBom.isExplode = false;
+                    oBom.update();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Löst die Stückliste komplett auf
+        /// </summary>
+        public void fullExplode()
+        {
+            foreach(OrderBOMpos pos in getAllPosToExplode())
+            {
+                pos.explode();
+            }
+            if (getAllPosToExplode().Count > 0)
+                fullExplode();
         }
     }
 }

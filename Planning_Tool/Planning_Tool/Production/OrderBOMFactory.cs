@@ -9,5 +9,6 @@ namespace Planning_Tool.Production
 {
     class OrderBOMFactory : PlanningObjectFactory
     {
+
     }
 }

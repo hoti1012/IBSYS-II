@@ -9,5 +9,16 @@ namespace Planning_Tool.Forecasts
 {
     class ForecastFactory : PlanningObjectFactory
     {
+        public static List<Forecast> getAll()
+        {
+            List<Forecast> res = new List<Forecast>();
+            List<PlanningObject> tmp;
+            tmp = PlanningObjectFactory.searchAll(typeof(Forecast));
+            foreach(PlanningObject p in tmp)
+            {
+                res.Add(p as Forecast);
+            }
+            return res;
+        }
     }
 }

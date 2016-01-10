@@ -42,12 +42,63 @@ namespace Planning_Tool.Production
             set { _designation = value; }
         }
 
-        private int _production;
+        private string _dependence;
 
-        public int production
+        public string dependence
         {
-            get { return _production; }
-            set { _production = value; }
+            get { return _dependence; }
+            set { _dependence = value; }
+        }
+
+        private int _amount;
+
+        public int amount
+        {
+            get { return _amount; }
+            set { _amount = value; }
+        }
+
+        private bool _isBom;
+
+        public bool isBom
+        {
+            get { return _isBom; }
+            set { _isBom = value; }
+        }
+
+        private bool _isExplode;
+
+        public bool isExplode
+        {
+            get { return _isExplode; }
+            set { _isExplode = value; }
+        }
+
+        /// <summary>
+        /// Löst eine Baugruppe innerhalb einer Stückliste auf
+        /// </summary>
+        internal void explode()
+        {
+            foreach (PlanningPosObject p in PlanningPosObjectFactory.search(typeof(BOMpos), this.orderBOMpos))
+            {
+                BOMpos bom = p as BOMpos;
+                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, bom.bompos) as OrderBOMpos;
+                Stock stock = StockFactory.search(typeof(Stock), bom.bompos) as Stock;
+                Article art = ArticleFactory.search(typeof(Article), bom.bompos) as Article;
+
+                int use = art.getUse().Count;
+                if (use <= 0)
+                    use = 1;
+                int amount = (this.amount * bom.amount + (stock.safetyStock / use)) - (art.getWaitingList() / use) - (art.getInWork() / use);
+                if (amount < 0)
+                    amount = 0;
+
+                oBom.dependence = this.orderBOMpos;
+                oBom.isBom = bom.isModule();
+                oBom.amount = amount;
+                oBom.isExplode = false;
+                oBom.update();
+            }
         }
     }
 }

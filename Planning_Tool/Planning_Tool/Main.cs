@@ -258,7 +258,7 @@ namespace Planning_Tool
         {
             try
             {
-                loading = new Loading("Daten für die Produktionsplanung werden vorbereitet");
+                loading = new Loading("Produktion wird geplant");
                 loading.Show();
                 new Thread(saveForecast).Start();
             }
@@ -270,17 +270,34 @@ namespace Planning_Tool
 
         private void saveForecast()
         {
+            bool success = false;
             try
             {
                 Forecast.saveForecasts(Convert.ToInt32(A1_P0.Value), Convert.ToInt32(A1_P1.Value), Convert.ToInt32(A1_P2.Value), Convert.ToInt32(A1_P3.Value),
                                             Convert.ToInt32(A2_P0.Value), Convert.ToInt32(A2_P1.Value), Convert.ToInt32(A2_P2.Value), Convert.ToInt32(A2_P3.Value),
                                             Convert.ToInt32(A3_P0.Value), Convert.ToInt32(A3_P1.Value), Convert.ToInt32(A3_P2.Value), Convert.ToInt32(A3_P3.Value));
                 updateFields();
+                startPlaning();
                 this.Invoke((Action)closeLoding);
             }
             catch (Exception ex)
             {
                 this.Invoke((Action)closeLoding);
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Führt die Produktionsplanung durch
+        /// </summary>
+        private void startPlaning()
+        {
+            try
+            {
+                ProductionUtil.startPlanning();
+            }
+            catch(Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
