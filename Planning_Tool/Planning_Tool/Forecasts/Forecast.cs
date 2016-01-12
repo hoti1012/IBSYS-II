@@ -111,7 +111,7 @@ namespace Planning_Tool.Forecasts
                 a1.update();
                 a2.update();
                 a3.update();
-                ProductionPlan.setForecasts();
+                //ProductionPlan.setForecasts();
             }
         }
 

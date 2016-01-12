@@ -83,7 +83,7 @@ namespace Planning_Tool.Core
         /// Sucht nach einem Object in der Datenbank
         /// </summary>
         /// <param name="type">Typ des gesuchten objects</param>
-        /// <param name="head">nummer des Kopfobjects</param>
+        /// <param name="sql">nummer des Kopfobjects</param>
         /// <returns>Das gesuchte Object</returns>
         public static List<PlanningObject> select(Type type, string sql)
         {

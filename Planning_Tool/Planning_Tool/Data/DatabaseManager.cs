@@ -44,6 +44,7 @@ namespace Planning_Tool.Data
             {
                 connection.Close();
                 connection.Dispose();
+                connection = null;
                 open = false;
             }
             else
@@ -138,6 +139,7 @@ namespace Planning_Tool.Data
             string sql;
             string fields;
             string primary;
+            bool hasDependence = false;
             Type[] classes;
             PropertyInfo[] prop;
 
@@ -161,6 +163,9 @@ namespace Planning_Tool.Data
                 fields = null;
                 foreach(PropertyInfo p in prop) 
                 {
+                    if (p.Name.Equals("dependence",StringComparison.CurrentCultureIgnoreCase)){
+                        hasDependence = true;
+                    }
                     fields += p.Name + " " + p.PropertyType.Name;
                     if(anz < prop.Length)
                     {
@@ -178,10 +183,21 @@ namespace Planning_Tool.Data
                 primary = ", PRIMARY KEY(" + t.Name;
                 if (t.Name.EndsWith("pos",StringComparison.CurrentCultureIgnoreCase))
                 {
-                    primary += ", " + t.Name.Remove(t.Name.Length-3) + ")";
+                    primary += ", " + t.Name.Remove(t.Name.Length-3);
+
+                    if (hasDependence)
+                    {
+                        primary += ", dependence";
+                    }
+
+                    primary += ")";
                 }
                 else
                 {
+                    if (hasDependence)
+                    {
+                        primary += ", dependence";
+                    }
                     primary += ")";
                 }
 

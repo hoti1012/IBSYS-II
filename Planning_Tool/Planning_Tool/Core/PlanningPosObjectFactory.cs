@@ -82,6 +82,41 @@ namespace Planning_Tool.Core
         }
 
         /// <summary>
+        /// Sucht nach Positionen mit abhäigkeiten
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="head"></param>
+        /// <param name="pos"></param>
+        /// <returns>Die gesuchte Position</returns>
+        public static PlanningPosObject search(Type type, string head, string pos, string dependence)
+        {
+            DatabaseManager manager;
+            string where;
+            PlanningPosObject obj = null;
+            List<Object> res;
+
+            manager = new DatabaseManager();
+            try
+            {
+                where = "WHERE " + type.Name.Remove(type.Name.Length - 3) + " = \"" + head + "\""
+                      + " AND " + type.Name + " = \"" + pos + "\""
+                      + " AND dependence = \"" + dependence + "\"";
+
+                res = manager.select(type, where);
+
+                if (res != null && res.Count > 0)
+                {
+                    obj = res[0] as PlanningPosObject;
+                }
+            }
+            finally
+            {
+                manager.release();
+            }
+            return obj;
+        }
+
+        /// <summary>
         /// Sucht alle Objectposition zu einem Kopfobject in der Datenbank
         /// </summary>
         /// <param name="type">Typ des gesuchten objects</param>
@@ -100,6 +135,36 @@ namespace Planning_Tool.Core
                 where = "WHERE " + type.Name.Remove(type.Name.Length - 3) + " = \"" + head + "\"";
 
                 res = manager.select(type, where);
+
+                foreach (Object o in res)
+                {
+                    obj.Add(o as PlanningPosObject);
+                }
+            }
+            finally
+            {
+                manager.release();
+            }
+            return obj;
+        }
+
+        /// <summary>
+        /// Sucht nach einem Object in der Datenbank
+        /// </summary>
+        /// <param name="type">Typ des gesuchten objects</param>
+        /// <param name="sql">nummer des Kopfobjects</param>
+        /// <returns>Das gesuchte Object</returns>
+        public static List<PlanningPosObject> select(Type type, string sql)
+        {
+            DatabaseManager manager;
+            List<Object> res;
+            List<PlanningPosObject> obj = new List<PlanningPosObject>();
+
+            manager = new DatabaseManager();
+            try
+            {
+
+                res = manager.freeSelect(type, sql);
 
                 foreach (Object o in res)
                 {
@@ -180,6 +245,59 @@ namespace Planning_Tool.Core
                     if (p.Name.Equals(type.Name.Remove(type.Name.Length -3), StringComparison.CurrentCultureIgnoreCase))
                     {
                         p.SetValue(obj, head);
+                    }
+                }
+                manager.insert(obj);
+
+            }
+            finally
+            {
+                manager.release();
+            }
+            return obj;
+        }
+
+        /// <summary>
+        /// Erzeugt eine Position welche auch eine abhäigkeit hat
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="head"></param>
+        /// <param name="pos"></param>
+        /// <param name="dependence"></param>
+        /// <returns>Das erzeugte Object</returns>
+        public static PlanningPosObject create(Type type, string head, string pos, string dependence)
+        {
+            DatabaseManager manager;
+            PlanningPosObject obj = null;
+            PropertyInfo[] props;
+
+            manager = new DatabaseManager();
+            try
+            {
+                //Prüfen ob es die Objectposition bereits gibt
+                obj = search(type, head, pos, dependence);
+                if (obj != null)
+                {
+                    return null;
+                }
+
+                obj = Activator.CreateInstance(type) as PlanningPosObject;
+                props = obj.GetType().GetProperties();
+                foreach (PropertyInfo p in props)
+                {
+                    if (p.Name.Equals(type.Name, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        p.SetValue(obj, pos);
+                    }
+
+                    if (p.Name.Equals(type.Name.Remove(type.Name.Length - 3), StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        p.SetValue(obj, head);
+                    }
+
+                    if (p.Name.Equals("dependence", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        p.SetValue(obj, dependence);
                     }
                 }
                 manager.insert(obj);

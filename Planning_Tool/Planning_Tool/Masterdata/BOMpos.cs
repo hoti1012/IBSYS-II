@@ -81,7 +81,11 @@ namespace Planning_Tool.Masterdata
                     
                     _bompos = value;
                     _designation = art.Designation;
-                    art.use += 1;
+                    if (art.IsProduction)
+                    {
+                        art.use += 1;
+                        art.update();
+                    }
                 }
             }
         }

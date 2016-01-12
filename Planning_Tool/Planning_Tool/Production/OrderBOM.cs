@@ -52,20 +52,23 @@ namespace Planning_Tool.Production
         public List<OrderBOMpos> getAllPos()
         {
             List<OrderBOMpos> res = new List<OrderBOMpos>();
-            foreach (PlanningPosObject p in PlanningObjectFactory.searchAllPos(typeof(OrderBOMpos), this._orderBOM))
+            foreach (OrderBOMpos o in PlanningObjectFactory.searchAllPos(typeof(OrderBOMpos), this._orderBOM))
             {
-                res.Add(p as OrderBOMpos);
+                res.Add(o);
             }
             return res;
         }
 
         public List<OrderBOMpos> getAllPosToExplode()
         {
+            string sql = "SELECT * FROM " + typeof(OrderBOMpos).Name
+                       + " WHERE OrderBom = \"" + this.orderBOM + "\""
+                       + " AND isBom = \"true\""
+                       + " AND isExplode = \"false\"";
             List<OrderBOMpos> res = new List<OrderBOMpos>();
-            foreach (OrderBOMpos o in this.getAllPos())
+            foreach (OrderBOMpos o in PlanningPosObjectFactory.select(typeof(OrderBOMpos),sql))
             {
-                if(o.isBom && !o.isExplode)
-                    res.Add(o);
+                res.Add(o);
             }
             return res;
         }
@@ -76,7 +79,7 @@ namespace Planning_Tool.Production
         public void explodeBOM()
         {
             firstExplode();
-            fullExplode();
+            //fullExplode();
         }
 
         /// <summary>
@@ -84,10 +87,11 @@ namespace Planning_Tool.Production
         /// </summary>
         public void firstExplode()
         {
-            foreach (PlanningPosObject p in PlanningPosObjectFactory.search(typeof(BOMpos),this.orderBOM))
+            List<PlanningPosObject> list = PlanningPosObjectFactory.search(typeof(BOMpos), this.orderBOM);
+            foreach (PlanningPosObject p in list)
             {
                 BOMpos bom = p as BOMpos;
-                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, bom.bompos) as OrderBOMpos;
+                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, bom.bompos,this.orderBOM) as OrderBOMpos;
                 Stock stock = StockFactory.search(typeof(Stock), bom.bompos) as Stock;
                 Article art = ArticleFactory.search(typeof(Article), bom.bompos) as Article;
                 if (art.IsProduction)
@@ -99,7 +103,6 @@ namespace Planning_Tool.Production
                     if (amount < 0)
                         amount = 0;
 
-                    oBom.dependence = null;
                     oBom.isBom = bom.isModule();
                     oBom.amount = amount;
                     oBom.isExplode = false;
@@ -111,10 +114,8 @@ namespace Planning_Tool.Production
                     if (amount < 0)
                         amount = 0;
 
-                    oBom.dependence = null;
                     oBom.isBom = false;
                     oBom.amount = amount;
-                    oBom.isExplode = false;
                     oBom.update();
                 }
             }

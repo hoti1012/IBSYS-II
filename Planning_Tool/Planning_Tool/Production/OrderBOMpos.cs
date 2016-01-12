@@ -79,10 +79,11 @@ namespace Planning_Tool.Production
         /// </summary>
         internal void explode()
         {
-            foreach (PlanningPosObject p in PlanningPosObjectFactory.search(typeof(BOMpos), this.orderBOMpos))
+            List<PlanningPosObject> list = PlanningPosObjectFactory.search(typeof(BOMpos), this.orderBOMpos);
+            foreach (PlanningPosObject p in list)
             {
                 BOMpos bom = p as BOMpos;
-                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, bom.bompos) as OrderBOMpos;
+                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, bom.bompos, orderBOMpos) as OrderBOMpos;
                 Stock stock = StockFactory.search(typeof(Stock), bom.bompos) as Stock;
                 Article art = ArticleFactory.search(typeof(Article), bom.bompos) as Article;
                 if (art.IsProduction)
@@ -94,7 +95,6 @@ namespace Planning_Tool.Production
                     if (amount < 0)
                         amount = 0;
 
-                    oBom.dependence = this.orderBOMpos;
                     oBom.isBom = bom.isModule();
                     oBom.amount = amount;
                     oBom.isExplode = false;
@@ -106,13 +106,14 @@ namespace Planning_Tool.Production
                     if (amount < 0)
                         amount = 0;
 
-                    oBom.dependence = this.orderBOMpos;
                     oBom.isBom = false;
                     oBom.amount = amount;
                     oBom.isExplode = false;
                     oBom.update();
                 }
             }
+            this.isExplode = true;
+            update();
         }
     }
 }

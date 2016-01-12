@@ -277,27 +277,12 @@ namespace Planning_Tool
                                             Convert.ToInt32(A2_P0.Value), Convert.ToInt32(A2_P1.Value), Convert.ToInt32(A2_P2.Value), Convert.ToInt32(A2_P3.Value),
                                             Convert.ToInt32(A3_P0.Value), Convert.ToInt32(A3_P1.Value), Convert.ToInt32(A3_P2.Value), Convert.ToInt32(A3_P3.Value));
                 updateFields();
-                startPlaning();
+                ProductionUtil.startPlanning();
                 this.Invoke((Action)closeLoding);
             }
             catch (Exception ex)
             {
                 this.Invoke((Action)closeLoding);
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Führt die Produktionsplanung durch
-        /// </summary>
-        private void startPlaning()
-        {
-            try
-            {
-                ProductionUtil.startPlanning();
-            }
-            catch(Exception ex)
-            {
                 MessageBox.Show(ex.Message);
             }
         }
