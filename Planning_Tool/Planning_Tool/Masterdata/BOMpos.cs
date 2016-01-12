@@ -74,18 +74,12 @@ namespace Planning_Tool.Masterdata
         {
             get { return _bompos; }
             set {
-                if(value != null){
+                if(value != null && !value.Equals(_bompos)){
                     Article art = ArticleFactory.search(typeof(Article),value) as Article;
                     if (art == null)
                         throw new ArticleNotFoundException(value);
-                    
                     _bompos = value;
                     _designation = art.Designation;
-                    if (art.IsProduction)
-                    {
-                        art.use += 1;
-                        art.update();
-                    }
                 }
             }
         }

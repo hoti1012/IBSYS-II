@@ -1003,7 +1003,14 @@ namespace Planning_Tool.Data
             bomPos.amount = 1;
             bomPos.update();
 
-
+            foreach (Article a in ArticleFactory.getAllArticle())
+            {
+                if (a.IsProduction)
+                {
+                    a.use = a.getUse();
+                    a.update();
+                }
+            }
         }
     }
 }

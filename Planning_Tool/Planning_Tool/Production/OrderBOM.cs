@@ -16,34 +16,9 @@ namespace Planning_Tool.Production
         public string orderBOM
         {
             get { return _orderBOM; }
-            set 
-            {
-                Article art = ArticleFactory.search(typeof(Article), value) as Article;
-                if (art == null)
-                {
-                    throw new ArticleNotFoundException(value);
-                }
-
-                _orderBOM = value;
-                _designation = art.Designation;
-            }
+            set { _orderBOM = value; }
         }
 
-        private string _designation;
-
-        public string designation
-        {
-            get { return _designation; }
-            set { _designation = value; }
-        }
-
-        private int _amount;
-
-        public int amount
-        {
-            get { return _amount; }
-            set { _amount = value; }
-        }
 
         /// <summary>
         /// Gibt alle Positionen zu dieser Stückliste zurück
@@ -61,14 +36,11 @@ namespace Planning_Tool.Production
 
         public List<OrderBOMpos> getAllPosToExplode()
         {
-            string sql = "SELECT * FROM " + typeof(OrderBOMpos).Name
-                       + " WHERE OrderBom = \"" + this.orderBOM + "\""
-                       + " AND isBom = \"true\""
-                       + " AND isExplode = \"false\"";
             List<OrderBOMpos> res = new List<OrderBOMpos>();
-            foreach (OrderBOMpos o in PlanningPosObjectFactory.select(typeof(OrderBOMpos),sql))
+            foreach (OrderBOMpos o in getAllPos())
             {
-                res.Add(o);
+                if(o.isBom && !o.isExplode)
+                    res.Add(o);
             }
             return res;
         }
@@ -78,39 +50,81 @@ namespace Planning_Tool.Production
         /// </summary>
         public void explodeBOM()
         {
-            firstExplode();
-            //fullExplode();
+            //Alle noch nicht Nachaufgelöste Positionen Auflösen
+            List<OrderBOMpos> list = getAllPosToExplode();
+
+            if (list == null || list.Count == 0)
+                return;
+
+            foreach(OrderBOMpos orderBomPos in list)
+            {
+                List<PlanningPosObject> bomPosList = BOMposFactory.search(typeof(BOMpos), orderBomPos.orderBOMpos);
+                foreach (BOMpos bomPos in bomPosList)
+                {
+                    Article art = ArticleFactory.search(typeof(Article), bomPos.bompos) as Article;
+                    Stock stock = StockFactory.search(typeof(Stock), bomPos.bompos) as Stock;
+                    //Verwendung für die berechnung herrausfinden
+                    int use = art.getUse();
+                    if (use <= 0)
+                    {
+                        use = 1;
+                    }
+
+                    int amount;
+
+                    if (art.IsProduction)
+                    {
+                        //Menge berechnen
+                        amount = ((orderBomPos.amount * bomPos.amount) + (stock.safetyStock / use)) - (art.getInWork() / use) - (art.getWaitingList() / use) - (stock.amount / use); 
+                    }
+                    else
+                    {
+                        amount = orderBomPos.amount * bomPos.amount;
+                    }
+
+                    OrderBOMpos newOrderBomPos = OrderBOMposFactory.create(typeof(OrderBOMpos),this._orderBOM,bomPos.bompos,orderBomPos.orderBOMpos) as OrderBOMpos;
+                    newOrderBomPos.amount = amount;
+                    newOrderBomPos.isBom = bomPos.isModule();
+                    newOrderBomPos.isExplode = false;
+                    newOrderBomPos.designation = art.Designation;
+                    newOrderBomPos.update();
+                }
+                orderBomPos.isExplode = true;
+                orderBomPos.update();
+            }
+
+            explodeBOM();
         }
 
+        /*
         /// <summary>
         /// Löst die Auftragsstückliste erstmals auf
         /// </summary>
         public void firstExplode()
         {
             List<PlanningPosObject> list = PlanningPosObjectFactory.search(typeof(BOMpos), this.orderBOM);
-            foreach (PlanningPosObject p in list)
+            foreach (BOMpos p in list)
             {
-                BOMpos bom = p as BOMpos;
-                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, bom.bompos,this.orderBOM) as OrderBOMpos;
-                Stock stock = StockFactory.search(typeof(Stock), bom.bompos) as Stock;
-                Article art = ArticleFactory.search(typeof(Article), bom.bompos) as Article;
+                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, p.bompos,this.orderBOM) as OrderBOMpos;
+                Stock stock = StockFactory.search(typeof(Stock), p.bompos) as Stock;
+                Article art = ArticleFactory.search(typeof(Article), p.bompos) as Article;
                 if (art.IsProduction)
                 {
                     int use = art.use;
                     if (use <= 0)
                         use = 1;
-                    int amount = (this.amount * bom.amount + (stock.safetyStock / use)) - (art.getWaitingList() / use) - (art.getInWork() / use) - (stock.amount / use);
+                    int amount = (this.amount * p.amount + (stock.safetyStock / use)) - (art.getWaitingList() / use) - (art.getInWork() / use) - (stock.amount / use);
                     if (amount < 0)
                         amount = 0;
 
-                    oBom.isBom = bom.isModule();
+                    oBom.isBom = p.isModule();
                     oBom.amount = amount;
                     oBom.isExplode = false;
                     oBom.update();
                 }
                 else
                 {
-                    int amount = this.amount * bom.amount;
+                    int amount = this.amount * p.amount;
                     if (amount < 0)
                         amount = 0;
 
@@ -130,8 +144,9 @@ namespace Planning_Tool.Production
             {
                 pos.explode();
             }
-            if (getAllPosToExplode().Count > 0)
-                fullExplode();
+            //if (getAllPosToExplode().Count > 0)
+            //    fullExplode();
         }
+        */
     }
 }

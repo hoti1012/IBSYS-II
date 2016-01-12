@@ -15,16 +15,16 @@ namespace Planning_Tool.Production
         /// </summary>
         public static void startPlanning()
         {
-            //Auftragsstücklisten anlegen und Nachauflösen
-            foreach (Forecast f in ForecastFactory.getAll())
+            List<Forecast> forecasts = ForecastFactory.getAll();
+            List<OrderBOM> createdBoms = new List<OrderBOM>();
+            //Auftragsstücklisten anlegen
+            foreach (Forecast f in forecasts)
             {
                 OrderBOM bom = OrderBOMFactory.create(typeof(OrderBOM), f.forecast) as OrderBOM;
                 Stock stock = StockFactory.search(typeof(Stock), f.forecast) as Stock;
                 Article art = ArticleFactory.search(typeof(Article),f.forecast) as Article;
 
-                if(bom == null)
-                    bom = OrderBOMFactory.search(typeof(OrderBOM), f.forecast) as OrderBOM;
-                int use = art.use;
+                int use = art.getUse();
                 if (use == 0)
                     use = 1;
                 int amount = f.currentAmount + (stock.safetyStock/use) - (art.getWaitingList()/use) - (art.getInWork()/use) - (stock.amount/use);
@@ -32,10 +32,23 @@ namespace Planning_Tool.Production
                 {
                     amount = 0;
                 }
-                bom.amount = amount;
-                bom.update();
-                bom.explodeBOM();
+
+                OrderBOMpos oBompos = OrderBOMposFactory.create(typeof(OrderBOMpos), bom.orderBOM, art.article, "0") as OrderBOMpos;
+                oBompos.amount = amount;
+                oBompos.designation = art.Designation;
+                oBompos.isExplode = false;
+                oBompos.isBom = true;
+                oBompos.update();
+                createdBoms.Add(bom);
             }
+
+            //Auftragsstücklisten nachauflösen
+            foreach (OrderBOM o in createdBoms)
+            {
+                o.explodeBOM();
+            }
+
+            //Produktionspläne erstellen
         }
 
     }

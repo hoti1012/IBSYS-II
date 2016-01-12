@@ -24,14 +24,7 @@ namespace Planning_Tool.Production
         public string orderBOMpos
         {
             get { return _orderBOMpos; }
-            set 
-            {
-                Article art = ArticleFactory.search(typeof(Article), value) as Article;
-                if (art == null)
-                    throw new ArticleNotFoundException(value);
-                _orderBOMpos = value;
-                _designation = art.Designation;
-            }
+            set { _orderBOMpos = value; }
         }
 
         private string _designation;

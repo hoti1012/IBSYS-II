@@ -254,10 +254,11 @@ namespace Planning_Tool.Data
         /// <param name="obj">Object welches in der Datenbank aktuallisiert werden soll</param>
         public void update(Object obj)
         {
-            string sql,where,valuePos = null,valueHead = null;
+            string sql,where,valuePos = null,valueHead = null,valueDependence = null;
             string fields;
             string table = obj.GetType().Name;
             bool isPos = table.EndsWith("Pos",StringComparison.CurrentCultureIgnoreCase);
+            bool hasDependence = false;
             PropertyInfo[] prop = obj.GetType().GetProperties();
 
             if (!open)
@@ -291,6 +292,12 @@ namespace Planning_Tool.Data
                             valueHead = p.GetValue(obj).ToString();
                         }
                     }
+
+                    if (p.Name.Equals("dependence", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        hasDependence = true;
+                        valueDependence = p.GetValue(obj).ToString();
+                    }
                     fields += p.Name + " = " + "\"" + p.GetValue(obj) + "\"";
                 }
                 anz++;
@@ -305,6 +312,11 @@ namespace Planning_Tool.Data
             if (isPos)
             {
                 where += " AND " + table.Remove(table.Length - 3) + " = \"" + valueHead + "\""; 
+            }
+
+            if (hasDependence)
+            {
+                where += " AND dependence = \"" + valueDependence + "\"";
             }
 
             sql += fields;

@@ -26,6 +26,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
         }
 
@@ -44,6 +45,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
         }
 
@@ -77,6 +79,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
             return obj;
         }
@@ -112,6 +115,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
             return obj;
         }
@@ -144,6 +148,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
             return obj;
         }
@@ -174,6 +179,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
             return obj;
         }
@@ -206,6 +212,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
             return obj;
         }
@@ -253,6 +260,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
             return obj;
         }
@@ -306,6 +314,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
             return obj;
         }
@@ -339,6 +348,7 @@ namespace Planning_Tool.Core
             finally
             {
                 manager.release();
+                manager = null;
             }
             return head;
         }

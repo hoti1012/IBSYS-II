@@ -88,7 +88,7 @@ namespace Planning_Tool.Masterdata
         /// Gibt eine Liste zurück in wecher die Artikelnummern sind in dem dieser Artikel verwendet wird
         /// </summary>
         /// <returns></returns>
-        public List<string> getUse()
+        public List<string> getUseList()
         {
             List<string> res = new List<string>();
             foreach (Article art in Article.getAllMainArticle())
@@ -102,6 +102,15 @@ namespace Planning_Tool.Masterdata
                 }
             }
             return res;
+        }
+
+        /// <summary>
+        /// Gibt an in wievielen Baugruppen der Artikel verwendet wird
+        /// </summary>
+        /// <returns></returns>
+        public int getUse()
+        {
+            return BOMposFactory.searchAllWithPos(typeof(BOMpos), article).Count;
         }
 
         /// <summary>
