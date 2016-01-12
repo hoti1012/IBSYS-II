@@ -11,6 +11,12 @@ namespace Planning_Tool.Masterdata
 {
     class BOMposFactory : PlanningPosObjectFactory
     {
-   
+        /*
+        public static PlanningPosObject create()
+        {
+            PlanningPosObject p = null;
+            return p;
+        }
+        */
     }
 }

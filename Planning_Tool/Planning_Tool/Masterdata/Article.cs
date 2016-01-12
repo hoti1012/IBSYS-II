@@ -74,6 +74,17 @@ namespace Planning_Tool.Masterdata
         private int _safetyStock;
 
         /// <summary>
+        /// Gibt an wie oft ein Artikel verwendet wird
+        /// </summary>
+        private int _use;
+
+        public int use
+        {
+            get { return _use; }
+            set { _use = value; }
+        }
+
+        /// <summary>
         /// Gibt eine Liste zurück in wecher die Artikelnummern sind in dem dieser Artikel verwendet wird
         /// </summary>
         /// <returns></returns>

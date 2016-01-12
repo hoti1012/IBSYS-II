@@ -24,7 +24,7 @@ namespace Planning_Tool.Production
 
                 if(bom == null)
                     bom = OrderBOMFactory.search(typeof(OrderBOM), f.forecast) as OrderBOM;
-                int use = art.getUse().Count;
+                int use = art.use;
                 if (use == 0)
                     use = 1;
                 int amount = f.currentAmount + (stock.safetyStock/use) - (art.getWaitingList()/use) - (art.getInWork()/use) - (stock.amount/use);

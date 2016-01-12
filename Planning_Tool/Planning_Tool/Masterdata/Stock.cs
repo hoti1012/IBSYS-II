@@ -68,7 +68,7 @@ namespace Planning_Tool.Masterdata
 
                     _stock = value;
                     _designation = art.Designation;
-                    _use = art.getUse().Count;
+                    _use = art.use;
                     _safetyStock = art.safetyStock;
                 }
             }

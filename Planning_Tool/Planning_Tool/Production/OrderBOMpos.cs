@@ -85,19 +85,33 @@ namespace Planning_Tool.Production
                 OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, bom.bompos) as OrderBOMpos;
                 Stock stock = StockFactory.search(typeof(Stock), bom.bompos) as Stock;
                 Article art = ArticleFactory.search(typeof(Article), bom.bompos) as Article;
+                if (art.IsProduction)
+                {
+                    int use = art.use;
+                    if (use <= 0)
+                        use = 1;
+                    int amount = (this.amount * bom.amount + (stock.safetyStock / use)) - (art.getWaitingList() / use) - (art.getInWork() / use);
+                    if (amount < 0)
+                        amount = 0;
 
-                int use = art.getUse().Count;
-                if (use <= 0)
-                    use = 1;
-                int amount = (this.amount * bom.amount + (stock.safetyStock / use)) - (art.getWaitingList() / use) - (art.getInWork() / use);
-                if (amount < 0)
-                    amount = 0;
+                    oBom.dependence = this.orderBOMpos;
+                    oBom.isBom = bom.isModule();
+                    oBom.amount = amount;
+                    oBom.isExplode = false;
+                    oBom.update();
+                }
+                else
+                {
+                    int amount = this.amount * bom.amount;
+                    if (amount < 0)
+                        amount = 0;
 
-                oBom.dependence = this.orderBOMpos;
-                oBom.isBom = bom.isModule();
-                oBom.amount = amount;
-                oBom.isExplode = false;
-                oBom.update();
+                    oBom.dependence = this.orderBOMpos;
+                    oBom.isBom = false;
+                    oBom.amount = amount;
+                    oBom.isExplode = false;
+                    oBom.update();
+                }
             }
         }
     }
