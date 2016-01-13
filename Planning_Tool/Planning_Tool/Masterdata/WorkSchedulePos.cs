@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Planning_Tool.Masterdata
 {
-    class WorkSchedulePos : PlanningPosObject
+    public class WorkSchedulePos : PlanningPosObject
     {
         public static string TABLE = typeof(WorkSchedulePos).Name;
 
@@ -22,6 +22,11 @@ namespace Planning_Tool.Masterdata
         private string _workSchedulePos;
 
         /// <summary>
+        /// Gibt die Reihenfolge an in welcher der Arbeitsgang ansteht
+        /// </summary>
+        private string _dependence;
+
+        /// <summary>
         /// Rüstzeit
         /// </summary>
         private int _makeReady;
@@ -30,38 +35,6 @@ namespace Planning_Tool.Masterdata
         /// Stückarbeitszeit
         /// </summary>
         private int _workTime;
-
-        /// <summary>
-        /// Enthält die Positionsnummer des Nächsten Arbeitsgangs
-        /// </summary>
-        private string _nextPos;
-
-        /// <summary>
-        /// Gibt die nächste Position zurück
-        /// </summary>
-        /// <returns></returns>
-        public WorkSchedulePos getNextPos()
-        {
-            WorkSchedulePos pos = null;
-            try
-            {
-                if (_nextPos != null)
-                {
-                    pos = WorkSchedulePosFactory.search(typeof(WorkSchedulePos),_workSchedule,_nextPos) as WorkSchedulePos;
-                }
-            }
-            finally
-            {
-
-            }
-            return pos;
-        }
-
-        public string nextPos
-        {
-            get { return _nextPos; }
-            set { _nextPos = value; }
-        }
 
         public string workSchedule
         {
@@ -73,6 +46,12 @@ namespace Planning_Tool.Masterdata
         {
             get { return _workSchedulePos; }
             set { _workSchedulePos = value; }
+        }
+
+        public string dependence
+        {
+            get { return _dependence; }
+            set { _dependence = value; }
         }
 
         public int makeReady

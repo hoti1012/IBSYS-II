@@ -46,7 +46,7 @@ namespace Planning_Tool.Production
         }
 
         /// <summary>
-        /// Löst die Auftragsstückliste auf
+        /// Löst die Auftragsstückliste vollständig auf auf
         /// </summary>
         public void explodeBOM()
         {
@@ -75,7 +75,7 @@ namespace Planning_Tool.Production
                     if (art.IsProduction)
                     {
                         //Menge berechnen
-                        amount = ((orderBomPos.amount * bomPos.amount) + (stock.safetyStock / use)) - (art.getInWork() / use) - (art.getWaitingList() / use) - (stock.amount / use); 
+                        amount  = ((orderBomPos.amount * bomPos.amount) + (stock.safetyStock / use)) - (art.getInWork() / use) - (art.getWaitingList() / use) - (stock.amount / use); 
                     }
                     else
                     {
@@ -84,6 +84,9 @@ namespace Planning_Tool.Production
 
                     OrderBOMpos newOrderBomPos = OrderBOMposFactory.create(typeof(OrderBOMpos),this._orderBOM,bomPos.bompos,orderBomPos.orderBOMpos) as OrderBOMpos;
                     newOrderBomPos.amount = amount;
+                    newOrderBomPos.amountN1 = orderBomPos.amountN1 * bomPos.amount;
+                    newOrderBomPos.amountN2 = orderBomPos.amountN2 * bomPos.amount;
+                    newOrderBomPos.amountN3 = orderBomPos.amountN3 * bomPos.amount;
                     newOrderBomPos.isBom = bomPos.isModule();
                     newOrderBomPos.isExplode = false;
                     newOrderBomPos.designation = art.Designation;
@@ -95,58 +98,5 @@ namespace Planning_Tool.Production
 
             explodeBOM();
         }
-
-        /*
-        /// <summary>
-        /// Löst die Auftragsstückliste erstmals auf
-        /// </summary>
-        public void firstExplode()
-        {
-            List<PlanningPosObject> list = PlanningPosObjectFactory.search(typeof(BOMpos), this.orderBOM);
-            foreach (BOMpos p in list)
-            {
-                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, p.bompos,this.orderBOM) as OrderBOMpos;
-                Stock stock = StockFactory.search(typeof(Stock), p.bompos) as Stock;
-                Article art = ArticleFactory.search(typeof(Article), p.bompos) as Article;
-                if (art.IsProduction)
-                {
-                    int use = art.use;
-                    if (use <= 0)
-                        use = 1;
-                    int amount = (this.amount * p.amount + (stock.safetyStock / use)) - (art.getWaitingList() / use) - (art.getInWork() / use) - (stock.amount / use);
-                    if (amount < 0)
-                        amount = 0;
-
-                    oBom.isBom = p.isModule();
-                    oBom.amount = amount;
-                    oBom.isExplode = false;
-                    oBom.update();
-                }
-                else
-                {
-                    int amount = this.amount * p.amount;
-                    if (amount < 0)
-                        amount = 0;
-
-                    oBom.isBom = false;
-                    oBom.amount = amount;
-                    oBom.update();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Löst die Stückliste komplett auf
-        /// </summary>
-        public void fullExplode()
-        {
-            foreach(OrderBOMpos pos in getAllPosToExplode())
-            {
-                pos.explode();
-            }
-            //if (getAllPosToExplode().Count > 0)
-            //    fullExplode();
-        }
-        */
     }
 }

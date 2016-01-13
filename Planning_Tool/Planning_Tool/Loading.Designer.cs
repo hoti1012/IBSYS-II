@@ -66,6 +66,6 @@
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.Label info;
+        public System.Windows.Forms.Label info;
     }
 }

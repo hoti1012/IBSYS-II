@@ -108,6 +108,8 @@
     <Compile Include="Purchase\OrderingPosFactory.cs" />
     <Compile Include="Masterdata\Stock.cs" />
     <Compile Include="Masterdata\StockFactory.cs" />
+    <Compile Include="Purchase\PurchasePlan.cs" />
+    <Compile Include="Purchase\PurchasePlanFactory.cs" />
     <Compile Include="Time\Period.cs" />
     <Compile Include="Time\PeriodFactory.cs" />
     <Compile Include="XML\XML_Manager.cs" />

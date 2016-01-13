@@ -51,6 +51,30 @@ namespace Planning_Tool.Production
             set { _amount = value; }
         }
 
+        private int _amountN1;
+
+        public int amountN1
+        {
+            get { return _amountN1; }
+            set { _amountN1 = value; }
+        }
+
+        private int _amountN2;
+
+        public int amountN2
+        {
+            get { return _amountN2; }
+            set { _amountN2 = value; }
+        }
+
+        private int _amountN3;
+
+        public int amountN3
+        {
+            get { return _amountN3; }
+            set { _amountN3 = value; }
+        }
+
         private bool _isBom;
 
         public bool isBom
@@ -65,48 +89,6 @@ namespace Planning_Tool.Production
         {
             get { return _isExplode; }
             set { _isExplode = value; }
-        }
-
-        /// <summary>
-        /// Löst eine Baugruppe innerhalb einer Stückliste auf
-        /// </summary>
-        internal void explode()
-        {
-            List<PlanningPosObject> list = PlanningPosObjectFactory.search(typeof(BOMpos), this.orderBOMpos);
-            foreach (PlanningPosObject p in list)
-            {
-                BOMpos bom = p as BOMpos;
-                OrderBOMpos oBom = OrderBOMposFactory.create(typeof(OrderBOMpos), this.orderBOM, bom.bompos, orderBOMpos) as OrderBOMpos;
-                Stock stock = StockFactory.search(typeof(Stock), bom.bompos) as Stock;
-                Article art = ArticleFactory.search(typeof(Article), bom.bompos) as Article;
-                if (art.IsProduction)
-                {
-                    int use = art.use;
-                    if (use <= 0)
-                        use = 1;
-                    int amount = (this.amount * bom.amount + (stock.safetyStock / use)) - (art.getWaitingList() / use) - (art.getInWork() / use);
-                    if (amount < 0)
-                        amount = 0;
-
-                    oBom.isBom = bom.isModule();
-                    oBom.amount = amount;
-                    oBom.isExplode = false;
-                    oBom.update();
-                }
-                else
-                {
-                    int amount = this.amount * bom.amount;
-                    if (amount < 0)
-                        amount = 0;
-
-                    oBom.isBom = false;
-                    oBom.amount = amount;
-                    oBom.isExplode = false;
-                    oBom.update();
-                }
-            }
-            this.isExplode = true;
-            update();
         }
     }
 }

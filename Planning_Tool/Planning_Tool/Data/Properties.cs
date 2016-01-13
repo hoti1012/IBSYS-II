@@ -33,6 +33,7 @@ namespace Planning_Tool.Data
                                        ,typeof(DirektSale)
                                        ,typeof(OrderBOM)
                                        ,typeof(OrderBOMpos)
+                                       ,typeof(PurchasePlan)
                                        };
 
         public static Type[] deleteTables = {typeof(Ordering)

@@ -206,6 +206,15 @@ namespace Planning_Tool.Masterdata
             return BOMFactory.create(typeof(BOM),this.article) as BOM;
         }
 
+        /// <summary>
+        /// Erzeugt einen Arbeitsplan
+        /// </summary>
+        /// <returns>Den erzuegten Arbeitsplan</returns>
+        public WorkSchedule createWorkSchedule()
+        {
+            return WorkScheduleFactory.create(typeof(WorkSchedule),this.article) as WorkSchedule;
+        }
+
         public static List<Article> getAllMainArticle()
         {
             string sql = "Select * from " + typeof(Article).Name;

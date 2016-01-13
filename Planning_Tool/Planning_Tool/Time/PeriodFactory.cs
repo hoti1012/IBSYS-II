@@ -39,7 +39,7 @@ namespace Planning_Tool.Time
             {
                 manager.release();
             }
-            return max + 1;
+            return max ;
         }
     }
 }

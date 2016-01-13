@@ -17,6 +17,8 @@ namespace Planning_Tool.Data
             Article art = null;
             BOM bom = null;
             BOMpos bomPos = null;
+            WorkSchedule ws = null;
+            WorkSchedulePos wsPos = null;
 
             //Kaufteile
             art = ArticleFactory.create(type, "21") as Article;
@@ -417,6 +419,23 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("59");
             bomPos.amount = 2;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("6");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("8");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("9");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "13") as Article;
             art.Designation = "Schutzblech v.";
@@ -431,6 +450,27 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("39");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("13");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("12");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("8");
+            wsPos.workTime = 1;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("9");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "7") as Article;
             art.Designation = "Vorderradgruppe";
@@ -454,6 +494,15 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("53");
             bomPos.amount = 36;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("10");
+            wsPos.workTime = 4;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("11");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "49") as Article;
             art.Designation = "Vorderrad cpl.";
@@ -477,6 +526,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("18");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("1");
+            wsPos.workTime = 6;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "10") as Article;
             art.Designation = "Schutzblech hinten";
@@ -491,6 +545,27 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("39");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("13");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("12");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("8");
+            wsPos.workTime = 1;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("9");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "4") as Article;
             art.Designation = "Hinterradgruppe";
@@ -511,6 +586,15 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("53");
             bomPos.amount = 36;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("10");
+            wsPos.workTime = 4;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("11");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 10;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "50") as Article;
             art.Designation = "Rahmen u. Räder";
@@ -534,6 +618,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("49");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("2");
+            wsPos.workTime = 5;
+            wsPos.makeReady = 30;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "17") as Article;
             art.Designation = "Sattel";
@@ -554,6 +643,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("46");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("17");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "16") as Article;
             art.Designation = "Lenker";
@@ -577,6 +671,15 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("42");
             bomPos.amount = 2;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("6");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("14");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 0;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "51") as Article;
             art.Designation = "Fahrrad o. Pedal";
@@ -600,6 +703,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("50");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("3");
+            wsPos.workTime = 5;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "26") as Article;
             art.Designation = "Pedal";
@@ -617,6 +725,15 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("48");
             bomPos.amount = 2;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 30;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("15");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "1") as Article;
             art.Designation = "Kinderfahrrad";
@@ -640,6 +757,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("51");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("4");
+            wsPos.workTime = 6;
+            wsPos.makeReady = 30;
+            wsPos.update();
             
             //P2
             art = ArticleFactory.create(type, "19") as Article;
@@ -658,6 +780,23 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("59");
             bomPos.amount = 2;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("6");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("8");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 25;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("9");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "14") as Article;
             art.Designation = "Schutzblech v.";
@@ -672,6 +811,27 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("39");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("13");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("12");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("8");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("9");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "8") as Article;
             art.Designation = "Vorderradgruppe";
@@ -695,6 +855,15 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("58");
             bomPos.amount = 36;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("10");
+            wsPos.workTime = 4;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("11");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "54") as Article;
             art.Designation = "Vorderrad";
@@ -718,6 +887,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("19");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("1");
+            wsPos.workTime = 6;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "11") as Article;
             art.Designation = "Schutzblech h.";
@@ -732,6 +906,27 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("39");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("13");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("12");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("8");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("9");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "5") as Article;
             art.Designation = "Hinterradgruppe";
@@ -752,6 +947,15 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("58");
             bomPos.amount = 36;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("10");
+            wsPos.workTime = 4;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("11");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 10;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "55") as Article;
             art.Designation = "Rahmen u. Räder";
@@ -775,6 +979,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("54");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("2");
+            wsPos.workTime = 5;
+            wsPos.makeReady = 30;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "56") as Article;
             art.Designation = "Fahrrad ohne Pedal";
@@ -798,6 +1007,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("55");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("3");
+            wsPos.workTime = 6;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "2") as Article;
             art.Designation = "Damenfahrrad";
@@ -821,6 +1035,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("56");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("4");
+            wsPos.workTime = 7;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             //P3
             art = ArticleFactory.create(type, "20") as Article;
@@ -839,6 +1058,23 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("59");
             bomPos.amount = 2;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("6");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("8");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("9");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "15") as Article;
             art.Designation = "Schutzblech v.";
@@ -853,6 +1089,27 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("39");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("13");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("12");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("8");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("9");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "9") as Article;
             art.Designation = "Vorderradgruppe";
@@ -876,6 +1133,15 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("38");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("10");
+            wsPos.workTime = 4;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("11");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "29") as Article;
             art.Designation = "Vorderrad mont.";
@@ -899,6 +1165,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("20");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("1");
+            wsPos.workTime = 6;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "12") as Article;
             art.Designation = "Schutzblech h.";
@@ -913,6 +1184,27 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("39");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("13");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("12");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 0;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("8");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 15;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("7");
+            wsPos.workTime = 2;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("9");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 15;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "6") as Article;
             art.Designation = "Hinterradgruppe";
@@ -933,6 +1225,15 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("36");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("10");
+            wsPos.workTime = 4;
+            wsPos.makeReady = 20;
+            wsPos.update();
+            wsPos = ws.addWorkSchedulePos("11");
+            wsPos.workTime = 3;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "30") as Article;
             art.Designation = "Rahmen o. Räder";
@@ -956,6 +1257,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("29");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("2");
+            wsPos.workTime = 5;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "31") as Article;
             art.Designation = "Rahmen o. Ped.";
@@ -979,6 +1285,11 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("30");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("3");
+            wsPos.workTime = 6;
+            wsPos.makeReady = 20;
+            wsPos.update();
 
             art = ArticleFactory.create(type, "3") as Article;
             art.Designation = "Herrenfahrrad";
@@ -1002,6 +1313,14 @@ namespace Planning_Tool.Data
             bomPos = bom.addPos("31");
             bomPos.amount = 1;
             bomPos.update();
+            ws = art.createWorkSchedule();
+            wsPos = ws.addWorkSchedulePos("4");
+            wsPos.workTime = 7;
+            wsPos.makeReady = 30;
+            wsPos.update();
+
+
+            //Arbeitspläne anlegen
 
             foreach (Article a in ArticleFactory.getAllArticle())
             {

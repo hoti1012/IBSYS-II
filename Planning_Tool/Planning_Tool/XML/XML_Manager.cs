@@ -47,7 +47,7 @@ namespace Planning_Tool.XML
                     throw new WrongFormatException("Die eingelesene XML ist im falschen Format");
                 }
                 //Aktuelle periode einlesen
-                periodObj = PeriodFactory.create(typeof(Period), _root.Attributes["period"].Value) as Period;
+                periodObj = PeriodFactory.create(typeof(Period), (Convert.ToInt32(_root.Attributes["period"].Value)+1).ToString()) as Period;
                 
                 //Lagerbestand einlesen 
                 foreach (XmlNode node in _root.GetElementsByTagName("warehousestock"))

@@ -156,6 +156,7 @@ namespace Planning_Tool.Data
 
             foreach(Type t in classes)
             {
+                hasDependence = false;
                 sql = "CREATE TABLE IF NOT EXISTS " + t.Name + " (";
 
                 prop = t.GetProperties();
