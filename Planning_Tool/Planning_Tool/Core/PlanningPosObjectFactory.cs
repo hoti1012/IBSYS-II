@@ -154,6 +154,37 @@ namespace Planning_Tool.Core
         }
 
         /// <summary>
+        /// Sucht alle Objectposition zu einem Kopfobject in der Datenbank
+        /// </summary>
+        /// <param name="type">Typ des gesuchten objects</param>
+        /// <param name="head">nummer des Kopfobjects</param>
+        /// <returns></returns>
+        public static List<PlanningPosObject> search(Type type)
+        {
+            DatabaseManager manager;
+            string where;
+            List<Object> res;
+            List<PlanningPosObject> obj = new List<PlanningPosObject>();
+
+            manager = new DatabaseManager();
+            try
+            {
+                res = manager.select(type,null);
+
+                foreach (Object o in res)
+                {
+                    obj.Add(o as PlanningPosObject);
+                }
+            }
+            finally
+            {
+                manager.release();
+                manager = null;
+            }
+            return obj;
+        }
+
+        /// <summary>
         /// Sucht nach einem Object in der Datenbank
         /// </summary>
         /// <param name="type">Typ des gesuchten objects</param>

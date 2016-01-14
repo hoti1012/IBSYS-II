@@ -21,6 +21,7 @@ namespace Planning_Tool.Production
             List<Forecast> forecasts = ForecastFactory.getAll();
             List<OrderBOM> createdBoms = new List<OrderBOM>();
             List<Article> artList = ArticleFactory.getAllArticle();
+            List<Workplace> wps = WorkplaceFactory.getAll();
             int periode = Period.getCurrentPeriod();
 
             //Auftragsstücklisten anlegen
@@ -29,11 +30,16 @@ namespace Planning_Tool.Production
                 OrderBOM bom = OrderBOMFactory.create(typeof(OrderBOM), f.forecast) as OrderBOM;
                 Stock stock = StockFactory.search(typeof(Stock), f.forecast) as Stock;
                 Article art = ArticleFactory.search(typeof(Article),f.forecast) as Article;
+                DirektSale ds = DirektSaleFactory.search(typeof(DirektSale), f.forecast) as DirektSale;
 
                 int use = art.getUse();
                 if (use == 0)
                     use = 1;
                 int amount = f.currentAmount + (stock.safetyStock/use) - (art.getWaitingList()/use) - (art.getInWork()/use) - (stock.amount/use);
+                if (ds != null)
+                {
+                    amount += ds.amount;
+                }
                 if (amount < 0)
                 {
                     amount = 0;
@@ -114,7 +120,31 @@ namespace Planning_Tool.Production
             order.calcPrice();
             order.update();
 
-            //TODO: Kapazitätsplanung
+            //Kapazitätsplanung
+            WaitingListPlan.createAllWaitinglistPlan();
+            foreach (Workplace wp in wps)
+            {
+                WaitingListPlan waiting = WaitingListPlanFactory.search(typeof(WaitingListPlan),wp.workplace) as WaitingListPlan;
+                CapacityPlan capaPlan = CapacityPlanFactory.create(typeof(CapacityPlan),wp.workplace) as CapacityPlan;
+                foreach(WorkSchedulePos wsPos in WorkSchedulePosFactory.searchAllWithPos(typeof(WorkSchedulePos),capaPlan.capacityPlan))
+                {
+                    ProductionPlan proPlan = ProductionPlanFactory.search(typeof(ProductionPlan),wsPos.workSchedule) as ProductionPlan;
+                    int neededTime = 0;
+                    int makeReady = 0;
+                    if (proPlan != null)
+                    {
+                        neededTime = proPlan.amount * wsPos.workTime;
+                        makeReady = wsPos.makeReady;
+                    }
+                    capaPlan.addPos(proPlan.productionPlan, neededTime,makeReady);
+                }
+                if (waiting != null)
+                {
+                    capaPlan.neededOldTime = waiting.neededTime;
+                }
+                capaPlan.finalizeCapaPlan();
+                capaPlan.update();
+            }
         }
 
     }

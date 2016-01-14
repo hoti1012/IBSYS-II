@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Planning_Tool.Production
 {
-    class Workplace : PlanningObject
+    public class Workplace : PlanningObject
     {
         public static string TABLE = typeof(Workplace).Name;
 

@@ -87,6 +87,10 @@
     <Compile Include="Masterdata\WorkScheduleFactory.cs" />
     <Compile Include="Masterdata\WorkSchedulePos.cs" />
     <Compile Include="Masterdata\WorkSchedulePosFactory.cs" />
+    <Compile Include="Production\CapacityPlanFactory.cs" />
+    <Compile Include="Production\CapacityPlan.cs" />
+    <Compile Include="Production\CapacityPlanPos.cs" />
+    <Compile Include="Production\CapacityPlanPosFactory.cs" />
     <Compile Include="Production\DirektSale.cs" />
     <Compile Include="Production\DirektSaleFactory.cs" />
     <Compile Include="Production\OrderBOM.cs" />
@@ -96,6 +100,8 @@
     <Compile Include="Production\ProductionPlan.cs" />
     <Compile Include="Production\ProductionPlanFactory.cs" />
     <Compile Include="Production\ProductionUtil.cs" />
+    <Compile Include="Production\WaitingListPlan.cs" />
+    <Compile Include="Production\WaitingListPlanFactory.cs" />
     <Compile Include="Production\Workplace.cs" />
     <Compile Include="Production\WorkplaceFactory.cs" />
     <Compile Include="Production\WorkplacePos.cs" />

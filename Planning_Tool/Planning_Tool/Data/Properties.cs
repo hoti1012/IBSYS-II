@@ -34,6 +34,9 @@ namespace Planning_Tool.Data
                                        ,typeof(OrderBOM)
                                        ,typeof(OrderBOMpos)
                                        ,typeof(PurchasePlan)
+                                       ,typeof(CapacityPlan)
+                                       ,typeof(CapacityPlanPos)
+                                       ,typeof(WaitingListPlan)
                                        };
 
         public static Type[] deleteTables = {typeof(Ordering)
@@ -45,9 +48,11 @@ namespace Planning_Tool.Data
                                             ,typeof(DirektSale)
                                             ,typeof(OrderBOM)
                                             ,typeof(OrderBOMpos)
+                                            ,typeof(CapacityPlan)
+                                            ,typeof(CapacityPlanPos)
                                             };
 
         //TODO: Bei fertigstellung auf false setzen
-        public static bool isTestmode = true;
+        public static bool isTestmode = false;
     }
 }

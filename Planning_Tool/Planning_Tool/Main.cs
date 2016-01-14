@@ -25,11 +25,15 @@ namespace Planning_Tool
         private SQLiteDataAdapter ppDirektSaleAdapter = new SQLiteDataAdapter();
         private SQLiteDataAdapter ovProductionPlanAdapter = new SQLiteDataAdapter();
         private SQLiteDataAdapter ovOrderingPosAdapter = new SQLiteDataAdapter();
+        private SQLiteDataAdapter ovDirektSaleAdapter = new SQLiteDataAdapter();
+        private SQLiteDataAdapter ovCapacityPlanAdapter = new SQLiteDataAdapter();
         
         private BindingSource ppStockBinding = new BindingSource();
         private BindingSource ppDirektSaleBinding = new BindingSource();
         private BindingSource ovProductionPlanBinding = new BindingSource();
         private BindingSource ovOrderingPosBinding = new BindingSource();
+        private BindingSource ovDirektSaleBinding = new BindingSource();
+        private BindingSource ovCapacityPlanBinding = new BindingSource();
         private Loading loading;
 
         public Main()
@@ -40,6 +44,8 @@ namespace Planning_Tool
             pStock.DataSource = ppStockBinding;
             ovOrderingPosView.DataSource = ovOrderingPosBinding;
             ovProductionPlanView.DataSource = ovProductionPlanBinding;
+            ovCapacityPlanView.DataSource = ovCapacityPlanBinding;
+            ovDirektSaleView.DataSource = ovDirektSaleBinding;
             int count = 0;
             try
             {
@@ -148,12 +154,60 @@ namespace Planning_Tool
         }
 
         /// <summary>
+        /// Läd die Daten als DataAdapter aus der Datenbank
+        /// </summary>
+        /// <param name="selectCommand"></param>
+        private void getDataCapacityPlan(string selectCommand)
+        {
+            string connectionString = "Data Source=database.db";
+            try
+            {
+                ovCapacityPlanAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
+                SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(ovCapacityPlanAdapter);
+
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                ovCapacityPlanAdapter.Fill(table);
+                ovCapacityPlanBinding.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Läd die Daten als DataAdapter aus der Datenbank
+        /// </summary>
+        /// <param name="selectCommand"></param>
+        private void getDataDirektSale(string selectCommand)
+        {
+            string connectionString = "Data Source=database.db";
+            try
+            {
+                ovDirektSaleAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
+                SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(ovDirektSaleAdapter);
+
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                ovDirektSaleAdapter.Fill(table);
+                ovDirektSaleBinding.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
         /// Füllt alle Übersichts views
         /// </summary>
         public void fillOvFields()
         {
             fillovProductionPlan();
             fillovOrderingPos();
+            fillovCapacityPlan();
+            fillovDirektSale();
         }
 
         /// <summary>
@@ -216,6 +270,17 @@ namespace Planning_Tool
             getDataOrderingPos(select);
         }
 
+        private void fillovDirektSale()
+        {
+            string select = "SELECT * FROM DirektSale";
+            getDataDirektSale(select);
+        }
+
+        private void fillovCapacityPlan()
+        {
+            string select = "SELECT CapacityPlan, OverTime, Shift FROM CapacityPlan";
+            getDataCapacityPlan(select);
+        }
        
         /// <summary>
         /// Öffnet die Auswahl für den Pfad zur XML
@@ -372,10 +437,13 @@ namespace Planning_Tool
             manager.delete("Forecast",null);
             manager.delete("OrderBom",null);
             manager.delete("OrderBomPos", null);
-            manager.delete("DirektSale", null);
             manager.delete("PurchasePlan", null);
+            manager.delete("ProductionPlan", null);
+            manager.delete("CapacityPlan",null);
+            manager.delete("CapacityPlanPos", null);
             manager.delete("Ordering", " Where Ordering = \"" + Period.getCurrentPeriod() + "\"");
             manager.delete("OrderingPos", " Where Ordering = \"" + Period.getCurrentPeriod() + "\"");
+            manager.delete("WaitingListPlan", null);
         }
 
         private void label63_Click(object sender, EventArgs e)

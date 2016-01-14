@@ -63,6 +63,7 @@ namespace Planning_Tool.Production
                 {
                     Article art = ArticleFactory.search(typeof(Article), bomPos.bompos) as Article;
                     Stock stock = StockFactory.search(typeof(Stock), bomPos.bompos) as Stock;
+                    DirektSale ds = DirektSaleFactory.search(typeof(DirektSale), bomPos.bompos) as DirektSale;
                     //Verwendung für die berechnung herrausfinden
                     int use = art.getUse();
                     if (use <= 0)
@@ -80,6 +81,11 @@ namespace Planning_Tool.Production
                     else
                     {
                         amount = orderBomPos.amount * bomPos.amount;
+                    }
+
+                    if (ds != null)
+                    {
+                        amount += ds.amount;
                     }
 
                     OrderBOMpos newOrderBomPos = OrderBOMposFactory.create(typeof(OrderBOMpos),this._orderBOM,bomPos.bompos,orderBomPos.orderBOMpos) as OrderBOMpos;

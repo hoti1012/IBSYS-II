@@ -65,5 +65,17 @@ namespace Planning_Tool.Masterdata
             get { return _workTime; }
             set { _workTime = value; }
         }
+
+        public List<WorkSchedulePos> getAllPosAfterThis()
+        {
+            string sql = "SELECT * FROM " + typeof(WorkSchedulePos).Name
+                       + " WHERE " + typeof(WorkSchedule).Name + " = \"" + this._workSchedule + "\" AND dependence > " + this._dependence;
+            List<WorkSchedulePos> res = new List<WorkSchedulePos>();
+            foreach(WorkSchedulePos pos in WorkSchedulePosFactory.select(typeof(WorkSchedulePos),sql))
+            {
+                res.Add(pos);
+            }
+            return res;
+        }
     }
 }

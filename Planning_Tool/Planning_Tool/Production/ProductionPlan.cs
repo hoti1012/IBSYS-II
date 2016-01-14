@@ -38,6 +38,15 @@ namespace Planning_Tool.Production
             set { _position = value; }
         }
 
+        public static int getProductionCount()
+        {
+            string sql = "SELECT * FROM ProductionPlan WHERE amount > 0";
+            List<PlanningObject> res = ProductionPlanFactory.select(typeof(ProductionPlan), sql);
+            if (res != null)
+                return res.Count;
+            return 0;
+        }
+
         public string productionPlan
         {
             get { return _productionPlan; }
