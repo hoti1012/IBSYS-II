@@ -92,5 +92,55 @@ namespace Planning_Tool.Purchase
             get { return mterialPrice; }
             set { mterialPrice = value; }
         }
+
+        /// <summary>
+        /// Erzeugt die Bestellpositionen anhand des PurchasePlanes
+        /// </summary>
+        internal void createNeededOrderPos()
+        {
+            foreach(PurchasePlan pp in PurchasePlanFactory.searchAll(typeof(PurchasePlan)))
+            {
+                Article art = ArticleFactory.search(typeof(Article), pp.purchasePlan) as Article;
+                bool createOrder = false;
+                bool express = false;
+                int period = getNeedetPeriod(pp);
+                if (period != 5)
+                {
+                    if (period > art.DeliverTime)
+                    {
+                        if (period - art.DeliverTime <= 1)
+                        {
+                            createOrder = true;
+                        }
+                    }else
+                    {
+                            createOrder = true;
+                            express = true;
+                    }
+                }
+                if (createOrder)
+                {
+                    OrderingPos op = this.addPos(art.article) as OrderingPos;
+                    op.IsExpress = express;
+                    op.Amount = art.Discount;
+                    op.IsOrdered = false;
+                    op.update();
+                }
+            }
+        }
+
+        private int getNeedetPeriod(PurchasePlan pp)
+        {
+            if (pp.stockN1 <= 0)
+                return 1;
+            if (pp.stockN2 <= 0)
+                return 2;
+            if (pp.stockN3 <= 0)
+                return 3;
+            if (pp.stockN4 <= 0)
+                return 4;
+            return 5;
+
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Planning_Tool.Core;
 using Planning_Tool.Purchase;
+using Planning_Tool.Time;
 
 namespace Planning_Tool.Production
 {
@@ -20,6 +21,8 @@ namespace Planning_Tool.Production
             List<Forecast> forecasts = ForecastFactory.getAll();
             List<OrderBOM> createdBoms = new List<OrderBOM>();
             List<Article> artList = ArticleFactory.getAllArticle();
+            int periode = Period.getCurrentPeriod();
+
             //Auftragsstücklisten anlegen
             foreach (Forecast f in forecasts)
             {
@@ -95,17 +98,23 @@ namespace Planning_Tool.Production
                     }
                     Stock s = StockFactory.search(typeof(Stock),a.article) as Stock;
                     pp.stockN1 = s.amount - pp.amountN;
-                    pp.stockN2 -= pp.amountN1;
-                    pp.stockN3 -= pp.amountN2;
-                    pp.stockN4 -= pp.amountN3;
+                    pp.stockN2 = pp.stockN1 - pp.amountN1;
+                    pp.stockN3 = pp.stockN2 - pp.amountN2;
+                    pp.stockN4 = pp.stockN3 - pp.amountN3;
 
                     //Noch offene Bestellungen beachten
-                    pp.setStockWithIncommingOrdering();
+                    pp.setStockWithIncommingOrdering(periode);
                     pp.update();
                 }
             }
 
             //Bestellungen anlegen
+            Ordering order = OrderingFactory.create(typeof(Ordering), periode.ToString()) as Ordering;
+            order.createNeededOrderPos();
+            order.calcPrice();
+            order.update();
+
+            //TODO: Kapazitätsplanung
         }
 
     }

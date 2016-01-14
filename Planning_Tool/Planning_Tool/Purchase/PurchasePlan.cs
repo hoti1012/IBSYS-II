@@ -86,9 +86,8 @@ namespace Planning_Tool.Purchase
         /// <summary>
         /// Korriegiert die entsprechenden Lagerbestände anhand der noch offenen Bestellungen
         /// </summary>
-        internal void setStockWithIncommingOrdering()
+        internal void setStockWithIncommingOrdering(int period)
         {
-            int period = Period.getCurrentPeriod();
             Article art = ArticleFactory.search(typeof(Article),this._purchasePlan) as Article;
             foreach(OrderingPos op in OrderingPosFactory.searchAllWithPos(typeof(OrderingPos),this._purchasePlan))
             {

@@ -15,6 +15,7 @@ using Planning_Tool.Exceptions;
 using Planning_Tool.Production;
 using System.Data.SQLite;
 using System.Threading;
+using Planning_Tool.Time;
 	
 namespace Planning_Tool
 {
@@ -22,8 +23,13 @@ namespace Planning_Tool
     {
         private SQLiteDataAdapter ppStockAdapter = new SQLiteDataAdapter();
         private SQLiteDataAdapter ppDirektSaleAdapter = new SQLiteDataAdapter();
+        private SQLiteDataAdapter ovProductionPlanAdapter = new SQLiteDataAdapter();
+        private SQLiteDataAdapter ovOrderingPosAdapter = new SQLiteDataAdapter();
+        
         private BindingSource ppStockBinding = new BindingSource();
         private BindingSource ppDirektSaleBinding = new BindingSource();
+        private BindingSource ovProductionPlanBinding = new BindingSource();
+        private BindingSource ovOrderingPosBinding = new BindingSource();
         private Loading loading;
 
         public Main()
@@ -31,7 +37,9 @@ namespace Planning_Tool
             InitializeComponent();
             DatabaseManager manager = new DatabaseManager();
             pDirektSale.DataSource = ppDirektSaleBinding;
-            pStock.DataSource = ppStockBinding; 
+            pStock.DataSource = ppStockBinding;
+            ovOrderingPosView.DataSource = ovOrderingPosBinding;
+            ovProductionPlanView.DataSource = ovProductionPlanBinding;
             int count = 0;
             try
             {
@@ -94,6 +102,61 @@ namespace Planning_Tool
         }
 
         /// <summary>
+        /// Läd die Daten als DataAdapter aus der Datenbank
+        /// </summary>
+        /// <param name="selectCommand"></param>
+        private void getDataProductionPlan(string selectCommand)
+        {
+            string connectionString = "Data Source=database.db";
+            try
+            {
+                ovProductionPlanAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
+                SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(ovProductionPlanAdapter);
+
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                ovProductionPlanAdapter.Fill(table);
+                ovProductionPlanBinding.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Läd die Daten als DataAdapter aus der Datenbank
+        /// </summary>
+        /// <param name="selectCommand"></param>
+        private void getDataOrderingPos(string selectCommand)
+        {
+            string connectionString = "Data Source=database.db";
+            try
+            {
+                ovOrderingPosAdapter = new SQLiteDataAdapter(selectCommand, connectionString);
+                SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(ovOrderingPosAdapter);
+
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                ovOrderingPosAdapter.Fill(table);
+                ovOrderingPosBinding.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Füllt alle Übersichts views
+        /// </summary>
+        public void fillOvFields()
+        {
+            fillovProductionPlan();
+            fillovOrderingPos();
+        }
+
+        /// <summary>
         /// Füllt alle DataGridFelder neu
         /// </summary>
         public void fillFields()
@@ -138,6 +201,19 @@ namespace Planning_Tool
         private void updateppStockBinding()
         {
             ppStockAdapter.Update((DataTable)ppStockBinding.DataSource);
+        }
+
+        private void fillovProductionPlan()
+        {
+            string select = "SELECT productionplan, amount FROM ProductionPlan ORDER BY ProductionPlan";
+            getDataProductionPlan(select);
+        }
+
+        private void fillovOrderingPos()
+        {
+            string select = "SELECT orderingpos,amount,isexpress FROM OrderingPos"
+                          + " WHERE ordering = \"" + Period.getCurrentPeriod() + "\"";
+            getDataOrderingPos(select);
         }
 
        
@@ -273,18 +349,33 @@ namespace Planning_Tool
             bool success = false;
             try
             {
+                cleanAllForPlanning();
                 Forecast.saveForecasts(Convert.ToInt32(A1_P0.Value), Convert.ToInt32(A1_P1.Value), Convert.ToInt32(A1_P2.Value), Convert.ToInt32(A1_P3.Value),
                                             Convert.ToInt32(A2_P0.Value), Convert.ToInt32(A2_P1.Value), Convert.ToInt32(A2_P2.Value), Convert.ToInt32(A2_P3.Value),
                                             Convert.ToInt32(A3_P0.Value), Convert.ToInt32(A3_P1.Value), Convert.ToInt32(A3_P2.Value), Convert.ToInt32(A3_P3.Value));
                 updateFields();
                 ProductionUtil.startPlanning();
                 this.Invoke((Action)closeLoding);
+                this.Invoke((Action)fillOvFields);
             }
             catch (Exception ex)
             {
                 this.Invoke((Action)closeLoding);
+                this.Invoke((Action)fillOvFields);
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void cleanAllForPlanning()
+        {
+            DatabaseManager manager = new DatabaseManager();
+            manager.delete("Forecast",null);
+            manager.delete("OrderBom",null);
+            manager.delete("OrderBomPos", null);
+            manager.delete("DirektSale", null);
+            manager.delete("PurchasePlan", null);
+            manager.delete("Ordering", " Where Ordering = \"" + Period.getCurrentPeriod() + "\"");
+            manager.delete("OrderingPos", " Where Ordering = \"" + Period.getCurrentPeriod() + "\"");
         }
 
         private void label63_Click(object sender, EventArgs e)

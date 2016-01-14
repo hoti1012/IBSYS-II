@@ -60,7 +60,7 @@ namespace Planning_Tool.Purchase
         {
             calcPrice();
             base.update();
-            calcHead();
+            //calcHead();
         }
 
         /// <summary>
