@@ -104,11 +104,12 @@ namespace Planning_Tool.Purchase
                 bool createOrder = false;
                 bool express = false;
                 int period = getNeedetPeriod(pp);
-                if (period != 5)
+                if (period != 4)
                 {
-                    if (period > art.DeliverTime)
+                    double deliverTime = art.DeliverTime + art.DiliverDeviation;
+                    if (period > deliverTime)
                     {
-                        if (period - art.DeliverTime <= 1)
+                        if (period - deliverTime <= 1)
                         {
                             createOrder = true;
                         }
@@ -132,14 +133,14 @@ namespace Planning_Tool.Purchase
         private int getNeedetPeriod(PurchasePlan pp)
         {
             if (pp.stockN1 <= 0)
-                return 1;
+                return 0;
             if (pp.stockN2 <= 0)
-                return 2;
+                return 1;
             if (pp.stockN3 <= 0)
-                return 3;
+                return 2;
             if (pp.stockN4 <= 0)
-                return 4;
-            return 5;
+                return 3;
+            return 4;
 
         }
     }
