@@ -58,6 +58,7 @@ namespace Planning_Tool.Production
 
             foreach(OrderBOMpos orderBomPos in list)
             {
+                Article headArt = ArticleFactory.search(typeof(Article),orderBomPos.orderBOMpos) as Article;
                 List<PlanningPosObject> bomPosList = BOMposFactory.search(typeof(BOMpos), orderBomPos.orderBOMpos);
                 foreach (BOMpos bomPos in bomPosList)
                 {
@@ -76,7 +77,7 @@ namespace Planning_Tool.Production
                     if (art.IsProduction)
                     {
                         //Menge berechnen
-                        amount  = ((orderBomPos.amount * bomPos.amount) + (stock.safetyStock / use)) - (art.getInWork() / use) - (art.getWaitingList() / use) - (stock.amount / use); 
+                        amount  = (((orderBomPos.amount * bomPos.amount) + headArt.getWaitingList()) + (stock.safetyStock / use)) - (art.getInWork() / use) - (art.getWaitingList() / use) - (stock.amount / use); 
                     }
                     else
                     {
