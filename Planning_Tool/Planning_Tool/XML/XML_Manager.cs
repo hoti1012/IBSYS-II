@@ -143,7 +143,7 @@ namespace Planning_Tool.XML
         /// <summary>
         /// Schreibt die Inputxml
         /// </summary>
-        public void write()
+        public static void write()
         {
             try
             {

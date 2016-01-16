@@ -345,6 +345,20 @@ namespace Planning_Tool
                 }  
         }
 
+        private void xml_export_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                loading = new Loading("XML wird Exportiert");
+                loading.Show();
+                new Thread(xmlExportieren).Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         /// <summary>
         /// Importiert die XML
         /// </summary>
@@ -359,6 +373,25 @@ namespace Planning_Tool
                 this.Invoke((Action)fillFields);
             }
             catch(Exception ex)
+            {
+                this.Invoke((Action)closeLoding);
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Importiert die XML
+        /// </summary>
+        private void xmlExportieren()
+        {
+            try
+            {
+                //TODO: Alle daten aus dem DataGrids updaten
+                XML_Manager.write();
+                this.Invoke((Action)closeLoding);
+            }
+            catch (Exception ex)
             {
                 this.Invoke((Action)closeLoding);
 
@@ -483,6 +516,26 @@ namespace Planning_Tool
         }
 
         private void label236_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tab_direktverkäufe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pStock_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ovOrderingPosView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ovDirektSaleView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
