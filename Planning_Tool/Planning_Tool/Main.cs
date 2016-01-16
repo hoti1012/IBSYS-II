@@ -352,6 +352,7 @@ namespace Planning_Tool
         {
             try
             {
+                cleanAllForXMLimport();
                 XML_Manager.read(xml_path_input_textbox.Text);
                 this.Invoke((Action)closeLoding);
                 this.Invoke((Action)cleanXMLPath);
@@ -444,6 +445,17 @@ namespace Planning_Tool
             manager.delete("Ordering", " Where Ordering = \"" + Period.getCurrentPeriod() + "\"");
             manager.delete("OrderingPos", " Where Ordering = \"" + Period.getCurrentPeriod() + "\"");
             manager.delete("WaitingListPlan", null);
+        }
+
+        private void cleanAllForXMLimport()
+        {
+            DatabaseManager manager = new DatabaseManager();
+            manager.delete("Stock", null);
+            manager.delete("Workplace", null);
+            manager.delete("WorkplacePos", null);
+            manager.delete("Period", null);
+            manager.delete("Ordering", null);
+            manager.delete("OrderingPos", null);
         }
 
         private void label63_Click(object sender, EventArgs e)
