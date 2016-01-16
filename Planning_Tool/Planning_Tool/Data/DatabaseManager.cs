@@ -299,7 +299,22 @@ namespace Planning_Tool.Data
                         hasDependence = true;
                         valueDependence = p.GetValue(obj).ToString();
                     }
-                    fields += p.Name + " = " + "\"" + p.GetValue(obj) + "\"";
+
+                    if (p.PropertyType.Equals(typeof(bool)))
+                    {
+                        if (p.GetValue(obj).Equals(true))
+                        {
+                            fields += p.Name + " = " + "\"" + 1 + "\"";
+                        }
+                        else
+                        {
+                            fields += p.Name + " = " + "\"" + 2 + "\"";
+                        }
+                    }
+                    else
+                    {
+                        fields += p.Name + " = " + "\"" + p.GetValue(obj) + "\"";
+                    }
                 }
                 anz++;
             }
