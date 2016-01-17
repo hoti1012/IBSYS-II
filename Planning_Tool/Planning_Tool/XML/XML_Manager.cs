@@ -298,7 +298,7 @@ namespace Planning_Tool.XML
                 nroot = doc.CreateElement("productionlist");
                 root.AppendChild(nroot);
 
-                foreach (ProductionPlan pp in ProductionPlanFactory.searchAll(typeof(ProductionPlan)))
+                foreach (ProductionPlan pp in ProductionPlanFactory.getOrderdProductionPlan())
                 {
                     node = doc.CreateElement("production");
 

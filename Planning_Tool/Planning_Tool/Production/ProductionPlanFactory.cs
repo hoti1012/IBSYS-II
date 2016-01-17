@@ -10,30 +10,14 @@ namespace Planning_Tool.Production
 {
     class ProductionPlanFactory : PlanningObjectFactory
     {
-        /// <summary>
-        /// Gibt die Produktionspläne welche zur Baugruppe gehört
-        /// </summary>
-        /// <param name="productionPlan"></param>
-        /// <returns></returns>
-        public static List<ProductionPlan> getProductionPlansFromBom(string productionPlan)
+
+        public static List<ProductionPlan> getOrderdProductionPlan()
         {
-            if (productionPlan == null)
-            {
-                return null;
-            }
+            string sql = "SELECT * FROM ProductionPlan Order By dependence";
             List<ProductionPlan> res = new List<ProductionPlan>();
-            Article artObj = ArticleFactory.search(typeof(Article),productionPlan) as Article;
-            if (artObj != null)
+            foreach(ProductionPlan pp in ProductionPlanFactory.select(typeof(ProductionPlan),sql))
             {
-                foreach (BOMpos pos in artObj.getModule())
-                {
-                    //Zur sicherheit Prüfen ob die BOMPos auch wirklich eine Baugruppe ist
-                    if (pos.isModule())
-                    {
-                        ProductionPlan pp = ProductionPlanFactory.search(typeof(ProductionPlan), pos.bompos) as ProductionPlan;
-                        res.Add(pp);
-                    }
-                }
+                res.Add(pp);
             }
             return res;
         }

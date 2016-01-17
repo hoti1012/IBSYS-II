@@ -1,4 +1,5 @@
 ﻿using Planning_Tool.Core;
+using Planning_Tool.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,6 +76,14 @@ namespace Planning_Tool.Masterdata
             {
                 res.Add(pos);
             }
+            return res;
+        }
+
+        public static int getCountItem(string pos)
+        {
+            int res = 0;
+            string sql = "SELECT * FROM WorkSchedulePos WHERE WorkSchedulePos = " + pos;
+            res = WorkSchedulePosFactory.select(typeof(WorkSchedulePos), sql).Count;
             return res;
         }
     }
