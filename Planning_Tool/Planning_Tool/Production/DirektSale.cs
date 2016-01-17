@@ -25,9 +25,9 @@ namespace Planning_Tool.Production
             set { _amount = value; }
         }
 
-        private int _price;
+        private double _price;
 
-        public int price
+        public double price
         {
             get { return _price; }
             set { _price = value; }

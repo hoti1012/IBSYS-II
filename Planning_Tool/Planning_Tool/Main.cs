@@ -385,6 +385,8 @@ namespace Planning_Tool
             try
             {
                 SaveFileDialog path = new SaveFileDialog();
+                path.DefaultExt = ".xml";
+                path.FileName = "input_p" + Period.getCurrentPeriod();
                 if (path.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     updateOvFields();

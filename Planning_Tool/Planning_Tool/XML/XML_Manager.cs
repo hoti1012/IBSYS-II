@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using Planning_Tool.Forecasts;
+using Planning_Tool.Core;
 
 namespace Planning_Tool.XML
 {
@@ -152,16 +154,196 @@ namespace Planning_Tool.XML
                     throw new Exception("Bitte geben Sie einen Pfad an!");
                 }
 
-                //Grundstruktur
+                XmlDocument doc = new XmlDocument();
+                XmlNode root, nroot, node;
+                XmlAttribute attribute;
+
+                //Grundstruktur 
+                root = doc.CreateElement("input");
+                doc.AppendChild(root);
+
+                node = doc.CreateElement("qualitycontrol");
+
+                attribute = doc.CreateAttribute("type");
+                attribute.InnerText = "no";
+                node.Attributes.Append(attribute);
+
+                root.AppendChild(node);
+
+                attribute = doc.CreateAttribute("losequantity");
+                attribute.InnerText = "0";
+                node.Attributes.Append(attribute);
+
+                root.AppendChild(node);
+
+                attribute = doc.CreateAttribute("delay");
+                attribute.InnerText = "0";
+                node.Attributes.Append(attribute);
+
+                root.AppendChild(node);            
 
                 //Verkaufsaufträge
+                nroot = doc.CreateElement("sellwish");
+                root.AppendChild(nroot);
+
+                foreach(Forecast f in ForecastFactory.getAll())
+                {
+                    node = doc.CreateElement("item");
+
+                    attribute = doc.CreateAttribute("article");
+                    attribute.InnerText = f.forecast;
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+
+                    attribute = doc.CreateAttribute("quantity");
+                    attribute.InnerText = f.currentAmount.ToString();
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+                }
 
                 //Direktverkäufe
+                List<PlanningObject> selldirect = DirektSaleFactory.searchAll(typeof(DirektSale));
+                if (selldirect == null || selldirect.Count < 3)
+                {
+                    if (selldirect == null)
+                    {
+                        selldirect = new List<PlanningObject>();
+                    }
+                    for (int i = 1; i <= 3; i++)
+                    {
+                        DirektSale dsObj = DirektSaleFactory.search(typeof(DirektSale), i.ToString()) as DirektSale;
+                        if (dsObj == null)
+                        {
+                            dsObj = DirektSaleFactory.create(typeof(DirektSale), i.ToString()) as DirektSale;
+                            dsObj.amount = 0;
+                            dsObj.penalty = 0.0;
+                            dsObj.price = 0.0;
+                            dsObj.update();
+                            selldirect.Add(dsObj);
+                        }
+                    }
+                }
+
+                nroot = doc.CreateElement("selldirect");
+                root.AppendChild(nroot);
+
+                foreach(DirektSale d in selldirect)
+                {
+                    node = doc.CreateElement("item");
+
+                    attribute = doc.CreateAttribute("article");
+                    attribute.InnerText = d.direktSale;
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+
+                    attribute = doc.CreateAttribute("quantity");
+                    attribute.InnerText = d.amount.ToString();
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+
+                    attribute = doc.CreateAttribute("price");
+                    attribute.InnerText = d.price.ToString();
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+
+                    attribute = doc.CreateAttribute("penalty");
+                    attribute.InnerText = d.penalty.ToString();
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+                }
+
+                //Bestellungen
+                nroot = doc.CreateElement("orderlist");
+                root.AppendChild(nroot);
+
+                foreach(OrderingPos o in OrderingPosFactory.getAllCurrentOrder())
+                {
+                    node = doc.CreateElement("order");
+
+                    attribute = doc.CreateAttribute("article");
+                    attribute.InnerText = o.orderingpos;
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+
+                    attribute = doc.CreateAttribute("quantity");
+                    attribute.InnerText = o.Amount.ToString();
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+
+                    string modus = null;
+                    if (o.IsExpress)
+                    {
+                        modus = "5";
+                    }
+                    else
+                    {
+                        modus = "4";
+                    }
+                    attribute = doc.CreateAttribute("modus");
+                    attribute.InnerText = modus;
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+                }
 
                 //Produktionsaufträge
+                nroot = doc.CreateElement("productionlist");
+                root.AppendChild(nroot);
+
+                foreach (ProductionPlan pp in ProductionPlanFactory.searchAll(typeof(ProductionPlan)))
+                {
+                    node = doc.CreateElement("production");
+
+                    attribute = doc.CreateAttribute("article");
+                    attribute.InnerText = pp.productionPlan;
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+
+                    attribute = doc.CreateAttribute("quantity");
+                    attribute.InnerText = pp.amount.ToString();
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+                }
+
 
                 //Capazitätsplanung
+                nroot = doc.CreateElement("workingtimelist");
+                root.AppendChild(nroot);
 
+                foreach (CapacityPlan cp in CapacityPlanFactory.searchAll(typeof(CapacityPlan)))
+                {
+                    node = doc.CreateElement("workingtime");
+
+                    attribute = doc.CreateAttribute("station");
+                    attribute.InnerText = cp.capacityPlan;
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+
+                    attribute = doc.CreateAttribute("shift");
+                    attribute.InnerText = cp.shift.ToString();
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+
+                    attribute = doc.CreateAttribute("overtime");
+                    attribute.InnerText = cp.overTime.ToString();
+                    node.Attributes.Append(attribute);
+
+                    nroot.AppendChild(node);
+                }
+
+                doc.Save(path);
             }
             finally
             {
