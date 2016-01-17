@@ -89,6 +89,11 @@ namespace Planning_Tool.Production
                         amount += ds.amount;
                     }
 
+                    if (amount < 0 && use != 1)
+                    {
+                        amount = 0;
+                    }
+
                     OrderBOMpos newOrderBomPos = OrderBOMposFactory.create(typeof(OrderBOMpos),this._orderBOM,bomPos.bompos,orderBomPos.orderBOMpos) as OrderBOMpos;
                     newOrderBomPos.amount = amount;
                     newOrderBomPos.amountN1 = orderBomPos.amountN1 * bomPos.amount;

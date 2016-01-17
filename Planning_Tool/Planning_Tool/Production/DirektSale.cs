@@ -32,5 +32,13 @@ namespace Planning_Tool.Production
             get { return _price; }
             set { _price = value; }
         }
+
+        private double _penalty;
+
+        public double penalty
+        {
+            get { return _penalty; }
+            set { _penalty = value; }
+        }
     }
 }

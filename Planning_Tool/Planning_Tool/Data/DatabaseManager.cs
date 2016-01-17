@@ -308,7 +308,7 @@ namespace Planning_Tool.Data
                         }
                         else
                         {
-                            fields += p.Name + " = " + "\"" + 2 + "\"";
+                            fields += p.Name + " = " + "\"" + 0 + "\"";
                         }
                     }
                     else

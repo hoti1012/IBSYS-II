@@ -57,6 +57,8 @@
     <Compile Include="Data\DatabaseManager.cs" />
     <Compile Include="Data\FillTable.cs" />
     <Compile Include="Data\Properties.cs" />
+    <Compile Include="Data\SaveFile.cs" />
+    <Compile Include="Data\SaveFileFactory.cs" />
     <Compile Include="Exceptions\AlreadyExistsException.cs" />
     <Compile Include="Exceptions\ArticleNotFoundException.cs" />
     <Compile Include="Exceptions\BetterWhithMoreInformationsException.cs" />

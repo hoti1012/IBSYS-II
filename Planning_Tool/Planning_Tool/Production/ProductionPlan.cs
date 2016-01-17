@@ -30,12 +30,12 @@ namespace Planning_Tool.Production
         /// <summary>
         /// Gibt die Reihenfolge an
         /// </summary>
-        private int _position;
+        private int _dependence;
 
-        public int position
+        public int dependence
         {
-            get { return _position; }
-            set { _position = value; }
+            get { return _dependence; }
+            set { _dependence = value; }
         }
 
         public static int getProductionCount()

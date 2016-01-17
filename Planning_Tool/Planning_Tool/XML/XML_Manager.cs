@@ -143,12 +143,25 @@ namespace Planning_Tool.XML
         /// <summary>
         /// Schreibt die Inputxml
         /// </summary>
-        public static void write()
+        public static void write(string path)
         {
             try
             {
-                //TODO: Funktion implementieren
-                throw new NotImplementedException("Diese Funktion muss noch implementiert werden");
+                if (path == null)
+                {
+                    throw new Exception("Bitte geben Sie einen Pfad an!");
+                }
+
+                //Grundstruktur
+
+                //Verkaufsaufträge
+
+                //Direktverkäufe
+
+                //Produktionsaufträge
+
+                //Capazitätsplanung
+
             }
             finally
             {

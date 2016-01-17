@@ -16,6 +16,7 @@ using Planning_Tool.Production;
 using System.Data.SQLite;
 using System.Threading;
 using Planning_Tool.Time;
+using Planning_Tool.Data;
 	
 namespace Planning_Tool
 {
@@ -228,6 +229,20 @@ namespace Planning_Tool
             updateppDirektSaleBinding();
         }
 
+        private void updateOvFields()
+        {
+            try
+            {
+                updateovCapacityPlan();
+                updateovDirektSale();
+                updateovOrderingPos();
+                updateovProductionPlan();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         /// <summary>
         /// Füllt das DataGrid für die Produktionsübersicht
         /// </summary>
@@ -259,15 +274,25 @@ namespace Planning_Tool
 
         private void fillovProductionPlan()
         {
-            string select = "SELECT productionplan, amount FROM ProductionPlan ORDER BY ProductionPlan";
+            string select = "SELECT productionplan, amount, dependence FROM ProductionPlan ORDER BY ProductionPlan";
             getDataProductionPlan(select);
+        }
+
+        private void updateovProductionPlan()
+        {
+            ovProductionPlanAdapter.Update((DataTable)ovProductionPlanBinding.DataSource);
         }
 
         private void fillovOrderingPos()
         {
-            string select = "SELECT orderingpos,amount,isexpress FROM OrderingPos"
+            string select = "SELECT ordering, orderingpos,amount,isexpress FROM OrderingPos"
                           + " WHERE ordering = \"" + Period.getCurrentPeriod() + "\"";
             getDataOrderingPos(select);
+        }
+
+        private void updateovOrderingPos()
+        {
+            ovOrderingPosAdapter.Update((DataTable)ovOrderingPosBinding.DataSource);
         }
 
         private void fillovDirektSale()
@@ -276,10 +301,20 @@ namespace Planning_Tool
             getDataDirektSale(select);
         }
 
+        private void updateovDirektSale()
+        {
+            ovDirektSaleAdapter.Update((DataTable)ovDirektSaleBinding.DataSource);
+        }
+
         private void fillovCapacityPlan()
         {
-            string select = "SELECT CapacityPlan, OverTime, Shift FROM CapacityPlan";
+            string select = "SELECT CapacityPlan, neededCompleteTime, OverTime, Shift FROM CapacityPlan";
             getDataCapacityPlan(select);
+        }
+
+        private void updateovCapacityPlan()
+        {
+            ovCapacityPlanAdapter.Update((DataTable)ovCapacityPlanBinding.DataSource);
         }
        
         /// <summary>
@@ -349,9 +384,12 @@ namespace Planning_Tool
         {
             try
             {
-                loading = new Loading("XML wird Exportiert");
-                loading.Show();
-                new Thread(xmlExportieren).Start();
+                SaveFileDialog path = new SaveFileDialog();
+                if (path.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    updateOvFields();
+                    xmlExportieren(path.FileName);
+                }
             }
             catch (Exception ex)
             {
@@ -383,18 +421,14 @@ namespace Planning_Tool
         /// <summary>
         /// Importiert die XML
         /// </summary>
-        private void xmlExportieren()
+        private void xmlExportieren(string path)
         {
             try
             {
-                //TODO: Alle daten aus dem DataGrids updaten
-                XML_Manager.write();
-                this.Invoke((Action)closeLoding);
+                XML_Manager.write(path);
             }
             catch (Exception ex)
             {
-                this.Invoke((Action)closeLoding);
-
                 MessageBox.Show(ex.Message);
             }
         }
