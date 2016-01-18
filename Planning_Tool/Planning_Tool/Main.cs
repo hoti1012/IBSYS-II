@@ -554,6 +554,7 @@ namespace Planning_Tool
             manager.delete("Ordering", " Where Ordering = \"" + Period.getCurrentPeriod() + "\"");
             manager.delete("OrderingPos", " Where Ordering = \"" + Period.getCurrentPeriod() + "\"");
             manager.delete("WaitingListPlan", null);
+            manager.delete("DirektSale", null);
         }
 
         private void cleanAllForXMLimport()
