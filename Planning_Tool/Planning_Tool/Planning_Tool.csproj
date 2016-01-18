@@ -83,6 +83,7 @@
     <Compile Include="Masterdata\BOMFactory.cs" />
     <Compile Include="Masterdata\BOMpos.cs" />
     <Compile Include="Masterdata\BOMposFactory.cs" />
+    <Compile Include="Masterdata\CountObject.cs" />
     <Compile Include="Masterdata\WorkSchedule.cs" />
     <Compile Include="Masterdata\WorkScheduleFactory.cs" />
     <Compile Include="Masterdata\WorkSchedulePos.cs" />

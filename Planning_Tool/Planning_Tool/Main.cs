@@ -17,6 +17,7 @@ using System.Data.SQLite;
 using System.Threading;
 using Planning_Tool.Time;
 using Planning_Tool.Data;
+using Planning_Tool.Purchase;
 	
 namespace Planning_Tool
 {
@@ -82,6 +83,29 @@ namespace Planning_Tool
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void selectTab(int page)
+        {
+            if(page == 1)
+            {
+                tabControl1.SelectedTab = tab_startseite;
+            }
+
+            if (page == 2)
+            {
+                tabControl1.SelectedTab = tab_xml_input;
+            }
+
+            if (page == 3)
+            {
+                tabControl1.SelectedTab = tab_prognose;
+            }
+
+            if (page == 4)
+            {
+                tabControl1.SelectedTab = tab_uebersicht_xmloutput;
             }
         }
 
@@ -209,6 +233,21 @@ namespace Planning_Tool
             fillovOrderingPos();
             fillovCapacityPlan();
             fillovDirektSale();
+            setBestellkostenLabel();
+            selectTab(4);
+        }
+
+        private void setBestellkostenLabel()
+        {
+            Ordering order = OrderingFactory.search(typeof(Ordering),Period.getCurrentPeriod().ToString()) as Ordering;
+            if (order != null)
+            {
+                OrderPrice.Text = order.Price.ToString() + " €";
+            }
+            else
+            {
+                OrderPrice.Text = "0 €";
+            }
         }
 
         /// <summary>
@@ -218,6 +257,7 @@ namespace Planning_Tool
         {
             fillppDirektSaleBinding();
             fillppStockBinding();
+            selectTab(3);
         }
 
         /// <summary>
@@ -274,7 +314,7 @@ namespace Planning_Tool
 
         private void fillovProductionPlan()
         {
-            string select = "SELECT productionplan, amount, dependence FROM ProductionPlan ORDER BY ProductionPlan";
+            string select = "SELECT productionplan, amount, dependence FROM ProductionPlan ORDER BY dependence";
             getDataProductionPlan(select);
         }
 

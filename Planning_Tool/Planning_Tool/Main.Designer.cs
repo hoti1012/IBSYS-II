@@ -29,34 +29,53 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new System.Data.DataSet();
             this.tab_uebersicht_xmloutput = new System.Windows.Forms.TabPage();
             this.xml_export = new System.Windows.Forms.Button();
             this.ovDirektSaleView = new System.Windows.Forms.DataGridView();
+            this.direktverkäufe_fahrrad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direktverkäufe_menge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direktverkäufe_preis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ovStrafe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label230 = new System.Windows.Forms.Label();
             this.ovOrderingPosView = new System.Windows.Forms.DataGridView();
+            this.Periode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_kaufteil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellungen_menge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellungen_eil = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label229 = new System.Windows.Forms.Label();
             this.kapazitätsplanung = new System.Windows.Forms.Label();
             this.ovCapacityPlanView = new System.Windows.Forms.DataGridView();
+            this.column_arbeitsplatz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Auslastung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_ueberstunden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_schichten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fertigungsaufträge = new System.Windows.Forms.Label();
             this.label228 = new System.Windows.Forms.Label();
             this.ovProductionPlanView = new System.Windows.Forms.DataGridView();
+            this.Pos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productionplan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_prognose = new System.Windows.Forms.TabPage();
             this.label238 = new System.Windows.Forms.Label();
             this.label236 = new System.Windows.Forms.Label();
             this.pDirektSale = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Strafe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pStock = new System.Windows.Forms.DataGridView();
             this.lagerbestand_teil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lagerbestand_bezeichnung = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,25 +119,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Strafe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productionplan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_arbeitsplatz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Auslastung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_ueberstunden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_schichten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Periode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_kaufteil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellungen_menge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellungen_eil = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.direktverkäufe_fahrrad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direktverkäufe_menge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direktverkäufe_preis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ovStrafe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.OrderPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.tab_uebersicht_xmloutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ovDirektSaleView)).BeginInit();
@@ -155,6 +157,8 @@
             // 
             // tab_uebersicht_xmloutput
             // 
+            this.tab_uebersicht_xmloutput.Controls.Add(this.OrderPrice);
+            this.tab_uebersicht_xmloutput.Controls.Add(this.label3);
             this.tab_uebersicht_xmloutput.Controls.Add(this.xml_export);
             this.tab_uebersicht_xmloutput.Controls.Add(this.ovDirektSaleView);
             this.tab_uebersicht_xmloutput.Controls.Add(this.label230);
@@ -207,6 +211,35 @@
             this.ovDirektSaleView.TabIndex = 8;
             this.ovDirektSaleView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ovDirektSaleView_CellContentClick);
             // 
+            // direktverkäufe_fahrrad
+            // 
+            this.direktverkäufe_fahrrad.DataPropertyName = "DirektSale";
+            this.direktverkäufe_fahrrad.HeaderText = "Fahrrad";
+            this.direktverkäufe_fahrrad.Name = "direktverkäufe_fahrrad";
+            this.direktverkäufe_fahrrad.Width = 60;
+            // 
+            // direktverkäufe_menge
+            // 
+            this.direktverkäufe_menge.DataPropertyName = "amount";
+            this.direktverkäufe_menge.HeaderText = "Menge";
+            this.direktverkäufe_menge.Name = "direktverkäufe_menge";
+            this.direktverkäufe_menge.Width = 75;
+            // 
+            // direktverkäufe_preis
+            // 
+            this.direktverkäufe_preis.DataPropertyName = "price";
+            this.direktverkäufe_preis.HeaderText = "Preis";
+            this.direktverkäufe_preis.Name = "direktverkäufe_preis";
+            this.direktverkäufe_preis.Width = 75;
+            // 
+            // ovStrafe
+            // 
+            this.ovStrafe.DataPropertyName = "penalty";
+            this.ovStrafe.HeaderText = "Strafe";
+            this.ovStrafe.Name = "ovStrafe";
+            this.ovStrafe.ReadOnly = true;
+            this.ovStrafe.Width = 75;
+            // 
             // label230
             // 
             this.label230.AutoSize = true;
@@ -232,9 +265,44 @@
             this.ovOrderingPosView.Name = "ovOrderingPosView";
             this.ovOrderingPosView.RowHeadersWidth = 20;
             this.ovOrderingPosView.RowTemplate.Height = 24;
-            this.ovOrderingPosView.Size = new System.Drawing.Size(219, 490);
+            this.ovOrderingPosView.Size = new System.Drawing.Size(219, 487);
             this.ovOrderingPosView.TabIndex = 6;
             this.ovOrderingPosView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ovOrderingPosView_CellContentClick);
+            // 
+            // Periode
+            // 
+            this.Periode.DataPropertyName = "ordering";
+            this.Periode.HeaderText = "Periode";
+            this.Periode.Name = "Periode";
+            this.Periode.Width = 50;
+            // 
+            // column_kaufteil
+            // 
+            this.column_kaufteil.DataPropertyName = "OrderingPos";
+            this.column_kaufteil.HeaderText = "K-Teil";
+            this.column_kaufteil.MaxInputLength = 32;
+            this.column_kaufteil.Name = "column_kaufteil";
+            this.column_kaufteil.Width = 40;
+            // 
+            // bestellungen_menge
+            // 
+            this.bestellungen_menge.DataPropertyName = "amount";
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.bestellungen_menge.DefaultCellStyle = dataGridViewCellStyle1;
+            this.bestellungen_menge.HeaderText = "Menge";
+            this.bestellungen_menge.MaxInputLength = 8;
+            this.bestellungen_menge.Name = "bestellungen_menge";
+            this.bestellungen_menge.Width = 75;
+            // 
+            // bestellungen_eil
+            // 
+            this.bestellungen_eil.DataPropertyName = "isExpress";
+            this.bestellungen_eil.HeaderText = "Eil?";
+            this.bestellungen_eil.Name = "bestellungen_eil";
+            this.bestellungen_eil.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bestellungen_eil.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.bestellungen_eil.Width = 30;
             // 
             // label229
             // 
@@ -274,8 +342,46 @@
             this.ovCapacityPlanView.Name = "ovCapacityPlanView";
             this.ovCapacityPlanView.RowHeadersVisible = false;
             this.ovCapacityPlanView.RowTemplate.Height = 24;
-            this.ovCapacityPlanView.Size = new System.Drawing.Size(277, 490);
+            this.ovCapacityPlanView.Size = new System.Drawing.Size(277, 487);
             this.ovCapacityPlanView.TabIndex = 3;
+            // 
+            // column_arbeitsplatz
+            // 
+            this.column_arbeitsplatz.DataPropertyName = "capacityplan";
+            this.column_arbeitsplatz.HeaderText = "Arbeitsplatz";
+            this.column_arbeitsplatz.Name = "column_arbeitsplatz";
+            this.column_arbeitsplatz.ReadOnly = true;
+            this.column_arbeitsplatz.ToolTipText = "Nummer des Arbeitsplatzes";
+            this.column_arbeitsplatz.Width = 75;
+            // 
+            // Auslastung
+            // 
+            this.Auslastung.DataPropertyName = "neededCompleteTime";
+            this.Auslastung.HeaderText = "Auslastung";
+            this.Auslastung.Name = "Auslastung";
+            this.Auslastung.ReadOnly = true;
+            this.Auslastung.Width = 60;
+            // 
+            // column_ueberstunden
+            // 
+            this.column_ueberstunden.DataPropertyName = "overtime";
+            dataGridViewCellStyle2.Format = "N0";
+            this.column_ueberstunden.DefaultCellStyle = dataGridViewCellStyle2;
+            this.column_ueberstunden.HeaderText = "Überstunden";
+            this.column_ueberstunden.MaxInputLength = 3;
+            this.column_ueberstunden.Name = "column_ueberstunden";
+            this.column_ueberstunden.Width = 75;
+            // 
+            // column_schichten
+            // 
+            this.column_schichten.DataPropertyName = "shift";
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.column_schichten.DefaultCellStyle = dataGridViewCellStyle3;
+            this.column_schichten.HeaderText = "Schichten";
+            this.column_schichten.MaxInputLength = 1;
+            this.column_schichten.Name = "column_schichten";
+            this.column_schichten.Width = 60;
             // 
             // fertigungsaufträge
             // 
@@ -294,7 +400,7 @@
             this.label228.Location = new System.Drawing.Point(19, 16);
             this.label228.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label228.Name = "label228";
-            this.label228.Size = new System.Drawing.Size(528, 39);
+            this.label228.Size = new System.Drawing.Size(761, 52);
             this.label228.TabIndex = 1;
             this.label228.Text = resources.GetString("label228.Text");
             // 
@@ -314,9 +420,41 @@
             this.ovProductionPlanView.Name = "ovProductionPlanView";
             this.ovProductionPlanView.RowHeadersWidth = 20;
             this.ovProductionPlanView.RowTemplate.Height = 24;
-            this.ovProductionPlanView.Size = new System.Drawing.Size(208, 490);
+            this.ovProductionPlanView.Size = new System.Drawing.Size(208, 487);
             this.ovProductionPlanView.TabIndex = 0;
             this.ovProductionPlanView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellContentClick);
+            // 
+            // Pos
+            // 
+            this.Pos.DataPropertyName = "dependence";
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Pos.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Pos.FillWeight = 50.41844F;
+            this.Pos.HeaderText = "Pos";
+            this.Pos.MaxInputLength = 3;
+            this.Pos.Name = "Pos";
+            this.Pos.ToolTipText = "Reihenfolge des Produktionsauftrags";
+            // 
+            // productionplan
+            // 
+            this.productionplan.DataPropertyName = "productionPlan";
+            this.productionplan.FillWeight = 76.14214F;
+            this.productionplan.HeaderText = "Teil";
+            this.productionplan.MaxInputLength = 3;
+            this.productionplan.Name = "productionplan";
+            this.productionplan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.productionplan.ToolTipText = "Nummer des Teils";
+            // 
+            // amount
+            // 
+            this.amount.DataPropertyName = "amount";
+            dataGridViewCellStyle5.Format = "N0";
+            this.amount.DefaultCellStyle = dataGridViewCellStyle5;
+            this.amount.FillWeight = 173.4394F;
+            this.amount.HeaderText = "Menge";
+            this.amount.MaxInputLength = 4;
+            this.amount.Name = "amount";
             // 
             // tab_prognose
             // 
@@ -378,6 +516,49 @@
             this.pDirektSale.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.pDirektSale.Size = new System.Drawing.Size(305, 390);
             this.pDirektSale.TabIndex = 6;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "direktsale";
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Artikel";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "amount";
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Menge";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ToolTipText = "Menge des Direktverkauften Artikels";
+            this.dataGridViewTextBoxColumn2.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "price";
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Preis";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ToolTipText = "Preis zu welchem die Direktverkäufe verkauft werden";
+            this.dataGridViewTextBoxColumn3.Width = 75;
+            // 
+            // Strafe
+            // 
+            this.Strafe.DataPropertyName = "penalty";
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Strafe.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Strafe.HeaderText = "Strafe";
+            this.Strafe.Name = "Strafe";
+            this.Strafe.ToolTipText = "Hier kann die Strafe eingetragen werden, bei nichteinhaltung";
+            this.Strafe.Width = 75;
             // 
             // pStock
             // 
@@ -982,183 +1163,23 @@
             this.tabControl1.Size = new System.Drawing.Size(1182, 621);
             this.tabControl1.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn1
+            // label3
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "direktsale";
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Artikel";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 50;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(856, 352);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Bestellkosten:";
             // 
-            // dataGridViewTextBoxColumn2
+            // OrderPrice
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "amount";
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Menge";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ToolTipText = "Menge des Direktverkauften Artikels";
-            this.dataGridViewTextBoxColumn2.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "price";
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Preis";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ToolTipText = "Preis zu welchem die Direktverkäufe verkauft werden";
-            this.dataGridViewTextBoxColumn3.Width = 75;
-            // 
-            // Strafe
-            // 
-            this.Strafe.DataPropertyName = "penalty";
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Strafe.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Strafe.HeaderText = "Strafe";
-            this.Strafe.Name = "Strafe";
-            this.Strafe.ToolTipText = "Hier kann die Strafe eingetragen werden, bei nichteinhaltung";
-            this.Strafe.Width = 75;
-            // 
-            // Pos
-            // 
-            this.Pos.DataPropertyName = "dependence";
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Pos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Pos.FillWeight = 50.41844F;
-            this.Pos.HeaderText = "Pos";
-            this.Pos.MaxInputLength = 2;
-            this.Pos.Name = "Pos";
-            this.Pos.ToolTipText = "Reihenfolge des Produktionsauftrags";
-            // 
-            // productionplan
-            // 
-            this.productionplan.DataPropertyName = "productionPlan";
-            this.productionplan.FillWeight = 76.14214F;
-            this.productionplan.HeaderText = "Teil";
-            this.productionplan.MaxInputLength = 3;
-            this.productionplan.Name = "productionplan";
-            this.productionplan.ReadOnly = true;
-            this.productionplan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.productionplan.ToolTipText = "Nummer des Teils";
-            // 
-            // amount
-            // 
-            this.amount.DataPropertyName = "amount";
-            dataGridViewCellStyle5.Format = "N0";
-            this.amount.DefaultCellStyle = dataGridViewCellStyle5;
-            this.amount.FillWeight = 173.4394F;
-            this.amount.HeaderText = "Menge";
-            this.amount.MaxInputLength = 4;
-            this.amount.Name = "amount";
-            // 
-            // column_arbeitsplatz
-            // 
-            this.column_arbeitsplatz.DataPropertyName = "capacityplan";
-            this.column_arbeitsplatz.HeaderText = "Arbeitsplatz";
-            this.column_arbeitsplatz.Name = "column_arbeitsplatz";
-            this.column_arbeitsplatz.ReadOnly = true;
-            this.column_arbeitsplatz.ToolTipText = "Nummer des Arbeitsplatzes";
-            this.column_arbeitsplatz.Width = 75;
-            // 
-            // Auslastung
-            // 
-            this.Auslastung.DataPropertyName = "neededCompleteTime";
-            this.Auslastung.HeaderText = "Auslastung";
-            this.Auslastung.Name = "Auslastung";
-            this.Auslastung.ReadOnly = true;
-            this.Auslastung.Width = 60;
-            // 
-            // column_ueberstunden
-            // 
-            this.column_ueberstunden.DataPropertyName = "overtime";
-            dataGridViewCellStyle2.Format = "N0";
-            this.column_ueberstunden.DefaultCellStyle = dataGridViewCellStyle2;
-            this.column_ueberstunden.HeaderText = "Überstunden";
-            this.column_ueberstunden.MaxInputLength = 3;
-            this.column_ueberstunden.Name = "column_ueberstunden";
-            this.column_ueberstunden.Width = 75;
-            // 
-            // column_schichten
-            // 
-            this.column_schichten.DataPropertyName = "shift";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.column_schichten.DefaultCellStyle = dataGridViewCellStyle3;
-            this.column_schichten.HeaderText = "Schichten";
-            this.column_schichten.MaxInputLength = 1;
-            this.column_schichten.Name = "column_schichten";
-            this.column_schichten.Width = 60;
-            // 
-            // Periode
-            // 
-            this.Periode.DataPropertyName = "ordering";
-            this.Periode.HeaderText = "Periode";
-            this.Periode.Name = "Periode";
-            this.Periode.Width = 50;
-            // 
-            // column_kaufteil
-            // 
-            this.column_kaufteil.DataPropertyName = "OrderingPos";
-            this.column_kaufteil.HeaderText = "K-Teil";
-            this.column_kaufteil.MaxInputLength = 32;
-            this.column_kaufteil.Name = "column_kaufteil";
-            this.column_kaufteil.Width = 40;
-            // 
-            // bestellungen_menge
-            // 
-            this.bestellungen_menge.DataPropertyName = "amount";
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.bestellungen_menge.DefaultCellStyle = dataGridViewCellStyle1;
-            this.bestellungen_menge.HeaderText = "Menge";
-            this.bestellungen_menge.MaxInputLength = 8;
-            this.bestellungen_menge.Name = "bestellungen_menge";
-            this.bestellungen_menge.Width = 75;
-            // 
-            // bestellungen_eil
-            // 
-            this.bestellungen_eil.DataPropertyName = "isExpress";
-            this.bestellungen_eil.HeaderText = "Eil?";
-            this.bestellungen_eil.Name = "bestellungen_eil";
-            this.bestellungen_eil.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.bestellungen_eil.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.bestellungen_eil.Width = 30;
-            // 
-            // direktverkäufe_fahrrad
-            // 
-            this.direktverkäufe_fahrrad.DataPropertyName = "DirektSale";
-            this.direktverkäufe_fahrrad.HeaderText = "Fahrrad";
-            this.direktverkäufe_fahrrad.Name = "direktverkäufe_fahrrad";
-            this.direktverkäufe_fahrrad.Width = 60;
-            // 
-            // direktverkäufe_menge
-            // 
-            this.direktverkäufe_menge.DataPropertyName = "amount";
-            this.direktverkäufe_menge.HeaderText = "Menge";
-            this.direktverkäufe_menge.Name = "direktverkäufe_menge";
-            this.direktverkäufe_menge.Width = 75;
-            // 
-            // direktverkäufe_preis
-            // 
-            this.direktverkäufe_preis.DataPropertyName = "price";
-            this.direktverkäufe_preis.HeaderText = "Preis";
-            this.direktverkäufe_preis.Name = "direktverkäufe_preis";
-            this.direktverkäufe_preis.Width = 75;
-            // 
-            // ovStrafe
-            // 
-            this.ovStrafe.DataPropertyName = "penalty";
-            this.ovStrafe.HeaderText = "Strafe";
-            this.ovStrafe.Name = "ovStrafe";
-            this.ovStrafe.ReadOnly = true;
-            this.ovStrafe.Width = 75;
+            this.OrderPrice.AutoSize = true;
+            this.OrderPrice.Location = new System.Drawing.Point(935, 352);
+            this.OrderPrice.Name = "OrderPrice";
+            this.OrderPrice.Size = new System.Drawing.Size(13, 13);
+            this.OrderPrice.TabIndex = 11;
+            this.OrderPrice.Text = "0";
             // 
             // Main
             // 
@@ -1273,9 +1294,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Strafe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productionplan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn column_arbeitsplatz;
         private System.Windows.Forms.DataGridViewTextBoxColumn Auslastung;
         private System.Windows.Forms.DataGridViewTextBoxColumn column_ueberstunden;
@@ -1288,6 +1306,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn column_kaufteil;
         private System.Windows.Forms.DataGridViewTextBoxColumn bestellungen_menge;
         private System.Windows.Forms.DataGridViewCheckBoxColumn bestellungen_eil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productionplan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label OrderPrice;
 
     }
 }

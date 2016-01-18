@@ -23,5 +23,10 @@ namespace Planning_Tool.Core
         {
             PlanningObjectFactory.delete(this);
         }
+
+        public void create()
+        {
+            PlanningObjectFactory.create(this); 
+        }
     }
 }

@@ -21,5 +21,15 @@ namespace Planning_Tool.Production
             }
             return res;
         }
+
+        public static List<ProductionPlan> getAll()
+        {
+            List<ProductionPlan> res = new List<ProductionPlan>();
+            foreach (ProductionPlan pp in ProductionPlanFactory.searchAll(typeof(ProductionPlan)))
+            {
+                res.Add(pp);
+            }
+            return res;
+        }
     }
 }

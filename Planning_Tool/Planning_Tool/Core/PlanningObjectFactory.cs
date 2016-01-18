@@ -195,5 +195,23 @@ namespace Planning_Tool.Core
             }
             return obj;
         }
+
+        /// <summary>
+        /// Fügt ein Object in die Datenbank hinzu
+        /// </summary>
+        /// <param name="obj"></param>
+        public static void create(PlanningObject obj)
+        {
+            DatabaseManager manager = new DatabaseManager();
+            try
+            {
+                manager.insert(obj);
+            }
+            finally
+            {
+                manager.release();
+                manager = null;
+            }
+        }
     }
 }

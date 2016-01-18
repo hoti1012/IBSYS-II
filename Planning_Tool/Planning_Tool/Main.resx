@@ -215,8 +215,10 @@
   </metadata>
   <data name="label228.Text" xml:space="preserve">
     <value>Bitte überprüfen Sie die Fertigungsaufträge, den Kapazitätsplan, die Bestellungen und ggfs. die Direktverkäufe.
-Wollen Sie Änderungen vornehmen ghen Sie bitte einfach in den entsprechenden Reiter zurück.
-Ansonsten können sie sich die Eingaben ganz bequem als XML ausgeben lassen</value>
+Wollen Sie Änderungen vornehmen können Sie diese hier vornehmen. Bitte beachten Sie, dass änderungen auf dieser Seite keine erneute Berechnung auslöst.
+Sollten Sie eine erneute berechnung wünschen gehen Sie auf den Reiter Prognose zurück.
+Ansonsten können sie sich die Eingaben ganz bequem als XML ausgeben lassen.
+</value>
   </data>
   <metadata name="Pos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

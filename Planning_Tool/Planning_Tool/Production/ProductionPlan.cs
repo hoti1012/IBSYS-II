@@ -3,6 +3,7 @@ using Planning_Tool.Exceptions;
 using Planning_Tool.Forecasts;
 using Planning_Tool.Masterdata;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,5 +75,58 @@ namespace Planning_Tool.Production
             set { _amount = value; }
         }
 
+        public int getWaitlist()
+        {
+            Article art = ArticleFactory.search(typeof(Article), _productionPlan) as Article;
+            return art.getWaitingList() + art.getInWork();
+        }
+
+        
+        public static void orderPlan()
+        {
+            List<ProductionPlan> all = ProductionPlanFactory.getAll();
+            List<ProductionPlan> sortet = new List<ProductionPlan>();
+            while(all.Count > 0)
+            {
+                orderList(all, sortet);
+            }
+            int i = 0;
+            foreach (ProductionPlan pp in sortet)
+            {
+                i++;
+                pp.delete();
+                pp._dependence = i;
+                ProductionPlanFactory.create(pp);
+            }
+            
+        }
+
+        public static void orderList(List<ProductionPlan> all,List<ProductionPlan> sort)
+        {
+            if(all.Count == 0){
+                return;
+            }
+            ProductionPlan max = all[0];
+            int i = 0;
+            int index = 0;
+            foreach (ProductionPlan pp in all)
+            {
+                if (max.getWaitlist() < pp.getWaitlist() && pp._amount > 0)
+                {
+                    max = pp;
+                    index = i;
+                }
+                i++;
+            }
+
+            sort.Add(max);
+            all.RemoveAt(index);
+        }
+
+        public static void splitPlan()
+        {
+            WorkSchedule.getArticleToSplit();
+            //TODO: Aufträge splitten
+        }
     }
 }

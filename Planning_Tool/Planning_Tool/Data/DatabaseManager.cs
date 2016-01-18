@@ -429,9 +429,10 @@ namespace Planning_Tool.Data
         {
             Type type;
             PropertyInfo[] prop;
-            string sql,secondValue = null,firstValue = null;
+            string sql, secondValue = null, firstValue = null, valueDependence = null;
             string headTable = null;
             bool isPos = false;
+            bool hasDependence = false;
 
             if (!open)
             {
@@ -475,6 +476,12 @@ namespace Planning_Tool.Data
                     }
                         
                 }
+
+                if (p.Name.Equals("dependence", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    hasDependence = true;
+                    valueDependence = p.GetValue(obj).ToString();
+                }
             }
 
             if (firstValue == null)
@@ -488,6 +495,11 @@ namespace Planning_Tool.Data
             if (isPos)
             {
                 sql += "AND " + headTable + " = \"" + secondValue + "\"";
+            }
+
+            if (hasDependence)
+            {
+                sql += " AND dependence = \"" + valueDependence + "\"";
             }
 
             command.CommandText = sql;

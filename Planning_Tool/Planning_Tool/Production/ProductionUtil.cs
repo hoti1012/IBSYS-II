@@ -145,6 +145,9 @@ namespace Planning_Tool.Production
                 capaPlan.finalizeCapaPlan();
                 capaPlan.update();
             }
+
+            ProductionPlan.orderPlan();
+            //ProductionPlan.splitPlan();
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using Planning_Tool.Core;
+using Planning_Tool.Production;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,13 @@ namespace Planning_Tool.Masterdata
         {
             int i = WorkSchedulePosFactory.search(typeof(WorkSchedulePos),_workSchedule).Count + 1;
             return WorkSchedulePosFactory.create(typeof(WorkSchedulePos),_workSchedule,pos,i.ToString()) as WorkSchedulePos;
+        }
+
+        public static List<string> getArticleToSplit()
+        {
+            List<string> articles = new List<string>();
+            List<Workplace> workplaces =  Workplace.getMostUsedWorkplace();
+            return articles;
         }
     }
 }

@@ -33,5 +33,13 @@ namespace Planning_Tool.Core
             return PlanningPosObjectFactory.getHead(this,headType);
         }
 
+        /// <summary>
+        /// Fügt ein Object in die Datenbank hinzu
+        /// </summary>
+        public void create()
+        {
+            PlanningPosObjectFactory.create(this);
+        }
+
     }
 }
